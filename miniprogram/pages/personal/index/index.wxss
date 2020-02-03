@@ -1,0 +1,181 @@
+page{
+  background: #F8F8F8;
+}
+
+.personal-contaier{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.personal-contaier .container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .header-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #528B8B;
+  height: 250rpx;
+  align-items: center;
+}
+
+.header-content .header{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.header-content .header-left{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content .header-right{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.header-right .tag{
+  font-size: 30rpx;
+  color: #DAA520 ;
+}
+
+.header-left image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.gap{
+  height: 50rpx;
+  width: 100%;
+  background: #528B8B;
+}
+
+.content-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.order-info{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  position: absolute;
+  top: -50rpx;
+  background: white;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 0rpx 10rpx 5rpx gainsboro;
+}
+
+.order-info .info-header{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.info-header .all-order{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-info .order-content{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.order-item .image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.order-content .order-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 27rpx;
+}
+
+.all-order .turn-right-icon{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.order-icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.service-content{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 170rpx;
+  font-size: 30rpx;
+  box-shadow: 0rpx 0rpx 10rpx 5rpx gainsboro;
+  background: white;
+  border-radius: 20rpx;
+}
+
+.service-content .service-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 0rpx;
+  border-bottom-style:solid;
+  border-width:1rpx;
+  border-color: #EDEDED;
+}
+
+.service-item .item-icon{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  padding-left: 30rpx;
+}
+
+.direct{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+}
+
+.service-content image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.service-item .service-icon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}

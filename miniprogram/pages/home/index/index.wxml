@@ -1,0 +1,83 @@
+<view class='home-container'>
+  <view class='content'>
+
+    <!-- 搜索框 -->
+    <view class='search-container'>
+        <view class='search'>
+          <input type='text' 
+                class='search-input' 
+                placeholder="搜索商品"         
+                bindinput='getFilter'/>
+          <view class='search-image' bindtap='search'>
+              <image mode="" src='/images/search.png'></image>
+          </view>
+        </view>
+    </view>
+    
+    <!-- 轮播图 -->
+    <view class='swiper'>
+      <swiper indicator-dots="true" 
+              indicator-color="#ffffff" 
+              indicator-active-color="#66CDAA"
+              autoplay="true"
+              interval="3000"
+              circular="true"
+              duration="1500"
+              class='image-container'>
+          <block wx:for="{{attachments}}" wx:key="{{item}}">
+            <swiper-item class="image-item">
+              <image class='goods-image' src="{{item}}" mode='aspectFill' />
+            </swiper-item>
+          </block>
+      </swiper>
+    </view>
+
+    <!-- 商品列表 -->
+    <view class='goods-container'>
+      <view class='goods-content-title'>为您推荐</view>
+      <view class='goods-content'>
+        <view class='goods-item' 
+              wx:for="{{goodsList}}" 
+              wx:key="{{item.id}}" 
+              data-id='{{item.id}}'
+              bindtap='openGoodsDetail'>
+          <view class='item-image'>
+            <image mode='aspectFill' src='{{item.images_attachments[0]}}'></image>
+          </view>
+          <view class='goods-info'>
+            <view class='goods-name'>{{item.name}}</view>
+            <view class='describe'>{{item.describe}}</view>
+            <view class='price-container'>
+              <view class='price'>
+                <view class='sale-price'>￥{{item.sku[0].price}}</view>
+                <view class='chalk_line_price'>{{item.sku[0].chalk_line_price}}</view>
+              </view>
+              <view class='cart-icon'>
+                <image src='/images/cart-logo.png'></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 授权弹窗 -->
+  <view wx:if="{{showAuth}}" class='auth-container'>
+    <view class='auth-wall'>
+      <view class='auth-tips'>
+        <image src='/images/wechat-logo.png'></image>
+        <view>授权您的公开信息(昵称和头像)</view>
+      </view>
+      <button open-type="getUserInfo" 
+              bindgetuserinfo="getAuthUserInfo" 
+              class='auth-button'>
+        <view>授权登录</view>
+      </button>
+    </view>
+  </view>
+
+  <get-more-loading wx:if="{{showGeMoreLoadin}}"></get-more-loading>
+  <not-more wx:if="{{notDataTips && goodsList.length>0}}"></not-more>
+</view>

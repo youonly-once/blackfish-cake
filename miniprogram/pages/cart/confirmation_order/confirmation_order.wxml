@@ -1,0 +1,205 @@
+<block wx:if="{{isShow}}">
+<import src="../../common/foot.wxml" />
+
+<view class='confirm-container'>
+  <!--<DateTimePicker years="{{years}}" months ="{{months}}" days="{{days}}" hours="{{hours}}" minutes="{{minutes}}">
+      <view class="picker"> 
+      {{date2}}  
+      </view> 
+  </DateTimePicker>-->
+<view class="deliver_choose flexRowCenter">
+  <view class="deliver flexRowBetween">
+    <view class="{{isDeliver==1?'dliver_choose_item_deliver':'dliver_choose_item_get'}}" data-id="1" bindtap="swithDeliver" >商家配送</view>
+    <view class="{{isDeliver==2?'dliver_choose_item_deliver':'dliver_choose_item_get'}}" data-id="2" bindtap="swithDeliver">到店自提</view>
+  </view>
+</view>
+
+  <!-- 自提地址 -->
+  <view class='address-container' wx:if="{{isDeliver==2}}">
+    <view class='address-content flexRowCenter'>
+      <view class='address-middle' style="width: 50%;">
+
+         <view class='get-address-info' >
+        重庆市大渡口区双园路1号附35号,15723468981
+        </view>
+        <view class='flexColumnBetween'>
+          <view style="font-size:24rpx;margin-bottom:10rpx;"><input placeholder="提货人" bindinput="getPerson" value="{{getPerson}}"></input></view>
+          <view style="font-size:24rpx;"><input placeholder="预留电话" type="number" maxlength="11" bindinput="getPersonPhone"  value="{{getPersonPhone}}"></input></view>
+        </view>
+
+      </view>
+      <map
+          bindtap="chooseMapAddress"
+          id="myMap"
+          style="width: 50%; height:200rpx;"
+          latitude="{{storeLatitude}}"
+          longitude="{{storeLongitude}}"
+          markers="{{markers}}"
+        ></map>
+    </view>
+    <view class='boder-style'></view>
+  </view>
+
+
+  <!-- 收货地址 -->
+  <view class='address-container' bindtap="chooseAddr" wx:if="{{isDeliver==1}}">
+    <view class='address-content flexRowCenter'>
+      <view class='address-left'>
+        <image src='/images/address-logo.png'></image>
+      </view>
+      <!--没有默认地址时显示-->
+      <view class='address-middle' wx:if="{{!isHaveAddr}}" style="background:#fff">
+        <view class='address-info'>选择收获地址</view>
+      </view>
+
+      <view class='address-middle' wx:if="{{isHaveAddr}}">
+        <view class='user-info'>
+          <view class='headeer-left'>收货人：{{defAddrObject.name}}</view>
+          <view class='header-right'>{{defAddrObject.phone}}</view>
+        </view>
+        <!--直辖市，不显示省-->
+        <view class='address-info' >
+          收获地址：{{defAddrObject.addressName}},{{defAddrObject.address}}{{defAddrObject.detail}}
+        </view>
+      </view>
+      <view class='address-right'>
+        <image src='/images/right.png'></image>
+      </view>
+    </view>
+    <view class='boder-style'></view>
+  </view>
+  <!--<view class='top kinds' style='display:block;'>
+     <image class='goodspic' src='{{item.styleImgSelect}}'></image>
+      <view class='right'>
+        <text class='goodsTitle'>{{item.cakeName}}</text>
+        <text class='goodsSubTitle'>{{item.sizeNameSelect}}</text>
+        <view class='nowPrice'>当前价格:<text class='goodsPrice'>￥{{item.buyPrice}} </text>
+        <text class="order_number">X1</text>
+        </view>
+      </view>
+      </view>-->
+  <view class="order_list">
+    <view class="order_confirm" wx:for="{{goods}}">
+      <view class="flexRowBetween orderlistShow">
+        <view class="img_left">
+          <image src="{{item.cakeImage}}"></image>
+        </view>
+        <view class="order_name">
+          <view class="text1 avoidOverflow">{{item.cakeName}}</view>
+          <view class="order_type avoidOverflow">{{item.style}},{{item.cakeSize}}</view>
+          <view class="order_type avoidOverflow">{{item.candleDesc}}</view>
+          <view class="orders flexRowBetween">
+            <text class="order_price">￥{{item.singlePrice}}</text>
+            <text class="order_number">x {{item.buyCount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 购买的商品 -->
+  <!--
+  <view class='goods-container'>
+    <view class='goods-content'>
+      <view class='goods-item' wx:for="{{sku}}" wx:key="{{item.sku_id}}">
+        <view class='goods-left'>
+          <image mode='aspectFill' src="{{item.sku.goods.images_attachments.length>0?item.sku.goods.images_attachments[0]:'/images/not-image.png'}}"></image>
+        </view>
+        <view class='goods-middle'>
+          <view class='title'>{{item.sku.goods.name}}</view>
+          <view class='sku-data' wx:if="{{item.sku.standard_values.length>0}}">
+            <view wx:for="{{item.sku.standard_values}}" wx:for-item="sub" wx:key="{{sub.id}}">{{sub.value}}</view>
+          </view>
+          <view class='price'>￥{{item.sku.price}}</view>
+        </view>
+        <view class='goods-right'>
+          <view>x2</view>
+        </view>
+      </view>
+    </view>
+  </view>
+-->
+  <view class='footer-container'>
+    <view class='coupon'>
+      <view class='coupon-content'>
+        <view class='coupon-left'>优惠券</view>
+        <view class='coupon-right' bindtap="chooseCoupon">
+          <view>使用优惠券</view>
+          <image src='/images/ic_chevron_right_black_18dp.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='expre-container'>
+      <view class='expre-content'>
+        <view class='expre-info'>
+          <view class='info-title'>配送方式</view>
+          <view class='coupon-right'>
+          <view class='info'>{{delivMethod}}</view>
+          <image src='/images/ic_chevron_right_black_18dp.png'></image>
+          </view>
+        </view>
+        <view class='expre-info'>
+          <view class='info-title'>{{isDeliver==1?'配送日期':'取货日期'}}</view>
+          <view class='coupon-right' >
+           <picker mode="date" value="{{deliverStartDate}}" start="{{deliverStartDate}}" end="{{deliverEndDate}}" bindchange="deliverDateChange">
+            <view >{{currDeliverDate}}</view>
+             </picker>
+            <image src='/images/ic_chevron_right_black_18dp.png'></image>
+          </view>
+        </view>
+        <view class='expre-info'>
+          <view class='info-title'>{{isDeliver==1?'配送时间':'取货时间'}}</view>
+          <view class='coupon-right' >
+            <picker mode="selector" value="{{index}}" range="{{timeArray}}" bindchange="deliverTimeChange">
+              <view >{{currDeliverTime}}</view>
+            </picker>
+            <image src='/images/ic_chevron_right_black_18dp.png'></image>
+          </view>
+
+        </view>
+
+        <view class='remark'>
+          <view class='remark-left'>买家留言</view>
+          <input class='remark-right' placeholder="建议留言前与卖家沟通" bindinput="remarkInput"></input>
+        </view>
+      </view>
+    </view>
+
+    <view class='order-info'>
+      <view class='order-content'>
+        <view class='order-item'>
+          <view class='item-left'>商品金额</view>
+          <view class='item-right'>￥{{allGoodPrice}}.00</view>
+        </view>
+        <view class='order-item express-cost'>
+          <view class='item-left'>配送费</view>
+          <view class='item-right'>+￥{{delivPrice}}.00</view>
+        </view>
+        <view class='order-item coupon-amount' wx:if="{{discount!=0 }}">
+          <view class='item-left'>优惠</view>
+          <view class='item-right'>-￥{{discount}}.00</view>
+        </view>
+        <view class='sum-money'>
+          <view>合计：</view>
+          <view class='total-amount'>￥{{allGoodPrice+delivPrice-discount}}.00</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 结算按钮 -->
+  <view class='submit-container'>
+    <view class='submit-left'>
+      <view>合计:</view>
+      <view class='total-amount'>￥{{allGoodPrice+delivPrice-discount}}.00</view>
+    </view>
+    <view class='submit-right' bindtap='checkOrderStatus'>{{orderStatusStr}}</view>
+     <!--<view wx:if="{{isReay}}" class='submit-right' bindtap='checkOrderStatus'>{{orderStatusStr}}</view>
+   <view wx:else class='submit-right disable' >{{orderStatusStr}}</view>-->
+  </view>
+
+</view>
+<template is="foot" />
+</block>
+<block wx:else></block>

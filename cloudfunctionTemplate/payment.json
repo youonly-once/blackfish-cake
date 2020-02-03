@@ -1,0 +1,13 @@
+[
+  {
+    "name": "payment ",
+    "value": {
+      "command": "pay",
+      "out_trade_no": "1",
+      "body": "测试",
+      "total_fee": 1,
+      "attach": "attach",
+      "spbill_create_ip": "127.0.0.1"
+    }
+  }
+]

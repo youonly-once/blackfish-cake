@@ -1,0 +1,124 @@
+<view class="detail-container">
+  <view class='container'>
+    <view class='header'>
+      <swiper indicator-dots="true" 
+              indicator-color="#ffffff" 
+              indicator-active-color="#66CDAA"
+              autoplay="true"
+              interval="3000"
+              circular="true"
+              duration="1000"
+              class='image-container'>
+          <block wx:for="{{goods.images_attachments}}" wx:key="{{item}}">
+            <swiper-item class="image-item">
+              <image class='goods-image' src="{{item}}" mode='aspectFill' />
+            </swiper-item>
+          </block>
+      </swiper>
+    </view>
+    <view class='goods-info'>
+      <view class='goods-describe'>
+        <view class='title'>{{goods.name}}</view>
+        <view class='describe'>{{goods.describe}}</view>
+      </view>
+      <view class='price-info'>
+        <view class='price-left'>
+          <view class='sale-price'>￥{{selecedtSku.price}}</view>
+          <view class='price'>原价 ￥{{selecedtSku.chalk_line_price<=0?selecedtSku.price:selecedtSku.chalk_line_price}}</view>
+        </view>
+        <view class='price-right'>
+          <view>剩余：{{selecedtSku.stock}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 选择商品规格 -->
+    <view class='standard-select' bindtap='selectSku' wx:if="{{goods.sku_type==1}}">
+      <view class='standard'>
+        <view class='standard-left'>
+          <view class='standard-select-title'>已选</view>
+          <view class='standard-content-world'>
+            <view class='standard-content-world-item' wx:for="{{skuNames}}" wx:key="{{item}}">{{item}}</view>
+          </view>
+        </view>
+        <view class='standard-right'>
+          <image src='/images/shenglue.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 底部固定栏 -->
+  <view class='footer'>
+    <view class='footer-left'>
+      <view class='server'>
+        <image src='/images/service.png'></image>
+        <view>客服</view>
+      </view>
+      <view class='cart-icon' bindtap='toCart'>
+        <image src='/images/detail-cart.png'></image>
+        <view class='red-point' wx:if="{{cartNum>0}}">{{cartNum}}</view>
+        <view>购物车</view>
+      </view>
+    </view>
+    <view class='cart' bindtap='firstAddCard'>加入购物车</view>
+  </view>
+
+  <!-- 选择sku页面 -->
+  <view class='sku-container' wx:if="{{showSkuContainer}}">
+    <view class='sku-content' wx:if="{{showSku}}" animation='{{animationData}}'>
+      <view class='sku-header'>
+        <view class="colse" bindtap='closeSku'><image src='/images/close.png'></image></view>
+        <view class='sku-header-left'>
+          <image src='{{goods.images_attachments[0]}}'></image>
+        </view>
+        <view class='sku-header-right'>
+          <view class='sku-right-content'>
+            <view class='price'>￥{{selecedtSku.price}}</view>
+            <view class='standard-values'>
+              <view class='standard-values-item' wx:for="{{skuNames}}" wx:key="{{item}}">{{item}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 规格数据 -->
+      <view class='standard-content'>
+        <view class='standard-content-item' wx:for="{{standards}}" wx:key="{{item.id}}">
+          <view class='title'>{{item.name}}</view>
+          <view class='standard-values-item'>
+            <view class='{{sub.select?"value-item-select":"value-item"}}' 
+                  wx:for="{{item.standard_values}}" 
+                  wx:for-item="sub" 
+                  bindtap='switchSku'
+                  data-value_id='{{sub.id}}'
+                  data-standard_id='{{item.id}}'
+                  wx:key="{{sub.id}}">{{sub.value}}</view>
+          </view>
+        </view>
+
+        <!-- 数量加减器 -->
+        <view class='standard-car-button'>
+          <view class='standard-car-left'>购买数量</view>
+          <view class='add-icon'>
+            <image class='add-icon-item jian-icon'
+                   bindtap='updatePurchase'
+                   data-type='0' 
+                   src='/images/jian.png'></image>
+            <view class='add-icon-item purchase-num'>{{purchaseNum}}</view>
+            <image class='add-icon-item jia-icon' 
+                   bindtap='updatePurchase'
+                   data-type='1'
+                   src='/images/jia.png'></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <view class='add-car-button' bindtap='addCar'>加入购物车</view>
+
+  </view>
+
+</view>

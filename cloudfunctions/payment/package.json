@@ -1,0 +1,17 @@
+{
+  "name": "payment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "china-time": "^0.12.3",
+    "md5-node": "^1.0.1",
+    "wx-server-sdk": "latest",
+    "xmlreader": "^0.2.3"
+  }
+}

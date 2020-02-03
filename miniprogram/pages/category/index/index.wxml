@@ -1,0 +1,65 @@
+<view class="category-container">
+  <view class='content-container'>
+    <view class='content'>
+
+      <!-- 侧边导航栏 -->
+      <view class='left-bar'>
+        <scroll-view class='scroll-h' 
+                     scroll-with-animation="{{scrollWithAnimation}}" 
+                     scroll-into-view="{{toView}}" 
+                     scroll-y>
+          <view id="{{'v'+item.id}}" 
+                class="category-item {{item.id==selectCategory?'select-category-item':''}}" 
+                wx:for="{{categories}}" 
+                wx:key="{{item.id}}"
+                bindtap='selectCategory'
+                data-id='{{item.id}}'>
+            <view class="item {{item.id==selectCategory?'select-item':''}}">{{item.name}}</view>
+          </view>
+        </scroll-view>                 
+      </view>
+
+      <!-- 右边商品列表 -->
+      <view class='right-content'>
+        <scroll-view class='scroll-goods' 
+                     scroll-with-animation="{{scrollWithAnimation}}" 
+                     scroll-into-view="{{toGoodsView}}" 
+                     scroll-y>
+          <view class='goods-item'
+                id="{{'v'+item.id}}" 
+                bindtap='openGoodsDetail'
+                data-id='{{item.id}}'
+                wx:for="{{goods}}" 
+                wx:key="{{item.id}}">
+            <view class='goods'>
+            <view class='goods-left'>
+              <image mode='aspectFill' 
+                     wx:if="{{item.images_attachments.length>0}}" 
+                     src='{{item.images_attachments[0]}}'></image>
+              <image mode='aspectFill' src='/images/not-image.png' wx:else></image>
+            </view>
+            <view class='goods-right'>
+              <view class='goods-info'>
+                <view class='title'>
+                  <view class='goods-name'>{{item.name}}</view>
+                  <view class='good-remark'>{{item.describe}}</view>
+                </view>
+                <view class='price-info'>
+                  <view class='price'>
+                    <view class='chalk-line-price'>￥{{item.sku[0].chalk_line_price}}</view>
+                    <view class='normal-price'>￥{{item.sku[0].vip_price}}</view>
+                  </view>
+                  <view class='cart'>
+                    <image src='/images/cart-logo.png'></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<view class="cart-container" style="{{isShow?'':'visibility:hidden'}}">
+  <view class='cart-content'>
+    <view style="width:100%;background:#FFF;display:flex;justify-content:center;border-top:1px solid #F8F8F8;">
+  <view style="display:flex;justify-content:flex-end;width:90%;align-self:center;">
+   <view class="manage_bt">删除</view>
+    <view class="manage_bt">清空</view>
+  </view>
+  </view>
+    <view class='cart-item'>
+
+      <!-- 购物车商品 -->
+      <view class='item-body' 
+            wx:for="{{carts}}" 
+            wx:key="id" 
+            bindlongpress='removeCart' 
+            data-id='item.sku_id'>
+        <view class='item' 
+              data-goods_id='id' 
+              bindtap='openDetail'>
+          <view class='select-icon' 
+                catchtap='selectGoods' 
+                data-id='id'>
+            <image src="{{true?'/images/select-circle.png':'/images/select-goods.png'}}"></image>
+          </view>
+          <view class='goods-image'>
+            <image mode='aspectFill' 
+                   src="{{item.cakeImage}}"></image>
+          </view>
+          <view class='goods-info'>
+            <view class='title'>{{item.cakeName}}</view>
+            <view class='sku-data'>{{item.style}} {{item.cakeSize}}</view>
+            <view class='sku-data'> {{item.candleDesc}} </view>
+            <view class='price'>￥{{item.singlePrice}}</view>
+          </view>
+          <view class='operate-button'>
+            <image src='/images/jian.png' 
+                   catchtap='updatePurchase'
+                   data-sku_id='{{item.sku_id}}'
+                   data-type='0'></image>
+            <view class='goods-number'>{{item.buyCount}}</view>
+            <image src='/images/jia.png' 
+                   catchtap='updatePurchase' 
+                   data-sku_id='sku_id'
+                   data-type='1'></image>
+          </view>
+        </view>
+      </view>
+
+      <!-- 底部结算栏 -->
+      <view class='settle-container'>
+        <view class='settle-content'>
+          <view class='left'>
+            <image src="{{selectAll==true?'/images/selected-goods.png':'/images/select-goods.png'}}"></image>
+            <view>全选</view>
+          </view>
+          <view class='settle-info'>
+            <view class='settle'> 
+              <view class='up'>合计</view>
+              <view class='down'>￥{{amount}}</view>
+            </view>
+            <view class='express'>配送费：00.00</view>
+          </view>
+          <view class='right' bindtap='toPay'>去支付</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

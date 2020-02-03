@@ -1,0 +1,94 @@
+<view class="personal-contaier">
+  <view class='container'>
+
+    <view class='header-content'>
+      <view class='header'>
+        <view class='header-left'>
+          <image src='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIRSkNHofic4wB9oyZrFBybUGjozW4DKtGJYWTWORATffxUtFLt1Cm3ibP0YVtfRicERVhsSickhgZic2w/132'></image>
+        </view>
+        <view class='header-right'>
+          <view class='nickname'>叶子</view>
+          <view class='tag'>vip会员</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='gap'></view>
+
+    <view class='content-body'>
+      <view class='gap'></view>
+      <view class='order-info'>
+        <view class='info-header'>
+          <view>我的订单</view>
+          <view class='all-order'>
+            <view>全部订单</view>
+            <image class='turn-right-icon' src='/images/turn-right.png'></image>
+          </view>
+        </view>
+        <view class='order-content'>
+          <view class='order-item wait-pay'>
+            <image class='order-icon' src='/images/wait-pay.png'></image>
+            <view>待付款</view>
+          </view>
+          <view class='wait-pay order-item'>
+            <image class='order-icon' src='/images/wait-send.png'></image>
+            <view>待发货</view>
+          </view>
+          <view class='wait-pay order-item'>
+            <image class='order-icon' src='/images/send.png'></image>
+            <view>配送中</view>
+          </view>
+          <view class='wait-pay order-item'>
+            <image class='order-icon' src='/images/tuikuang.png'></image>
+            <view>退款中</view>
+          </view>
+          <view class='wait-pay order-item'>
+            <image class='order-icon' src='/images/finish.png'></image>
+            <view>已完成</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='service-content'>
+        <view class='service-item'>
+          <view class='item-icon'>
+            <image class='service-icon' src='/images/comment.png'></image>
+            <view class='service-title'>优惠券</view>
+          </view>
+          <view class='direct'>
+            <image class='direct-icon' src='/images/turn-right.png'></image>
+          </view>
+        </view>
+        <view class='service-item'>
+          <view class='item-icon'>
+            <image class='service-icon' src='/images/view.png'></image>
+            <view class='service-title'>浏览历史</view>
+          </view>
+          <view class='direct'>
+            <image class='direct-icon' src='/images/turn-right.png'></image>
+          </view>
+        </view>
+        <view class='service-item'>
+          <view class='item-icon'>
+            <image class='service-icon' src='/images/address.png'></image>
+            <view class='service-title'>地址管理</view>
+          </view>
+          <view class='direct'>
+            <image class='direct-icon' src='/images/turn-right.png'></image>
+          </view>
+        </view>
+        <view class='service-item'>
+          <view class='item-icon'>
+            <image class='service-icon' src='/images/servicer.png'></image>
+            <view class='service-title'>联系客服</view>
+          </view>
+          <view class='direct'>
+            <image class='direct-icon' src='/images/turn-right.png'></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "DateTimePicker": "../../../components/DateTimePicker/DateTimePicker"
+  },
+  "navigationBarTitleText": "确认订单"
+  
+}

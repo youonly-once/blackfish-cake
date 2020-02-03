@@ -1,0 +1,54 @@
+
+<block wx:if='{{hasList}}'>
+  <!-- <>购物车列表 -->
+  <view class="carts-list">
+    <view wx:for="{{carts}}" class="carts-item" wx:key='cart' wx:item='item'>
+      <!-- //复选框 -->
+      <view class="carts-radio">
+        <image class="carts-select" bindtap="bindCheckbox" data-index="{{index}}" src="{{item.isSelect?'../../images/selected-goods.png':'../../images/select-goods.png'}}" />
+      </view>  
+      <!-- //商品信息 -->  
+      <view class="carts-cnt">
+        <image class="carts-image" src="{{item.cakeImage}}" data-cakeid="{{item.cakeId}}" mode="aspectFill" bindtap="cakeDetail"/>
+        <view class="carts-info">
+          <view class="carts-title clamp2">{{item.cakeName}}</view>
+          <text class="carts-guige">{{item.style}} {{item.cakeSize}}</text>
+          <text class="carts-guige">{{item.candleDesc}} </text>
+          <view class="carts-subtitle">
+            <text class="carts-price c--f60">￥{{item.singlePrice}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- //数量加减 -->  
+      <view class="carts-num">
+          <text class="minus"  bindtap="bindMinus"  data-id="{{item._id}}" data-index='{{index}}'>-</text>
+          <input type="number" disabled="true" bindinput="bindIptCartNum" data-index='{{index}}' data-id="{{item._id}}" value="{{item.buyCount}}" />
+          <text class="plus normal" data-index='{{index}}' data-id="{{item._id}}" bindtap="bindPlus">+</text>
+      </view>
+      
+      <!-- //删除 -->  
+      <icon class="carts-del" type="clear" size="16" color="#ccc" data-index="{{index}}" data-id="{{item._id}}" bindtap="bindCartsDel" />
+    </view>
+  </view>
+ <view class="carts-footer">  
+    <view class="bottomfixed">  
+      <view class="inner">  
+        <view class="chkAll" bindtap="bindSelectAll">
+        <image class="allselect" src="{{selectAllStatus?'../../images/selected-goods.png':'../../images/select-goods.png'}}" /> 
+          <text>全选</text>  
+        </view>  
+        <view class="total">合计：<em>￥{{totalMoney}}</em></view>  
+        <view wx:if="{{totalCount != 0}}" class="btn-pay" bindtap='bindSettlement'>去结算({{totalCount}})</view>  
+        <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>  
+      </view>  
+    </view>  
+  </view>
+  </block>
+  <block wx:else>
+     <view style="   width: 100%;height:100%;position: absolute;left: 0;font-size: 15px;color:#999; text-align:center;">
+      <view style="margin-top:50px;width:100%;">
+       <view style='font-size:15px;'>购物车没有商品!</view>
+      </view>
+    </view>
+
+  </block>
