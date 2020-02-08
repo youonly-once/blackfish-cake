@@ -6,7 +6,7 @@
 .clamp3{-webkit-line-clamp:3;}
   
 .carts-list{
-
+  margin-bottom:150rpx;
 }
  
 .carts-list .carts-item{

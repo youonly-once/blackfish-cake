@@ -1,4 +1,6 @@
-{
-  "usingComponents": {},
+{"component": true,
+    "usingComponents": {
+      "no-content-tip": "../components/not-content-tip/not-content-tip"
+    },
   "navigationBarTitleText": "购物车"
 }

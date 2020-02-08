@@ -7,6 +7,7 @@ const request = require("request")
 const xmlreader = require("xmlreader")
 const chinaTime = require('china-time');
 const md51 = require('MD5.js');
+const fs = require("fs");
 cloud.init({
   env: "bookcake-ne49u",
   traceUser: true,
@@ -17,7 +18,8 @@ const mch_id = '1574775751' //商户号
 const notify_url = 'http://www.weixin.qq.com/wxpay/pay.php' //随便写一个，云函数无法实现返回结果，但有巧妙的方法实现同样功能
 const trade_type = 'JSAPI' //小程序的trade_type为JSAPI。
 const key = 'HUY87T65Gj0iU09G7TFtre45FHJbhGFT' //就是微信支付账户里面设置的API密钥
-
+const cert_file = __dirname + '/ssl/apiclient_cert.pem' // 微信支付秘钥cert文件,退款接口会用到
+const key_file = __dirname + '/ssl/apiclient_key.pem' // 微信支付秘钥key文件,退款接口会用到
 // 云函数入口函数
 exports.main = async(event, context) => {
 
@@ -44,7 +46,7 @@ exports.main = async(event, context) => {
       
       let stringA = `appid=${appid}&attach=${attach}&body=${body}&mch_id=${mch_id}&nonce_str=${random}&notify_url=${notify_url}&openid=${openid}&out_trade_no=${out_trade_no}&spbill_create_ip=${spbill_create_ip}&total_fee=${payPrice}&trade_type=${trade_type}&key=${key}`
       var sign = md5(stringA).toUpperCase()
-      let dataBody = requestData(
+      let dataBody = requestData.payData(
         appid,
         attach,
         body,
@@ -119,26 +121,189 @@ exports.main = async(event, context) => {
       break
 
     case "refund": //退款功能
-      /*console.log("refund, event, wxContext.OPENID", event, wxContext.OPENID);
-      return await api.refund({
-        // transaction_id, out_trade_no 二选一
-        // transaction_id: '微信的订单号',
-        out_trade_no: event.out_trade_no,    //商户订单号
-        out_refund_no: event.out_trade_no + 're',  //商户退款订单号，要求商户内唯一
-        payPrice: event.payPrice,  //原单订单金额(单位是分)
-        refund_fee: event.refund_fee,
-        refund_desc: event.refund_desc
-      })*/
-      // 相关默认值:
-      // op_user_id - 默认为商户号(此字段在小程序支付文档中出现)
-      // notify_url - 默认为初始化时传入的refund_url, 无此参数则使用商户后台配置的退款通知地址
+      let order = await getOut_refund_no(event._id)//获取订单的商户号
+      return await refund(order, event._id)
       break
+    case "refundQuery":
+      return await refundQuery(event.out_refund_no)
   }
+}
+
+/**
+ * 退款
+ */
+function refund(order, orderId){
+ // let order =getOut_refund_no(orderId)//获取订单的商户号
+  console.log(order)
+  //await等待执行完成
+  order = (order.data)[0]
+  console.log(order)
+
+  const out_refund_no = order.out_refund_no//商户号
+  const out_trade_no = order.out_trade_no//商户号
+  const total_fee = order.payPrice; //订单金额(单位是分),
+  const refund_fee=order.refundData.refundPrice*100
+  let stringA = `appid=${appid}&mch_id=${mch_id}&nonce_str=${random}&out_refund_no=${out_refund_no}&out_trade_no=${out_trade_no}&refund_fee=${refund_fee}&total_fee=${total_fee}&key=${key}`
+  var sign = md5(stringA).toUpperCase()
+  let dataBody =requestData.refundData(
+    appid,
+    mch_id,
+    random,
+    out_refund_no,
+    out_trade_no,
+    refund_fee,
+    total_fee,
+    sign
+  )
+  let url ='https://api.mch.weixin.qq.com/secapi/pay/refund'
+  return refundSubmit(dataBody, url,orderId)
+  
+}
+function refundSubmit(dataBody, url,  orderId){
+  let key = fs.readFileSync(key_file).toString()
+  let cert = fs.readFileSync(cert_file).toString()
+  return new Promise((reslove, reject) => {
+    request({
+      url: url,
+      method: "POST",
+      body: dataBody,
+      key:key,
+      cert:cert
+    },
+    function (error, response, body) {
+        if (error || response.statusCode != 200) {
+          console.log(error)
+          reject({
+            code: 'FAIL',
+            msg: '服务器繁忙',
+            error: error
+          })
+        }
+      xmlreader.read(body, function (errors, response) {
+        if (null !== errors) {
+          reslove({
+            code: 'FAIL',
+            msg: 'XML读取错误'
+          })
+        }
+        if (response.xml.return_code.text() == 'SUCCESS') {
+          console.log(response)
+          refundConfirmSuccess(orderId)
+          reslove({
+            code: 'SUCCESS',
+            msg: response.xml.return_msg.text()
+          })
+        } else {
+          reslove({
+            code: 'FAIL',
+            msg: response.xml.return_msg.text()
+          })
+        }
+      })
+
+      }
+    )
+  })
+}
+/**
+ * 微信退款接口调用成功，更新订单状态
+ */
+function refundConfirmSuccess(orderId){
+  cloud.callFunction({
+    name: 'manageOrder',
+    data: {
+      command: 'refundConfirmSuccess',
+      _id: orderId,
+    },
+    success(res) {
+      console.log(res)
+    },
+  })
+}
+function refundQuery(out_refund_no){
+  let stringA = `appid=${appid}&mch_id=${mch_id}&nonce_str=${random}&out_refund_no=${out_refund_no}&key=${key}`
+  var sign = md5(stringA).toUpperCase()
+  let dataBody = requestData.refundQuery(
+    appid,
+    mch_id,
+    random,
+    out_refund_no,
+    sign
+  )
+  let url ='https://api.mch.weixin.qq.com/pay/refundquery'
+  return new Promise((reslove, reject) => {
+    request({
+      url: url,
+      method: "POST",
+      body: dataBody,
+    },
+      function (error, response, body) {
+        if (error || response.statusCode != 200) {
+          console.log(error)
+          reject({
+            code: 'FAIL',
+            msg: '服务器繁忙',
+            error: error
+          })
+        }
+        xmlreader.read(body, function (errors, response) {
+          if (null !== errors) {
+            reslove({
+              code: 'FAIL',
+              msg: 'XML读取错误'
+            })
+          }
+          if (response.xml.return_code.text() == 'SUCCESS') {
+            console.log(response)
+            let str='查询失败'
+            switch (response.xml.refund_status_0.text()){
+              case 'SUCCESS':
+                str='退款成功'
+                break;
+              case 'REFUNDCLOSE':
+                str ='退款关闭'
+                break;
+              case 'PROCESSING':
+                str = '退款处理中'
+                break;
+              case 'CHANGE':
+                str ='退款异常，退款到银行发现用户的卡作废或者冻结了，导致原路退款银行卡失败'
+                break;
+            }
+            if (response.xml.refund_status_0.text()=='SUCCESS'){
+              reslove({
+                code: response.xml.refund_status_0.text(),
+                msg: str,
+                time: response.xml.refund_success_time_0.text()
+              })
+            }
+            reslove({
+              code: response.xml.refund_status_0.text(),
+              msg: str
+            })
+          } else {
+            reslove({
+              code: 'FAIL',
+              msg: '查询失败'
+            })
+          }
+        })
+
+      }
+    )
+  })
 }
 function getOut_trade_no(openid,orderId){
   //console.log("2", 2)
   return cloud.database().collection('order').where({
     _openid: openid,//用户ID
     _id:orderId
+  }).get({})
+}
+function getOut_refund_no(orderId) {
+  //console.log("2", 2)
+  return cloud.database().collection('order').where({
+    //_openid: openid,//用户ID
+    _id: orderId
   }).get({})
 }

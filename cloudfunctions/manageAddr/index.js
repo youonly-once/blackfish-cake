@@ -1,6 +1,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 const chinaTime = require('china-time');
+const manager = 'oDyLk5FI5tBIvFz0sflkBwnRSa8o'
 cloud.init({
   env: "bookcake-ne49u",
   traceUser: true,
@@ -26,6 +27,12 @@ exports.main = async (event, context) => {
         data: _addrData,
       })
       break;
+    case 'getSingle':
+      return getSingle(event._id, wxContext.OPENID)
+      break
+    case 'getSingle_Manager':
+      return getSingle_Manager(event._id, wxContext.OPENID)
+      break
       //获取用户所有地址
     case 'get':
       return await cloud.database().collection('userAddre').where({
@@ -67,6 +74,20 @@ exports.main = async (event, context) => {
         return delAddr(id, wxContext.OPENID)
         break
   }
+}
+function getSingle(id, openid){
+  return  cloud.database().collection('userAddre').where({
+    _openid: openid,//用户ID
+    _id: id
+  }).get({})
+}
+function getSingle_Manager(id,openid) {
+  if (manager != openid) {
+    return
+  }
+  return cloud.database().collection('userAddre').where({
+    _id: id
+  }).get({})
 }
  function delAddr(id,openid){
   //设置删除标志

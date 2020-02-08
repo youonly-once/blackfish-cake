@@ -38,7 +38,6 @@
       <view class="good_price">
         <text class="color_ff6700 good_dis_price pdr10rpx display-ib" style="font-size:24rpx;">¥</text>
         <text class="color_ff6700 good_dis_price pdr10rpx display-ib">{{cakedata.cakeMinPrice}} </text>
-
         <text class="color_ff6700 good_dis_price pdr10rpx display-ib" style="font-size:24rpx;">.00 - ¥</text>
         <text class="color_ff6700 good_dis_price pdr10rpx display-ib">{{cakedata.cakeMaxPrice}}</text>
         <text class="color_ff6700 good_dis_price pdr10rpx display-ib" style="font-size:24rpx;">.00</text>
@@ -76,27 +75,27 @@
   </view>
   <view class="borderTop"></view>
   <view class="showCompany">
-    <image src="/images/select_active.jpg"></image>
+    <icon type="success" size="15" color="gray"></icon>
     <text>企业认证</text>
-    <image src="/images/select_active.jpg"></image>
+    <icon type="success" size="15" color="gray"></icon>
     <text>收货后结算</text>
-    <image src="/images/select_active.jpg"></image>
+    <icon type="success" size="15" color="gray"></icon>
     <text>线下门店</text>
   </view>
 
   <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}" catchtouchmove="toCatch" animation="{{popOpacityAnimation}}"></view>
-  <view animation="{{animationData}}" wx:if="{{showModalStatus}}" class="catalog_area bg_fff ">
+  <view animation="{{animationData}}" wx:if="{{showModalStatus}}" class="catalog_area bg_fff " style="min-height:{{940+padding_bottom}}rpx;" >
     <view class="catalog_title">
       <image class="thumbnails" src="{{styleImgSelect}}" mode="aspectFill" bindtap="seeSwiperAll"></image>
       <view class="info_tip">
         <view class="choosed_catalog text-hidden">{{cakedata.cakename}}</view>
-        <view class="good_dis_price">¥{{stylePrice+sizePrice}}</view>
+        <view class="good_dis_price">¥{{stylePrice+sizePrice}}.00</view>
         <!--<view class="choosed_catalog text-hidden">{{styleNameSelect}}</view>-->
       </view>
       <image class="cancel" bindtap="hideModal" src="/images/close.png"></image>
     </view>
 
-    <scroll-view scroll-y="true" style="height: 640rpx;margin-top:175rpx">
+    <scroll-view scroll-y="true" style="height: 640rpx;margin-top:175rpx;">
 
       <view class="info_choose">
 
@@ -135,22 +134,23 @@
         <input class="weui-input" maxlength="10" placeholder="字牌(10个字内)" bindinput="blessingInput" />
         <view class="borderTop"></view>
 
-        <input class="weui-input" maxlength="10" placeholder="蜡烛说明" bindinput="candleInput" />
+        <input class="weui-input" maxlength="10" placeholder="蜡烛说明" bindinput="candleInput"  />
 
-        <view class="borderTop"></view>
+       
 
       </view>
 
     </scroll-view>
 
 
-    <view class="btn_hidden"></view>
-    <view class="btn_area display-flex-row" style="height:{{ isIphoneX ? 65 : 50 }}px;">
-      <view bindtap="addCart" class="goods_half_half bg_09bb07 color_fff" style="padding-bottom:{{ isIphoneX ? 15 : 0 }}px;">加入购物车</view>
-      <view bindtap="saveOrder" class="goods_half_half bg_ff6700 color_fff" style="padding-bottom:{{ isIphoneX ? 15 : 0 }}px;">立即购买</view>
+    <view  style="position: fixed;bottom: 0;width:100%;left:0;">
+    <view class="btn_area flexRowCenter" >
+      <view bindtap="addCart" class="goods_choose_btn bg_09bb07 color_fff" style="margin-right:10rpx;" >加入购物车</view>
+      <view bindtap="saveOrder" class="goods_choose_btn bg_ff6700 color_fff" >立即购买</view>
     </view>
-
-  </view>
+      <view style="background:#FFF;height:{{padding_bottom}}rpx;"></view>
+      </view>
+   </view>
 
 
   <view class="container width100 ">
@@ -168,14 +168,17 @@
   </view>
 
 
-  <view class="display:block">
+  <view class="display:block" style="  position: fixed;bottom: 0;width:100%;">
 
-    <view class="goods_bottom_btn display-flex-row" style="height:{{ isIphoneX ? 65 : 50 }}px;">
-      <image src="../../images/wechat.png" style="width:50px;height:50px;padding-bottom:{{ isIphoneX ? 15 : 0 }}px;"></image>
-      <button open-type="contact" style="padding:0rpx;margin:0rpx;line-height:50px;width:50px;text-align:center;background:#FFF;">客服</button>
-      <view bindtap="addCart" class="goods_half_half bg_09bb07 color_fff" style="padding-bottom:{{ isIphoneX ? 15 : 0 }}px;">加入购物车</view>
-      <view bindtap="saveOrder" class="goods_half_half bg_ff6700 color_fff" style="padding-bottom:{{ isIphoneX ? 15 : 0 }}px;">立即购买</view>
+    <view class="goods_bottom_btn flexRowBetween" >
+      <view style="align-items:center;display:flex;justify-content:center;flex-direction:column;">
+        <image src="../../images/wechat.png" style="width:50rpx;height:50rpx;"></image>
+        <button open-type="contact" style="font-weight:1;padding:0rpx;margin:0rpx;width:100rpx;text-align:center;background:#FFF;font-size:28rpx;min-height:0px;">客服</button>
+      </view>
+      <view bindtap="addCart" class="goods_half_half bg_ff6700 color_fff" >加入购物车</view>
+      <view bindtap="saveOrder" class="goods_half_half bg_ff0036  color_fff" >立即购买</view>
     </view>
+    <view style="background:#FFF;height:{{padding_bottom}}rpx;"></view>
   </view>
 
   <template is="foot" />

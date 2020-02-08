@@ -1,0 +1,5 @@
+<view style="width:100%;height:{{100+padding_bottom}}rpx;background:#F8F8F8;"></view>
+<view class="catalog_area flexColumnBetween">
+  <button class="send_submit" form-type="submit"  style="  bottom: {{padding_bottom}}rpx;">{{title}}</button>
+  <view style="background:#FFF;height:{{padding_bottom}}rpx;position: fixed;bottom: 0;left: 0;width:100%"></view>
+</view>

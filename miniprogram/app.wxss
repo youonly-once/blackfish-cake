@@ -1,4 +1,5 @@
 /* reset */
+@import "./components/wei_ui/weui.wxss";
 page {
   background-color: #F8F8F8;
   height: 100%;
@@ -145,7 +146,7 @@ button{
 
 .image-plus {
   width: 150rpx;
-  height: 150rpx;image
+  height: 150rpx;
   border: 2rpx solid #D9D9D9;
   position: relative;
 }

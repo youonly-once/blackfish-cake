@@ -42,13 +42,14 @@
 			</view>
 			
 			<view class="check_order flexRowBetween">
-				<view style="fonts[2].font">
+				<view >
 					查看订单
 				</view>
 				<image src="/images/next_page.jpg"></image>
 			</view>
 		</view>
 	</view>
+
 	<view class="process flexRowBetween">
 		<view class="peocess_item item_other" bindtap="order" data-orderstatus="1">
 			<image src="/images/user_icon5.jpg"></image>
@@ -69,6 +70,21 @@
 		<view class="peocess_item" >
 			<image src="/images/user_icon9.jpg"></image>
 			<text>退换货</text>
+		</view>
+	</view>
+    	<view class="order" bindtap="orderManager"  wx:if="{{isAdmin}}">
+		<view class="user_order flexRowBetween">
+			<view class="order_left flexRowBetween">
+				<image src="/images/user_icon1.png"></image>
+				<view class="my_order">商家订单</view>
+			</view>
+			
+			<view class="check_order flexRowBetween">
+				<view >
+					查看订单
+				</view>
+				<image src="/images/next_page.jpg"></image>
+			</view>
 		</view>
 	</view>
 	<view class="user_all">

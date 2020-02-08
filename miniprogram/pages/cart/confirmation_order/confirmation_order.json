@@ -1,7 +1,10 @@
 {
+  
+  "navigationBarTitleText": "确认订单",
+  "component": true,
   "usingComponents": {
-    "DateTimePicker": "../../../components/DateTimePicker/DateTimePicker"
-  },
-  "navigationBarTitleText": "确认订单"
+
+    "show-cake": "../components/ShowCake/ShowCake"
+  }
   
 }

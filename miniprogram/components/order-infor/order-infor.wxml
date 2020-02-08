@@ -1,0 +1,211 @@
+  <view class="follow_satus" wx:if="{{orderInfors.status>0 && orderInfors.status<6 }}">
+      <view class="follow_address">
+        <view style="{{orderInfors.status>=1?'color: #f23b4d;':'color: #3333;'}}">用户付款</view>
+        <view class="date" wx:if="{{orderInfors.status>=2}}">{{payShowDate}}</view>
+
+      </view>
+      <view class="follow_address">
+        <view style="{{orderInfors.status>=2?'color:#f23b4d;':'color: #3333;'}}">{{orderInfors.deliverWay==1?'商家发货':'用户自提'}}</view>
+        <view class="date" wx:if="{{orderInfors.status>=3}}">{{sendShowDate}}</view>
+
+      </view>
+      <view class="follow_address">
+        <view style="{{orderInfors.status>=3?'color: #f23b4d;':'color: #3333;'}}">{{orderInfors.deliverWay==1?'用户收货':'用户验收'}}</view>
+        <view class="date" wx:if="{{orderInfors.status>=4}}">{{receiveShowDate}}</view>
+
+      </view>
+    </view>
+
+    <view class="follow_satus" wx:if="{{orderInfors.status>0 && orderInfors.status<6}}">
+      <view class="follow_address" style="{{orderInfors.status>=1?'border-bottom:1rpx solid #FF0000;':'border-bottom:1rpx solid #3333;'}}margin-bottom:20rpx;width:50%;left:-35rpx;margin-left:70rpx;">
+        <view class="label" style="left:-25rpx;{{orderInfors.status>=1?'background: #f23b4d; width: 20rpx;height: 20rpx;bottom: -11rpx;':'background:#3333;width: 10rpx;height: 10rpx; bottom: -5rpx;'}}"></view>
+      </view>
+
+      <view class="follow_address" style="margin-bottom:20rpx;width:25rpx">
+        <view class="label" style="{{orderInfors.status>=2?'background: #f23b4d;  width: 20rpx;height: 20rpx;bottom: -11rpx;':'background:#3333;width: 10rpx;height: 10rpx;bottom: -5rpx;'}}"></view>
+      </view>
+
+
+      <view class="follow_address" style="{{orderInfors.status>=3?'border-bottom:1rpx solid #FF0000;':'border-bottom:1rpx solid #3333;'}}margin-bottom:20rpx;width:50%;right:-35rpx;margin-right:70rpx;">
+        <view class="label" style="right:-25rpx;{{orderInfors.status>=3?'background: #f23b4d;width: 20rpx;height: 20rpx;bottom: -11rpx;':'background:#3333;width: 10rpx;height: 10rpx;bottom: -5rpx;'}}"></view>
+      </view>
+    </view>
+ <refund-status status="{{orderInfors.status}}" out_refund_no="{{orderInfors.out_refund_no}}"></refund-status>
+    <!--<view class="refund_satus flexColumnBetween" wx:if="{{orderInfors.status>=6}}" bindtap="gotoRefundDetail" >
+      <text>退款中</text>
+      <text class="status"> {{orderInfors.status==6?'等待商家确认':''}}</text>
+    </view>-->
+    <!-- 自提地址 -->
+    <!--<view class='address-container' wx:if="{{orderInfors.deliverWay==2}}" >
+    <view class='address-content flexRowCenter'>
+      <view class='address-middle' style="width: 100%;">
+
+         <view class='get-address-info' >
+        重庆市大渡口区双园路1号附35号,15723468981
+        </view>
+        <view class='flexRowStart' >
+          <view style="font-size:24rpx;margin-bottom:10rpx;">
+          <input disabled="true" value="提货人：{{orderInfors.getPerson}}"></input></view>
+          <view style="font-size:24rpx;"><input  type="number"  disabled="true" value="{{orderInfors.getPersonPhone}}"></input></view>
+        </view>
+
+      </view>
+    </view>
+    <view class='boder-style'></view>
+  </view>-->
+    <!-- 自提地址 -->
+    <view class='address-container' wx:if="{{orderInfors.deliverWay==2}}">
+      <view class='address-content flexRowCenter'>
+        <view class='address-middle' style="width: 50%;">
+
+          <view class='get-address-info' bindtap="call_custom" data-phone="18223411280">
+            重庆市大渡口区双园路1号附35号,18223411280
+          </view>
+          <view class='flexColumnBetween'>
+            <view style="font-size:24rpx;margin-bottom:10rpx;">
+              <input disabled="true" value="提货人：{{orderInfors.getPerson}}"></input>
+            </view>
+            <view style="font-size:24rpx;">
+              <input disabled="true" value="{{orderInfors.getPersonPhone}}"></input>
+            </view>
+          </view>
+
+        </view>
+        <map bindtap="chooseMapAddress" id="myMap" style="width: 50%; height:200rpx;" latitude="{{storeLatitude}}" longitude="{{storeLongitude}}" markers="{{markers}}"></map>
+      </view>
+      <view class='boder-style'></view>
+    </view>
+    <!-- 收货地址 -->
+    <view class='address-container' bindtap="chooseAddr" wx:if="{{orderInfors.deliverWay==1}}">
+      <view class='address-content'>
+        <view class='address-left'>
+          <image src='../../images/address-logo.png'></image>
+        </view>
+        <!--没有默认地址时显示-->
+        <!-->
+        <view class='address-middle' wx:if="{{isHaveAddr}}" style="background:#fff">
+          <view class='address-info'>选择收获地址</view>
+        </view>-->
+
+        <view class='address-middle'>
+          <view class='user-info'>
+            <view class='headeer-left'>收货人：{{addrObject.name}}</view>
+            <view class='header-right'>{{addrObject.phone}}</view>
+          </view>
+          <!--直辖市，不显示省-->
+          <view class='address-info'>
+            收获地址：{{addrObject.addressName}},{{addrObject.address}}{{addrObject.detail}}
+          </view>
+        </view>
+        <!--<view class='address-right'>
+        <image src='/images/right.png'></image>
+      </view>-->
+      </view>
+      <view class='boder-style'></view>
+    </view>
+
+    <show-cake cakes="{{orderInfors.goods}}">
+    </show-cake>
+
+    <view class='footer-container'>
+
+      <view class='expre-container'>
+        <view class='expre-content'>
+          <view class='expre-info'>
+            <view class='info-title'>配送方式</view>
+            <view class='info'>{{orderInfors.delivMethod}}</view>
+          </view>
+          <view class='expre-info'>
+            <view class='info-title'>{{orderInfors.deliverWay==2?'自提时间':'配送时间'}}</view>
+            <view class='info'>{{orderInfors.currDeliverDate}}</view>
+          </view>
+          <view class='remark'>
+            <view class='remark-left'>买家留言</view>
+            <view class='remark-right'>{{orderInfors.remark==''?'无':orderInfors.remark}}</view>
+          </view>
+        </view>
+      </view>
+      <!--<text style="width:100%;color:gray;font-size:24rpx;">配送信息</text>-->
+      <view class='expre-container' wx:if="{{orderInfors.status>=3 && orderInfors.deliverWay==1 && orderInfors.delivPerName}}">
+        <view class='expre-content'>
+          <view class='expre-info'>
+            <view class='info-title'>配送员姓名</view>
+            <view class='info'>{{orderInfors.delivPerName}}</view>
+          </view>
+          <view class='expre-info'>
+            <view class='info-title'>配送员电话</view>
+            <view class='info' bindtap="call_custom" data-phone="{{orderInfors.delivPerPhone}}">{{orderInfors.delivPerPhone}}</view>
+            <image src='/images/ic_chevron_right_black_18dp.png'></image>
+          </view>
+          <view class='remark'>
+            <view class='remark-left'>配送员留言</view>
+            <view class='remark-right'>{{orderInfors.delivPerRemark==''?'无':orderInfors.delivPerRemark}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='order-info'>
+        <view class='order-content'>
+          <view class='order-item'>
+            <view class='item-left'>商品金额</view>
+            <view class='item-right'>¥{{orderInfors.allGoodPrice}}</view>
+          </view>
+          <view class='order-item express-cost'>
+            <view class='item-left'>运费</view>
+            <view class='item-right'>+¥{{orderInfors.delivPrice}}</view>
+          </view>
+          <view class='order-item coupon-amount' wx:if="{{orderInfors.discount!=0}}">
+            <view class='item-left'>优惠</view>
+            <view class='item-right'>-¥{{orderInfors.discount}}</view>
+          </view>
+          <view class='sum-money'>
+          <view class="refund_bt" bindtap="gotoRefund" wx:if="{{orderInfors.status>=2}}">{{orderInfors.status>=6?'退款详情':'申请售后'}}</view>
+            <view>{{orderInfors.status>=2?'实付款':'合计'}}:</view>
+            <view class='total-amount'>￥{{orderInfors.payPrice/100.00}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="custom-infor flexRowBetween">
+        <view class="custom" >
+          <image src="/images/wechat-logo.png"></image>
+          <button open-type="contact">在线客服</button>
+        </view>
+        <view class="custom" bindtap="call_custom" data-phone="18223411280">
+          <image src="/images/servicer.png"></image>
+          <text>电话客服</text>
+        </view>
+      </view>
+
+      <view class='order-info'>
+        <view class='order-content'>
+          <view class='order-information'>
+            <view class='orderIcon'></view>
+            <view class='item-left'>订单信息</view>
+
+          </view>
+          <view class='order-pay-info'>
+            <view class='item-left'>订单编号</view>
+            <view class='item-right'>{{orderInfors.out_trade_no}}</view>
+          </view>
+          <view class='order-pay-info'>
+            <view class='item-left'>创建时间</view>
+            <view class='item-right'>{{orderInfors.createDate}}</view>
+          </view>
+          <view class='order-pay-info' wx:if="{{orderInfors.payDate}}">
+            <view class='item-left'>付款时间</view>
+            <view class='item-right'>{{orderInfors.payDate}}</view>
+          </view>
+          <view class='order-pay-info' wx:if="{{orderInfors.sendDate}}">
+            <view class='item-left'>发货时间</view>
+            <view class='item-right'>{{orderInfors.sendDate}}</view>
+          </view>
+          <view class='order-pay-info' wx:if="{{orderInfors.receiveDate}}">
+            <view class='item-left'>收货时间</view>
+            <view class='item-right'>{{orderInfors.receiveDate}}</view>
+          </view>
+          <view class='order-pay-info' wx:if="{{orderInfors.finishDate}}">
+            <view class='item-left'>完成时间</view>
+            <view class='item-right'>{{orderInfors.finishDate}}</view>
+          </view>
+        </view>
+      </view>
+    </view>

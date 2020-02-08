@@ -21,10 +21,21 @@ Page({
     that.setData({//商品
         cakeIds: [{
           "_id": "rshprX44SssYA1kcXa0jI5SiAO5TRIFfQh854Df5tFRj3ZOR",
-          "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake1.jpg",
+          "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake2.jpg",
         },{
-            "_id": "1a986ac0-ed96-493e-905d-e9a038eb6b8b",
+            "_id": "rshprX44SssYA1kcXa0jI5SiAO5TRIFfQh854Df5tFRj3ZOR",
             "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake1.jpg",
+          },
+          {
+            "_id": "rshprX44SssYA1kcXa0jI5SiAO5TRIFfQh854Df5tFRj3ZOR",
+            "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake3.jpg",
+          },
+          {
+            "_id": "rshprX44SssYA1kcXa0jI5SiAO5TRIFfQh854Df5tFRj3ZOR",
+            "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake4.jpg",
+          }, {
+            "_id": "rshprX44SssYA1kcXa0jI5SiAO5TRIFfQh854Df5tFRj3ZOR",
+            "src": "cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/home_image/cake5.jpg",
           },],
     });
     this.getSwiperListImg()

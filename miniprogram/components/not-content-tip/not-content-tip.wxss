@@ -1,0 +1,18 @@
+/* no-content */
+
+.no-content-image {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.no-content-image image {
+  display: block;
+  width: 18%;
+  margin: 0 auto;
+}
+.wancll-text-pray {
+  color: #777 !important;
+}
+.wancll-margin-t-10 {
+  margin-top: 20rpx;
+}

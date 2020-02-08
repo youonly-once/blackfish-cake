@@ -16,12 +16,30 @@ App({
       })
     }
     cart.setCartNun()
+    this.getIsAdmin(function(){})
+    this.getUserOpenIdViaCloud()
+    this.isIphoneX()
   },
   onShow(opts) {
     console.log('App Show', opts)
   },
   onHide() {
     console.log('App Hide')
+  },
+
+  globalData: {
+    hasLogin: false,
+    openid: null,
+    //顶部显示用
+    storeLatitude: 29.492788228,
+    storeLongitude: 106.470879739,
+    userInfo: null,
+    apiUrl: null,
+    needToReloadShareActivity: false,
+
+    flushCart: false,//刷新购物车列表
+    flushCartNum: false,//刷新购物车数量
+    isAdmin: false,//是否为管理员
   },
   /**
   * 刷新纪录新增购物车的状态
@@ -33,57 +51,46 @@ App({
   flushCartNum:function(){
     this.globalData.flushCartNum = this.globalData.flushCartNum == true ? false : true;
   },
- 
-  globalData: {
-    hasLogin: false,
-    openid: null,
-    
-    userInfo: null,
-    apiUrl: null,
-    needToReloadShareActivity: false,
-    flushCart: false,
-    flushCartNum:false
+  getIsAdmin(callback){
+    let that=this
+    wx.cloud.callFunction({
+      name:'manageUser',
+      success(res){
+        console.log(res.result)
+        that.globalData.isAdmin = res.result.isAdmin
+      },
+      complete(res){
+        callback(res)
+      }
+    })
   },
-  // lazy loading openid
-  getUserOpenId(callback) {
-    const self = this
 
-    if (self.globalData.openid) {
-      callback(null, self.globalData.openid)
-    } else {
-      wx.login({
-        success(data) {
-          wx.request({
-            url: config.openIdUrl,
-            data: {
-              code: data.code
-            },
-            success(res) {
-              console.log('拉取openid成功', res)
-              self.globalData.openid = res.data.openid
-              callback(null, self.globalData.openid)
-            },
-            fail(res) {
-              console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
-              callback(res)
-            }
-          })
-        },
-        fail(err) {
-          console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
-          callback(err)
-        }
-      })
-    }
-  },
   // 通过云函数获取用户 openid，支持回调或 Promise
   getUserOpenIdViaCloud() {
     return wx.cloud.callFunction({
       name: 'wxContext',
       data: {}
     }).then(res => {
+      console.log(res.result.openid)
       this.globalData.openid = res.result.openid
       return res.result.openid
     })
+  },
+  /**
+  * IPHONE X系列底部会被遮挡
+  * IPHONE 11系列也会
+  */
+  isIphoneX() {
+    let info = wx.getSystemInfoSync();
+    console.log('info.model', info)
+    let infoX = info.model.substring(0, 8)
+    let info11 = info.model.substring(0, 9)
+    // console.log('info.model', infoX)
+    // console.log('info.model', info11)
+    if (/iPhone X/i.test(infoX) || /iPhone 11/i.test(info11)) {
+      this.globalData.padding_bottom=45
+    } else {
+      this.globalData.padding_bottom = 0
+    }
   }
 })

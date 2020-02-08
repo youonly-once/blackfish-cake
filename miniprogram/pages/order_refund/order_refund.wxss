@@ -1,0 +1,48 @@
+.page__bd{
+  border-top:1rpx solid #F8F8F8;
+  margin-bottom: 60px;
+}
+
+.padding{
+  padding: 15px;
+  font-size: 28rpx;
+  background: #fff;
+}
+.padding .title{
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.image-input .image-list{
+  margin-right: 20rpx;
+}
+.image-input .up-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.image-input .add-image{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px
+}
+.image-input{
+  display: flex;
+  flex-wrap: wrap
+}
+.weiui_input_title{
+  font-size:24rpx;
+}
+.weiui_input_content{
+  font-size:28rpx;
+}
+.weui-cells__title{
+   font-size:24rpx;
+}
+.weui-cells__tips{
+   font-size:24rpx;
+}
+

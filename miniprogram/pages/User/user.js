@@ -8,9 +8,16 @@ Page({
     
   },
   onLoad: function () {
-    this.setData({
-      fonts:app.globalData.font
+    app.getIsAdmin(function(res){
+      console.log(res)
+      wx.stopPullDownRefresh()
     })
+    this.setData({
+      isAdmin: app.globalData.isAdmin
+    })
+  },
+  onPullDownRefresh:function(){
+    this.onLoad()
   },
   userInfo:function(){
     wx.navigateTo({
@@ -31,6 +38,12 @@ Page({
     let orderstatus = e.currentTarget.dataset.orderstatus
     wx.navigateTo({
       url: '/pages/order/order?orderstatus=' + orderstatus
+    })
+  },
+  orderManager: function (e) {
+    
+    wx.navigateTo({
+      url: '/pages/order_manager/order_manager?orderstatus=0' 
     })
   },
  shopping:function(){

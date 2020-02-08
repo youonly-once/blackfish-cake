@@ -6,30 +6,36 @@ const ORDER_PAY = 2     //已付款
 const ORDER_SEND = 3//已送货
 const ORDER_RECEIVE = 4//已签收 待评价
 const ORDER_Finish = 5//已完成 待评价
+const ORDER_REFUND = 6//已申请退款
 Page({
   data: {
-    //顶部显示用
-    payShowDate:'',
-    sendShowDate:'',
-    receiveShowDate:'',
-
     orderInfors: {},//保存的订单信息
     addrObject: {},//订单关联的收获地址
     orderStatusStr: '',
     orderId: null,//订单 数据库表的ID
-    isShow:true,//加载成功就显示
- 
+    isShow:false,//加载成功就显示
+
   },
   onLoad: function (options) {
     wx.showLoading({
-      title: '加载中',
+      mask: true,
+      title: '',
     })
     console.log("options.orderid", options.orderid)
     this.setData({
       orderId:options.orderid
     })
-    this.getorderInfors()
 
+    this.getorderInfors()
+  },
+  onShow:function(){
+   /* if (this.data.orderId!=null){
+      wx.showLoading({
+        mask: true,
+        title: '',
+      })
+      this.getorderInfors()
+    }*/
   },
   onReady: function () {
     console.log("onReady", "onReady")
@@ -55,8 +61,15 @@ Page({
         console.log("orderInfors", res);
         that.setData({
           orderInfors: res.result.data[0]
+          
         })
-        that.setStatusDate()
+        if(that.data.orderInfors.deliverWay==2){
+          that.setData({
+            isShow: true
+
+          })
+        }
+        //that.selectComponent("#orderInfo").setStatusDate()
         that.setOrderStatus()
         //获取收获地址
         that.getOrderAddr()
@@ -73,16 +86,7 @@ Page({
       }
     })
   },
-  /**
-   * 
-   */
-  setStatusDate:function(){
-    this.setData({
-      payShowDate: this.data.orderInfors.payDate.toString().substr(0,10),
-      sendShowDate: this.data.orderInfors.sendDate.toString().substr(0, 10),
-      receiveShowDate: this.data.orderInfors.receiveDate.toString().substr(0, 10),
-    })
-  },
+
   /**
    * 右下角按钮文字
    */
@@ -94,7 +98,8 @@ Page({
         orderStatusStr='支付'
         break;
       case ORDER_PAY:
-        orderStatusStr = '提醒卖家发货'
+
+        orderStatusStr = '提醒商家'
         break;
       case ORDER_SEND:
         orderStatusStr = '去签收'
@@ -102,6 +107,7 @@ Page({
       case ORDER_RECEIVE:
         orderStatusStr = '去评价'
         break;
+
     }
     this.setData({
       orderStatusStr: orderStatusStr
@@ -113,10 +119,15 @@ Page({
   getOrderAddr: function () {
 
     var that = this;
+    //自提方式不需地址
+    if (that.data.orderInfors.deliverWay == 2) {
+      wx.hideLoading();
+      return
+    }
     wx.cloud.callFunction({
       name: 'manageAddr',
       data: {
-        command: 'getDefault',
+        command: 'getSingle',
         _id: that.data.orderInfors.addrId
       },
       success(res) {
@@ -144,26 +155,7 @@ Page({
       }
     })
   },
-  //跳转到商品详情页
-  gotoCakeDetail:function(data){
-    let id=data.currentTarget.dataset.id
-    wx.showLoading({
-      title: '',
-    })
-    wx.navigateTo({
-      url: '../../cake_detail/cake_detail?cakeid='+id,
-      complete(res){
-        wx.hideLoading()
-      }
-    })
-  },
-  //下单后不允许更改地址
-  chooseAddr: function () {
-    wx.showToast({
-      title: '下单后不允许更改地址',
-      icon:'none'
-    })
-  },
+
  
   checkOrderStatus: function () {
 
@@ -189,6 +181,7 @@ Page({
   confirmPay: function () {
     let that = this;
     wx.showLoading({
+      mask: true,
       title: '支付中',
     })
     wx.cloud.callFunction({
@@ -237,6 +230,7 @@ Page({
   //调用小程序支付 //官方标准的支付方法
   pay(payData) {
     wx.showLoading({
+      mask: true,
       title: '支付中',
     })
     let that = this
@@ -279,6 +273,7 @@ Page({
       return
     }
     wx.showLoading({
+      mask: true,
       title: '更新订单状态',
     })
     wx.cloud.callFunction({
@@ -308,6 +303,7 @@ Page({
       },
       complete(res) {
         wx.showLoading({
+          mask: true,
           title: '加载中',
         })
         that.getorderInfors()
@@ -414,10 +410,5 @@ Page({
 
     return promise;
   },
-  call_custom:function(){
-    wx.makePhoneCall({
-      phoneNumber: '15723468981' //仅为示例，并非真实的电话号码
-    })
-  }
-
+  
 })

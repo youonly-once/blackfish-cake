@@ -23,7 +23,7 @@
 				<image src="/images/next_page.jpg" style=""></image>
 			</view>
 	</picker>-->
-  <input  bindtap="chooseMapAddress" disabled="true" placeholder="选择地址" value="{{addressName}}{{chooseMapAddress}}" ></input>
+  <input  bindtap="chooseMapAddress" disabled="true" placeholder="选择地址" value="{{addressName}}" ></input>
 
 	</view>
 </view>
@@ -34,7 +34,7 @@
 <view class="user_input" >
 	<view class="users_detail flexRowBetween">
 		<view class="input_note">详细地址:</view>
-		<input placeholder="如街道，门牌号" bindinput="detailAddrInput" value="详细地址"></input>
+		<input placeholder="如街道，门牌号" bindinput="detailAddrInput" value="{{chooseMapAddress}}"></input>
 	</view>
 </view>
 <view class="user_input flexRowBetween">

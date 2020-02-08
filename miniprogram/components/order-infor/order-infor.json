@@ -1,0 +1,7 @@
+{
+  "component": true,
+      "usingComponents": {
+        "show-cake": "../components/ShowCake/ShowCake",
+        "refund-status":"../components/refund-status/refund-status"
+      }
+}

@@ -34,11 +34,12 @@ Page({
     })
     this.getCakeDetail(this.data.cakeId)
     this.setData({
-      "isIphoneX": this.isIphoneX()
+      padding_bottom:app.globalData.padding_bottom
     })
     wx.showShareMenu({
       withShareTicket: true
     })
+    
   },
   onReady: function () {
    
@@ -455,20 +456,5 @@ Page({
       urls: imgArray // 需要预览的图片http链接列表
     })
   },
-  /**
-   * IPHONE X系列底部会被遮挡
-   * IPHONE 11系列也会
-   */
-  isIphoneX() {
-    let info = wx.getSystemInfoSync();
-    let infoX = info.model.substring(0, 8)
-    let info11 = info.model.substring(0, 9)
-   // console.log('info.model', infoX)
-   // console.log('info.model', info11)
-    if (/iPhone X/i.test(infoX) || /iPhone 11/i.test(info11)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+ 
 })

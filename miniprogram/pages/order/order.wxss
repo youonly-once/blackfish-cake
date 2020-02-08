@@ -140,17 +140,24 @@ page{
 	float:right;
 }
 .handle_orders{
-	width:100rpx;
-	height:50rpx;
 	border:solid 1px #d1d1d1;
 	border-radius:20rpx;
 	text-align:center;
-	line-height:50rpx;
+  padding: 10rpx 20rpx;
 	font-size:24rpx;
+  margin-left:20rpx;
+  width: 100rpx;
 	
 }
 .comment_order{
   color:white;
   background-color: rgb(220, 87, 18);
   border:none;
+}
+.noMore{
+  width:100%;
+  color: gray;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 50rpx;
 }

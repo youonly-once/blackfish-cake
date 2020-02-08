@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/home/scroll-view",
+    "pages/order_refund/refund_detail/refund_detail",
+    "pages/order_refund/order_refund",
+    
     "pages/order/order_detail/order_detail",
-
+    "pages/order_manager/order_manager",
+    "pages/order_manager/order_detail_manager/order_detail_manager",
     "pages/text/text",
-
     "pages/order/order",
     "pages/cart/cart",
     "pages/manageAddress/manageAddress",

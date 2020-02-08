@@ -1,0 +1,18 @@
+    <view class="order_list">
+      <view class="order_confirm" wx:for="{{cakes}}" wx:key="order_detail_manage">
+        <view class="flexRowBetween orderlistShow" bindtap="gotoCakeDetail" data-id="{{item.cakeId}}">
+          <view class="img_left">
+            <image src="{{item.cakeImage}}"></image>
+          </view>
+          <view class="order_name">
+            <view class="text1 avoidOverflow">{{item.cakeName}}</view>
+            <view class="order_type avoidOverflow">{{item.style}},{{item.cakeSize}}</view>
+            <view class="order_type avoidOverflow">{{item.candleDesc}}</view>
+            <view class="orders flexRowBetween">
+              <text class="order_price">￥{{item.singlePrice}}</text>
+              <text class="order_number">x {{item.buyCount}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>

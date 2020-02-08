@@ -19,7 +19,7 @@
           <view class="address_right">{{item.phone}}</view>
         </view>
         <!--直辖市，不显示省-->
-        <view class="text1 text_other" >收获地址：{{item.addressName}},{{item.address}}{{item.detail}}</view>
+        <view class="text1 text_other" >{{item.addressName}},{{item.address}}{{item.detail}}</view>
       </view>
     </view>
     <view class="address_set flexRowEnd">

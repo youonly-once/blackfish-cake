@@ -11,8 +11,6 @@ const ORDER_Finish = 5//已完成 待评价
 
 Page({
   data: {
-    storeLatitude : 29.492788228,
-    storeLongitude : 106.470879739,
     isShow:false,//数据是否正常，能否付款 暂未用
     goods:[],//商品数组
     allGoodPrice:0,//,所有商品总价 不包括折扣配送
@@ -30,7 +28,7 @@ Page({
     deliverEndDate: '2018-01-24',//默认结束时间  
    // deliverStartTime: '08:00',//默认起始时间  
     //deliverEndTime: '23:59',//默认结束时间  
-    timeArray: ['08：00 ~ 09：00', '09：00 ~ 10：00', '10：00 ~ 11：00', '12：00 ~ 13：00', '13：00 ~ 14：00', '14：00 ~ 15：00', '15：00 ~ 16：00', '16：00 ~ 17：00', '17：00 ~ 18：00', '18：00 ~ 19：00', '19：00 ~ 20：00', '20：00 ~ 21：00', '21：00 ~ 22:00'],
+    timeArray: ['08:00~09:00', '09:00~10:00', '10:00~11:00', '12:00~13:00', '13:00~14:00', '14:00~15:00', '15:00~16:00', '16:00~17:00', '17:00~18:00', '18:00~19:00', '19:00~20:00', '20:00~21:00', '21:00~22:00'],
     currDeliverDate:'选择配送或自提日期',
     currDeliverTime:'选择配送或自提时间',
    /* years:['2019','2018'],
@@ -43,7 +41,8 @@ Page({
   },
   onLoad: function (options) {
     wx.showLoading({
-      title: '加载中',
+      mask:true,
+      title: '',
     })
     if(!this.getGoods()){
       wx.hideLoading()
@@ -70,11 +69,17 @@ Page({
  * 跳转到选择地址界面后，返回来判断 刷新地址
  */
   onShow: function () {
+    //配送界面才需要刷新默认地址
     if (this.data.orderChoose) {
       wx.showLoading({
+        mask: true,
         title: '',
       })
       this.getDefaultAddr()//重新获取地址
+      this.getRealLocation()
+      this.setData({
+        orderChoose:false
+      })
     }
 
  
@@ -85,28 +90,26 @@ Page({
   onPullDownRefresh:function(){
     this. getRealLocation()
     this.getDefaultAddr()
-
   },
   /**
    * 切换配送方式
    */
-  swithDeliver:function(e){
+  switchDeliver:function(e){
     var isDeliver = e.currentTarget.dataset.id
     //isDeliver=(isDeliver==1?isDeliver=2:isDeliver)
     this.setData({
       isDeliver: isDeliver
     })
     if (isDeliver==2){
-      this.getRealLocation()
+      this.getRealLocation()//获取实时位置显示在地图上
       this.setData({
         delivPrice: 0,
         delivMethod: "用户自提、免运费"
 
       })
     } if (isDeliver == 1){
-      this.getDelivPrice()
+      this.getDelivPrice()//获取配送价格
       this.setData({
-        delivPrice: 0,
         delivMethod: '同城配送'
       })
     }
@@ -117,8 +120,8 @@ Page({
     wx.openLocation({
       name:"黑鲸烘培工作室",
       address:"重庆市大渡口区双园路1号附35号",
-      latitude:that.data.storeLatitude,
-      longitude:that.data.storeLongitude,
+      latitude: app.globalData.storeLatitude,
+      longitude: app.globalData.storeLongitude,
       success(res) {
         console.log(res)
 
@@ -138,12 +141,16 @@ Page({
     })
   },
   getRealLocation: function(){
+    this.setData({
+      storeLatitude: app.globalData.storeLatitude,
+      storeLongitude: app.globalData.storeLongitude,
+    })
     var that = this;
     wx.getLocation({
       type: 'gcj02',
       success(res) {
         console.log(res)
-        let distance=that.getDistance(res.latitude, res.longitude, that.data.storeLatitude, that.data.storeLongitude)
+        let distance = that.getDistance(res.latitude, res.longitude, app.globalData.storeLatitude, app.globalData.storeLongitude)
         let distanceStr=""
         if(distance!=null && distance!=undefined){
           distanceStr ="\n距您" + distance+"km"
@@ -151,14 +158,14 @@ Page({
         that.setData({
           markers: [{
             id: 1,
-            latitude: that.data.storeLatitude,
-            longitude: that.data.storeLongitude,
+            latitude: app.globalData.storeLatitude,
+            longitude: app.globalData.storeLongitude,
             iconPath: '/images/head.jpg',
             width: '20px',
             height: '20px',
             //alpha: 0.3,
-            /*callout: {
-              content: "黑鲸烘培工作室",
+            callout: {
+              content: "黑鲸烘培" + distanceStr,
               bgColor: "#fff",
               padding: "5px",
              borderRadius: "20px",
@@ -166,19 +173,19 @@ Page({
              borderWidth: "1px",
               borderColor: "#fff",
               display: "ALWAYS"
-            },*/ label: {
-              content: "黑鲸烘培工作室" + distanceStr,
-              bgColor: "#fff",
+            }, /*label: {
+              content: "黑鲸烘培" + distanceStr,
+              bgColor: "#FFFFFF",
               padding: "5px",
               borderRadius: "20px",
-              fontSize: '24rpx',
+              fontSize: '16rpx',
               borderWidth: "1px",
-              borderColor: "#fff",
+              borderColor: "#FF6347",
               //display: "ALWAYS",
-              color:"gray",
-              //anchorX:-30,
-              //anchorY:-50,
-            }
+              color:"#FF6347",//不能用字母颜色代码，显示不出来
+              anchorX:20,
+              anchorY:-20,
+            }*/
           }]
         });
       },
@@ -198,8 +205,12 @@ Page({
         console.log("获取地址列表成功", res.result.data)
         var def = res.result.data[0];
         if (def == null || def == undefined || Object.keys(def).length<=0){
+          let defAddrObject = that.data.defAddrObject
+          defAddrObject._id=null
           that.setData({
             isHaveAddr: false,//没有地址
+            defAddrObject: null,
+            delivPrice:0
           })
           return
         }
@@ -225,10 +236,19 @@ Page({
    * 计算配送费
    */
   getDelivPrice:function(){
+    
     //3km 20元 超出3元/KM
-
+    if (this.data.isDeliver==2){//自提方式，直接为0
+      this.setData({
+        delivPrice: 0,
+      })
+      return
+    }
+    if (this.data.defAddrObject==null){
+      return
+    }
     //距离 km
-    var distance = this.getDistance(this.data.storeLatitude, this.data.storeLongitude
+    var distance = this.getDistance(app.globalData.storeLatitude, app.globalData.storeLongitude
       , this.data.defAddrObject.latitude, this.data.defAddrObject.longitude)
     var delivPrice=0
     if (distance<=3){
@@ -375,9 +395,16 @@ Page({
      * goods:[{good},{good}]
      * }
      */
-
     let that = this;
-    let  out_trade_no=that.getRandomCode() //生成商户订单号
+    if (that.data.defAddrObject == null && that.data.deliverWay == 1) {
+      wx.showToast({
+        title: "请选择配送地址",
+        icon: 'none'
+      })
+      return
+    }
+    
+    //let  out_trade_no=that.getRandomCode() //生成商户订单号
     
     let orderInfors={
       getPerson: that.data.getPerson,
@@ -387,11 +414,11 @@ Page({
       "allGoodPrice": that.data.allGoodPrice,//所有商品价格
       "payPrice": 1,//that.data.allGoodPrice+that.data.delivPrice-that.data.discount  //单位分 付款金额
       "remark": that.data.remark,
-      "delivMethod": "同城配送",
+      "delivMethod": that.data.delivMethod,
       "currDeliverDate": that.data.currDeliverDate + '  ' + that.data.currDeliverTime,
-      "addrId": that.data.defAddrObject._id,//地址
+      "addrId": that.data.defAddrObject == null?'':that.data.defAddrObject._id,//地址
       deliverWay: parseInt(that.data.isDeliver),
-      "out_trade_no": out_trade_no,
+      //"out_trade_no": out_trade_no,
       "body": '测试',//付款内容
       "attach": 'attach',
       "spbill_create_ip": '127.0.0.1',
@@ -410,6 +437,7 @@ Page({
     orderInfors.goods = that.data.goods;
     console.log("orderInfors", orderInfors)
     wx.showLoading({
+      mask: true,
       title: '提交中',
     })
     wx.cloud.callFunction({
@@ -448,13 +476,16 @@ Page({
 
     console.log(submitdata)
     for (var o in submitdata) {
-  
+      if (o == "candleDesc" || o == "remark" || o == "blessing") {//非必填
+        continue
+      }
+      if (o == "addrId" && submitdata.deliverWay == 2) {
+        continue
+      }
       let temp=submitdata[o]
       //判断null 和undefined 以及长度
       if (temp == null || temp == undefined || temp == "null" || temp == "undefined" || temp == "NaN" || temp.length == 0 ){
-        if (o == "candleDesc" || o == "remark" || o == "blessing") {//非必填
-          continue
-        }
+
         //配送方式 则不校验提货人信息
         if ((o == "getPerson" || o == "getPersonPhone") && submitdata.deliverWay == 1){
           continue
@@ -485,6 +516,8 @@ Page({
         })
         return false
       }
+      //自提 校验
+
      /* if (o == "currDeliverDate" && (temp <= date.getDateStr(date.getNowTime(), 31))){
         wx.showToast({
           title: '只能提前30天预定',
@@ -512,6 +545,7 @@ Page({
     let that = this;
   
     wx.showLoading({
+      mask: true,
       title: '支付中',
     })
     wx.cloud.callFunction({
@@ -548,7 +582,9 @@ Page({
         wx.showToast({
           title: '付款失败',
           icon: 'none',
-         
+        })
+        wx.redirectTo({
+          url: '../../order/order_detail/order_detail?orderid=' + that.data.orderId
         })
         console.log("云函数payment提交失败：", res)
       },complete: () => {
@@ -560,6 +596,7 @@ Page({
   //调用小程序支付 //官方标准的支付方法
   pay(payData) {
     wx.showLoading({
+      mask: true,
       title: '支付中',
     })
     let that = this
@@ -591,6 +628,9 @@ Page({
           title: '付款失败',
           icon: 'none',
         })
+        wx.redirectTo({
+          url: '../../order/order_detail/order_detail?orderid=' + that.data.orderId
+        })
         console.log("支付失败：", res)
       },
       complete(res) {
@@ -608,6 +648,7 @@ Page({
       return
     }
     wx.showLoading({
+      mask: true,
       title: '更新订单状态',
     })
     wx.cloud.callFunction({
@@ -665,6 +706,8 @@ Page({
   /**
  * 产生一个不重复的code
  */
+
+/*
   generateCode:function () {
     let that=this
     let promise = new Promise(function (resolve, reject) {
@@ -687,6 +730,7 @@ Page({
  * 产生四位数字+字母随机字符
  * 生成商户订单号
  */
+
 getRandomCode :function () {
     let code = "";
     const array = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'/*, 'a', 'b', 'c', 'd', 'e',
@@ -704,6 +748,7 @@ getRandomCode :function () {
 /**
  * 从云数据库中查询code
  */
+/*
  queryCode:function (code) {
     let promise = new Promise(function (resolve, reject) {
       //  result[0] 代表是否需要结束，true：需要结束，false：不需要结束
@@ -740,5 +785,11 @@ getRandomCode :function () {
     });
 
     return promise;
-  }
+  },
+  */
+  call_custom: function (e) {
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.phone //仅为示例，并非真实的电话号码
+    })
+  },
 })

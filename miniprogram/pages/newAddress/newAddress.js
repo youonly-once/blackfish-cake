@@ -60,7 +60,7 @@ Page({
   //详细地址
   detailAddrInput: function (e) {
     this.setData({
-      detailAddr: e.detail.value,
+      chooseMapAddress: e.detail.value,
       street: e.detail.value
     })
   },
@@ -112,7 +112,8 @@ Page({
       },
       fail(res) {//打开地理位置授权}
         console.log(res)
-       // if (res.errMsg =="chooseLocation:fail auth deny"){
+        //不是用户取消，则提示用户打开地理位置授权
+        if (res.errMsg = !"chooseLocation:fail cancel"){
           that.setData({
             isOpenLocation: true
           })
@@ -120,7 +121,7 @@ Page({
             title: '请求授权当前位置',
             content: '需要您手动授权地理位置，用于配送蛋糕及计算配送距离。',
           })
-       // }
+        }
       }
     })
   },
@@ -133,7 +134,7 @@ Page({
           //"city": this.data.city,
           //"area": this.data.area,
           //"street": this.data.detailAddr,
-          "detail": this.data.detailAddr,
+         // "detail": this.data.detailAddr,
           //"province": this.data.province
         //},
         "address":this.data.chooseMapAddress,

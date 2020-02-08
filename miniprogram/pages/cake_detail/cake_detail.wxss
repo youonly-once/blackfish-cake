@@ -160,8 +160,8 @@ swiper {
 }
 
 .catalog_area{
-  min-height: 900rpx;
-  max-height: 900rpx;
+  min-height: 940rpx;
+  /*max-height: 900rpx;*/
   padding:20rpx;
   position: fixed;
   z-index: 888;
@@ -288,9 +288,8 @@ swiper {
 
 .catalog_area .btn_area{
   width: 100%;
-  margin:0 -20rpx;
-  position: fixed;
-  bottom: 0;
+  box-sizing:border-box;
+  padding:20rpx;
 }
 
 .catalog_area .item_btn {
@@ -352,96 +351,34 @@ swiper {
   border-bottom:4rpx solid #ff6700 !important; 
 }
 
-.goods_infor_pre {
-  margin-top: 20rpx;
-  background-color: #FFF;
-  padding: 10px;
-  min-height: 40px;
-}
-.goods_infor_txt {
-  position: relative;
-  padding-left: 50px;
-  font-size: 13px;
-  line-height: 18px;
-}
-.goods_infor_brand {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-image: url(../../image/brand.png);
-  background-size: 40px 40px;
-  background-repeat: no-repeat;
-  background-position: center;
-  left: 0px;
-  top: 10px;
-}
-.goods_infor_raw {
-  margin-top: 20rpx;
-  background-color: #FFF;
-  padding: 10px;
-}
-.goods_infor_item {
-  font-size: 13px;
-  line-height: 18px; 
-}
-.goods_infor_item text  {
-  display: inline-block;
-  width: 90px;
-}
-.goods_detail {
-  padding: 0 10px;
-  margin-top: 20rpx;
-  background-color: #FFF;
-}
-.goods_detail_title {
-  padding: 10px 0;
-  font-size: 14px;
-}
+
 .goods_bottom {
-  height: 50px;
+  height: 100rpx;
 }
 .goods_bottom_btn {
   width: 100%;
-  position: fixed;
-  bottom: 0;
   z-index: 99;
   background-color: #FFF;
   border-top: 1px solid #E5E5E5;
-}
-.goods_one {
-  width:50%;
-  height: 50px;
-}
-.goods_half_half {
-  width:50%;
-  height: 50px;
-  
-  line-height: 50px;
-  text-align: center;
-  color: #FFF;
+  box-sizing:border-box;
+  padding:20rpx;
 }
 
-.goods_car_num {
-  width: 30px;
-  height: 30px;
-  margin: 0 auto;
-  margin-top: 10px;
-  font-size: 10px;
-  background-image: url(../../image/car1.png);
-  background-size: 26px;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-.goods_car_num span {
-  position: absolute;
-  right: -5px;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 14px;
-  background-color: #FF0000;
-  color: #FFF;
+.goods_half_half {
+  width:40%;
+  height: 100rpx;
+  line-height: 100rpx;
   text-align: center;
-  line-height: 14px;
+  color: #FFF;
+  border-radius:20rpx;
+  margin-left:10rpx;
 }
+.goods_choose_btn{
+  width:50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #FFF;
+  border-radius:20rpx;
+}
+

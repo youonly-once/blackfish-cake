@@ -1,4 +1,4 @@
-function requestData(
+function payData(
   appid,
   attach,
   body,
@@ -29,4 +29,48 @@ function requestData(
   return data
 }
 
-module.exports = requestData
+function refundData(
+  appid,
+  mch_id,
+  random,
+  out_refund_no,
+  out_trade_no,
+  refund_fee,
+  total_fee,
+  sign
+){
+
+  let data = "<xml>"
+    data += "<appid>" + appid + "</appid>"
+    data += "<mch_id>" + mch_id + "</mch_id>"
+    data += "<nonce_str>" + random + "</nonce_str>"
+  data += "<out_refund_no>"+out_refund_no + "</out_refund_no>"
+    data += "<out_trade_no>" + out_trade_no + "</out_trade_no>"
+  data += "<refund_fee>" + refund_fee+"</refund_fee>"
+  data += "<total_fee>" + total_fee+ "</total_fee>"
+  data += "<sign>" + sign + "</sign>"
+    data += "</xml>"
+  return data
+}
+function refundQuery(
+  appid,
+  mch_id,
+  random,
+  out_refund_no,
+  sign
+) {
+
+  let data = "<xml>"
+  data += "<appid>" + appid + "</appid>"
+  data += "<mch_id>" + mch_id + "</mch_id>"
+  data += "<nonce_str>" + random + "</nonce_str>"
+  data += "<out_refund_no>" + out_refund_no + "</out_refund_no>"
+  data += "<sign>" + sign + "</sign>"
+  data += "</xml>"
+  return data
+}
+module.exports = {
+  payData: payData,
+  refundData:refundData,
+  refundQuery: refundQuery
+  }

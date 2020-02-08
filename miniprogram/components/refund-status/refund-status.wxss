@@ -1,0 +1,19 @@
+.refund_satus{
+  width:100%;
+  padding: 50rpx;
+  background: #ff6347;
+  font-size:30rpx;
+  box-sizing:border-box;
+}
+.refund_satus text{
+  color:#FFF;
+}
+.refund_satus .status{
+  color:#FFF;
+  font-size:24rpx;
+}
+.flexColumnBetween{
+  display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}

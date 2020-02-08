@@ -1,0 +1,99 @@
+
+<!--manageAddress.wxml-->
+<view class="order_sort flexRowBetween">
+	<view class="order_item {{currentTap ==0?'order_this':''}}" data-current="0" bindtap="order_status">
+		全部
+	</view>
+	<view class="order_item {{currentTap ==1?'order_this':''}}" data-current="1" bindtap="order_status">
+		待付款
+	</view>
+	<view class="order_item {{currentTap ==2?'order_this':''}}" data-current="2" bindtap="order_status">
+		待发货/自提
+	</view>
+	<view class="order_item {{currentTap ==3?'order_this':''}}" data-current="3" bindtap="order_status">
+		待收货
+	</view>
+	<view class="order_item {{currentTap ==4?'order_this':''}}" data-current="4" bindtap="order_status">
+		待评价
+	</view>
+</view>
+
+<view class="order_list" wx:if="{{orderList.length>0}}">
+	<view class="order_all order_show}}">	
+      <block wx:for="{{orderList}}"  wx:for-item="item" wx:key="order_manager_list">
+          <view class="order_tlt flexRowBetween">
+            <view class="tlt_left">
+              <text >{{item.createDate}}</text>
+            </view>
+            <view class="tlt_right"  wx:if="{{item.status==0}}">已取消</view>
+            <view class="tlt_right"  wx:if="{{item.status==1}}">待支付</view>
+            <view class="tlt_right"  wx:if="{{item.status==2}}">{{item.deliverWay==1?'待送货':'待取货'}}</view>
+            <view class="tlt_right"  wx:if="{{item.status==3}}">待收货</view>
+            <view class="tlt_right"  wx:if="{{item.status==4}}">待评价</view>
+            <view class="tlt_right"  wx:if="{{item.status==5}}">已完成</view>
+             <view class="tlt_right"  wx:if="{{item.status==6}}">已申请退款</view>
+            <view class="tlt_right"  wx:if="{{item.status==7}}">退款中</view>
+          </view>
+          <view class="same_stroe" wx:for="{{item.goods}}"  wx:for-item="good" wx:key="order_manager_list_goods">
+            <view class="flexRowBetween orderlistShow" bindtap="gotoOrderDetail" data-id="{{item._id}}">
+              <!--<view class="all_select" style="width:8%;text-align:left;overflow:hidden;">
+                <image src="/images/select.png"></image>
+              </view>-->
+              <view class="order_left"><image src="{{good.cakeImage}}"></image></view>
+              <view class="order_name">
+                <view >
+                  <view class="text1">{{good.cakeName}}</view>
+                  <text class="order_type">{{item.cakeSize}} {{good.style}}</text>
+                </view>
+                <view class="orders flexRowBetween">
+                  <text class="order_price">¥{{good.singlePrice}}</text>
+                  <text class="order_number">x{{good.buyCount}}</text>
+                </view>
+                <view class="total_order flexRowBetween" wx:if="{{item.goods.length<=1}}">
+                        <view class="total_money">
+                          <text style="color: black;">合计:</text>
+                          <text class="text2">¥{{good.totalPrice}}</text>
+                        </view>
+                        <view class="user_discount" wx:if="{{item.discount!=0}}">
+                          （优惠券：-¥{{item.discount}}）
+                        </view>
+                    </view>
+              </view>
+            </view>
+          </view>
+            <view wx:if="{{item.goods.length>1}}" style="display:flex;flex-direction:Row;justify-content:flex-end;background:#FFF;padding:20rpx;font-size:28rpx;">
+                        <view class="total_money">
+                          <text style="color: black;">合计:</text>
+                          <text class="text2">¥{{item.allGoodPrice}}</text>
+                        </view>
+                        <view class="user_discount" wx:if="{{item.discount!=0}}">
+                          （优惠券：-¥{{item.discount}}）
+                        </view>
+                      
+            </view>
+          <view class="handle" wx:if="{{item.status!=0}}">
+
+            <view class="handle_order" >
+              <view class="flexRowEnd" >
+                  <!--<view class="handle_orders comment_order" bindtap="commentOrder" wx:if="{{item.status==0}}">已取消</view>-->
+                <view class="handle_orders comment_order" bindtap="gotoOrderDetail" wx:if="{{item.status==1 }}" data-id="{{item._id}}">查看详情</view>
+                <view class="handle_orders comment_order" bindtap="gotoOrderDetail" wx:if="{{item.status==2}}" data-id="{{item._id}}">{{item.deliverWay==1?'去发货':'通知取货'}}</view>
+                <view class="handle_orders comment_order" bindtap="gotoOrderDetail" wx:if="{{item.status==3}}" data-id="{{item._id}}">查看详情</view>
+                <view class="handle_orders comment_order" bindtap="gotoOrderDetail" wx:if="{{item.status==4}}" data-id="{{item._id}}">查看详情</view>
+                <view class="handle_orders comment_order" bindtap="gotoOrderDetail" wx:if="{{item.status>=6}}" data-id="{{item._id}}">退款详情</view>
+              </view>
+            </view>
+          </view>
+    </block>
+  </view>
+   </view>
+  
+
+  <view wx:else>
+     <view style="   width: 100%;height:100%;position: absolute;left: 0;font-size: 15px;color:#999; text-align:center;margin-top:100rpx">
+      <view style="margin-top:50px;width:100%;">
+       <view style='font-size:15px;'>还没有用户购买商品。</view>
+      </view>
+    </view>
+  </view>
+  <view class="noMore" wx:if="{{noMore}}">别扯啦，已经没有了 </view>
