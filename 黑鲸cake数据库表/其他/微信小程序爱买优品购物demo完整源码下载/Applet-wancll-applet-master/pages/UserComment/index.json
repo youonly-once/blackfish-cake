@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的评价",
+  "usingComponents": {
+    "icon": "../../components/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-button": "../../dist/btn/index"
+  },
+  "enablePullDownRefresh": true
+}

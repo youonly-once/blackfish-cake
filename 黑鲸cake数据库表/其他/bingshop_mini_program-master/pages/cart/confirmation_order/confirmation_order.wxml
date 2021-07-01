@@ -1,0 +1,107 @@
+<view class='confirm-container'>
+  <!-- 收货地址 -->
+  <view class='address-container'>
+    <view class='address-content'>
+      <view class='address-left'>
+        <image src='/images/address-logo.png'></image>
+      </view>
+      <view class='address-middle'>
+        <view class='user-info'>
+          <view class='headeer-left'>收货人：区志彬</view>
+          <view class='header-right'>13425144866</view>
+        </view>
+        <view class='address-info'>
+          广东省深圳南山区南头街道丁头村大板桥巷129号402室
+        </view>
+      </view>
+      <view class='address-right'>
+        <image src='/images/right.png'></image>
+      </view>
+    </view>
+
+    <view class='boder-style'></view>
+  </view>
+
+  <!-- 购买的商品 -->
+  <view class='goods-container'>
+    <view class='goods-content'>
+      <view class='goods-item' 
+            wx:for="{{sku}}" 
+            wx:key="{{item.sku_id}}">
+        <view class='goods-left'>
+          <image mode='aspectFill' 
+                 src="{{item.sku.goods.images_attachments.length>0?item.sku.goods.images_attachments[0]:'/images/not-image.png'}}"></image>
+        </view>
+        <view class='goods-middle'>
+            <view class='title'>{{item.sku.goods.name}}</view>
+            <view class='sku-data' wx:if="{{item.sku.standard_values.length>0}}">
+              <view wx:for="{{item.sku.standard_values}}"  
+                    wx:for-item="sub" 
+                    wx:key="{{sub.id}}">{{sub.value}}</view>
+            </view>
+            <view class='price'>￥{{item.sku.price}}</view>
+        </view>
+        <view class='goods-right'>
+          <view>x2</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer-container'>
+    <view class='coupon'>
+      <view class='coupon-content'>
+        <view class='coupon-left'>优惠券</view>
+        <view class='coupon-right'>
+          <view>使用优惠券</view>
+          <image src='/images/right.png'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='expre-container'>
+      <view class='expre-content'>
+        <view class='expre-info'>
+          <view class='info-title'>配送方式</view>
+          <view class='info'>普通快递 免运费</view>
+        </view>
+        <view class='remark'>
+          <view class='remark-left'>买家留言</view>
+          <view class='remark-right'>建议留言前与卖家沟通</view>
+        </view>
+      </view>
+    </view>
+
+    <view class='order-info'>
+      <view class='order-content'>
+        <view class='order-item'>
+          <view class='item-left'>商品金额</view>
+          <view class='item-right'>￥30</view>
+        </view>
+        <view class='order-item express-cost'>
+          <view class='item-left'>运费</view>
+          <view class='item-right'>+￥30</view>
+        </view>
+        <view class='order-item coupon-amount'>
+          <view class='item-left'>优惠</view>
+          <view class='item-right'>-￥30</view>
+        </view>
+        <view class='sum-money'>
+          <view>合计：</view>
+          <view class='total-amount'>￥240</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 结算按钮 -->
+  <view class='submit-container'>
+    <view class='submit-left'>
+      <view>合计:</view>
+      <view class='total-amount'>￥100</view>
+    </view>
+    <view class='submit-right' bindtap='submitOrder'>提交订单</view>
+  </view>
+
+</view>

@@ -1,4 +1,4 @@
-<view class="refund_satus flexColumnBetween" >
+<view class="refund_satus main_bg flexColumnBetween"  >
   <text>{{refundSatus}}</text>
   <text class="status">{{successRefundTime}}</text>
 </view>

@@ -1,0 +1,41 @@
+<view class="container">
+  <view class='logo-box'>
+    <image src="{{logo}}" mode="widthFix" class="wancll-col-xs-7 logo"></image>
+  </view>
+  <view class="wancll-margin-l-15 wancll-text-pray wancll-margin-b-10" wx:if="{{unionId}}">
+    <text>请注册绑定手机号,下次可直接用第三方账号登录</text>
+  </view>
+  <view class='panle' wx:if="{{is_open_bonus || is_open_drp}}">
+    <input bindinput='bindtjMobile' placeholder='请输入推荐人手机号码(选填)'></input>  
+  </view>
+  <view class='panle'>
+    <input bindinput='bindMobile' placeholder='请输入手机号码'></input>
+    <view class='right'>
+      <block wx:if="{{status}}">
+        <button class="wancll-bg-info wancll-text-white" bindtap="sendCode">发送验证码</button>
+      </block>
+      <block wx:else="{{status}}">
+        <zan-button>{{countDown}} 再次发送</zan-button>
+      </block>
+    </view>
+  </view>
+  <view class='panle'>
+    <input bindinput="bindCode" placeholder="输入验证码" class="" />
+  </view>
+  <view class='panle'>
+    <input bindinput="bindPassword" password placeholder="输入密码" class="" />
+  </view>
+  <view class='panle'>
+    <input bindinput="bindRPassword" password placeholder="确认密码" class="" />
+  </view>
+  <view class="form wancll-margin-l-10 wancll-margin-r-10">
+    <button class="wancll-bg-info wancll-text-white" bindtap="sendData">注册</button>
+  </view>
+  <view class="greet">
+    <zan-icon style='{{ischecked?"color:#358cff":""}}' bindtap='ischecked' class="icon" type="checked"></zan-icon>
+    我同意 
+    <text bindtap="goArticle" data-id="1" data-type="reg">《服务条款》</text>
+    和
+    <text bindtap="goArticle" data-id="2" data-type="reg">《隐私政策》</text>
+  </view>
+</view>

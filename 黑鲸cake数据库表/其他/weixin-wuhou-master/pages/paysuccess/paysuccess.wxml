@@ -1,0 +1,147 @@
+<!-- 支付之前 -->
+
+
+<view class="content">
+  <view class='head'>订单详情<view class='noreturn' class='noreturn'>不支持退款</view>
+  </view>
+  <view class='goodsmessage'>
+    <image class='menuLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menuLogo.png'></image>
+    订单编号:{{goodsidentifier}}
+  </view>
+  <view class='Message'>
+    <view class='goodsinfo'>
+      <view class='goodsinfohead'>
+        <image class='pic' src='{{pic}}'></image>
+        <view class='type'>
+          <view class='goodstitle'>{{goodstitle}}
+        </view> 
+      <!-- 实物价格显示 -->
+         <view class='primecost' style='display:none;'>原价:￥{{primecost}}/件 
+          <!-- <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image> -->
+        </view> 
+        <!-- 核销价格显示 -->
+         <view class='primecost' style='display:block;'>午逅粉丝卡价:￥{{fansprice}}/件
+          <view class='oldprice'>原价:￥{{primecost}}/件 </view>
+          <!-- <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image> -->
+        </view> 
+        </view> 
+         
+      </view>
+      <!-- <view class='goodsnum'>数量:{{goodsnum}}</view> -->
+      <view class='goodskind left'>商品类型 
+        <view class='right'>{{goodskind}}</view> 
+      </view>
+      <view class='goodsnumber left'>商品数量 
+        <view class='right'>{{goodsnumber}}</view> 
+      </view>
+      <view class='goodsprice left'>商品总额
+        <view class='right'>￥{{goodsprice}}</view> 
+      </view>
+
+      <!-- 优惠券 -->
+      <view class='discount left' style='display:none;'>优惠券
+        <view class='right'>-￥{{discountprice}}</view> 
+      </view>
+
+      <view class='realtotal left'>实付款
+        <view class='right red'>￥{{realtotal}}</view>
+      </view>
+    </view>
+  </view>
+   <!-- 收货人信息 -->
+      <view class='head userinfo-head'>
+        <image class='person' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/person.png'></image>
+        收货人
+      </view>
+      <view class='userinfo'>
+        <view class='username left'>姓名
+          <view class='right'>{{username}}</view>
+        </view>
+        <view class='userphone left'>电话
+          <view class='right'>{{userphone}}</view>
+        </view>
+        <view class='tip'>*提示：在发货前，如需更改收货信息，请拨打客服:<text class='kefuphone'>{{kefuphone}}</text>
+        </view>
+      </view>
+
+      <!-- 发货信息 -->
+      <view class='fahuo' style='display:none;'>
+        <view class='head getinfo-head'>
+          <image class='sendgoods' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/sendgoods.png'></image>
+          发货信息
+        </view>
+        <view class='getinfo'>
+          <view class='username left'>发货状态
+            <view class='right'>{{sendstate}}</view>
+          </view>
+          <view class='username left'>物流公司
+            <view class='right'>{{sendcompany}}</view>
+          </view>
+          <view class='userphone left'>快递单号
+            <view class='right'>{{sendnumber}}</view>
+          </view>
+        </view>
+       </view>
+
+      <view class='hexiao' style='display:{{end}};'>
+        <view class='head hexiao-head'>
+          <image class='hexiaopic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/hexiao.png'></image>
+          消费核销
+          <view class='useday'>使用有效期: <text class="time">{{startTime}}~{{endTime}}</text></view>
+        </view>
+        <view class='hexiao'>
+          <!-- <view class='hxnumber left'>核销码
+            <view class='right'>{{hxnumber}}</view>
+          </view> -->
+          <view class='hxexplain'>核销说明
+            <view class='right'>{{hxexplain}}</view>
+          </view>
+          <view class='hxer'>
+            <image class='hxerpic' src='{{hxer}}'></image>
+          </view>
+
+          <!-- 多商家核销页面 -->
+           <view class="hxshop {{clickId==index?'selected':''}} {{change==0?'white':''}}" style='index' wx:for="{{hxshops}}"  bindtap='clickopen' id='{{index}}'>{{item.shopname}}  
+            <view class='hexiaoright'>核销次数:<text class='red'>({{item.hxnum}})</text>
+              <!-- <view class='closepic' catchtap='clickclose'  style="background-image:url('http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/close.png')"></view> -->
+            </view>
+            <image class='openpic'  style="display:{{openpic}};" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/open.png'></image>
+              <image class='closepic' catchtap='clickclose' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/close.png' ></image> 
+            <view class='close' wx:for="{{hxdaynum}}" >核销日期：{{item.hxday}} 
+                <view class='righ-num'>已使用{{item.usenum}}次</view> 
+            </view>
+          </view> 
+          <!-- 核销一次 -->
+          <view class='hxmessage' style='display:none;' wx:for="{{hxoneshop}}">核销日期：{{item.hxtime}}
+            <view class='hxusenum'>已使用{{item.hxusenum}}次</view>
+          </view>
+        </view>
+       </view>
+</view>
+
+ <view class='realpay' style='display:{{start}};'>
+  <view class='paymunber'>实付款:<text class='redprice'>￥{{realtotal}}</text>
+  </view>
+  <view class='paybtn' bindtap='pay'>微信支付</view>
+</view> 
+
+<view style='display:{{end}};'>
+  <view class='bottom' >
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomBar.png'></image>
+      <text class='indextext'>首页</text>
+    </view> 
+    <view class='bottomfans'>粉丝俱乐部</view>
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menu.png'></image>
+      <text class='menutext'>订单</text> 
+    </view>
+  </view>
+  <!-- 边框大圆 -->
+  <view class='freejewel'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle'></view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+  <image class="jewelLogo"   bindtap="picTofansHappy"  src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/fansjewel.png"></image>
+</view>

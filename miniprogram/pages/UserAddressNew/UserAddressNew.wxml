@@ -1,0 +1,56 @@
+<!--manageAddress.wxml-->
+<import src="/components/foot-head/foot.wxml" />
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">姓名:</view>
+		<input placeholder="请输入收货人" bindinput="nameInput" value="{{addrData.name}}"> </input>
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">电话:</view>
+		<input placeholder="请输入手机号码" type="number" maxlength="11" bindinput="phoneInput" value="{{addrData.phone}}"></input>
+
+	</view>
+</view>
+<view class="user_input">
+	<view class="users_detail flexRowBetween" >
+		<view class="input_note" >地名:</view>
+		
+	<!---	<picker mode="region" class="" value="{{region}}" custom-item="{{customItem}}" bindchange="bindRegionChange" style="width:77%;position:relative;right:0rpx;align-items:center;">
+		<view mode="region" style="width:95%;float:left;font-size:28rpx;">{{province}},{{city}},{{area}}</view>
+		<view class="next_page" style="width:5%;float:right;">
+				<image src="/images/next_page.jpg" style=""></image>
+			</view>
+	</picker>-->
+  <input  bindtap="chooseMapAddress" disabled="true" placeholder="选择地址" value="{{addrData.addressName}}" ></input>
+
+	</view>
+</view>
+<view class="user_input" wx:if="{{isOpenLocation}}">
+  <button  type="primary" open-type="openSetting" bindopensetting="getSetting" style="min-height:0rpx;margin:0rpx;width:100%;font-size:28rpx;" >去打开地理位置授权</button>
+  </view>
+
+<view class="user_input" >
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">地区:</view>
+		<input placeholder="如街道，门牌号" bindinput="areaAddrInput" value="{{addrData.address}}"></input>
+	</view>
+</view>
+<view class="user_input" >
+	<view class="users_detail flexRowBetween">
+		<view class="input_note">详细地址:</view>
+		<input placeholder="楼层，门牌号" bindinput="detailAddrInput" value="{{addrData.detailAddr}}"></input>
+	</view>
+</view>
+<view class="user_input flexRowBetween">
+	<view class="input_note address_set">默认地址</view>
+	<view class="body-view">
+		<switch bindchange="switchDefaultChange" checked="{{addrData._default}}" color="#FFBA1E"/>
+	</view>
+</view>
+<view class="submit_info" bindtap="saveAddress">
+	保存
+</view>
+
+<template is="foot" />

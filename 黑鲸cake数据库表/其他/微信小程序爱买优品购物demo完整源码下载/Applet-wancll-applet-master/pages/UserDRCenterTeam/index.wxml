@@ -1,0 +1,34 @@
+<zan-tab id="tab" class="tab" bindtap="tabchange" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" data-target="{{ tabSelectedId }}" fixed>
+  <view class='title-cont'>
+    <zan-row>
+      <zan-col col="15" col-class="left">
+        <view>
+          <icon class='icon' type="tubiao-"></icon> 成员信息</view>
+      </zan-col>
+      <zan-col col="9" col-class="right">
+        <view>提现佣金/下级分销商</view>
+      </zan-col>
+    </zan-row>
+  </view>
+  <view class='lists'>
+    <view class='list' wx:for="{{teamUsers}}" wx:key="item">
+      <zan-row>
+        <zan-col col="5" col-class="image">
+          <image src="{{user.avatar}}" mode='widthFix'></image>
+        </zan-col>
+        <zan-col col="13" col-class="center">
+          <view class='text'>{{item.nick_name?item.nick_name:item.mobile}}</view>
+          <view class='text'>注册时间：{{item.create_time}}</view>
+        </zan-col>
+        <zan-col col="6" col-class="right">
+          <view class='text money'>+{{item.user_info.already_drawcash_bonus_money}}元</view>
+          <view class='text'>{{item.team_num}} 成员</view>
+        </zan-col>
+      </zan-row>
+    </view>
+  </view>
+  <view wx:if="{{FPage.noContent}}" class="no-content-image">
+    <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+    <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+  </view>
+</zan-tab>

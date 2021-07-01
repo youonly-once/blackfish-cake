@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "网开创商城",
+  "navigationBarBackgroundColor": "#3c9aeb",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "zan-icon": "../../dist/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "icon": "../../components/icon/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-loading": "../../dist/loading/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,4 +1,4 @@
-@import "../../app.wxss";
+@import "../../maincolor.wxss";
 /** 收货地址 **/
 .get-address-info{
   font-size: 28rpx;
@@ -6,7 +6,11 @@
   font-weight: bold;
   margin-top: 5rpx;
 }
-
+.flexRowBetween{
+	display:flex;
+	flex-direction:Row;
+	justify-content:space-between;
+}
 .address-container {
   width: 100%;
   display: flex;
@@ -37,7 +41,7 @@
   width: 100%;
   border: 1rpx solid transparent;
   background: linear-gradient(white, white) padding-box,
-                repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/80rpx 40rpx;
+                repeating-linear-gradient(-45deg, yellow 0, yellow 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/80rpx 40rpx;
   margin-top: 20rpx;
 }
 
@@ -50,7 +54,7 @@
 
 
 
-.address-left image {
+.address-left .image {
   width: 30rpx;
   height: 30rpx;
   margin-top: 10rpx;
@@ -121,7 +125,7 @@
   flex-direction: row;
   justify-content: flex-end;
 }
-.expre-info image{
+.expre-info .image{
   width: 30rpx;
   height: 30rpx;
   padding-left:10rpx;
@@ -229,10 +233,6 @@
   font-size: 30rpx;
 }
 
-.total-amount {
-  color: #ff6347;
-}
-
 /** 提交支付按钮 **/
 
 .submit-container {
@@ -258,12 +258,12 @@
 }
 
 .submit-left .total-amount {
-  color: #ff6347;
+
   margin-right: 20rpx;
 }
 
 .submit-container .submit-right {
-  background: #ff6347;
+
   color: white;
   width: 35%;
   display: flex;
@@ -275,6 +275,8 @@
 .custom-infor {
   width: 100%;
   background: #fff;
+  border-top:1rpx #f2f2f2 solid;
+  margin-top: 1rpx;
 }
 
 .custom {
@@ -282,19 +284,19 @@
   font-size: 24rpx;
   background: #fff;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   padding: 25rpx 0rpx;
 
 }
 
-.custom image {
+.custom .image {
   width: 28rpx;
   height: 28rpx;
   margin-right: 20rpx;
 }
 
-.custom button {
+.custom .button {
   padding: 0rpx;
   margin: 0rpx;
   min-height: 0px;
@@ -304,9 +306,8 @@
   width: 50%;
 }
 
-.custom text {
+.custom .text {
   font-weight: bold;
-  width: 50%;
   text-align: left;
 }
 /**

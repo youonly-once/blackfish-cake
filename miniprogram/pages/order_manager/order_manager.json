@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "所有用户订单",
-  "navigationBarTextStyle":"black",
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance":0
-}

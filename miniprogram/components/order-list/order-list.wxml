@@ -1,0 +1,99 @@
+<import src="/components/foot-head/foot.wxml" />
+<view wx:if="{{orderList.length>0}}" class="order_list">
+  <view class="order_all order_show}}">
+    <block wx:for="{{orderList}}" wx:for-item="item" wx:key="order_list">
+      <view class="order_tlt flexRowBetween">
+        <view class="tlt_left">
+          <text>{{item.createDate}}</text>
+        </view>
+        <view class="tlt_right color_main" style="color:gray;" wx:if="{{item.status==0}}">已取消</view>
+        <view class="tlt_right color_main" wx:if="{{item.status==1}}">待支付</view>
+        <view class="tlt_right color_main" wx:if="{{item.status==2}}">{{item.deliverWay==1?'待送货':'待取货'}}</view>
+        <view class="tlt_right color_main" wx:if="{{item.status==3}}">待收货</view>
+        <view class="tlt_right color_main" wx:if="{{item.status==4}}">待评价</view>
+        <view class="tlt_right color_main" wx:if="{{item.status==5}}">已完成</view>
+        <view class="tlt_right color_main" style="color:rgb(220, 87, 18);" wx:if="{{item.status==6}}">已申请退款</view>
+        <view class="tlt_right color_main" style="color:rgb(220, 87, 18);" wx:if="{{item.status==7}}">退款中</view>
+        <view class="tlt_right color_main" style="color:gray;" wx:if="{{item.status==8}}">已退款</view>
+      </view>
+      <view class="same_stroe" wx:for="{{item.goods}}" wx:for-item="good" wx:for-index="index" wx:key="order_list_goods">
+        <view class="flexRowBetween orderlistShow" bindtap="gotoOrderDetail" data-id="{{item._id}}">
+          <view class="order_left">
+            <image class="image" src="{{good.cakeImage}}" wx:if="{{good.cakeImage}}" mode="aspectFill"></image>
+          </view>
+          <view class="order_name">
+            <view>
+              <view class="text1">{{good.cakeName}}</view>
+              <text class="order_type">{{item.cakeSize}} {{good.style}}</text>
+            </view>
+            <view class="orders flexRowBetween">
+              <text class="order_price color_main">¥{{good.singlePrice}}</text>
+              <text class="order_number">x{{good.buyCount}}</text>
+            </view>
+            <view class="total_order flexRowBetween" wx:if="{{item.goods.length<=1}}">
+              <view class="total_money">
+                <text style="color: black;">合计:</text>
+                <text class="text2 color_main">¥{{item.payPrice/100}}.00</text>
+              </view>
+              <view class="user_discount" wx:if="{{item.delivPrice!=0 || item.discount!=0}}">
+                （
+              </view>
+              <view class="user_discount" wx:if="{{item.delivPrice!=0}}">
+                配送：¥{{item.delivPrice}}
+              </view>
+              <view class="user_discount" wx:if="{{item.discount!=0}}">
+                优惠：-{{item.discount}}
+              </view>
+              <view class="user_discount" wx:if="{{item.delivPrice!=0 || item.discount!=0}}">
+                ）
+              </view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{item.goods.length>1}}" style="align-items:center;display:flex;flex-direction:Row;justify-content:flex-end;background:#FFF;padding:20rpx;font-size:28rpx;">
+        <view class="total_money">
+          <text style="color: black;">合计:</text>
+          <text class="text2">¥{{item.payPrice/100}}</text>
+        </view>
+        <view class="user_discount" wx:if="{{item.delivPrice!=0 || item.discount!=0}}">
+          （
+        </view>
+        <view class="user_discount" wx:if="{{item.delivPrice!=0}}">
+          配送：¥{{item.delivPrice}}
+        </view>
+        <view class="user_discount" wx:if="{{item.discount!=0}}">
+          优惠：-{{item.discount}}
+        </view>
+        <view class="user_discount" wx:if="{{item.delivPrice!=0 || item.discount!=0}}">
+          ）
+        </view>
+
+      </view>
+      <view class="handle flexRowBetween" wx:if="{{item.status!=0}}">
+        <view style="font-size:24rpx;" wx:if="{{!isAdmin}}">{{item.status==1?paymentCountdown[index]:''}}</view>
+        <view style="font-size:24rpx;" wx:if="{{isAdmin}}">用户：
+          <open-data type="userNickName" lang="zh_CN"></open-data>
+        </view>
+
+        <view class="handle_order">
+          <view class="flexRowEnd">
+            <view class="handle_orders delete_order" wx:if="{{item.status<=1}}" bindtap="isCancelOrder" data-id="{{item._id}}" data-status="{{item.status}}">取消订单</view>
+            <!--<view class="handle_orders delete_order"  bindtap="isCancelOrder" data-id="{{item._id}}" data-status="{{item.status}}">{{item.status>=2?(item.status==6?'退款详情':'申请退款'):'取消订单'}}</view>-->
+            <!--<view class="handle_orders comment_order  main_bg" bindtap="commentOrder" wx:if="{{item.status==0}}">已取消</view>-->
+            <view class="handle_orders comment_order main_bg" bindtap="gotoOrderDetail" wx:if="{{item.status==1}}" data-id="{{item._id}}">去付款</view>
+            <view class="handle_orders comment_order  main_bg" bindtap="gotoOrderDetail" wx:if="{{item.status==2}}" data-id="{{item._id}}">{{item.deliverWay==1?'提醒发货':'待取货'}}</view>
+            <view class="handle_orders comment_order  main_bg" bindtap="gotoOrderDetail" wx:if="{{item.status==3}}" data-id="{{item._id}}">验收</view>
+            <view class="handle_orders comment_order main_bg" bindtap="gotoOrderDetail" wx:if="{{item.status==4}}" data-id="{{item._id}}">去评价</view>
+            <view class="handle_orders comment_order  main_bg" bindtap="gotoOrderDetail" wx:if="{{item.status>=6}}" data-id="{{item._id}}">退款详情</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<mp-loading type="circle" show="{{loadMoreShow}}"></mp-loading>
+<no-content-tip isShow="{{isNoContent}}"></no-content-tip>
+<view class="noMore" wx:if="{{noMore}}">没有更多了 </view>
+<template is="foot" wx:if="{{!loadMoreShow}}" />

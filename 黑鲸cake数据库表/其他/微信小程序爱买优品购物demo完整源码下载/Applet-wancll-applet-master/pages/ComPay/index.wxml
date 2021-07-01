@@ -1,0 +1,44 @@
+<view>
+  <zan-panel>
+    <view class="wancll-bg-white wancll-padded-10">
+      <view class="wancll-font-size-14">订单号：{{orderNo}}</view>
+      <view class="wancll-margin-t-10 wancll-font-size-14">订单金额：
+        <text class='money  wancll-text-price'>
+        <text class="wancll-font-size-10">￥</text>{{orderMoney}}</text>
+      </view>
+    </view>
+  </zan-panel>
+</view>
+<view class="wancll-bg-white wancll-padded-5 wancll-margin-t-10 wancll-margin-b-10">
+  <view class="wancll-flex" bindtap='handleSelectChange' data-paytype="1">
+    <i class="wancll-padded-10 iconfont icon-yue" style="font-size:50rpx;color: #eb661b;"></i>
+    <text class="wancll-col-xs-9 wancll-margin-l-10 wancll-font-size-16">余额支付</text>
+    <i class="iconfont icon-roundcheckfill wancll-font-size-18 wancll-text-info" wx:if="{{payType == 1}}"></i>
+    <i class="iconfont icon-roundcheckfill wancll-font-size-18" style="color:rgb(204, 204, 204);" wx:else></i>
+  </view>
+
+  <view class="wancll-flex" bindtap='handleSelectChange' data-paytype="2">
+    <i class="wancll-padded-10 iconfont icon-weixinzhifu" style="font-size:50rpx;color:#09bb07;"></i>
+    <text class="wancll-col-xs-9 wancll-margin-l-10 wancll-font-size-16">微信支付</text>
+    <i class="iconfont icon-roundcheckfill wancll-font-size-18 wancll-text-info" wx:if="{{payType == 2}}"></i>
+    <i class="iconfont icon-roundcheckfill wancll-font-size-18" style="color:rgb(204, 204, 204);" wx:else></i>
+  </view>
+</view>
+<view class="wancll-margin-10">
+  <button class="wancll-bg-info wancll-text-white" catchtap='payMoney'>确认付款 ￥{{orderMoney}}</button>
+</view>
+
+<zan-popup show="{{ showPopup }}" bindclose="togglePopup">
+  <view class="zan-btns">
+    <view class='popup-warpper'>
+      <zan-panel>
+        <view class='title'>请输入支付密码</view>
+      </zan-panel>
+      <input bindinput='passwordInput' type='password'></input>
+      <view class='select'>
+        <zan-button class='yes' catchtap='sendMoney'> 确定 </zan-button>
+        <zan-button class='no' catchtap="togglePopup"> 取消 </zan-button>
+      </view>
+    </view>
+  </view>
+</zan-popup>

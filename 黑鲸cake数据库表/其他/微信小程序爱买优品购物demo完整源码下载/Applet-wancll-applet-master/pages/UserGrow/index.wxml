@@ -1,0 +1,37 @@
+<view class='panel'>
+  
+    <view class='user'>
+      <view class='avatar'>
+        <image src='{{user.avatar}}'></image>
+      </view>
+      <view class='info'>
+        <view class="name">{{user.nick_name || '匿名用户'}}</view>
+        <view class="other">
+          <view class='vip'>
+            <icon class='icon' type='huiyuan'></icon>
+            <text> {{user.user_level}}</text>
+          </view>
+          <view class='grow' bindtap='showGrow'>
+            <icon class='icon' type='tubiao312'></icon>
+            <text> 成长值: {{asset.score}} </text>
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+<view class='grow-warpper'>
+  <view class='title'>成长记录</view>
+  <view class='lists'>
+    <view class='list' wx:for="{{lists}}" wx:key="key">
+      <view class='left'>
+        <view>{{item.intro}}</view>
+        <view>{{item.create_time}}</view>
+      </view>
+      <view class='right'>{{item.symbol}}{{item.change_num}}</view>
+    </view>
+  </view>
+  <view wx:if="{{noContent}}" class="no-content-image">
+    <image mode="widthFix" src="{{noContentImg}}"></image>
+    <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+  </view>
+</view>

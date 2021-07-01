@@ -1,0 +1,141 @@
+<scroll-view class="bigWrap" scroll-into-view="{{list}}" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+<!-- 头部信息展示 -->
+<view class="goods">
+  <view class='goodspic' style="background-image:url('{{pic}}')">
+    <view class='likenumber'> 
+      <image class='likepic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/likepic.png'></image>{{likenum}}人喜欢</view>
+  </view>
+  <view class="sale">
+    <image class="saleBg" src="{{saleBg}}"></image>
+    <view class="saleprice">
+      <view class="nowPrice"><text> ￥{{nowPrice}}</text><text class="oldPrice">市场价:￥{{oldPrice}}</text></view>
+      <view class="fansPrice">午逅粉丝卡:￥{{fansPrice}}</view>
+    </view>
+    <view class="saleNumber">已售{{saleNumber}}份</view>
+  </view>
+  <view class="fansTip">成为午逅粉丝可节省10元
+    <view class="Tobefans"  bindtap='openCard' style='display:{{Notfans}};'>开通午逅粉丝卡
+    </view>
+  </view>
+  <view class="goodsTitle">{{Title}}</view>
+  <view class="fansDiscountLogo">
+  <image class="chooseMark" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/hook.png"></image>午逅粉丝卡优惠
+  <view id='attention'></view>
+  </view>
+
+  <!-- 下拉后显示的列表 -->
+  <view class="attention">
+    <view class="Chead attention-head"><image class="Clogo attentionLogo" src="{{attentionLogo}}"></image>注意事项</view>
+    <view class="Cintroduct attentionText">
+      <view class="Ctext attentionText">{{attentionText}}</view>
+    </view>
+    <view id='shop'></view>
+  </view>
+  <!-- 商家信息 -->
+  <view class="shop" >
+    <view class="Chead shop-head"><image class="Clogo shopLogo" src="{{shopLogo}}"></image>
+    商家信息
+    </view>
+      <view class=" Cintroduct shopTextList">
+       <view class="shopMessage" wx:for="{{shops}}" wx:key="{{shop}}"  wx:for-index="idx" wx:for-item="shop">
+          <view class="shopNumber">{{shop.title}}</view>
+          <view class="shopTime"><image class="shopPic shopTimePic" src="{{shopTimePic}}"></image>营业时间：{{shop.openTime}}~{{shop.endTime}}</view>
+          <view class="shopTelepone"  bindtap='calling'>
+            <image  class="shopPic shopTeleponePic" src="{{shopTeleponePic}}"></image>商家电话:
+            {{shop.shopTelepone}}
+            <view class="call" bindtap='calling'>拨打</view>
+          </view>
+          <view class="shopAddress" bindtap="goShop">
+            <image class="shopAddressPic" src="{{shopAddressPic}}"></image>商家地址:{{shop.shopAddress}}
+            <view class="navigation" bindtap="goShop">导航</view>
+            </view>
+          </view>
+      </view>
+      <view class='moreShop' bindtap='moreShop' style='display:{{showshop}};'>
+        展开查看更多 <image class='moreShopLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/moreShop.png'></image>
+      </view>
+      <view class='moreShop' bindtap='closeShops' style='display:{{closeshop}};'>
+        收起 <image class='moreShopLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/closeshop.png'></image> 
+      </view>
+      <view id='activity'></view>
+  </view>
+
+  <view class=" activity">
+    <view class="Chead activity-head"><image class="Clogo activityLogo" src="{{activityLogo}}"></image>活动详情</view>
+    <view class="Cintroduct goods-introduct">
+      <!-- <image class="goodsPicture" src="{{goodsPicture}}"></image> -->
+      <view class="Ctext goodsIntroduceText">减肥iOS金额记帝王将诶哦见覅危机见覅偶微积分见覅危机发见覅价位哦 见覅偶文件否王绯闻就放假哦我文件附件覅偶耳温计佛覅围殴见覅偶发为分为非方位角飞蛾飞机文绯闻就额覅我抚慰金覅我违法及文件覅we 发为抚慰金见覅危机覅
+      </view>
+    </view>
+    <view id='use'></view>
+  </view>
+  <view class="use" >
+    <view class="Chead use-head">
+      <image class="Clogo useLogo" src="{{useLogo}}"></image>
+      使用流程
+    </view>
+      <view class="Cintroduct useText">
+        <view class="Ctext useText">{{useText}}</view>
+      </view>
+  </view>
+
+  <!-- 头部定位 -->
+  <view class='topMenu' style='display:{{topMenu}};'>
+    <view class='list {{att}}' bindtap='Toattention'>
+      注意事项
+    </view>
+    <view class='list {{shop}}' bindtap='Toshop'>
+      商家信息
+    </view>
+    <view class='list {{act}}' bindtap='Toactivity'>
+      活动详情
+    </view>
+    <view class='list {{use}}' bindtap='Touse'>
+      使用流程
+    </view>
+  </view>
+  <view class="bottomMenu">
+      <view class='menuselect'>
+        <view class="freedom" bindtap="Tofreedom">
+          <image class="freedompic" bindtap="Tofreedom" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomBar.png"></image> 
+          <text bindtap="Tofreedom">首页</text> 
+        </view>
+        <view id="customerS" bindtap='serviceTc' >
+          <image class="customerSpic" bindtap='serviceTc' src="{{customerSpic}}"></image>
+          <text>客服</text>
+          <!-- <button open-type="contact" ></button>   -->
+        </view>
+        <view class="menu" switchTab="Tomenu">
+          <image class="menupic" bindtap='Tomenu' src="{{menupic}}"></image>
+          <text bindtap='Tomenu'>订单</text>
+        </view>
+      </view>
+      <view bindtap='ToSingup' class="kind orange" >
+        <text style='display:{{signup}}'>立即报名</text> 
+        <text style='display:{{paynow}}'>{{kindState}}| 剩{{stayNumber}}份</text> 
+      </view>
+     <!-- <view bindtap='ToPaynow' class='kind orange' style='dispaly:{{paynow}}'>
+      {{kindState}}| 剩{{stayNumber}}份
+    </view>  -->
+    <!-- <view class='kind grey'>
+      {{kindState}}
+    </view> -->
+  </view>
+</view>
+
+<!-- 没有粉丝卡需要购买粉丝卡后使用 -->
+  <view class='nofansTip' style='display:{{servicetc}}'>
+    <view class='fansdiv'>
+      <image class='nofanslogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/nofanslogo.png'></image>
+      <view class='cannotjoin'>无法参与活动</view>
+      <view class='cannotjointip'>此活动为午逅粉丝卡专属活动</view>
+      <view class='cannotreason'>
+        您未有<text class='red'>粉丝卡</text>,需要先购买才能参加
+      </view>
+      <view class='buybtn'>马上购买</view>
+    </view>
+    <view class='close'>
+      <image bindtap='closetc' class='close' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/serviceClose.png'></image>
+    </view>
+  </view>
+</scroll-view>

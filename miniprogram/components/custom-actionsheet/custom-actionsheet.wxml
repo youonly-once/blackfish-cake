@@ -1,0 +1,14 @@
+<action-sheet actionShow="{{actionShow}}" closeText="关闭" bind:actionHide="onActionHide">
+  <!-- slot ActionSheet 菜单项 只能是button 或 navigator -->
+  <!--<navigator url="/pages/index/index">我是navigator: 回首页</navigator>-->
+  <button open-type="contact" class="custom"  
+  send-message-title="{sendMessageTitle}}"          send-message-path="sendMessagePath}}"
+   show-message-card="{{showMessageCard}}">
+    <image class="image" src="/images/wechat-logo.png"></image>
+    <text>在线客服</text>
+  </button>
+  <button bindtap="call_custom" class="custom">
+    <image class="image" src="/images/call.png"></image>
+    <text>电话客服</text>
+  </button>
+</action-sheet>

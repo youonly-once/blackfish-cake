@@ -1,0 +1,55 @@
+<view class="content">
+  <view class='ali'>
+    <zan-panel>
+      <zan-panel>
+        <view class='item'>
+          <zan-row>
+            <zan-col col="22" col-class="left">
+              <view wx:if="{{ali.id}}">
+                {{ali.account}} ({{ali.name}})
+              </view>
+              <view wx:else>未绑定</view>
+            </zan-col>
+            <zan-col col="2" col-class="right">
+              <icon class='icon icon-ali' type="zhifubao"></icon>
+            </zan-col>
+          </zan-row>
+        </view>
+      </zan-panel>
+      <zan-panel hide-border="{{ true }}">
+        <view class='bind' bindtap='bindAliAccunt'>
+          <icon class='icon' type="icon-"></icon>
+          <text wx:if="{{ali.id}}"> 更新</text>
+          <text wx:else> 未绑定</text>
+        </view>
+      </zan-panel>
+    </zan-panel>
+  </view>
+  <view class='wx'>
+    <zan-panel>
+      <view class='item'>
+        <zan-row>
+          <zan-col col="15" col-class="left">
+            <view wx:if="{{wx.id}}">已绑定</view>
+            <view wx:else>未绑定</view>
+          </zan-col>
+          <zan-col col="9" col-class="right">
+            <icon class='icon icon-wx' type="weixinzhifu"></icon>
+          </zan-col>
+        </zan-row>
+      </view>
+    </zan-panel>
+    <zan-panel hide-border="{{ true }}">
+      <view class='bind' bindtap='bindWeiChartAccunt'>
+        <icon class='icon' type="icon-"></icon>
+        <text wx:if="{{wx.id}}"> 更新</text> 
+        <text wx:else> 未绑定</text>
+      </view>
+    </zan-panel>
+  </view>
+</view>
+
+<modal hidden="{{hidden}}" title="输入支付宝账号" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+  <input value='{{account}}' class='m-input' bindinput='bindAccunt' placeholder="账户/手机/邮箱"></input>
+  <input value='{{name}}' class='m-input' bindinput='bindName' placeholder="真实姓名"></input>
+</modal>

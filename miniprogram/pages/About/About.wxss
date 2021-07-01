@@ -1,0 +1,36 @@
+/* miniprogram/pages/About/About.wxss */
+.about{
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 20rpx;
+  overflow-x: hidden;
+}
+.infor{
+  padding: 20rpx;
+}
+.infor image{
+  height:160rpx;
+  width: 160rpx
+}
+.title{
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  font-size: 28rpx;
+  color: black;
+  font-weight: bold;
+}
+.content{
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: gray;
+}
+.name{
+  padding: 0rpx 20rpx;
+  font-size: 24rpx;
+  color: black;
+  font-weight: bold;
+}
+.border{
+  width:100%;
+  border-top: 1px solid #F8F8F8;
+  margin-left:20rpx;
+}

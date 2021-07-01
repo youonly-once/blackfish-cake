@@ -1,0 +1,32 @@
+.item{
+  padding: 10px;
+}
+.item .left{
+  text-align: left;
+}
+.item .right{
+  text-align: right;
+}
+.bind{
+  padding: 10px;
+  color: #777
+}
+.icon{
+  font-size: 14px;
+}
+.icon-ali{
+  color: rgb(0, 170, 238);
+}
+.icon-wx{
+  color: rgb(9, 187, 7);
+}
+.ali{
+  margin-bottom: 10px;
+}
+.m-input{
+  background: #fafafa;
+  border:1px solid #eee;
+  margin-bottom: 10px;
+  font-size: 12px;
+  padding: 5px;
+}

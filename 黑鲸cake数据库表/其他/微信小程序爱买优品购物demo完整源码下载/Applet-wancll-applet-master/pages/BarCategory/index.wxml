@@ -1,0 +1,33 @@
+<view>
+  <zan-tab id="tab" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" scroll="{{ tabScroll }}" height="{{ tabHeight }}" bindtap='tabChange' fixed/>
+  <!-- 弹出的 -->
+  <view class='popup-nav' wx:if="{{popupNav}}">
+    <view class='list' wx:for="{{childNav}}" wx:key="{{index}}" bindtap='changeSubNav' data-id='{{item.id}}'>
+      <view class='image'>
+        <image src="{{item.thum}}"></image>
+      </view>
+      <view class='text'>{{item.name}}</view>
+    </view>
+  </view>
+
+  <view class='goods-list wancll-padded-3 wancll-bg-pray'>
+    <view class='goods wancll-bg-pray' bindtap='goDetail' data-id='{{item.id}}' wx:for="{{goods}}" wx:key="index">
+      <view class='wancll-padded-3 wancll-bg-pray'>
+        <view class='image'>
+          <image mode="widthFix" class="wancll-col-xs-12" src='{{item.thum}}'></image>
+        </view>
+        <image wx:if="{{item.stock == 0}}" class="no-stock" src="{{noStockImage}}" mode='widthFix'></image>
+        <view class='info wancll-bg-white'>
+          <view class='wancll-padded-t-10 wancll-padded-r-10 wancll-padded-l-10 wancll-ellipsis-2'>{{item.name}}</view>
+          <view class='wancll-padded-10 wancll-text-price'>
+            <text class="wancll-font-size-10">￥</text>{{item.sell_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{FPage.noContent}}" class="no-content-image">
+    <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+    <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+  </view>
+</view>

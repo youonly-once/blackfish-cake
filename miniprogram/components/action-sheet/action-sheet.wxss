@@ -1,0 +1,101 @@
+
+.wx-actionsheet_mask{
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+ /* background: rgba(0,0,0,.5);  */
+  overflow: hidden;  
+}
+.wx-actionsheet_transparent{
+  background: rgba(0,0,0,0);
+}
+.wx-actionsheet_main{
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  z-index: 1001;
+  overflow: hidden;
+}
+.wx-actionsheet_main button,
+.wx-actionsheet_main navigator,
+.wx-actionsheet_close {
+  text-align: center;
+  background: #FFF;
+  border-radius: 0;
+  line-height: 3;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ECECEC;
+  font-family:  Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin: 0rpx;
+  font-weight:400;
+}
+.wx-actionsheet_main button::after{
+  border: none;
+  border-radius: 0;
+}
+.wx-actionsheet_close{
+  border-bottom: none;
+  border-top: 4px solid #ECECEC;
+}
+
+
+
+.wx-actionsheet_animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+
+@keyframes showAction {
+from{
+   transform: translate3d(0, 0, 0);
+ }
+  to {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+.wx-actionsheet_showActionBG {
+  animation-name: showActionBG;
+  animation-duration: 0.5s;
+}
+@keyframes showActionBG {
+from{
+   background: rgba(0,0,0,0);
+ }
+  to {
+    background: rgba(0,0,0,.5);  
+  }
+}
+.wx-actionsheet_hideActionBG {
+  animation-name: hideActionBG;
+  animation-duration: 0.5s;
+}
+@keyframes hideActionBG {
+from{
+  background: rgba(0,0,0,.5); 
+   
+ }
+  to {
+     background: rgba(0,0,0,0);
+  }
+}
+.wx-actionsheet_showAction {
+  animation-name: showAction;
+  animation-duration: 0.5s;
+}
+@keyframes hideAction {
+from{
+   transform: translate3d(0, -100%, 0);
+ }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+.wx-actionsheet_hideAction {
+  animation-name: hideAction;
+  animation-duration: 0.5s;
+}

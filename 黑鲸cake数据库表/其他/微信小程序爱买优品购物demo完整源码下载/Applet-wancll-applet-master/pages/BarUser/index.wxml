@@ -1,0 +1,148 @@
+<view class='panel'>
+  <zan-panel>
+    <view class='user'>
+      <view class='avatar'>
+        <image src="{{user.avatar}}"></image>
+      </view>
+      <view class='info'>
+        <view class="name">{{user.nick_name || '匿名用户'}}</view>
+        <view class="phone">
+          <icon class='icon' type='shouji'></icon>
+          <text> {{user.mobile}}</text>
+        </view>
+        <view class="other">
+          <view class='vip'>
+            <icon class='icon' type='huiyuan'></icon><text> {{user.user_level}}</text>
+          </view>
+          <view class='grow' bindtap='showGrow'>
+            <icon class='icon' type='tubiao312'></icon> 
+            <text> 成长值: {{asset.score}} </text>
+            <icon class='icon' type='xiangyou1'></icon> 
+          </view>
+        </view>
+      </view>
+      <view class='setting' bindtap='settingInfo'>
+        <icon class='icon' type='shezhi-xue'></icon>
+      </view>
+    </view>
+  </zan-panel>
+</view>
+<view class='panel'>
+  <zan-panel>
+    <zan-cell-group>
+      <zan-cell title="我的订单" value="查看全部订单" is-link catchtap='goOrderList' data-target="0">
+      </zan-cell>
+      <zan-panel>
+        <view class='pending-list'>
+          <view class='pending pending-order' catchtap='goOrderList' data-target="1">
+            <view class='icon-badge'>
+              <zan-badge wx:if="{{count.wait_pay_num}}">{{count.wait_pay_num}}</zan-badge>
+              <icon class='icon' type="daifukuan"></icon>
+            </view>
+            <view class='text'>待付款</view>
+          </view>
+          <view class='pending pending-order' catchtap='goOrderList' data-target="2">
+            <view class='icon-badge'>
+              <zan-badge wx:if="{{count.wait_ship_num}}">{{count.wait_ship_num}}</zan-badge>
+              <icon class='icon' type="daifahuo"></icon>
+            </view>
+            <view class='text'>待发货</view>
+          </view>
+          <view class='pending pending-order' catchtap='goOrderList' data-target="3">
+            <view class='icon-badge'>
+              <zan-badge wx:if="{{count.wait_finish_num}}">{{count.wait_finish_num}}</zan-badge>
+              <icon class='icon' type="yifahuo"></icon>
+            </view>
+            <view class='text'>待收货</view>
+          </view>
+          <view class='pending pending-order' catchtap='goOrderList' data-target="4">
+            <view class='icon-badge'>
+              <zan-badge wx:if="{{count.wait_comment_num}}">{{count.wait_comment_num}}</zan-badge>
+              <icon class='icon' type="daipingjia"></icon>
+            </view>
+            <view class='text'>待评价</view>
+          </view>
+          <view class='pending pending-order' catchtap='goSubPages' data-target="UserService">
+            <view class='icon-badge'>
+              <zan-badge wx:if="{{count.return_goods_num}}">{{count.return_goods_num}}</zan-badge>
+              <icon class='icon' type="shouhou"></icon>
+            </view>
+            <view class='text'>售后服务</view>
+          </view>
+        </view>
+      </zan-panel>
+    </zan-cell-group>
+  </zan-panel>
+</view>
+
+<view class='panel'>
+  <zan-panel>
+    <zan-cell-group>
+      <zan-cell title="我的服务"></zan-cell>
+      <zan-panel>
+        <view class='pending-list'>
+          <view class='pending' catchtap='goSubPages' data-target="UserCollect">
+            <icon class='icon color-y' type="star"></icon>
+            <view class='text'>我的收藏</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserAddress">
+            <icon class='icon color-y' type="dizhi-01"></icon>
+            <view class='text'>我的地址</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserComment">
+            <icon class='icon color-r' type="dingdan1"></icon>
+            <view class='text'>我的评价</view>
+          </view>
+        </view>
+      </zan-panel>
+      <zan-panel hide-border="{{true}}">
+        <view class='pending-list'>
+          <view class='pending' catchtap='auth'>
+            <icon class='icon color-r' type="shimingrenzheng1"></icon>
+            <view class='text'>实名认证</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserWallet">
+            <icon class='icon color-y' type="qianbao"></icon>
+            <view class='text'>我的钱包</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserCard">
+            <icon class='icon color-r' type="yinhangqia"></icon>
+            <view class='text'>我的银行卡</view>
+          </view>
+        </view>
+      </zan-panel>
+      <zan-panel>
+        <view class='pending-list'>
+          <view class='pending' catchtap='goCarts' data-target="BarCarts">
+            <icon class='icon color-r' type="gouwuche2"></icon>
+            <view class='text'>购物车</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserCoupon">
+            <icon class='icon color-y' type="youhuiquan"></icon>
+            <view class='text'>优惠券</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserQRCode" wx:if="{{is_open_bonus||is_open_drp}}">
+            <icon class='icon color-y' type="qr-code"></icon>
+            <view class='text'>我的二维码</view>
+          </view>
+        </view>
+      </zan-panel>
+      <zan-panel hide-border="{{true}}" wx:if="{{is_open_bonus||is_open_drp}}">
+        <view class='pending-list'>
+          <view class='pending' catchtap='goSubPages' data-target="UserDRCenter" wx:if="{{is_open_drp}}">
+            <icon class='icon color-r' type="daifahuo"></icon>
+            <view class='text'>分销中心</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserDBCenter" wx:if="{{is_open_bonus}}">
+            <icon class='icon color-y' type="shouhou"></icon>
+            <view class='text'>分红中心</view>
+          </view>
+          <view class='pending' catchtap='goSubPages' data-target="UserRecAccunt" wx:if="{{is_open_bonus || is_open_drp}}">
+            <icon class='icon color-r' type="qianbao1"></icon>
+            <view class='text'>收款账户</view>
+          </view>
+        </view>
+      </zan-panel>
+    </zan-cell-group>
+  </zan-panel>
+</view>

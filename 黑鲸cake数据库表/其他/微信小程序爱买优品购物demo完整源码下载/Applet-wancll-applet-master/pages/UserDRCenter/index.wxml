@@ -1,0 +1,52 @@
+<view class='content'>
+  <image class="bg-image" src="{{bgImg}}" mode='widthFix'></image>
+  <view class='info-box'>
+    <view class='user-info'>
+      <view class='avatar-box'>
+        <image class="avatar" src="{{user.avatar}}" mode='widthFix'></image>
+      </view>
+      <view class='name'>{{user.nick_name?user.nick_name:'匿名用户'}}</view>
+      <view class='name'>{{drpData.level_name}}</view>
+      <view class='name'>{{user.create_time}}</view>
+    </view>
+    <view class='moneys'>
+      <view class='money bonus-money'>
+        <view class='number'>{{drpData.total_money}}</view>
+        <view class='text'>累计佣金</view>
+        <zan-button size='small' type='info' bindbtnclick="goSubPage"  data-target="Wallet">进入</zan-button>
+      </view>
+      <view class='money pay-money'>
+        <view class='number'>{{drpData.can_drawcash_money}}</view>
+        <view class='text'>可提现佣金</view>
+        <zan-button size='small' type='info' bindbtnclick="goSubPage" data-target="Apply">提现</zan-button>
+      </view>
+    </view>
+    <view class='selects-subpage'>
+      <view class='subpage' bindtap="goSubPage" data-target="Wallet">
+        <icon class='icon icon-r' type='qianbao1'></icon>
+        <view class='text'>分销佣金</view>
+        <view class='other'>{{drpData.total_money}}</view>
+      </view>
+      <view class='subpage' bindtap="goSubPage" data-target="Order">
+        <icon class='icon icon-r' type='chengjiaodingdan'></icon>
+        <view class='text'>分销订单</view>
+        <view class='other'>{{drpData.order_num}}个</view>
+      </view>
+      <view class='subpage' bindtap="goSubPage" data-target="Detail">
+        <icon class='icon icon-r' type='icon_gongzimingxi'></icon>
+        <view class='text'>佣金明细</view>
+        <view class='other'>佣金明细</view>
+      </view>
+      <view class='subpage' bindtap="goSubPage" data-target="Custs">
+        <icon class='icon icon-b' type='huiyuan1'></icon>
+        <view class='text'>我的客户</view>
+        <view class='other'>{{drpData.child_user_num}}个</view>
+      </view>
+      <view class='subpage' bindtap="goSubPage" data-target="Team">
+        <icon class='icon icon-b' type='tubiao-'></icon>
+        <view class='text'>我的团队</view>
+        <view class='other'>{{drpData.team_user_num}}个</view>
+      </view>
+    </view>
+  </view>
+</view>

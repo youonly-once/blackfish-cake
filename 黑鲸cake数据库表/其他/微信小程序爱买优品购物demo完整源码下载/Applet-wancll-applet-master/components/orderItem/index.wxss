@@ -1,0 +1,85 @@
+/* components/orderItem/index.wxss */
+.item{
+  margin-bottom: 20rpx;
+}
+.item .item-content{
+  padding: 10px;
+  background: #fff;
+}
+.top-info{
+  display: flex;
+  height: 50rpx;
+  /* line-height: 60rpx; */
+}
+.top-info .left{
+  flex:1;
+  text-align: left;
+}
+.top-info .right{
+  flex: 100px 0 0;
+  text-align: right;
+}
+.center-info{
+  background: #fafafa;
+  padding: 10rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.center-info .image-warpper{
+  width: 25%;
+}
+.center-info .image{
+  width: 160rpx;
+  height: 160rpx;
+  background: #ccc;
+  display: block;
+}
+.center-info .title-warpper{
+  width: 55%;
+}
+.center-info .title-warpper .title{
+  width: 100%;
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  margin-bottom: 5rpx;
+}
+.center-info .title-warpper .sku{
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #999;
+}
+.center-info .price-warpper{
+  width: 20%;
+  text-align: right;
+}
+.center-info .price-warpper .price{
+  height: 70rpx;
+  margin-bottom: 5rpx;
+}
+.center-info .price-warpper .price .real_price{
+  color: #df0303;
+}
+.center-info .price-warpper .price .sell_price{
+  text-decoration: line-through;
+  color: #999;
+} 
+.center-info .price-warpper .count{
+  height: 40rpx;
+  line-height: 1;
+}
+
+.bottom-info .all-price{
+  line-height: 70rpx;
+  text-align: right;
+}
+.bottom-info .all-price .text-price{
+  color: #df0303;
+}
+.bottom-info .click-button{
+  text-align: right;
+}
+.bottom-info .click-button .zan-button{
+  margin-left: 20rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+    "usingComponents": {
+      "action-sheet": "../components/action-sheet/action-sheet"
+    }
+}

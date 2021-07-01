@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "usingComponents": {
+    "zan-tab": "../../dist/tab/index",
+    "zan-icon": "../../dist/icon/index",
+    "order-item": "../../components/orderItem/index"
+  },
+  "enablePullDownRefresh": true
+}

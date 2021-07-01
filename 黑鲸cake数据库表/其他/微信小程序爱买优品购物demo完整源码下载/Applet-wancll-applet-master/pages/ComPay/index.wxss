@@ -1,0 +1,24 @@
+.popup-warpper{
+  width: 600rpx;
+  background: #fff;
+}
+.popup-warpper .title{
+  padding: 15px;
+  font-size: 30rpx;
+  text-align: center;
+}
+.popup-warpper input{
+  width: 80%;
+  margin: 0 auto;
+  height: 100rpx;
+  text-align: center;
+}
+.popup-warpper .select{
+  display: flex;
+}
+.popup-warpper .select .yes{
+  flex: 1;
+}
+.popup-warpper .select .no{
+    flex: 1;
+}

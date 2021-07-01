@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "订单退款",
+    "navigationBarTextStyle": "black",
+   "component": true,
+    "usingComponents": {
+      "mp-cells": "../components/wei-ui/cells/cells",
+      "mp-cell": "../components/wei-ui/cell/cell",
+      "mp-form": "../components/wei-ui/form/form",
+      "show-cake": "../components/ShowCake/ShowCake",
+      "zan-badge": "../components/badge/index",
+      "button-center-bottom": "../components/button-center-bottom/button-center-bottom"
+      
+    }
+}

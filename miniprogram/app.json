@@ -1,29 +1,24 @@
 {
   "pages": [
-    "pages/home/scroll-view",
-    "pages/order_refund/refund_detail/refund_detail",
-    "pages/order_refund/order_refund",
-    
-    "pages/order/order_detail/order_detail",
-    "pages/order_manager/order_manager",
-    "pages/order_manager/order_detail_manager/order_detail_manager",
-    "pages/text/text",
-    "pages/order/order",
-    "pages/cart/cart",
-    "pages/manageAddress/manageAddress",
-    "pages/newAddress/newAddress",
-    "pages/cake_detail/cake_detail",
-    "pages/home/index/index",
-    "pages/category/index/index",
-    "pages/category/goods_detail/goods_detail",
-    "pages/cart/index/index",
-    "pages/cart/confirmation_order/confirmation_order",
-    "pages/personal/index/index",
-    "pages/User/user",
-    "pages/userInfo/userInfo",
-    "pages/discount/discount",
-    
-    "pages/commentOrder/commentOrder"
+     "pages/Index/index",
+    "pages/Home/Home",
+    "pages/CakeDetail/CakeDetail",
+    "pages/Cart/Cart",
+    "pages/OrderCreate/OrderCreate",
+    "pages/Order/Order",
+    "pages/Order/OrderDetail/OrderDetail",
+    "pages/OrderManager/OrderManager",
+    "pages/OrderManager/OrderDetailManager/OrderDetailManager",
+    "pages/OrderRefund/OrderRefund",
+    "pages/OrderRefund/RefundDetail/RefundDetail",
+    "pages/OrderComment/OrderComment",
+    "pages/User/User",
+    "pages/UserInfor/UserInfor",
+    "pages/UserAddress/UserAddress",
+    "pages/UserAddressNew/UserAddressNew",
+    "pages/UserCoupon/UserCoupon",
+    "pages/About/About",
+    "pages/Login/Login"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -39,21 +34,21 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/home/scroll-view",
-        "iconPath": "/images/home.png",
-        "selectedIconPath": "/images/select-home.png",
+        "pagePath": "pages/Index/index",
+        "iconPath": "/images/tabbar/home.png",
+        "selectedIconPath": "/images/tabbar/home_yellow.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/cart/cart",
-        "iconPath": "images/cart.png",
-        "selectedIconPath": "images/select-cart.png",
+        "pagePath": "pages/Cart/Cart",
+        "iconPath": "images/tabbar/cart.png",
+        "selectedIconPath": "images/tabbar/cart_yellow.png",
         "text": "购物车"
       },
       {
-        "pagePath": "pages/User/user",
-        "iconPath": "images/me.png",
-        "selectedIconPath": "images/select-me.png",
+        "pagePath": "pages/User/User",
+        "iconPath": "images/tabbar/mine.png",
+        "selectedIconPath": "images/tabbar/mine_yellow.png",
         "text": "我的"
       }
     ]

@@ -1,0 +1,90 @@
+.pop-example__container {
+  overflow: hidden;
+  background: #f6f6f6;
+}
+
+.pop-example__container--bottom {
+  width: 100vw;
+}
+
+.pop-example__container--left,
+.pop-example__container--right {
+  height: 100vh;
+}
+.order-address{
+  margin-bottom: 10px;
+}
+.item-list{
+  margin-bottom: 10px;
+}
+.top-close{
+  font-size: 28rpx;
+  padding: 10px;
+}
+.top-close .icon{
+  font-size: 28rpx;
+  float: right;
+}
+.item-content{
+  padding: 10px;
+  background: #fff;
+}
+.center-info{
+  background: #fafafa;
+  padding: 10rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.center-info .image-warpper{
+  flex: 180rpx 0 0;  
+}
+.center-info .image{
+  width: 160rpx;
+  height: 160rpx;
+  background: #ccc;
+  display: block;
+}
+.center-info .title-warpper{
+  flex: 1;
+}
+
+.center-info .title-warpper .price-warpper{
+  display: flex;
+}
+.center-info .title-warpper .price-warpper .price{
+  flex: 1;
+}
+.center-info .title-warpper .price-warpper .count{
+  flex: 1;
+  justify-content: flex-end;
+}
+.other-price{
+  display: block;
+  background: #fff;
+}
+.other-price .panel{
+  padding: 10px;
+}
+.other-price .panel .discont{
+  float: right;
+}
+.total-box{
+  background: #fff;
+  text-align: right;
+  margin-bottom: 10px;
+}
+.total-box .total{
+  font-size: 20px;
+  padding: 10px;
+}
+.memo{
+  display: flex;
+  padding: 10px;
+}
+.memo .title{
+  flex: 150rpx 0 0;
+}
+.memo .content{
+  flex: 1;
+  height: 100px;
+}

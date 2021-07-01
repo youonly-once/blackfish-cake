@@ -1,0 +1,11 @@
+
+.info{
+  height: 280rpx;
+  padding: 50px 0 0 50px;
+  background: linear-gradient(to right, #2c94e8, #1b80d0, #1276c5);
+  color: #fff;
+  font-size: 40rpx;
+}
+.info .money{
+  font-size: 50rpx;
+}

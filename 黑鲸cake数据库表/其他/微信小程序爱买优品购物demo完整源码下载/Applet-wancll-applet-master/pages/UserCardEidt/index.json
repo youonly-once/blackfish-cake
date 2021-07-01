@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "编辑银行卡",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-loading": "../../dist/loading/index",
+    "zan-button":"../../dist/btn/index"
+  }
+}

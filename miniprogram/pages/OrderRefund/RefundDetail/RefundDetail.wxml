@@ -1,0 +1,63 @@
+<view style="{{showContent?'':'display:none'}}">
+<refund-status id="refund-status" status="{{orderInfors.status}}" out_refund_no="{{orderInfors.out_refund_no}}" refundData="{{orderInfors.refundData}}"></refund-status>
+<view style="margin:20rpx;">
+  <view class="infor-title">退款信息</view>
+  <view class="refund-infor">
+    <view class="infor-item flexRowBetween">
+      <view class="refund-price" >退款金额</view>
+      <view class="refund-price color_main">¥{{orderInfors. refundData.refundPrice}}.00</view>
+    </view>
+    <view class="infor-item flexRowBetween">
+      <view class="infor-content-name">退款方式</view>
+      <view class="infor-content-value">原路返还</view>
+    </view>
+    <view class="flexColumnBetween">
+      <view class="infor-item flexRowBetween" style="padding:0rpx;">
+        <view class="infor-content-name">退款原因</view>
+        <view class="infor-content-value">{{orderInfors. refundData.reason}}</view>
+      </view>
+      <view class="detail-reason">{{orderInfors. refundData.detailReason}}</view>
+    </view>
+
+    <view class='padding' wx:if="{{orderInfors. refundData.refundImg.length}}">
+      <view class="infor-content-name">凭证：</view>
+      <view class='image-input'>
+        <view class='image-list'  wx:for="{{orderInfors. refundData.refundImg}}" wx:key="key">
+          <view class='add-image' catchtap='previewImage' data-id='{{index}}' >
+            <image class='up-img' src="{{item}}" mode="aspectFill" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="infor-title">商品信息</view>
+  <view style="border-radius:20rpx;padding:20rpx;background:#FFF;" >
+    <show-cake cakes="{{orderInfors.goods}}" > </show-cake>
+  </view>
+
+   <view class="infor-title"></view>
+  <view class="refund-infor" wx:if="{{orderInfors. refundData.refundCreateDate}}">
+     <view class="infor-item flexRowBetween" wx:if="{{orderInfors.out_refund_no}}">
+      <view class="infor-content-name">服务单号</view>
+      <view class="infor-content-value">{{orderInfors.out_refund_no}}</view>
+    </view>
+      <view class="infor-item flexRowBetween" wx:if="{{orderInfors.refundData.refundCreateDate}}">
+      <view class="infor-content-name">申请时间</view>
+      <view class="infor-content-value">{{orderInfors. refundData.refundCreateDate}}</view>
+    </view>
+      <view class="infor-item flexRowBetween" wx:if="{{orderInfors. refundData.refundConfirmDate}}">
+      <view class="infor-content-name">审核时间</view>
+      <view class="infor-content-value">{{orderInfors. refundData.refundConfirmDate}}</view>
+    </view>
+     <view class="infor-item flexRowBetween" wx:if="{{orderInfors. refundData.refundSuccessDate}}">
+      <view class="infor-content-name">退款时间</view>
+      <view class="infor-content-value">{{orderInfors. refundData.refundSuccessDate}}</view>
+    </view>
+  </view>
+  <button-center-bottom title="商家确认退款" wx:if="{{isAdmin && orderInfors.status==6}}" bindtap="isRefundOrder"></button-center-bottom>
+</view>
+</view>
+<no-content-tip isShow="{{noContent}}"/>

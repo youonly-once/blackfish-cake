@@ -1,0 +1,31 @@
+@import '../../dist/css/weui.wxss';
+@import '../../dist/css/icon.wxss';
+.search-bar{
+    width:90%;
+    margin: 0 auto;
+    border: 1px solid #aaa;
+    padding: 3px 10px;
+    border-radius: 8rpx;
+    font-size: 46rpx;
+    margin-bottom: 20rpx;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.placeholder{
+    font-size: 30rpx;
+    color: #999;
+    padding-left: 10rpx;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 8px 12px 8px 12px;
+}
+.search-input{
+    display: flex;
+    align-items: center;
+    line-height: 2;
+}

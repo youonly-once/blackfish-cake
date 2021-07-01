@@ -1,0 +1,347 @@
+/* 重置样式 */
+button{
+  border: none;
+  margin: 0;
+}
+/* 自定义 */
+.content{
+  letter-spacing: 4rpx;
+}
+.top{
+  width: 750rpx;
+}
+.goodspic{
+  float: left;
+  width: 162rpx;
+  height: 162rpx;
+  margin: 30rpx; 
+}
+.right{
+  float: left;
+  position: relative;
+  width: 490rpx;
+  height: 162rpx;
+  margin-top: 30rpx;
+  /* background-color: red; */
+}
+.right .goodsTitle{
+  position: absolute;
+  top: 0;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: block;
+  /* background-color: gray; */
+  
+}
+.right .nowPrice{
+  position: absolute;
+  bottom: 0;
+  font-size: 28rpx;
+  display: inline-block;
+
+}
+.right .goodsPrice{
+  display: inline-block;
+  color: #ff4545;
+  font-size: 22rpx;
+}
+.right .NumberCount{
+  width: 192rpx;
+  height: 58rpx;
+  margin-top: 20rpx;
+  float: right;
+  line-height: 58rpx;
+  text-align: center;
+  border: 1rpx solid #8f8f8f;
+}
+.right .NumberCount .add{
+  width: 59rpx;
+  height: 58rpx;
+  font-size: 32rpx;
+  float: left;
+}
+.addlogo,.reducelogo{
+  width: 32rpx;
+  height: 32rpx;
+}
+.right .NumberCount .nowNumber{
+  width: 77rpx;
+  height: 58rpx;
+  float: left;
+  font-size: 24rpx;
+  border-left: 1rpx solid #8f8f8f;
+  border-right: 1rpx solid #8f8f8f;
+}
+.right .NumberCount .discount{
+  width: 54rpx;
+  height: 58rpx;
+  float: left;
+}
+.fansDiscount{
+  clear: both;
+  width: 750rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 24rpx;
+  color: #ff5858;
+  border-top: 20rpx solid #f4f4f4; 
+}
+.fansDiscount .redLogo{
+  float: left;
+  width: 128rpx;
+  height: 40rpx;
+  margin-top: 17rpx;
+  margin-left: 30rpx;
+  margin-right: 12rpx;
+}
+.fansDiscount .gonext{
+  width: 18rpx;
+  height: 27rpx;
+  vertical-align: middle;
+}
+.fansDiscount .text-right{
+  float: right;
+  height: 68rpx; 
+  font-size: 27rpx;
+  color: #363636;
+}
+.fansDiscount .text-right .red{
+  color: #ff5858;
+}
+.writeMessage{
+  clear: both;
+  width: 750rpx;
+  border-top: 20rpx solid #f4f4f4;
+}
+.writeMessage .HeadTitle{
+  width: 720rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left:30rpx;
+  font-size: 30rpx; 
+  border-bottom: 1rpx solid #dcdcdc;
+}
+form{
+  width: 750rpx;
+}
+form .name,.phone,.address{
+  width: 690rpx;
+  height: 62rpx;
+  padding-top: 30rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+.choose-area{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-indent: 60rpx;
+  padding-top: 40rpx;
+}
+.address{
+  position: relative;
+}
+.area-tip{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-indent: 60rpx;
+  padding-top: 40rpx;
+   color: #a0a0a0;
+}
+.writeLogo{
+  width: 34rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+.personLogo,.Smartphone,.Placeholder{
+  width: 32rpx;
+  height: 36rpx;
+  float: left;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+form .gonext{
+  float: right;
+  vertical-align: middle;
+  width: 19rpx;
+  height: 30rpx;
+}
+form .more-address{
+  width: 680rpx;
+  height: 112rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+  border: 1rpx solid #dcdcdc;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+}
+form .wxAddr{
+  position: relative;
+  z-index: 10;
+  border-top: 20rpx solid #f4f4f4;
+  width: 720rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+}
+form .wxAddr .wxBg{
+  width: 38rpx;
+  height: 31rpx;
+  vertical-align: middle;
+}
+form .wxAddr .gonext{
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+}
+form .bottom-btn{
+  height: 189rpx;
+  padding-top: 54rpx;
+  padding-left: 125rpx; 
+  background-color: #f4f4f4;
+}
+form .submitorder{
+  width: 500rpx;
+  height: 82rpx;
+  line-height: 82rpx;
+  font-size: 32rpx;
+  background-color: #f35324;
+  color: #fff;
+  text-align: center;
+}
+
+/* 有商品种类的头部 */
+.top.kinds{
+  border: none;
+}
+.top.kinds .NumberCount{
+  width: 192rpx;
+  height: 58rpx;
+  margin-top: 20rpx;
+  float: right;
+  line-height: 58rpx;
+  text-align: center;
+  border: 1rpx solid #8f8f8f; 
+}
+.goodschoosekind{
+  clear: both;
+  border-top: 20rpx solid #f4f4f4;
+}
+.kind-title{
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #dcdcdc;
+}
+.goodschoosekind .chooseLogo{
+  width: 35rpx;
+  height: 34rpx;
+  margin-left: 28rpx;
+  vertical-align: middle;
+}
+.goods-kinds{
+  width: 690rpx;
+  padding-left: 15rpx;
+  padding-right: 30rpx;
+  padding-top: 23rpx;
+  padding-bottom: 23rpx;
+}
+.goods-kinds .kind{
+  position: relative;
+  display: inline-block;
+  padding-top: 15rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  padding-bottom: 15rpx;
+  font-size: 24rpx;
+  border: 1rpx solid #a0a0a0;
+  border-radius: 10rpx;
+  margin-top: 25rpx;
+  margin-left: 14rpx;
+  color: #a0a0a0;
+}
+.goods-kinds .kind.selected{
+  color: red;
+  border: 1rpx solid #f35324;
+}
+.goods-kinds .kind .kindchoosepic{
+  display: none;
+}
+.goods-kinds .kind.selected .kindchoosepic{
+  position: absolute;
+  display: block;
+  z-index: -1;
+  bottom:-1rpx;
+  right:-1rpx;
+  width: 34rpx;
+  height: 34rpx;
+  border-bottom-right-radius: 9rpx;
+}
+.knumber{
+  width: 690rpx;
+  height: 112rpx;
+  margin: 0 auto;
+  border-top: 1rpx solid #dcdcdc;
+}
+.kright{
+  margin-top: 40rpx;
+  font-size: 22rpx;
+  color: #f35324;
+  float: left;
+}
+.kNumberCount{
+  margin-top: 24rpx;
+  float: right;
+  text-align: center;
+}
+.kadd{
+  float: left;
+  width: 59rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border: 1rpx solid #f4f4f4;
+}
+.knowNumber{
+  float: left;
+  width: 77rpx;
+  height: 58rpx;
+  font-size: 22rpx;
+  line-height: 58rpx;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.kreduce{
+  float: left;
+  width: 54rpx;
+  padding-top: 10rpx;
+  height: 48rpx;
+  border: 1rpx solid #f4f4f4;
+}
+/* 吐司提示样式 */
+.toasttip{
+  position: fixed;
+  top: 300rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  letter-spacing: 5rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  }

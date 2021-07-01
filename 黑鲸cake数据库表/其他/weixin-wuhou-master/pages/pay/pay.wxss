@@ -1,0 +1,193 @@
+page{
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+.content{
+  margin: 0;
+  padding: 0;
+  width: 750rpx;
+  letter-spacing: 4rpx;
+  background-color: #fff;
+
+}
+.content .head{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+   /* background-color: red;  */
+}
+.head .noreturn{
+  float: right;
+  width: 177rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 26rpx;
+  background-color: #cecece; 
+  border-radius: 10rpx;
+  margin-right: 30rpx;
+  margin-top: 17rpx;
+}
+/* .usetime{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 24rpx;
+  color: #ff4545;
+  border-top: 20rpx solid #f4f4f4;
+  border-bottom: 20rpx solid #f4f4f4;
+} */
+.timeLogo{
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.menuLogo{
+  width: 27rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+.goodsmessage{
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 719rpx;
+  padding-left: 31rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #dedede;
+  border-top: 20rpx solid #f4f4f4;
+}
+.Message{
+  width: 690rpx;
+  margin: 0 auto;
+   /* background-color: blue;  */
+}
+.Message .pic{
+  margin-top: 30rpx;
+  float: left;
+  width: 162rpx;
+  height: 162rpx;
+}
+.goodstitle{
+  margin-left: 190rpx;
+  padding-top: 44rpx;
+  width: 500rpx; 
+  /* background-color: red; */
+  font-size: 27rpx;
+}
+.gonext{
+  position: absolute;
+  right: 0;
+  top: 20rpx; 
+  width: 19rpx;
+  height: 30rpx;
+}
+.primecost{
+  position: relative;
+  padding-top: 15rpx;
+  width: 500rpx;
+  height:70rpx;
+  font-size: 24rpx;
+  color: #6f6f6f;
+  margin-left:190rpx;
+  padding-bottom: 10rpx; 
+  /* background-color: #f0f; */
+}
+.list{
+   /* float: left;  */
+  width: 690rpx;
+  height: 74rpx;
+  margin: 0 auto;
+  line-height: 74rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+.left{
+float: left;
+}
+.right{
+  float: right;
+}
+.right.red{
+  color: #ff4545;
+}
+.goodsinfo .left:last-child{
+   border-bottom:none; 
+}
+
+
+/* 核销价格显示 */
+.oldprice{
+  width: 300rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  padding-top: 5rpx;
+  text-decoration: line-through;
+}
+
+/* 商家信息 */
+.userinfo,.getinfo{
+  width: 690rpx;
+  margin: 0 auto;
+  /* background-color: yellow; */
+}
+.userinfo-head,.getinfo-head{
+  border-top: 20rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #dedede;
+}
+.getinfo .left:last-child{
+  border-bottom: none;
+}
+.userinfo .tip{
+  /* width: 690rpx; */
+  height: 62rpx;
+  line-height: 62rpx;
+  font-size: 19rpx;
+  color: #ff4545;
+   /* background-color: green;  */
+}
+.person{
+  width: 32rpx;
+  height: 35rpx;
+}
+.sendgoods{
+  width: 34rpx;
+  height: 31rpx;
+}
+.userinfo .left:last-child{
+  border-bottom: none;
+}
+.borderB{
+  width: 750rpx;
+  height: 180rpx;
+  background-color: #f4f4f4;
+}
+.bottom{
+  position: fixed;
+  left:0;
+  right: 0;
+  bottom: 0;
+  height: 98rpx;
+  line-height: 98rpx;
+  padding-left: 30rpx;
+  width: 720rpx;
+  font-size: 30rpx;
+  border-top: 1rpx solid #f4f4f4;
+   background-color: #fff; 
+}
+.bottom .paybtn{
+  float: right;
+  width: 232rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+   background-color: #06ce0c; 
+  color: #fff;
+  text-align: center;
+}
+.bottom .p{
+  color: #ff4545;
+  
+}

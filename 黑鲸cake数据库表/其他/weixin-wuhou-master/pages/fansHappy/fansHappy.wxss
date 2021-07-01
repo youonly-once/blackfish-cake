@@ -1,0 +1,511 @@
+@keyframes mymove{
+  0%{
+     transform:translateY(0); 
+  }
+  100%{
+     transform: translateY(-100%);
+  }
+}
+image{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+/* 整体 */
+.container{
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑'; 
+  width: 750rpx;
+}
+/* 头部 */
+.head{
+ position: relative;
+ margin: 0;
+ padding: 0;
+ width: 750rpx;
+ background-color: #e2e2e2;
+
+}
+/* 粉丝卡背景 */
+.head .notfans-headpic{
+  display: block;
+  width: 736rpx;
+  height: 382rpx;
+  margin: 0 auto;
+   padding-top: 16rpx; 
+}
+/* 凹陷的背景图片 */  /* 位置相对于head来说 */
+.head .pit{
+  position: absolute;
+  top: 320rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  width: 750rpx;
+  height: 82rpx;
+}
+/* 购买的图片按钮 */
+.head .buypic{
+  position: absolute;
+  top: 315rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: block;
+  width: 384rpx;
+  height: 78rpx;
+}
+/* 标签 */
+.tag{
+  width: 750rpx;
+  padding-bottom: 40rpx;
+  background-color: #f1ede7;
+}
+.tag .tagtitle{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  
+}
+.tag .tagtitle .tagpic{
+  display: inline-block;
+  width: 30rpx;
+  height: 27rpx;
+}
+.tag .tagtitle .text{
+  display: inline-block;
+  margin-left: 32rpx;
+  margin-right: 32rpx;
+  font-size: 32rpx;
+  letter-spacing: 4rpx;
+  color: #e4be97;
+}
+.tag .tagcontainer{
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 645rpx; 
+  margin: 0 auto;
+  /* background-color: green; */
+}
+.tag .tagcontainer .tagsingle{
+  display: inline-block;
+  font-size: 24rpx;
+  padding: 10rpx  18rpx; 
+  border: 2rpx solid #e4be97;
+  border-radius: 30rpx;
+  letter-spacing: 2rpx;   
+  margin-top: 20rpx;
+  margin-left: 20rpx;  
+  /* margin-right: 20rpx; */
+  color: #e4be97;
+}
+.tagsingle:last-child{
+  background-color: red;
+}
+.tag .tagcontainer .moretag{
+  font-size: 25rpx;
+  display: inline-block;
+  margin-left: 23rpx;
+  border-radius: 30rpx;
+  background-color: #4a4e57;
+  color: #fff;
+  padding:12rpx 20rpx 12rpx 40rpx;
+}
+.tag .tagcontainer .moretag .morepic{
+    display: inline-block;
+    width: 25rpx;
+    height: 18rpx;
+}
+.bottom-tag{
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+}
+.tagCloseBtn{
+  float: right;
+  padding-top: 29rpx;
+  padding-right: 27rpx;
+  padding-left: 27rpx; 
+  padding-bottom: 29rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+.tagListBottom .headB{
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 35rpx;
+  background-color: #dcdcdc;
+}
+.tagListBottom .tagcontent{
+  width: 710rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.tagListBottom .singleTagBottom{
+  margin-top: 24rpx; 
+  font-size: 30rpx;
+  padding-left: 25rpx; 
+  padding-right: 25rpx;
+  padding-top: 12rpx;
+  padding-bottom: 12rpx;
+  border-radius: 35rpx;
+  border: 1rpx solid #bfbfbf;
+}
+/* 消息滚动 */
+.head .message-scroll{
+  width: 750rpx;
+  background-color: #f1ede7;
+}
+/* 消息滚动的标题 */
+.head .message-scroll .title{
+  width: 750rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #22201c;
+  font-size: 32rpx;
+}
+/* 消息滚动的人数 */
+.head .message-scroll .person-number{
+  width: 750rpx; 
+  padding-top: 6rpx;
+  height: 55rpx;
+  text-align: center;
+}
+.head .message-scroll .person-number .all{
+  display: inline-block;
+}
+.head .message-scroll .person-number .number{
+  float: left;
+  padding-left: 40rpx;
+  padding-right: 26rpx;
+}
+.head .message-scroll .person-number .singlenum{
+  float: left;
+  margin-right: 14rpx; 
+  height: 55rpx;
+  line-height: 55rpx;
+  width: 32rpx;
+  border-radius: 10rpx;
+  background-color: #1b1b1b;
+  text-align: center;
+  font-size: 32rpx;
+  color: #fff;
+}
+/* 两个矩形装饰 */
+.head .message-scroll .person-number .retangle-left,.head .message-scroll .person-number .retangle-right{
+  float: left;
+  display: block;
+  width: 127rpx;
+  height: 55rpx;
+}
+/* 消息滚动页面 */
+.head .message-scroll .show-message{
+  position: relative;
+  width: 750rpx;
+  height: 355rpx;
+  background-color: #f1ede7; 
+}
+.head .message-scroll .show-message .kuang{
+  position: relative;
+  top: 31rpx; 
+  width:  624rpx;
+  height: 264rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 页面滚动总消息 */
+.head .message-scroll .show-message .message-content{
+  position: absolute;
+  /* top: 100rpx; */
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 0 auto;
+} 
+/* 页面滚动单条消息 */
+.head .message-scroll .show-message .message-content .one-message{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 110rpx;
+  line-height: 110rpx;
+  width:  624rpx;
+  /* background-color: green; */
+  /* border: 1rpx solid red; */
+}
+/* 用户的头像 */
+.head .message-scroll .show-message .message-content .one-message .pic{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+} 
+.head .message-scroll .show-message .message-content .one-message .usermessage{
+  padding-left: 30rpx;
+  /* padding-left: 30rpx;
+  width: 530rpx; 
+  height: 60px;
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+  font-size: 28rpx;
+  color: #181818;
+  background-color:blue;
+  border: 1rpx solid yellow;
+  overflow:hidden;  */
+}
+ .head .message-scroll .show-message .show-message-bg{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 16rpx;
+  z-index: 10;
+  width: 704rpx;
+  height: 293rpx;
+  margin: 0 auto;
+} 
+/* 中间内容图片 */
+.container .middle-content{
+  width: 750rpx;
+}
+.container .middle-content .contentpic{
+  width: 750rpx;
+  height: 2463rpx;
+}
+/* 粉丝社群 */
+.container .bottom-fansgroup{
+  width: 750rpx;
+  padding-bottom: 150rpx;
+  background-color: #f1ede7;
+}
+/* 粉丝社群的标题 */
+.container .bottom-fansgroup .fansgroup-head{
+  position: relative;
+  width: 750rpx;
+  height: 105rpx;
+  line-height: 105rpx;
+  text-align: center;
+  color: #4f5453;
+  font-size: 35rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+}
+/* 两条横线 */
+.container .bottom-fansgroup .fansgroup-head::before{
+  content: '';
+  position: absolute;
+  left: 221rpx;
+  top: 51rpx;
+  width: 48rpx;
+  height: 2rpx;
+  background-color: #4b4e50;
+}
+.container .bottom-fansgroup .fansgroup-head::after{
+  content: '';
+  position: absolute;
+  right: 221rpx;
+  top: 51rpx;
+  width: 48rpx;
+  height: 2rpx;
+  background-color: #4b4e50;
+}
+/* 单个粉丝社群 */
+.container .bottom-fansgroup .sigle-fansgroup{
+    box-sizing: border-box;
+    padding:25rpx;
+    width: 690rpx;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin-top: 30rpx;
+}
+.container .bottom-fansgroup .sigle-fansgroup .leftpic .pic{
+  width: 126rpx;
+  height: 126rpx;
+  margin: 0 auto;
+}
+.container .bottom-fansgroup .sigle-fansgroup .rightintro{
+ width: 75%;
+}
+.container .bottom-fansgroup .sigle-fansgroup .rightintro .name{
+  font-size: 28rpx;
+}
+.container .bottom-fansgroup .sigle-fansgroup .rightintro .text{
+  font-size: 24rpx;
+  margin-top: 10rpx; 
+}
+/* 电话，微信，回到顶部 */
+.call,.server,.gotop,.serverbtn{
+  position: fixed;
+  z-index: 100;
+  width: 80rpx;
+  height: 80rpx;
+}
+.call{
+  right: 10rpx;
+  bottom: 310rpx;
+}
+.server{
+  right: 10rpx;
+  bottom: 210rpx;
+}
+.serverbtn{
+  position: fixed;
+  right: 10rpx;
+  bottom: 210rpx;
+  opacity: 0;
+   z-index: 110; 
+  background-color: red;
+}
+.gotop{
+  right: 10rpx;
+  bottom: 110rpx;
+}
+
+/* 底部菜单 */
+.bottom{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 11;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #bfbfbf;
+  text-align: center;
+  background-color: #fff;
+}
+/* 有颜色的小圆背景 */
+.bottomfans{
+  display: block;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  bottom: 9rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  text-align: center;
+  color: #f35324; 
+}
+.smallCircle{
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 42rpx;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%; 
+  background-color: #f35324; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+/* 纯白背景小圆 */
+.freejewel{
+  position: fixed;
+  z-index:10;
+  background-color: #fff;
+  bottom:30rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 11;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 67rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 35px;
+  height: 58rpx;
+  
+}
+.freedom{
+  flex: 1;
+  position: relative;
+  margin-left: -60rpx;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.freedompic{
+  display: block;
+  margin: 0 auto;
+  width: 44rpx;
+  height:44rpx;
+}
+.bottom .menuBar{
+  flex: 1;
+  position: relative;
+  margin-right: -60rpx;
+  text-align: center;
+  height: 88rpx;
+  float: left;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.menupic{
+  display: block;
+  width: 40rpx;
+  height: 44rpx;
+  margin: 0 auto;
+}
+.indextext,.menutext{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 9rpx;
+  display: inline-block;
+}
+

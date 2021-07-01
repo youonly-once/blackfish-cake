@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "申请详情",
+  "usingComponents": {
+    "zan-tab": "../../dist/tab/index",
+    "zan-icon": "../../dist/icon/index"
+  }
+}

@@ -1,0 +1,44 @@
+/**index.wxss**/
+.input_note{
+	color:#363636;
+	font-size:30rpx;
+  width: 200rpx;
+}
+.users_detail{
+
+	align-items:center;
+}
+.user_input{
+	border-top:solid 1px #F8F8F8;
+	padding:20rpx 20rpx;
+	align-items:center;
+  background: #fff;
+  font-size:28rpx;
+	}
+.user_input input{
+	height:32rpx;
+	line-height:32rpx;
+	width:77%;
+	font-size:28rpx;
+  text-align: left;
+  color:#000000;
+
+}
+.user_input image{
+	width:11rpx;
+	height:20rpx;
+}
+.address_right text{color:#b2b2b2;font-size:28rpx;}
+.address_right image{margin-left:15rpx;}
+.address_set{width:200rpx;}
+/***********提交按钮***********/
+.submit_info{
+margin:0rpx 25rpx;
+width:700rpx;
+height:88rpx;
+line-height:88rpx;
+text-align:center;
+font-size:36rpx;
+color:#fff;
+background:linear-gradient(to right,rgb(248, 180, 20),#FFBA1E);
+border-radius:10rpx;margin-top:260rpx;}

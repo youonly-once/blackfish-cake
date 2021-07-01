@@ -1,0 +1,52 @@
+<view class="view">
+<zan-panel>
+  <zan-panel>
+    <view class='padding'>
+      <view class='center-info' wx:key="key">
+        <view class='image-warpper'>
+          <image class='image' src='{{goodsInfo.thum}}' mode="widthFix"></image>
+        </view>
+        <view class='title-warpper'>
+          <view class='title zan-ellipsis--l2'>{{goodsInfo.name}}</view>
+          <view class='sku'>
+            规格: {{goodsInfo.spec_group_info?goodsInfo.spec_group_info:'无'}}
+          </view>
+        </view>
+        <view class='price-warpper'>
+          <view class='count'>x{{goodsInfo.num}}</view>
+        </view>
+      </view>
+    </view>
+  </zan-panel>
+  <view class='padding'>退款金额：{{goodsInfo.real_price}}</view>
+  <zan-panel>
+    <view class='padding'>
+      <view class='title'>退款原因：</view>
+      <view class='text-input'>
+        <textarea placeholder="请输入退款原因" bindinput='textareaInput'></textarea>
+      </view>
+    </view>
+  </zan-panel>
+  <view class='padding'>
+    <view class='title'>添加图片：（最多4张）</view>
+    <view class='image-input'>
+      <view
+        class='image-list'
+        wx:if="{{tempFilePaths.length}}" 
+        wx:for="{{tempFilePaths}}" 
+        wx:key="key">
+        <zan-badge catchtap='deleltImage' data-id='{{index}}'>x</zan-badge>      
+        <view class='add-image' catchtap='previewImage' data-id='{{index}}'>
+          <image class='up-img' src="{{item}}" mode="aspectFill"/>
+        </view>
+      </view>
+      <view class='add-image' catchtap='addImage'> + </view>
+    </view>
+  </view>
+  <zan-panel>
+    <view class='padding'>
+      <zan-button catchtap='send' type="info">提交申请</zan-button>
+    </view>
+  </zan-panel>
+</zan-panel>
+</view>

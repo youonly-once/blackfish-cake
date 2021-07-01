@@ -1,0 +1,42 @@
+<view class='panel'>
+  <zan-panel>
+    <zan-panel>
+      <view class='avatar-warpper' bindtap='changeAvatar'>
+        <view class='avatar'>
+          <image src="{{user.avatar}}" widthFix></image>
+        </view>
+        <view class='avatar-change'>点击头像修改</view>
+      </view>
+    </zan-panel>
+    <zan-cell-group>
+      <zan-cell class="cell" title="昵称">
+        <input slot="footer" type="text" bindblur='changeName' placeholder="请输入昵称" value="{{user.nick_name || '匿名用户'}}" />
+      </zan-cell>
+      <zan-cell title="性别">
+        <view slot="footer" bindtap='selectGender'>{{genderList[user.gender]}}</view>
+      </zan-cell>
+      <zan-cell title="手机号码" bindtap='changeMobile' value="{{user.mobile}}" is-link></zan-cell>
+      <zan-cell title="密码设置" catchtap='changePassword' value="点击修改" is-link></zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+</view>
+<view class='panel' wx:if="{{hasBindWechat}}">
+  <zan-panel>
+    <zan-cell title="微信绑定" value="已绑定(点击解绑)" catchtap="unbind" is-link></zan-cell>
+    <!-- <zan-cell title="微信绑定" value="点击绑定" is-link wx:if="{{!hasBindWechat}}"></zan-cell> -->
+
+  </zan-panel>
+</view>
+
+<view class='panel'>
+  <zan-panel>
+    <zan-cell-group>
+      <zan-cell title="帮助与反馈" value="点击发表" is-link bindtap="goHelpAndOption"></zan-cell>
+      <zan-cell title="wancllshop" value="v1.2.0"></zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+</view>
+<view class='btn'>
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bind" wx:if="{{!hasBindWechat}}"  type="primary">绑定微信</button>
+  <button class="wancll-bg-info wancll-text-white wancll-margin-t-15" bindtap="logout">退出登录</button>
+</view>

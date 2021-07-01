@@ -1,0 +1,61 @@
+.input {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #f4f4f4;
+}
+
+.pop-example__container--bottom {
+  width: 100vw;
+}
+
+.pop-example__container--left, .pop-example__container--right {
+  height: 100vh;
+}
+
+.top-close {
+  font-size: 28rpx;
+  padding: 10px;
+}
+
+.top-close .icon {
+  font-size: 28rpx;
+  float: right;
+}
+
+.popup-warpper {
+  width: 600rpx;
+  background: #fff;
+}
+
+.popup-warpper .title {
+  padding: 15px;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.popup-warpper input {
+  width: 80%;
+  margin: 0 auto;
+  height: 100rpx;
+  text-align: center;
+}
+
+.popup-warpper .select {
+  display: flex;
+}
+
+.popup-warpper .select .yes {
+  flex: 1;
+}
+
+.popup-warpper .select .no {
+  flex: 1;
+}
+
+
+.bankicon{
+  font-size:80rpx;
+
+}

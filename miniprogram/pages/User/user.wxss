@@ -2,12 +2,15 @@
 	height:300rpx;
 	width:100%;
   /*background-image:url('cloud://bookcake-ne49u.626f-bookcake-ne49u-1301143327/user_back.JPG');*/
-	background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));
+	 /*background:linear-gradient(to right,rgba(72,222,223,1.00),rgba(42,154,225,1.00));*/
 	overflow:hidden;
 	align-items:center;}
 .user_info{
 	height:300rpx;
 	align-items:center;
+  position: absolute;
+  width:100%;
+  top: 0rpx;
 }
 .user_img{
 	width:140rpx;
@@ -90,7 +93,7 @@ line-height:42rpx;
 }
 .check_order{
 	font-size:24rpx;
-	color:#333;
+	color:gray;
 }
 .process{
 	padding:26px 0;

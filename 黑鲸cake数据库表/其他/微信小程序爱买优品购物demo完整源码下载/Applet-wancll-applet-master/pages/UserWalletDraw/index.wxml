@@ -1,0 +1,52 @@
+<zan-panel bindtap="togglePopupShow">
+  <zan-cell-group>
+    <zan-cell title="请选择银行卡" is-link wx:if="{{!card.id}}"></zan-cell>
+    <zan-cell title="{{card.bank_name}}" label="{{card.card_holder}}" value="{{card.card_number}}"></zan-cell>
+  </zan-cell-group>
+</zan-panel>
+
+<view class="wancll-padded-20 wancll-bg-white">
+  <text>提现金额(元)</text>
+  <input type="digit" class="input wancll-margin-b-20" bindinput='bindMoney'></input>
+  <button class="wancll-margin-b-10 wancll-bg-info wancll-text-white" catchtap='submit'>提交</button>
+</view>
+
+<zan-popup show="{{ popupShow }}" type="bottom" bindclose="togglePopupShow">
+  <view class="pop-example__container pop-example__container--bottom">
+    <zan-panel>
+      <view class='top-close'>
+        <text>请选择银行卡</text>
+        <text class="icon" data-type="icon" bindtap="togglePopupShow">关闭</text>
+      </view>
+    </zan-panel>
+    <scroll-view scroll-y style="height: 450px;" class="wancll-bg-white">
+      <view class="wancll-bg-white wancll-padded-15 wancll-margin-b-10 clearfix" wx:for="{{cards}}" wx:key="key" data-card="{{item}}" bindtap="selectCard">
+        <view class="wancll-col-xs-2 wancll-fl">
+          <i class="{{'bankicon iconfont ' + item.fontClass}}" style="{{'color: ' + item.color}}"></i>
+        </view>
+        <view class="wancll-col-xs-10 wancll-fl">
+          <view class="wancll-font-size-18">{{item.bank_name}}</view>
+          <view class="wancll-font-size-12">{{item.card_holder}}</view>
+          <view class="wancll-font-size-16 wancll-margin-t-5">{{item.card_number}}</view>
+        </view>
+      </view>
+      <button class="wancll-margin-10 wancll-bg-info wancll-text-white" catchtap='addBank'>新增银行卡</button>
+    </scroll-view>
+  </view>
+</zan-popup>
+
+<!-- 密码选择 -->
+<zan-popup show="{{ passPopup }}" bindclose="togglePassPopup">
+  <view class="zan-btns">
+    <view class='popup-warpper'>
+      <zan-panel>
+        <view class='title'>请输入支付密码</view>
+      </zan-panel>
+      <input bindinput='passwordInput' type='password'></input>
+      <view class='select'>
+        <zan-button class='yes' catchtap='sendMoney'> 确定 </zan-button>
+        <zan-button class='no' catchtap="togglePassPopup"> 取消 </zan-button>
+      </view>
+    </view>
+  </view>
+</zan-popup>

@@ -1,6 +1,0 @@
-<template name="foot">
-  <view style="  width: 100%;padding-top: 50rpx;padding-bottom: 20rpx;margin-bottom:65px;justify-content: space-around;align-items: center;font-size: 25rpx;font-weight: 200;text-align: center; color: #BEBEBE;border-top:1rpx solid #E0E0E0">
-    <!--<view >别扯啦，到底了</view>-->
-    <view >技术支持：15723468981</view>
-  </view>
-</template>

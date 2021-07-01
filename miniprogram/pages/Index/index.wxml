@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<scroll-view class="container" scroll-y  bindscrolltolower="lower" style="{{isShow?'':noContent?'display:none':'visibility:hidden'}}">
+ <swiper 
+    indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" 
+    interval="{{interval}}" 
+    duration="{{duration}}"
+    style="height:{{swiperImgHei}};"
+    >
+     <block wx:for="{{swiperImg}}" wx:key="key">
+        <swiper-item data-img="{{item.style_image}}" bindtap="seeSwiperAll">
+          <image src="{{item}}" bindload="imgH" mode="widthFix" style="width:100%" />
+        </swiper-item>
+      </block>
+  </swiper>
+  <view class='icon'>
+    <navigator hover-class="none" url="/pages/list/index?title=生日&id=5b8e37e34b640a63b33272dc">
+      <image src='/images/birthday.png' mode="aspectFit"></image>
+      <text>生日</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/list/index?title=节日&id=5b8f45f2afb7c17788e11994">
+      <image src='/images/festival.png' mode="aspectFit"></image>
+      <text>节日</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/list/index?title=婚礼&id=5b8f4603afb7c17788e11996">
+      <image src='/images/wedding.png' mode="aspectFit"></image>
+      <text>婚礼</text>
+    </navigator>
+    <navigator hover-class="none" url="/pages/list/index?title=party&id=5b8f4612afb7c17788e11998">
+      <image src='/images/party.png' mode="aspectFit"></image>
+      <text>party</text>
+    </navigator>
+  </view>
+  <!-- <view class='title'>
+    <text class='cn'>主题</text>
+    <text class='en'>Theme</text>d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5d5e7f5
+  </view> -->
+  <!-- <view class='img'>
+    <image src='/images/banner_2.png' mode="widthFix"></image>
+    <image src='/images/banner_3.png' mode="widthFix"></image>
+    <image src='/images/banner_4.png' mode="widthFix"></image>
+  </view> -->
+  <view class='title'>
+    <text class='cn'>猜你喜欢</text>
+    <text class='en'>Lovely</text>
+  </view>
+  <view class='list'>
+    <view class='item' wx:for="{{cakeList}}"  wx:key="key1">
+      <navigator hover-class="none" url="/pages/CakeDetail/CakeDetail?cakeid={{item._id}}">
+        <image class='product' src='{{item.mainPic[0]}}'></image>
+        <text class='text'>{{item.cakename}}.</text>
+      </navigator>
+      <view class='price'>
+        <text class="color_main good_dis_price " style="font-size:24rpx;">¥</text>
+        <text class="color_main good_dis_price ">{{item.cakeMinPrice}} </text>
+        <text class="color_main good_dis_price " style="font-size:24rpx;">.00 - ¥</text>
+        <text class="color_main good_dis_price ">{{item.cakeMaxPrice}}</text>
+        <text class="color_main good_dis_price" style="font-size:24rpx;">.00</text>
+       <!-- <view  bindtap='addCart' data-item="{{item}}">
+        <image style='width:20px;height:20px;' src='/images/Shopping.png'></image>
+        </view>-->
+      </view>
+    </view>
+  </view>
+  <!-- <button bindtap='imgsc'> 上传</button> -->
+</scroll-view>
+<mp-loading type="circle" show="{{loadMoreShow}}"></mp-loading>
+<view class="noMore" wx:if="{{noMore}}">没有更多了 </view>
+<no-content-tip isShow="{{noContent}}"></no-content-tip>
+<template is="foot" wx:if="{{!loadMoreShow}}" />

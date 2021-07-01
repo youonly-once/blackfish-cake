@@ -1,0 +1,10 @@
+@import 'dist/css/weui.wxss';
+@import "dist/css/icon.wxss";
+@import "dist/css/common.wxss";
+
+.page-title{
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+  padding: 10rpx 0;
+}

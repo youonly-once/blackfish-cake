@@ -1,0 +1,12 @@
+<view class='info'>
+  <view class='wancll-font-size-16'>钱包余额 (元)</view>
+  <view class='money wancll-margin-t-20'>
+    <text class="wancll-font-size-14 wancll-margin-r-5">￥</text>{{walletInfo.money}}</view>
+</view>
+<zan-panel>
+  <zan-cell-group>
+    <zan-cell title="充值" is-link url="/pages/UserWalletRecharge/index"></zan-cell>
+    <zan-cell title="提现" is-link url="/pages/UserWalletDraw/index"></zan-cell>
+    <zan-cell title="明细" is-link url="/pages/UserWalletLog/index"></zan-cell>
+  </zan-cell-group>
+</zan-panel>

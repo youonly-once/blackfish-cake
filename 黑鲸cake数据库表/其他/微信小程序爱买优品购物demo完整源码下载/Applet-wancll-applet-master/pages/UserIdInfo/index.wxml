@@ -1,0 +1,22 @@
+<view>
+
+  <zan-panel>
+    <zan-cell-group>
+      <zan-cell class="cell" title="状态" value="{{statusName[status]}}"></zan-cell>
+      <zan-cell class="cell" title="真实姓名" value="{{name }}"></zan-cell>
+      <zan-cell class="cell" title="身份证号" value="{{idcard}}"></zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+  <view class="wancll-padded-5 wancll-flex">
+    <view class="wancll-col-xs-6 wancll-padded-5">
+      <image mode='widthFix' class="wancll-col-xs-12" src="{{idcardFront}}"></image>
+    </view>
+    <view class="wancll-col-xs-6 wancll-padded-5">
+      <image mode='widthFix' class="wancll-col-xs-12" src="{{idcardBack}}"></image>
+    </view>
+  </view>
+
+  <view class="wancll-padded-10" wx:if="{{status != 3}}">
+    <button class="wancll-bg-info  wancll-margin-t-10  wancll-text-white" bindtap='submit'>重新提交认证信息</button>
+  </view>
+</view>

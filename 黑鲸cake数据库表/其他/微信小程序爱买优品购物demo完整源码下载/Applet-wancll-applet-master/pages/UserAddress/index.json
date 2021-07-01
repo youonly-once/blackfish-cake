@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收货地址",
+  "usingComponents": {
+    "wancll-address": "../../components/address/index"
+  },
+  "enablePullDownRefresh": true
+}

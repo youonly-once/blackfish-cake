@@ -1,6 +1,6 @@
 const config = require('./config')
-const httpUtil = require("./utils/http.js");
 const cart = require('./utils/cart.js')
+const util = require('./utils/util.js')
 global.isDemo = true
 App({
   //小程序运行
@@ -15,10 +15,13 @@ App({
         traceUser: true,
       })
     }
-    cart.setCartNun()
+    //this.checkLogin();
     this.getIsAdmin(function(){})
     this.getUserOpenIdViaCloud()
+    cart.setCartNun()
     this.isIphoneX()
+    
+    
   },
   onShow(opts) {
     console.log('App Show', opts)
@@ -26,7 +29,26 @@ App({
   onHide() {
     console.log('App Hide')
   },
-
+  checkLogin(){
+    wx.getSetting({
+      success: function (res) {
+        console.log
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: function (res) {
+              //从数据库获取用户信息
+              //that.queryUsreInfo();
+              //用户已经授权过
+            }
+          });
+        }else{
+          wx.redirectTo({
+            url: '/pages/Login/Login'
+          })
+        }
+      }
+    })
+  },
   globalData: {
     hasLogin: false,
     openid: null,
@@ -36,7 +58,7 @@ App({
     userInfo: null,
     apiUrl: null,
     needToReloadShareActivity: false,
-
+    customPhone:'18223411280',
     flushCart: false,//刷新购物车列表
     flushCartNum: false,//刷新购物车数量
     isAdmin: false,//是否为管理员
@@ -56,7 +78,7 @@ App({
     wx.cloud.callFunction({
       name:'manageUser',
       success(res){
-        console.log(res.result)
+        console.log('管理员？',res.result)
         that.globalData.isAdmin = res.result.isAdmin
       },
       complete(res){
@@ -68,10 +90,10 @@ App({
   // 通过云函数获取用户 openid，支持回调或 Promise
   getUserOpenIdViaCloud() {
     return wx.cloud.callFunction({
-      name: 'wxContext',
+      name: 'login',
       data: {}
     }).then(res => {
-      console.log(res.result.openid)
+      console.log('用户openid:',res.result.openid)
       this.globalData.openid = res.result.openid
       return res.result.openid
     })

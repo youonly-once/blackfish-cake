@@ -8,6 +8,8 @@ const xmlreader = require("xmlreader")
 const chinaTime = require('china-time');
 const md51 = require('MD5.js');
 const fs = require("fs");
+const manager = 'oDyLk5FI5tBIvFz0sflkBwnRSa8o'
+const manager1 = 'oDyLk5G6G6PT5NdI34NNtVZ_b_rs'
 cloud.init({
   env: "bookcake-ne49u",
   traceUser: true,
@@ -120,25 +122,32 @@ exports.main = async(event, context) => {
 
       break
 
-    case "refund": //退款功能
+    case "refundConfirm": //退款功能
+      if (manager != wxContext.OPENID && manager1 != wxContext.OPENID) {
+        return
+      }
       let order = await getOut_refund_no(event._id)//获取订单的商户号
-      return await refund(order, event._id)
+      return await refundConfirm(order, event._id, order._openid)
       break
-    case "refundQuery":
+    case "refundQuery"://退款状态查询
       return await refundQuery(event.out_refund_no)
   }
 }
 
 /**
- * 退款
+ * 商家退款
  */
-function refund(order, orderId){
+function refundConfirm(order, orderId, openid){
+ 
+  
+      //refundConfirmSuccess(event._id)
+
  // let order =getOut_refund_no(orderId)//获取订单的商户号
   console.log(order)
   //await等待执行完成
   order = (order.data)[0]
   console.log(order)
-
+  
   const out_refund_no = order.out_refund_no//商户号
   const out_trade_no = order.out_trade_no//商户号
   const total_fee = order.payPrice; //订单金额(单位是分),
@@ -156,13 +165,14 @@ function refund(order, orderId){
     sign
   )
   let url ='https://api.mch.weixin.qq.com/secapi/pay/refund'
-  return refundSubmit(dataBody, url,orderId)
+  return refundSubmit(dataBody, url, orderId, openid)
   
 }
-function refundSubmit(dataBody, url,  orderId){
+function refundSubmit(dataBody, url, orderId, openid){
   let key = fs.readFileSync(key_file).toString()
   let cert = fs.readFileSync(cert_file).toString()
   return new Promise((reslove, reject) => {
+
     request({
       url: url,
       method: "POST",
@@ -186,13 +196,25 @@ function refundSubmit(dataBody, url,  orderId){
             msg: 'XML读取错误'
           })
         }
-        if (response.xml.return_code.text() == 'SUCCESS') {
-          console.log(response)
-          refundConfirmSuccess(orderId)
+        //提交错误
+        if (response.xml.err_code != null && response.xml.err_code.text()) {
           reslove({
-            code: 'SUCCESS',
-            msg: response.xml.return_msg.text()
+            code: response.xml.err_code.text(),
+            msg: response.xml.err_code_des.text()
           })
+        }
+        if (response.xml.return_code.text() == 'SUCCESS') {
+          console.log('SUCCESS',response)
+           //new Promise((reslove, reject) =>{
+          refundConfirmSuccess(orderId, openid).then((res)=>{
+               reslove({
+                 code: 'SUCCESS',
+                 msg: response.xml.return_msg.text(),
+                 data:res.result.data
+               })
+             })
+           //})
+
         } else {
           reslove({
             code: 'FAIL',
@@ -205,19 +227,33 @@ function refundSubmit(dataBody, url,  orderId){
     )
   })
 }
+
 /**
- * 微信退款接口调用成功，更新订单状态
+ * 微信退款商家确认成功
  */
-function refundConfirmSuccess(orderId){
-  cloud.callFunction({
+function refundConfirmSuccess(orderId, openid){
+  console.log('refundConfirmSuccess-payment')
+  return cloud.callFunction({
     name: 'manageOrder',
     data: {
       command: 'refundConfirmSuccess',
       _id: orderId,
+      useropenid:openid
     },
-    success(res) {
-      console.log(res)
-    },
+  })
+}
+/**
+ * 微信退款成功，更新订单状态
+ */
+function refundSuccess(out_refund_no, refundSuccessDate) {
+  console.log('refundSuccess-payment')
+  return cloud.callFunction({
+    name: 'manageOrder',
+    data: {
+      command: 'refundSuccess',
+      out_refund_no: out_refund_no,
+      refundSuccessDate: refundSuccessDate
+    }
   })
 }
 function refundQuery(out_refund_no){
@@ -246,11 +282,18 @@ function refundQuery(out_refund_no){
             error: error
           })
         }
+        console.log(response)
         xmlreader.read(body, function (errors, response) {
           if (null !== errors) {
             reslove({
               code: 'FAIL',
               msg: 'XML读取错误'
+            })
+          }
+          if (response.xml.err_code!=null && response.xml.err_code.text()){
+            reslove({
+              code: response.xml.err_code.text(),
+              msg: response.xml.err_code_des.text()
             })
           }
           if (response.xml.return_code.text() == 'SUCCESS') {
@@ -259,6 +302,13 @@ function refundQuery(out_refund_no){
             switch (response.xml.refund_status_0.text()){
               case 'SUCCESS':
                 str='退款成功'
+                console.log('111')
+                 refundSuccess(out_refund_no, response.xml.refund_success_time_0.text()).then(res=>{
+                   reslove({
+                     code: response.xml.refund_status_0.text(),
+                     msg: str
+                   })
+                 })
                 break;
               case 'REFUNDCLOSE':
                 str ='退款关闭'

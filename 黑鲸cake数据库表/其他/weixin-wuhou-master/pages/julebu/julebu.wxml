@@ -1,0 +1,158 @@
+
+<!-- <view class="container"> -->
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll" bindscrolltolower= "scrolltolower" style="position: absolute; left: 0; top:0; bottom: 0; right: 0; display:block;" > 
+  <!-- 头部 -->
+  <view class='head'>  
+    <!-- 头部背景 -->
+    <!-- 有粉丝卡的和过期的头部背景图 -->
+    <image style='display:block;' class='cardBg' src='../../images/cardBg.png'></image>
+    <!-- 没有粉丝卡的头部背景图 -->
+    <image style='display:none;' class='cardBg' src='../../images/NofansCard.png'></image>
+    <!-- 头部内容 -->
+    <view class='headcontent'>
+      <!-- 没有粉丝卡的图片按钮 -->
+      <image style='display:none;' class='nofansBg-btn'  src='../../images/fansbtn.png'></image>
+      <!-- 粉丝卡过期续费按钮 -->
+      <image class='needpayagain' bindtap='buyFansCard' src='../../images/continue.png'></image>
+      <!-- 用户头像,姓名，卡号 -->
+      <image style='display:block;' class='useravatar' src='{{userInfo.avatarUrl}}'></image>
+      <view style='display:block;'  class='username'>{{userInfo.nickName}}</view>
+      <view class='cardnumber' style='display:block;' >
+        <view class='first'>{{fnum}}</view>
+        <view class='second'>{{snum}}</view>
+        <view class='third'>{{tnum}}</view>
+      </view>
+      <!-- 用户加入时间 ，和参加的活动场数-->
+      <view style='display:block;'  class='jointhing'>
+        <view class='joinday'>
+          <view class='day'>{{daynumber}}天</view>
+          <view>加入时间</view>
+        </view>
+        <view class='joinactivity'>
+          <view class='activitynum'>{{activitynum}}场</view>
+          <view >已参加活动</view>
+        </view>
+      </view> 
+    </view>  
+  </view> 
+  <!-- 标签 -->
+  <view class='tag' style='display:none;' >
+    <view class='tag-title'>
+      <image class='lingxing' src='../../images/lingxing.png'></image>
+      已拥有标签
+      <image class='lingxing' src='../../images/lingxing.png'></image>
+    </view>
+    <view class='tags'>
+      <view class='singletag' wx:for="{{tags}}">
+        {{item}}
+      </view>
+      <!-- 更多标签按钮 -->
+      <view class='moretag' bindtap='moreTag' >更多></view>
+    </view>
+    <view class='clearfloat'></view>
+  </view>
+  <!-- 开通粉丝卡，消息滚动 -->
+  <view class='buycard'>
+    <view class='open-title'>
+      <!-- 两个菱形图片 -->
+      <image class='rhombus' src='../../images/rhombus.png'></image>
+      目前已有 <view class='fansnum'>{{fansnum}}</view>人开通午逅粉丝卡
+    </view>
+    <view class='messagemove'>
+        <!-- 消息滚动的图片背景 -->
+        <image class='openBg' src='../../images/fansOpenBg.png'></image>
+        <!-- 消息滚动的实现 -->
+        <view class='all-swiper'>
+        <swiper class='message-content before' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical='true' circular='true'>
+          <block wx:for="{{imgUrls}}">
+            <swiper-item class="item-sigle"> 
+              <image  src="{{item.pic}}" class="sigle-message" />
+              <view class='message-text'>{{item.text}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <swiper class='message-content' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical='true' circular='true'>
+          <block wx:for="{{imgUrlsS}}">
+            <swiper-item class="item-sigle"> 
+              <image src="{{item.pic}}" class="sigle-message" />
+              <view class='message-text'>{{item.text}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <swiper class='message-content' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical='true' circular='true'>
+          <block wx:for="{{imgUrlsT}}">
+            <swiper-item class="item-sigle"> 
+              <image src="{{item.pic}}" class="sigle-message" />
+              <view class='message-text'>{{item.text}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+        </view>
+      </view>
+  </view>
+  <!-- 图片背景，电话，客服，回到顶部 -->
+  <view class='introduce-julebu'>
+    <!-- 图片背景 -->
+    <image class='fans-happybg' src='../../images/fans-happybg.png'></image>
+    <!-- 电话图片 -->
+    <image class='call' src='../../images/call.png'  bindtap="calling"></image>
+    <!-- 微信客服图片 -->
+    <image  class='weixin' bindtap='showService' src='../../images/weixin.png'></image>
+    <button class='weixin-btn' open-type="contact" ></button>
+    <!-- 回到顶部图片 -->
+    <image class='goTop'  bindtap="goTop" src='../../images/goTop.png'></image>
+  </view>
+  <view class='fansgroup'>
+    <!-- 三个点 -->
+    <image class='threecircle' src='../../images/threecircle.png'></image>
+    <view class='groups-head'>
+      <!-- 两个菱形 -->
+      <image class='lingxing' src='../../images/lingxing.png'></image>
+      粉丝社群
+      <image class='lingxing' src='../../images/lingxing.png'></image>
+    </view>
+    <!-- 粉丝社群内容 -->
+    <view class='single-group' wx:for="{{fansgroup}}">
+      <view class='left-group'>
+        <view class='title-group'>
+          午逅粉丝俱乐部-{{item.name}}
+        </view>
+        <view class='text-group'>
+          {{item.text}}
+        </view>
+      </view>
+      <view class='right-group'>
+        <image class='erweima' src='../../images/call.png'></image>
+      </view>
+    </view>
+  </view>
+</scroll-view> 
+<!-- </view> -->
+<!-- 更多标签的弹窗 -->
+ <view class='bottom-tag' style='display:{{tagBottom}}'>
+  <view class='tagListBottom'>
+    <view class='headB'>更多标签  
+      <image class='tagCloseBtn'  bindtap='closeTag' src='../../images/tagClose.png'></image> 
+    </view>
+   <view class='singleTagBottom' wx:for="{{tags}}">{{item}}</view>
+  </view>
+</view> 
+ <!-- 菜单栏 -->
+<view class='bottommenu'>
+  <view class='freedom' bindtap='Tofreedom'>
+    <image class='freedompic' src='../../images/nofreedom.png'></image>
+    特权
+  </view> 
+  <view class='bottomfans'>粉丝俱乐部</view>
+  <view class='menuBar' bindtap='Tomenu'>
+    <image class='menupic' src='../../images/menu.png'></image>
+    订单
+  </view>
+</view>
+<!-- 边框大圆 -->
+<view class='freejewel'> </view>
+<!-- 纯白小圆 -->
+<view class='whiteCircle'></view>
+<!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+<view class='smallCircle'  bindtap='TofansHappy' ></view>
+<image class="jewelLogo"   bindtap="picTofansHappy"  src="../../images/nofansjewel.png"></image>

@@ -1,0 +1,54 @@
+
+.citypicker{
+  position: fixed;
+  width: 100%;
+  height: 300px
+}
+.citybody {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+}
+
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 4;
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+
+.cityheader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.city-cancel {
+  float: left;
+  margin: 20rpx;
+  color: #818181;
+}
+
+.city-true {
+  float: right;
+  margin: 20rpx;
+  color: #2FB42E
+}
+.select{
+  line-height: 50px;
+  text-align: center
+}

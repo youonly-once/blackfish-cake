@@ -1,0 +1,31 @@
+
+<view>
+  <zan-tab id="tab" class="tab" bindtap="tabchange" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" data-target="{{ tabSelectedId }}" fixed>
+    <block wx:for="{{orderList}}" wx:key="key">
+      <!-- 点击待评价按钮 -->
+      <block wx:if="{{tabSelectedId == 4}}"> 
+        <!-- 只显示没有评价以及不是退款成功的订单 -->
+        <order-item
+          data="{{item}}" 
+          gotype='orderdetail' 
+          haveinfo 
+          bind:refreshGet="refreshGet"
+          wx:if="{{item.is_comment == 0 && item.is_all_return_goods != 1}}">
+        </order-item>
+      </block>
+      <block wx:else="{{tabSelectedId != 4}}">
+        <order-item
+          data="{{item}}" 
+          gotype='orderdetail' 
+          haveinfo 
+          bind:refreshGet="refreshGet"
+          ></order-item>
+      </block>
+    </block>
+
+    <view wx:if="{{FPage.noContent}}" class="no-content-image">
+      <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+      <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+    </view>
+  </zan-tab>
+</view>

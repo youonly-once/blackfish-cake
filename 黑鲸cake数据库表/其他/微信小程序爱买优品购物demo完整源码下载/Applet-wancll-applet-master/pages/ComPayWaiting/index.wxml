@@ -1,0 +1,17 @@
+<view>
+  <view class="status  wancll-text-center">
+    <view class='loading' wx:if="{{!isPay}}">
+      <zan-loading class="loading-icon" type="spinner" color="black"></zan-loading>
+      <view class="wancll-margin-20">支付处理中</view>
+    </view>
+    <view wx:if="{{isPay}}">
+      <i class="iconfont icon-roundcheckfill pay-success"></i>
+      <view class="wancll-margin-20">支付成功</view>
+    </view>
+  </view>
+
+  <view class="wancll-margin-10">
+    <button class="wancll-bg-info wancll-text-white" bindtap='goOtherPage' wx:if="{{payType == 'goodsOrderPay'}}">查看我的订单</button>
+    <button class="wancll-bg-info wancll-text-white" bindtap='goOtherPage' wx:if="{{payType == 'rechargeOrderPay'}}">查看我的钱包</button>
+  </view>
+</view>

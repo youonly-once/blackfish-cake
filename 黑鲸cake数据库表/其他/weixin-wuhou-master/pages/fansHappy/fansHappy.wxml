@@ -1,0 +1,105 @@
+<scroll-view class="container" scroll-y="true" scroll-top="{{scrollTop}}"   bindscroll="scroll"  style="position: absolute; left: 0; top:0; bottom: 0; right: 0;">
+  <view class='head'>
+    <image class='notfans-headpic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/NofansCard.png'></image>
+    <image class='pit' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/club_bg2.png'></image>
+    <image class='buypic' bindtap="buycard" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/join_btn2.png'></image>
+    <view class='tag'>
+      <view class='tagtitle'>
+        <image class='tagpic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/tagretangle.png'></image>
+        <view class='text'>已拥有标签</view> 
+        <image class='tagpic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/tagretangle.png'></image>
+      </view>
+      <view class='tagcontainer'>
+        <view class='tagsingle' wx:for="{{tag}}">{{item}}
+        </view>
+        <view class='moretag' style='display:{{moreshow}};' bindtap='moreTag'>更多<image class='morepic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/moretag.png'></image>
+        </view>
+      </view>
+      <view class='bottom-tag' style='display:{{tagBottom}}'>
+        <view class='tagListBottom'>
+          <view class='headB'>更多标签  
+            <image class='tagCloseBtn'  bindtap='closeTag' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/tagClose.png'></image> 
+          </view>
+          <view class='tagcontent'>
+            <view class='singleTagBottom' wx:for="{{tags}}">{{item}}</view>
+          </view>
+        </view>
+      </view> 
+    </view>
+    <!-- 消息滚动 -->
+    <view class='message-scroll'>
+      <view class='title'>截止目前开通午逅粉丝卡人数</view>
+      <view class='person-number'>
+        <view class='all'>
+          <image class='retangle-left' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/f_x.png'></image>
+          <view class='number' >
+            <view class='singlenum' wx:for="{{allnumber}}">{{item}}</view>
+          </view>
+          <image class='retangle-right' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/f_x.png'></image>
+        </view>
+      </view>
+      <view class='show-message'>
+        <image class='show-message-bg' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/scroll_bg.png'></image> 
+        <view class='kuang'>
+          <view class='message-content' style='position:absolute; top:{{mtop}}rpx; height:{{mheight}}rpx; animation:mymove {{mheight/100}}s infinite; -webkit-animation:mymove {{mheight/100}}s linear infinite;transform-origin:center center;'>
+            <view class='one-message' wx:for="{{imgUrls}}">
+              <image class='pic' src='{{item.pic}}'></image>
+              <view class='usermessage'>{{item.text}}</view>
+            </view>
+          </view>
+          <view class='message-content' style='position:absolute; top:{{mtop+mheight}}rpx; height:{{mheight}}rpx; animation:mymove {{mheight/100}}s infinite; -webkit-animation:mymove {{mheight/100}}s linear infinite;transform-origin:center center;'>
+            <view class='one-message' wx:for="{{imgUrls}}">
+              <image class='pic' src='{{item.pic}}'></image>
+              <view class='usermessage'>{{item.text}}</view>
+            </view>
+          </view>
+          <view class='message-content' style='display:{{smshow}}; position:absolute; top:{{smtop}}rpx; height:{{mheight}}rpx;'>
+            <view class='one-message' wx:for="{{imgUrls}}">
+              <image class='pic' src='{{item.pic}}'></image>
+              <view class='text'>{{item.text}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='middle-content'>
+   <image class='contentpic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/club_bg.png'></image>
+  </view>
+  <view class='bottom-fansgroup'>
+    <view class='fansgroup-head'>粉丝社群</view>
+    <view class='sigle-fansgroup' wx:for="{{fansgroups}}" style="background-image:url('http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/border_bg.png')">
+      <view class='leftpic'>
+        <image class='pic' src='{{item.pic}}'></image>
+      </view>
+      <view class='rightintro'>
+        <view class='name'>{{item.name}}</view>
+        <view class='text'>{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 三个选项 -->
+  <image class='call' bindtap="calling" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/tel.png'></image>
+  <image class='server' bindtap='showService' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/wx.png'></image>
+  <button class='serverbtn' open-type="contact" ></button> 
+  <image class='gotop' style='display:{{showtop}};' bindtap="goTop" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/happy/top.png'></image>
+  <!-- 底部菜单 -->
+  <view class='bottom'>
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomBar.png'></image>
+      <text class='indextext'>首页</text>
+    </view>  
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menu.png'></image>
+      <text class='menutext'> 订单</text>
+    </view>
+  </view>
+  <view class='freejewel'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle'></view>
+  <view class='bottomfans'>粉丝俱乐部</view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+  <!-- 边框大圆 -->
+  <image class="jewelLogo"   bindtap="picTofansHappy"  src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/jewel.png"></image>
+</scroll-view>

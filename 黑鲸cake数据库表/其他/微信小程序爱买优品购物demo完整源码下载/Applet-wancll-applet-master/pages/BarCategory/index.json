@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品列表",
+  "usingComponents": {
+    "zan-tab": "../../dist/tab/index",
+    "zan-loading": "../../dist/loading/index"
+  },
+  "enablePullDownRefresh": true
+}

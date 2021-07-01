@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "黑鲸Cake",
+    "component": true,
+    "usingComponents": {
+      "mp-searchbar": "../../components/wei-ui/searchbar/searchbar"
+    }
+}

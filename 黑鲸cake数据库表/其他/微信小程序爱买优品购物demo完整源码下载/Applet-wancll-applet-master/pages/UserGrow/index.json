@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的成长值",
+  "usingComponents": {
+    "icon": "../../components/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-badge": "../../dist/badge/index",
+    "zan-cell-group": "../../dist/cell-group/index"
+  },
+  "enablePullDownRefresh": true
+}

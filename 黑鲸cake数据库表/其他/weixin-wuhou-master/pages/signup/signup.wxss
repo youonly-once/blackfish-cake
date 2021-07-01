@@ -1,0 +1,424 @@
+/* 商品图片，标题，价格，数量 */
+.picker-date
+.goodsMessage{
+  width: 750rpx;
+}
+.goodshead{
+  padding: 30rpx;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/* 商品图片 */
+.goodspic{
+  width: 163rpx;
+  height: 163rpx;
+  background-size: cover;
+  background-position: center center;
+}
+/* 除了图片的右边 */
+.goodsMessage .right{
+  width: 70%;
+}
+/* 商品标题 */
+.right .goodsTitle{
+  font-size: 30rpx;
+  display: block;
+}
+/* 商品当前价格 */
+.right .nowPrice{
+  font-size: 28rpx;
+  display: inline-block;
+  margin-top: 30rpx;
+}
+.right .goodsPrice{
+  color: #ff4545;
+  font-size: 28rpx;
+}
+/* 商品数量 */
+.right .NumberCount{
+  height: 38rpx;
+  margin-top: 30rpx;
+  float: right;
+  font-size: 22rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border: 1rpx solid #8f8f8f;
+}
+/* 商品数量增加 */
+.right .NumberCount .add{
+  width: 39rpx;
+  height: 38rpx;
+  float: left; 
+}
+/* 商品当前数量 */
+.right .NumberCount .nowNumber{
+  width: 57rpx;
+  height: 38rpx;
+  float: left;
+  border-left: 1rpx solid #8f8f8f;
+  border-right: 1rpx solid #8f8f8f;
+}
+/* 商品数量减少 */
+.right .NumberCount .reduce{
+  float: left;
+  width: 39rpx;
+  height: 38rpx;
+}
+.right .NumberCount .discount{
+  width: 54rpx;
+  height: 38rpx;
+  float: left;
+}
+.discount{
+  clear: both;
+  height: 70rpx;
+  width: 750rpx;
+  border-top: 20rpx solid #f4f4f4;
+}
+.discount .redLogo{
+  float: left;
+  width: 128rpx;
+  height: 40rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+.discount .discountText{
+  float: right;
+  font-size: 26rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-right: 30rpx;
+}
+.gonext{
+  display: inline-block;
+  width: 19rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+.addlogo{
+  margin: 0 auto;
+  margin-top: 3rpx;
+  width: 30rpx;
+  height: 32rpx;
+}
+.reducelogo{
+  display: block;
+  margin: 0 auto;
+  width: 30rpx;
+  height: 32rpx;
+  margin-top: 3rpx;
+}
+.redprice{
+  color: #ff4545;
+}
+.writeMessage .writeLogo{
+  width: 34rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  margin-right: 18rpx;
+}
+.writeMessage{
+  clear: both;
+  width: 750rpx;
+  padding: 20rpx 0;
+  /* height: 71rpx;
+  line-height: 71rpx; */
+  font-size: 27rpx;
+  border-top: 20rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.cardstate{
+  float: left;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #ff8686;
+  font-weight: bold;
+}
+form{
+ display: block;
+ width: 690rpx;
+ margin: 0 auto;
+ /* background-color: #f0f;   */
+}
+form .tt{
+  position: relative;
+  width: 690rpx;
+  /* height: 50rpx;
+  line-height: 50rpx; */
+  padding: 20rpx 10rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-top: 12rpx;
+  text-indent: 31rpx;
+}
+form .tt::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25rpx;
+  bottom: 25rpx;
+  width: 6rpx;
+  border-radius: 40%;
+  background-color: #d3ab82;
+}
+form .nameInput{
+  display: block;
+  font-size: 24rpx;
+  padding-left: 31rpx;
+  border-radius: 10rpx;
+  width: 657rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border: 1rpx solid #f4f4f4;
+}
+/* 性别选择 */
+.sex-choose{
+  position: relative;
+  width: 200rpx;
+  float: left;
+  margin-left: 100rpx;
+  text-indent: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 24rpx;
+}
+/* 性别选择圆点差异变化 */
+.sex-choose::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  border: 1rpx solid #434343;
+  background-color: #fff;
+}
+.sex-choose.selected::before{
+  content: '';
+  position: absolute;
+  background-color: #e4be97;
+}
+form .picker-date{
+  position: relative;
+  display: block;
+  height: 80rpx;
+  width: 688rpx;
+  text-indent: 31rpx;
+  line-height: 80rpx;
+  color: #000;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  font-size: 23rpx;
+  margin-bottom: 20rpx;
+}
+form .picker-date .gonext{
+  position: absolute;
+  right:20rpx;
+  top:20rpx;
+/* width:19rpx;
+height:30rpx; */
+}
+/* 地址选择器 */
+form .picker-address{
+  position: relative;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-indent: 31rpx;
+  width: 688rpx;
+  color: #000;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+}
+/* 地址的选择logo */
+.addr-gonext{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 19rpx;
+  height: 30rpx;
+}
+.input-addr-tip{
+  color: #9b9b9b;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+form .gonext{
+  width: 19rpx;
+  height: 30rpx;
+  float: right;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+form .more-address {
+ width: 690rpx;
+ margin-top: 20rpx;
+}
+form .more-address textarea{
+  width: 658rpx;
+  height: 128rpx;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  padding-left: 30rpx;
+  padding-top: 14rpx;
+}
+form .hobby{
+  display: block;
+  width: 710rpx;
+}
+.checkbox{
+  float: left; 
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  color: #959595;
+  border: 1rpx solid #959595;
+}
+/* 清除爱好列表,性别选择的浮动 */
+.clearfloat{
+clear: both;
+height: 10rpx;
+
+}
+/* 爱好选中后的颜色和边框 */
+.is_checked {
+  position: relative;  
+  color: #d3ab82;
+  border: 1rpx solid #d3ab82; 
+}
+/* 选中白色对勾 */
+.hobby-select{
+  width: 18rpx;
+  height: 20rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+/* 选中三角形效果 */
+.is_checked::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 30rpxx solid transparent;
+  border-bottom: 30rpx solid transparent;
+  border-left: 30rpx solid #d3ab82;
+  border-bottom-right-radius: 10rpx;
+  transform:rotate(180deg);
+  -ms-transform:rotate(180deg); 	/* IE 9 */
+  -moz-transform:rotate(180deg); 	/* Firefox */
+  -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+  -o-transform:rotate(180deg);
+}
+/* 介绍自己 */
+form .introduce textarea{
+  width: 660rpx;
+  height: 158rpx;
+  font-size: 24rpx;
+  padding-top: 14rpx;
+  padding-left: 30rpx;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+}
+form .pic{
+  width: 690rpx;
+  border-radius: 10rpx;
+  background-color: #eeeeee;
+  font-size: 28rpx;
+  color: #a9a9a9;
+  text-align: center;
+}
+.uploadpic-tip{
+  width: 690rpx;
+}
+/* 上传图片的logo */
+.uploadpic-logo{
+  margin-top: 20rpx;
+  width: 87rpx;
+  height: 87rpx;
+}
+/* 上传图片的提示话语 */
+.uploadtext-tip{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.upload-picture{
+  position: relative;
+  display: inline-block;
+  width: 300rpx;
+  height: 300rpx;
+  margin-left: 30rpx;
+}
+/* 用户上传图片成功显示 */
+.upload-success-pic{
+  width: 300rpx;
+  height: 300rpx;
+  background-size: cover;
+  background-position: center;
+}
+/* 关闭图片 */
+.closepic{
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  width: 48rpx;
+  height: 48rpx;
+}
+form .btn{
+  margin-top: 48rpx;
+  width: 750rpx;
+  margin-left: -30rpx;
+  height: 140rpx;
+  padding-top: 50rpx;
+  background-color: #f4f4f4;
+}
+form .btn .submit-btn{
+  display: block;
+  width: 500rpx;
+  height: 83rpx;
+  font-size: 32rpx;
+  line-height: 83rpx;
+  text-align: center;
+  background-color: #f35324; 
+  color: #fff;
+}
+/* 吐司提示样式 */
+.toasttip{
+  position: fixed;
+  top: 400rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  letter-spacing: 5rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  }

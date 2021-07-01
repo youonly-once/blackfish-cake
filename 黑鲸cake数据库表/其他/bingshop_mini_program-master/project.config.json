@@ -1,0 +1,79 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": false,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.0",
+	"appid": "wx82f1142443293aae",
+	"projectname": "bingshop_mini_program-master",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": 2,
+					"name": "个人中心",
+					"pathName": "pages/personal/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/index/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "商品详情",
+					"pathName": "pages/category/goods_detail/goods_detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/category/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "确认订单",
+					"pathName": "pages/cart/confirmation_order/confirmation_order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品支付",
+					"pathName": "pages/cart/confirmation_order/confirmation_order",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

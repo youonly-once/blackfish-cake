@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "zan-icon":"../../dist/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-tab": "../../dist/tab/index",
+    "icon": "../../components/icon/index",
+    "zan-popup": "../../dist/popup/index",
+    "zan-button": "../../dist/btn/index",
+    "wancll-address":"../../components/address/index",
+    "wancll-selectsku": "../../components/selectSku/index"
+  },
+  "enablePullDownRefresh": true
+}

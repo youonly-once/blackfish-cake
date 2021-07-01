@@ -1,5 +1,4 @@
-@import "../../app.wxss";
-
+@import "../../maincolor.wxss";
 .order_list {
   padding: 0rpx 25rpx;
   background: #fff;
@@ -9,25 +8,23 @@
   height: 160rpx;
   padding: 42rpx 0rpx 32rpx;
   /*border-bottom: solid 1rpx #ececec;*/
-  align-items: center;
-}
-.img_left {
-  width: 26%;
 }
 
-.order_confirm image {
+.order_confirm .image {
   width: 160rpx;
   height: 160rpx;
 }
 
 .img_left {
-  width: 26%;
+  width: 160rpx;
 }
 
 .order_name {
-  width: 74%;
+  width: 100%;
   align-items: center;
   overflow: hidden;
+  min-height:160rpx;
+  margin-left:20rpx;
 }
 
 .order_name .text1 {
@@ -44,7 +41,7 @@
 }
 
 .order_price {
-  color: #ff6347;
+ 
   font-size: 24rpx;
 }
 
@@ -60,4 +57,9 @@
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.flexRowBetween{
+	display:flex;
+	flex-direction:Row;
+	justify-content:space-between;
 }

@@ -1,0 +1,28 @@
+<view class='content'>
+  <image class="bg-image" src="{{bgImg}}" mode='widthFix'></image>
+  <view class='info-box'>
+    <view class='user-info'>
+      <view class='title'>可提现佣金(元)</view>
+      <view class='number'>{{bonusData.can_drawcash_money}}</view>
+    </view>
+    <view class='moneys'>
+      <view class='money bonus-money'>
+        <view class='number'>{{bonusData.total_money}}</view>
+        <view class='text'>累计佣金(元)</view>
+      </view>
+      <view class='money bonus-money'>
+        <view class='number'>{{bonusData.can_drawcash_money}}</view>
+        <view class='text'>可提现佣金(元)</view>
+      </view>
+      <view class='money pay-money'>
+        <view class='number'>{{bonusData.wait_pay_money}}</view>
+        <view class='text'>待打款佣金(元)</view>
+      </view>
+    </view>
+    <zan-panel class="cell-panel-demo">
+      <zan-cell title="提现" is-link url="/pages/UserDRCenterApply/index">
+        <icon slot="icon" class='icon icon-b' type='tixian'></icon>
+      </zan-cell>
+    </zan-panel>
+  </view>
+</view>

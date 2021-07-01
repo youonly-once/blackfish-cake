@@ -1,4 +1,4 @@
-<view wx:if="{{isShow}}" class="no-content-image">
-  <image mode="widthFix" src="/images/no-content.png"></image>
+<view  style="{{isShow?'':'display:none;'}}" class="no-content-image">
+  <image mode="widthFix" src="/images/no-content.png" class="image"></image>
   <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
 </view>

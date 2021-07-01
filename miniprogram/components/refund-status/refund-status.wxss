@@ -1,9 +1,10 @@
+@import "../../maincolor.wxss";
 .refund_satus{
   width:100%;
   padding: 50rpx;
-  background: #ff6347;
   font-size:30rpx;
   box-sizing:border-box;
+  min-height: 200rpx;
 }
 .refund_satus text{
   color:#FFF;
@@ -15,5 +16,5 @@
 .flexColumnBetween{
   display:flex;
 	flex-direction:column;
-	justify-content:space-between;
+	justify-content:center;
 }

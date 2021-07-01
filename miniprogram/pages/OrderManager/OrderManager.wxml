@@ -1,0 +1,21 @@
+
+<!--manageAddress.wxml-->
+<view class="order_sort flexRowBetween">
+	<view class="order_item {{currentTap ==0?'order_this color_main main_border':''}}" data-current="0" bindtap="order_status">
+		全部
+	</view>
+	<view class="order_item {{currentTap ==1?'order_this color_main main_border':''}}" data-current="1" bindtap="order_status">
+		待付款
+	</view>
+	<view class="order_item {{currentTap ==2?'order_this color_main main_border':''}}" data-current="2" bindtap="order_status">
+		待发货/自提
+	</view>
+	<view class="order_item {{currentTap ==3?'order_this color_main main_border':''}}" data-current="3" bindtap="order_status">
+		待收货
+	</view>
+	<view class="order_item {{currentTap ==4?'order_this color_main main_border':''}}" data-current="4" bindtap="order_status">
+		待评价
+	</view>
+</view>
+
+<order-list id="order-list"   isAdmin="true" bind:loadingSuccess="loadingSuccess"></order-list>

@@ -1,0 +1,85 @@
+/* pages/refound/refound.wxss */
+.padding{
+  padding: 15px;
+  font-size: 28rpx;
+}
+.padding .title{
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.text-input textarea{
+  height: 150rpx;
+}
+.image-input{
+  display: flex;
+  flex-wrap: wrap
+}
+.image-input .image-list{
+  margin-right: 20rpx;
+}
+.image-input .up-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.image-input .add-image{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px
+}
+
+.center-info{
+  background: #fafafa;
+  padding: 10rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.center-info .image-warpper{
+  flex: 180rpx 0 0;  
+}
+.center-info .image{
+  width: 160rpx;
+  height: 160rpx;
+  background: #ccc;
+  display: block;
+}
+.center-info .title-warpper{
+  flex: 1;
+}
+.center-info .title-warpper .title{
+  width: 100%;
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  margin-bottom: 5rpx;
+}
+.center-info .title-warpper .sku{
+  height: 70rpx;
+  line-height: 35rpx;
+  overflow: hidden;
+  color: #999;
+}
+.center-info .price-warpper{
+  flex: 100rpx 0 0;
+  margin-left: 20rpx;
+  text-align: right;
+}
+.center-info .price-warpper .price{
+  height: 70rpx;
+  margin-bottom: 5rpx;
+}
+.center-info .price-warpper .price .real_price{
+  color: #f44;
+}
+.center-info .price-warpper .price .sell_price{
+  text-decoration: line-through;
+  color: #999;
+} 
+.center-info .price-warpper .count{
+  height: 40rpx;
+  line-height: 1;
+}

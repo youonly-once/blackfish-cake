@@ -5,7 +5,7 @@
   text-align: center;
 }
 
-.no-content-image image {
+.no-content-image .image {
   display: block;
   width: 18%;
   margin: 0 auto;

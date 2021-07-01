@@ -1,0 +1,31 @@
+<view>
+  <zan-tab id="tab" class="tab" bindtap="tabchange" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" data-target="{{ tabSelectedId }}" fixed>
+    <view class='list' wx:for="{{dbList}}" wx:key="item" data-id="{{item.id}}" bindtap='goDetailInfo'>
+      <view class='title'>
+        <view class='left'>{{item.intro}} </view>
+        <view class='right'>+{{item.money}}</view>
+      </view>
+      <view class='info'>
+        <view class='left'>
+          <view class='line'>编号：{{item.apply_no}} </view>
+          <view class='line'>申请时间：{{item.create_time}} </view>
+        </view>
+        <view class='right'>
+          <template is="status" data="{{...item}}" />
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{FPage.noContent}}" class="no-content-image">
+      <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+      <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+    </view>
+  </zan-tab>
+</view>
+
+<!-- 状态 -->
+<template name="status">
+  <text class='text' wx:if="{{status==1}}">待审核</text>
+  <text class='text' wx:if="{{status==2}}">未通过</text>
+  <text class='text' wx:if="{{status==3}}">已打款</text>
+  <text class='text' wx:if="{{status==9}}">无效</text>
+</template>

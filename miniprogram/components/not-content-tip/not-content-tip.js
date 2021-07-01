@@ -6,7 +6,11 @@ Component({
   properties: {
     isShow:{
       type: Boolean,
-      value: false
+      value: false,
+      observer: function (newVal, oldVal) {//数组变化时回调该函数
+       // console.log(newVal,oldVal)
+
+      }
     }
   },
 

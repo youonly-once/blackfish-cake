@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "绑定手机号",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-select": "../../dist/select/index",
+    "zan-button": "../../dist/btn/index",
+    "zan-popup": "../../dist/popup/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index"
+  }
+}

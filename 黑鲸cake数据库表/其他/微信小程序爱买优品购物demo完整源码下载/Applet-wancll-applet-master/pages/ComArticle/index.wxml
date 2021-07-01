@@ -1,0 +1,7 @@
+<view class='article'>
+  <view class='title'>{{article.title}}</view>
+  <view class='timer'>{{article.create_time}}</view>
+  <view class='content'>
+    <rich-text nodes="{{article.content}}"></rich-text>
+  </view>
+</view>

@@ -1,0 +1,94 @@
+<view class="content">
+  <!-- 头部图片设置 -->
+  <view class='head'>
+     <image class='headBg' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/cardBg.png'></image>
+    <image class='aoBg' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/aoBg.png'></image> 
+  </view>
+  <!-- 未加入俱乐部的头部信息 -->
+  <view class='headText' style='display:none;'>
+    <image class='userAvatar' src='{{userInfo.avatarUrl}}'></image> 
+    <view class='nickName'>{{userInfo.nickName}}</view>
+    <image class='fansLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/logo.png'></image>
+    <view class='joinTip'>加入午逅粉丝俱乐部享有粉丝权益</view>
+    <view class='joinBtn'>加入俱乐部</view>
+  </view>
+  <!-- 有粉丝卡的头部显示 -->
+  <view class='headText' style='display:block;'>
+    <image class='userAvatar' src='{{userInfo.avatarUrl}}'></image> 
+    <view class='nickName'>{{userInfo.nickName}}</view>
+     <image class='fansLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/logo.png'></image> 
+    <view class='cardnumber'> 
+      <view class='first'>{{firstnumber}}</view> 
+      <view class='second'>{{secondnumber}}</view> 
+      <!-- <view class='third'>{{thirdnumber}}</view>  -->
+    </view>
+    <view class='cardendTime'>到期时间:{{cardendtime}}</view>
+    <view class='joinBtn' bindtap='TofansHappy'>俱乐部</view>
+  </view>
+  <!-- 粉丝卡到期的头部显示 -->
+  <view class='headText' style='display:none;'>
+    <image class='userAvatar' src='{{userInfo.avatarUrl}}'></image> 
+    <view class='nickName'>{{userInfo.nickName}}</view>
+    <image class='fansLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/logo.png'></image>
+    <view class='cardnumber'> 
+      <view class='first'>{{firstnumber}}</view> 
+      <view class='second'>{{secondnumber}}</view> 
+      <view class='third'>{{thirdnumber}}</view> 
+    </view>
+    <view class='cardendTime'>到期时间:{{cardendtime}}</view>
+    <view class='joinBtn' bindtap='renew'>需续费</view>
+  </view>
+  <!-- 头部选择 -->
+  <view class='menu'>
+    <view class='list {{first}}' bindtap='all'>
+      全部
+    </view>
+    <view class='list {{second}}' bindtap='noPay'>
+      待付款
+    </view>
+    <view class='list {{third}}' bindtap='noUse'>
+      待使用
+    </view>
+  </view>
+  <view class='all-content-menu' wx:for="{{allcontent}}">
+    <view class='signle-menu' bindtap='toseemenu'>
+      <view class='menu-head'>
+        <view class='identifier'>订单编号:{{item.identifier}}</view>
+        <view class='time'>下单时间:{{item.time}}</view>
+      </view>
+      <view class='menu-middle'>
+        <view class='headpic' style="background-image:url('{{item.pic}}')"></view>
+        <view class='menu-right'>
+          <view class='title'>{{item.title}}</view>
+          <view class='others'>
+            <view class='number'>数量:{{item.menuNumber}}</view>
+            <view class='allPrice'>总额:<text class='red'>{{item.allPrice}}</text></view>
+          </view>
+        </view>
+      </view>
+      <view class='menu-btn'>
+          <view class='nouse-btn'>{{item.kind}}</view> 
+      </view> 
+    </view>
+  </view>
+  <view class='white-bottom'>
+  </view>
+  <view class='bottom'>
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic'  bindtap='Tofreedom'src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomBar.png' ></image>
+      <text class="indextext" bindtap='Tofreedom'>首页</text>
+    </view>  
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/selectMenu.png'></image>
+      <text class="menutext"> 订单</text>
+    </view>
+  </view>
+  <view class='freejewel' bindtap='TofansHappy'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle' bindtap='TofansHappy'></view>
+  <view class='bottomfans' bindtap='TofansHappy'>粉丝俱乐部</view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+   <!-- 边框大圆 -->
+  <image class="jewelLogo"   bindtap='TofansHappy'  src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/fansjewel.png"></image>
+</view>

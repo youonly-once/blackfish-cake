@@ -1,0 +1,33 @@
+<zan-panel>
+  <view class='plant'>
+    <view class='title'>昵称</view>
+    <input class='context' value='{{name}}' bindinput='enterName' type="text" placeholder='请输入昵称'/>
+  </view>
+  <zan-panel>
+    <view class='plant'>
+      <view class='title'>QQ</view>
+      <input class='context' value='{{qq}}' bindinput='enterQQ' type="number" placeholder='请输入QQ号码'/>
+    </view>
+  </zan-panel>
+  <view class="plant">
+    <view class='title'>微信</view>
+    <input class='context' value='{{wechat}}' bindinput='enterWechat' type="text" placeholder="请输入微信号" />
+  </view>
+  <zan-panel>
+    <view class="plant">
+      <view class='title'>邮箱</view>
+      <input class='context' value='{{email}}' bindinput='enterEmail' type="text" placeholder="请输入邮箱" />
+    </view>
+  </zan-panel>
+  <view class="plant">
+    <view class='title'>地区</view>
+    <input class='context' disabled value='{{showAddress}}' bindtap="showPicker" type="text" />
+  </view>
+</zan-panel>
+<view style='margin-bottom:10px;'>
+  <zan-button-group>
+    <zan-button bindbtnclick="send" type="info">提交申请</zan-button>
+  </zan-button-group>
+</view>
+
+<citys id="citys"  bind:getCitys="getCitys" condition="{{condition}}"></citys>

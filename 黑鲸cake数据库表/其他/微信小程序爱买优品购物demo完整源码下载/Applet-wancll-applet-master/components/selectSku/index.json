@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-tab": "../../dist/tab/index",
+    "icon": "../../components/icon/index",
+    "zan-popup": "../../dist/popup/index",
+    "zan-button": "../../dist/btn/index"
+  }
+}

@@ -1,0 +1,24 @@
+.avatar-warpper{
+  padding: 20rpx;
+  text-align: center;
+}
+.avatar-warpper .avatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.avatar-warpper .avatar image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.avatar-warpper .avatar .avatar-change{
+  line-height: 60rpx;
+}
+.panel{
+  margin-bottom: 15px;
+}
+.btn{
+  padding: 10px;
+}

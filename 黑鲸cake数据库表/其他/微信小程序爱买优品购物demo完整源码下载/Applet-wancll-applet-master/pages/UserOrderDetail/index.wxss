@@ -1,0 +1,10 @@
+.order-top{
+  background: linear-gradient(to bottom, #3de5ff, #39bbff, #358dff);
+  align-items: flex-start;
+}
+
+.order-bottom{
+  background: #fff;
+  padding: 15px;
+  margin: 10px 0;
+}

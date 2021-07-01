@@ -1,0 +1,21 @@
+<view class="wancll-margin-t-10">
+  <view class="wancll-bg-white wancll-padded-15 wancll-margin-b-10 clearfix" wx:for="{{lists}}" wx:key="key" data-id='{{item.id}}' catchtap='editBankCard'>
+    <view class="wancll-col-xs-2 wancll-fl">
+      <i class="{{'bankicon iconfont ' + item.fontClass}}" style="{{'color: ' + item.color}}"></i>
+    </view>
+    <view class="wancll-col-xs-10 wancll-fl">
+      <view class="wancll-font-size-18">{{item.bank_name}}</view>
+      <view class="wancll-font-size-12">{{item.card_holder}}</view>
+      <view class="wancll-font-size-16 wancll-margin-t-5">{{item.card_number}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{FPage.noContent}}" class="no-content-image">
+    <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+    <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+  </view>
+
+  <view class="wancll-padded-15">
+    <button class="wancll-bg-info wancll-text-white" data-id='new' catchtap='editBankCard'>新增银行卡</button>
+  </view>
+</view>

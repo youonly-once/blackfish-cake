@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "用户订单(管理员)",
+  "navigationBarTextStyle":"black",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":0,
+  "component": true,
+  "usingComponents": {
+    "order-list": "../components/order-list/order-list"
+  }
+}

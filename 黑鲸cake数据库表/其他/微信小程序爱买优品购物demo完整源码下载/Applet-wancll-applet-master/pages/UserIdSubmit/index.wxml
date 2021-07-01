@@ -1,0 +1,31 @@
+<view>
+  <zan-panel>
+    <zan-cell-group>
+      <zan-cell class="cell" title="真实姓名">
+        <input slot="footer" type="text" bindinput='nameChange' placeholder="请输入真实姓名" value="{{name }}" />
+      </zan-cell>
+      <zan-cell class="cell" title="身份证号">
+        <input slot="footer" type="idcard" bindinput='idcardChange' placeholder="请输入身份证号" value="{{idcard}}" />
+      </zan-cell>
+    </zan-cell-group>
+  </zan-panel>
+  <view class="wancll-padded-10 wancll-margin-t-5">
+    <text>请按照实例上传您的身份证正反面照片</text>
+  </view>
+  <view class="wancll-padded-5 wancll-flex">
+    <view class="wancll-col-xs-6 wancll-padded-5">
+      <image mode='widthFix' class="wancll-col-xs-12" src="{{idcardFront}}"></image>
+    </view>
+    <view class="wancll-col-xs-6 wancll-padded-5">
+      <image mode='widthFix' class="wancll-col-xs-12" src="{{idcardBack}}"></image>
+    </view>
+  </view>
+  <view class="wancll-padded-10">
+    <image mode='widthFix' bindtap="uploadFile" class="wancll-col-xs-12 wancll-margin-t-10" data-type="idcardFront" src="{{uploadCardFront}}"></image>
+    <image mode='widthFix' bindtap="uploadFile" class="wancll-col-xs-12 wancll-margin-t-10" data-type="idcardBack" src="{{uploadCardBack}}"></image>
+
+    <button class="wancll-bg-info  wancll-margin-t-10  wancll-text-white" bindtap='submit' loading="{{loading}}">提交审核</button>
+  </view>
+
+
+</view>

@@ -1,0 +1,15 @@
+.plant{
+  padding:15px;
+  display: flex;
+  line-height: 60rpx;
+}
+.plant .title{
+  flex: 150rpx 0 0;
+  height: 60rpx;
+  font-size: 26rpx;
+}
+.plant .context{
+  flex: 1;
+  height: 60rpx;
+  color: #777
+}

@@ -1,0 +1,52 @@
+<view >
+<view class='head-text'>订单详情 <view class='noreturn'>不支持退款</view></view>
+ <view class='head'>
+ <image class='menuLogo' src='../../images/menuLogo.png'></image>
+ 报名编号：{{identifier}}
+ </view>
+ <view class='goods'>
+ <image   class='goodspic'  src='http://only5201314.com/uploads/2017/04/181412206332.jpg'></image>
+ <view class='title'>签到二维码</view>
+ <view class='GG title-text'>零基础和孩子一起画油画</view>
+ <view class='GG goodsPrice'>总额 <view class='right'>￥{{goodsPrice}}</view></view>
+ </view>
+ <view class='message'>
+ <view class='message-head'>
+  <image class='personPic' src='../../images/writeLogo.png'></image>
+  报名信息
+ </view>
+ <view class='table'>
+  <view class='T name'>姓名 <view class='t'>{{username}}</view></view>
+  <view class='T sex'>性别 <view class='t'>{{sex}}</view></view>
+  <view class='T birthday'>生日 <view class='t'>{{birthday}}</view></view>
+ <view class='T address'>地址 <view class='t'>{{address}}</view></view>
+ <view class='T hobby'>爱好 <view class='t'>{{hobby}}</view></view>
+ </view>
+<view class='introduce'>
+ <view class='left'>个人简介</view>
+ <view class='introduce-text'>{{introduce}}       </view>
+ </view>
+<view class='pic'> 
+  <view class='photo-text'>照片</view>
+  <image class='picture-pic' wx:for="{{pics}}" src='{{item}}'></image> 
+</view>
+ </view>
+ <view class='bottom'>
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic' src='../../images/freedomNo.png'></image>
+      特权
+    </view> 
+    <view class='bottomfans'>粉丝俱乐部</view>
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='../../images/menu.png'></image>
+      订单
+    </view>
+  </view>
+  <!-- 边框大圆 -->
+  <view class='freejewel'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle'></view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+  <image class="jewelLogo"   bindtap="picTofansHappy"  src="../../images/fansjewel.png"></image>
+</view>

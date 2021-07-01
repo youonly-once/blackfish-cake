@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "修改手机号码",
+  "usingComponents": {
+    "zan-button": "../../dist/btn/index"
+  }
+}

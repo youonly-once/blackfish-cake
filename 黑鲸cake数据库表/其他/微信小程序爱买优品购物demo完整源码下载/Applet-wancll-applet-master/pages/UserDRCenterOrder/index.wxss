@@ -1,0 +1,36 @@
+
+page{
+  background: #eeeeee
+}
+.list{
+  background: #fff;
+  margin: 10px 0;
+}
+.list-info{
+  padding: 10px;
+}
+.list-info .left{
+  text-align: left
+}
+.list-info .right{
+  text-align: right;
+  color: #358cff
+}
+
+.order-goods {
+  padding: 10px;
+  background: #fafafa;
+}
+.order-goods .image image{
+  width: 50px;
+  height: 50px;
+}
+.order-goods .right {
+  text-align: right
+}
+.order-goods .right {
+  text-align: right
+}
+.other{
+  color: rgb(254, 147, 65)
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "分红佣金",
+  "usingComponents": {
+    "zan-badge": "../../dist/badge/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-button": "../../dist/btn/index",
+    "zan-popup": "../../dist/popup/index",
+    "icon": "../../components/icon/index"
+  }
+}

@@ -1,0 +1,50 @@
+<import src="/components/foot-head/foot.wxml" />
+
+
+
+  <view class='confirm-container'> 
+  <order-infor id="order_infor" orderId="{{orderId}}" bind:getOrderInfor="getOrderInfor" ></order-infor>
+  
+    <!-- 结算按钮 -->
+    <view class='submit-container' wx:if="{{orderInfors.status>0 && orderInfors.status<6 }}">
+      <view class='submit-left' wx:if="{{orderInfors.status==1}}">
+        <view>合计:</view>
+        <view class='total-amount color_main'>￥{{orderInfors.payPrice/100}}.00</view>
+      </view>
+      <view class='submit-right main_bg' bindtap='checkOrderStatus'>{{orderStatusStr}}</view>
+
+    </view>
+
+  </view>
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}" catchtouchmove="toCatch" animation="{{popOpacityAnimation}}"></view>
+  <view animation="{{animationData}}" wx:if="{{showModalStatus}}" class="catalog_area bg_fff ">
+    <view class="sendInfor_title" >
+      <text> 发货</text>
+      <image class="cancel" bindtap="hideModal" src="/images/close.png"></image>
+    </view>
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{submitData}}">
+            <mp-cells title="配送员信息" footer="在你确认发货后该信息会发送给用户">
+                <mp-cell prop="name" title="姓名" ext-class="">
+                    <input bindinput="formInputChange" data-field="name" class="weui-input" placeholder="请输入姓名"/>
+                </mp-cell>
+                <mp-cell prop="mobile" title="手机号" ext-class="">
+                    <input bindinput="formInputChange" data-field="mobile" maxlength="11"  class="weui-input" placeholder="请输入手机号"/>
+                </mp-cell>
+                <mp-cell prop="remark" title="备注" ext-class="">
+                    <input  bindinput="formInputChange" data-field="remark" class="weui-input" placeholder="备注"/>
+                </mp-cell>
+            </mp-cells>
+        </mp-form>
+      </view>
+    <button-center-bottom title="确认发货" form-type="submit"  bindtap="submitCheckInfor"></button-center-bottom>
+    
+      
+  </view>
+
+
+
+
+
+<!--<template is="foot" />-->

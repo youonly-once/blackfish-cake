@@ -25,14 +25,14 @@ Component({
     //跳转到商品详情页
     gotoCakeDetail: function (data) {
       let id = data.currentTarget.dataset.id
-      wx.showLoading({
+      /*wx.showLoading({
         mask: true,
         title: '',
-      })
+      })*/
       wx.navigateTo({
-        url: '../../cake_detail/cake_detail?cakeid=' + id,
+        url: '/pages/CakeDetail/CakeDetail?cakeid=' + id,
         complete(res) {
-          wx.hideLoading()
+          //wx.hideLoading()
         }
       })
     },

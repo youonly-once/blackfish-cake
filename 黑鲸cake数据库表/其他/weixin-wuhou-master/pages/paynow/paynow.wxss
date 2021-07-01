@@ -1,0 +1,366 @@
+
+.head{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  font-size: 26rpx;
+  color: #2c2c2c;
+}
+.head .menuLogo{
+ display: inline-block;
+  width: 27rpx;
+  height: 34rpx;
+  padding-right:24rpx;
+  vertical-align: middle;
+}
+.goods{
+  width: 750rpx;
+  padding-top: 31rpx;
+  padding-left: 30rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.goods .goodspic{
+  width: 162rpx;
+  height: 162rpx;
+  float: left;
+}
+.goods .title{
+  margin-left: 40rpx;
+  display: inline-block;
+  width: 480rpx;
+  height: 180rpx;
+  font-size: 30rpx;
+  color: #000;
+  font-weight: 700;
+}
+.GG{
+  width: 690rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 24rpx;
+  color: #6f6f6f;
+}
+.goodsNumber{
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.goodsPrice .right{
+  color: #ff4545;
+}
+.GG .right{
+  float: right;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.message{
+  width: 750rpx;
+   border-bottom: 106rpx solid #fff; 
+}
+.message .message-head{
+  width: 720rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  color: #2c2c2c;
+}
+.message-head .personPic{
+  width: 32rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  padding-right: 20rpx;
+}
+.message .table{
+  width: 690rpx;
+  margin: 0 auto;
+  /* background-color: #f0f; */
+}
+.message .table .t{
+  display: inline-block;
+   float: right; 
+  margin-right: 10rpx;
+}
+.table .T{
+  width: 690rpx;
+  height: 79rpx;
+  line-height: 79rpx;
+  font-size: 25rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  color: #6f6f6f;
+}
+.message .introduce{
+  width: 690rpx;
+  padding-top: 23rpx;
+  margin: 0 auto;
+  font-size: 25rpx;
+  padding-bottom: 20rpx;
+  letter-spacing: 4rpx;
+  color: #6f6f6f;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.introduce .left{
+  width: 126rpx;
+  float: left;
+}
+.introduce .introduce-text{
+  width: 564rpx;
+  display: inline-block;
+  text-indent: 50rpx;
+}
+.message .pic{
+  width: 690rpx;
+  padding-top: 24rpx;
+  margin: 0 auto;
+  padding-bottom: 50rpx; 
+  color: #6f6f6f;
+}
+.message .pic .photo-text{
+  font-size: 25rpx;
+  padding-bottom: 10rpx;
+}
+/* 图片显示 */
+.message .picture-pic{
+  display: block;
+  width: 500rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1rpx solid #f4f4f4;
+}
+.btn .price{
+  font-weight: bold;
+  color: #ff4545;
+}
+.btn .btn-left{
+  padding-left: 30rpx;
+  font-size: 40rpx;
+  color: #7c7c7c;
+  font-weight: 600;
+}
+.btn .discount-price{
+  float: left;
+  font-size: 22rpx;
+  margin-left: 20rpx;
+}
+.btn .payBtn{
+  float: right;
+  width: 230rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 0;
+  font-size: 35rpx;
+  color: #fff;
+  background-color: #06ce0c;
+  text-align: center;
+}
+/* 提交后 */
+.end-head-text{
+  width: 750rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-indent: 30rpx;
+  font-size: 25rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.end-head-text .end-noreturn{
+  width: 178rpx;
+  height: 58rpx;
+  margin-right: 30rpx;
+  line-height: 58rpx;
+  display: block;
+  margin-top: 16rpx;
+  float: right;
+  background-color: #efefef;
+  text-indent: 0rpx;
+  text-align: center;
+}
+.end-head{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  font-size: 26rpx;
+  color: #2c2c2c;
+}
+.end-head .end-menuLogo{
+ display: inline-block;
+  width: 27rpx;
+  height: 34rpx;
+  padding-right:24rpx;
+  vertical-align: middle;
+}
+.end-goods{
+  width: 750rpx;
+  padding-top: 31rpx;
+  padding-left: 30rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.end-goods .end-goodspic{
+  display: block;
+  width: 162rpx;
+  height: 162rpx;
+  margin: 0 auto;
+}
+.end-goods .end-title{
+  width: 690rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30rpx;
+}
+.end-GG{
+  width: 690rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 24rpx;
+    /* background-color: green;   */
+}
+.end-GG.end-title-text{
+  width: 690rpx;
+  text-align: center;
+  background-color: #eeeeee;
+  border-radius: 20rpx;
+}
+.end-goodsNumber{
+  border-bottom: 1rpx solid #f4f4f4;
+  background-color: red;
+}
+.end-goodsPrice .end-right{
+  color: #ff4545;
+}
+.end-GG .end-right{
+  float: right;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+/* 底部菜单 */
+.freejewel{
+  position: fixed;
+  z-index:9;
+  background-color: #fff;
+  bottom:25rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.bottom{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #bfbfbf;
+  text-align: center;
+  background-color: #fff;
+}
+.bottomfans{
+  display: block;
+  position: fixed;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  bottom: 9rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  text-align: center;
+}
+.smallCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 42rpx;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  background-color: #212123; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 67rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 35px;
+  height: 58rpx;
+  
+}
+.freedom{
+  flex: 1;
+  position: relative;
+  margin-left: -60rpx;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+}
+.freedompic{
+  display: block;
+  margin: 0 auto;
+  width: 44rpx;
+  height: 44rpx;
+}
+.bottom .menuBar{
+  flex: 1;
+  position: relative;
+  margin-right: -60rpx;
+  text-align: center;
+  float: left;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #000;
+}
+.menupic{
+  display: block;
+  width: 40rpx;
+  height: 44rpx;
+  margin: 0 auto;
+}
+.indextext,.menutext{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 9rpx;
+  display: inline-block;
+  padding-top: 12rpx;
+}
+

@@ -1,0 +1,94 @@
+<view class="container">
+  <!-- 没有粉丝卡的头部页面 -->
+  <view bindtap="bindViewTap" class="userinfo" style='display:block;' >
+    <view class="curve wavef" style="background-image:url('http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/wave.png')"  ></view><view class="curve waves" style="background-image:url('http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/wave.png')" ></view>
+    <image class="cardBg" style='display:{{notfans}};'src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/NofansCard.png"></image> 
+    <view class='fansBtn' style='display:{{notfans}};'>{{fansHappyPrice}}元/年加入俱乐部</view>
+    <!-- 有粉丝的显示 -->
+    <image style='display:{{fans}};' class="cardBg" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/cardBg.png"></image> 
+    <image style='display:{{fans}};'  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text style='display:{{fans}};'  class="nickname">{{userInfo.nickName}}</text>  
+    <view style='display:{{fans}};'  class="daytime" >
+      加入俱乐部
+      <text class="day">{{fansDay}}</text>
+      天
+    </view>
+    <image style='display:{{fans}};'  class="logo" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/logo.png"></image> 
+    <view style='display:{{fans}};'  class="cardNumber">
+      <text class=" span firstnumber">{{cardFirst}}</text>
+      <text class="span cardSecond">{{cardSecond}}</text>
+    </view>
+    <ul style='display:{{fans}};'  class="menu">
+      <li  class="">
+        <image class="freedomlogo" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomlogo.png">专属特权</image>
+      </li>
+      <li>
+        <image class="discountlogo" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/discountlogo.png">优惠折扣</image>
+      </li>
+      <li>
+        <image class="fansgiftlogo" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/fansgiftlogo.png">粉丝福利</image>
+      </li>
+    </ul>
+  </view>
+  <!-- 头部优选和专属的选择 -->
+  <view class="activity">
+    <ul>
+      <li bindtap="preference" >
+        <image class="chooseActivity" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/chooseActivity.png"></image>
+        <text class="title">优选活动</text>
+        <text class="fanstext">粉丝卡折上折</text>
+      </li>
+      <li bindtap="exclusive">
+        <image class="ownActivity" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/ownActivity.png"></image>
+        <text class="title">专属活动</text>
+        <text class="fanstext">粉丝卡用户专享</text>
+      </li>
+    </ul>
+  </view>
+  <!-- 所有活动，商品内容 -->
+  <view style='display:{{all}};' class="content">  
+    <view class="single" catchtap="goods" wx:for="{{kindcontent}}" wx:key="{{classes}}" id='{{index}}' data-classes="{{item.classes}}" data-pic="{{item.pic}}" data-kind="{{item.kind}}" data-title="{{item.title}}" data-fansPrice="{{item.fansPrice}}" data-price="{{item.price}}" data-saleNumber="{{item.saleNumber}}">
+      <view class='picture' style="background-image:url('{{item.pic}}')"></view>
+      <image style='display:{{salekinds}}' class='salekind' src='{{salekindpic}}'></image>
+      <view class='new-kind {{bono}}' style='dispplay:block;'>
+        <view class="kindtext">{{item.kind}}</view>
+        <image class="kind" src="{{bonopic}}"></image>
+      </view>
+      <view class="title">{{item.title}}</view>
+      <!-- 粉丝卡优惠价格 -->
+      <view class="pricekind" style='display:block;'>
+        <image class="redlogo" src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/redLogo.png"></image>
+        <view class="fansprice">{{item.fansPrice}}</view>
+        <view class="price">{{item.price}}</view> 
+        <view class="saleNumber">已售<text class='n'>{{item.saleNumber}}</text>份</view> 
+      </view>
+      <!-- 没有优惠价 -->
+       <view class="pricekind" style='display:none;'>
+        <view class="no-price">{{item.price}}</view> 
+        <view class="saleNumber">已售<text class='n'>{{item.saleNumber}}</text>份</view> 
+      </view>
+    </view>
+  </view>
+  <view class='wuhoulogo'>
+    <image class='wuhou-erwei-logo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/wuhoulogoerwei.png'></image>
+  </view>
+  <!-- 底部菜单 -->
+  <view class='bottom'>
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedom.png'></image>
+      <text class="indextext">首页</text>
+    </view>  
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menu.png'></image>
+      <text class="menutext"> 订单</text>
+    </view>
+  </view>
+  <view class='freejewel'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle'></view>
+  <view class='bottomfans'>粉丝俱乐部</view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+   <!-- 边框大圆 -->
+  <image class="jewelLogo"   bindtap="picTofansHappy"  src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/fansjewel.png"></image>
+</view>

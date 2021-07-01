@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/goods",
+    "pages/buynow/buynow",
+    "pages/signup/signup",
+    "pages/paynow/paynow",
+    "pages/paysuccess/paysuccess",
+    "pages/SubmitOrder/SubmitOrder",
+    "pages/fansHappy/fansHappy",
+    "pages/pay/pay",
+    "pages/menuList/menuList",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "午逅粉丝卡",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

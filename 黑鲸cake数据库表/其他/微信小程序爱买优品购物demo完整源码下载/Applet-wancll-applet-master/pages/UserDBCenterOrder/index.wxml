@@ -1,0 +1,63 @@
+<view>
+  <zan-tab id="tab" class="tab" bindtap="tabchange" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" data-target="{{ tabSelectedId }}" fixed>
+    <view class='list' wx:for="{{orderList}}" wx:key="item">
+      <view class='list-info'>
+        <zan-row >
+          <zan-col col="18" col-class="left">
+             <view>{{item.source_user_info.nick_name}}</view> 
+            <view>{{item.order_info.order_no}}</view>
+          </zan-col>
+          <zan-col col="6" col-class="right">
+            <template is="status" data="{{...item}}" />
+          </zan-col>
+        </zan-row>
+      </view>
+      <view class='order-goods' wx:for="{{item.order_goods_info}}" wx:for-item="goods" wx:key="goods">
+        <zan-row>
+          <zan-col col="4" col-class="image">
+            <image src='{{goods.order_goods_info.thum}}' mode='widthFix'></image>
+          </zan-col>
+          <zan-col col="14" col-class="center">
+            <view class='title'>{{goods.order_goods_info.name}}</view>
+            <view class='number'>x{{goods.order_goods_info.num}}</view>
+            <view class='other'>
+              <template is="lev" data="{{...goods}}" />
+            </view>
+          </zan-col>
+          <zan-col col="6" col-class="right">
+            <view class='text'>
+              <template is="get" data="{{...item}}" />
+            </view>
+            <view class='buns'>+{{goods.expect_money}}</view>
+          </zan-col>
+        </zan-row>
+      </view>
+    </view>
+    <view wx:if="{{FPage.noContent}}" class="no-content-image">
+      <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+      <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+    </view>
+  </zan-tab>
+</view>
+
+<!-- 状态 -->
+<template name="status">
+  <text class='text' wx:if="{{order_status==1}}">待付款</text>
+  <text class='text' wx:if="{{order_status==2}}">已付款</text>
+  <text class='text' wx:if="{{order_status==3}}">已完成</text>
+  <text class='text' wx:if="{{order_status==9}}">无效</text>
+</template>
+<!-- 状态 -->
+<template name="lev">
+  <text class='text' wx:if="{{bonus_type==1}}">等级代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'area'}}">县级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'city'}}">市级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'province'}}">省级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==3}}">全球分红</text>
+</template>
+<!-- 状态 -->
+<template name="get">
+  <text class='text' wx:if="{{order_status==1}}">预计佣金</text>
+  <text class='text' wx:if="{{order_status==2}}">预计佣金</text>
+  <text class='text' wx:if="{{order_status==3}}">已获得佣金</text>
+</template>

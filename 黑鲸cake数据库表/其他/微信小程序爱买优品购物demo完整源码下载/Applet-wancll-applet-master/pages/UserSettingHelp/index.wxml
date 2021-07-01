@@ -1,0 +1,25 @@
+<view>
+  <view class="wancll-padded-10">
+    <text>请选择反馈问题的类型</text>
+  </view>
+  <radio-group bindchange="radioChange">
+    <view class='wancll-bg-white wancll-padded-10'>
+      <text>功能异常</text>
+      <radio class="wancll-fr" color="#358cff" value="功能异常" checked></radio>
+    </view>
+    <view class='wancll-bg-white wancll-padded-10'>
+      <text>功能改进</text>
+      <radio class="wancll-fr" color="#358cff" value="功能改进"></radio>
+    </view>
+  </radio-group>
+  <view class="wancll-padded-10">
+    <text>问题和意见描述</text>
+  </view>
+  <view class="wancll-padded-10">
+    <textarea bindinput='inputChange' class=" wancll-bg-white wancll-col-xs-12 wancll-padded-10"></textarea>
+  </view>
+
+  <button bindtap='submit' class="wancll-bg-info wancll-text-white wancll-margin-10">提交</button>
+
+
+</view>

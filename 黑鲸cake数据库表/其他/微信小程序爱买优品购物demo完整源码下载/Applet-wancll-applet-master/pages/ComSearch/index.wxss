@@ -1,0 +1,55 @@
+.search_box {
+  display: flex;
+  height: 80rpx;
+  background: #fff;
+}
+
+.search_box .category_button {
+  flex: 80rpx 0 0;
+  text-align: center;
+}
+
+.search_box .search_input {
+  flex: 1;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 15rpx;
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0 15rpx;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.search_box .search_input .icon {
+  flex: 40rpx 0 0;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.search_box .search_input .input {
+  width: auto;
+  color: #666;
+  flex: 1;
+}
+
+.search_box .massage_button {
+  flex: 80rpx 0 0;
+  text-align: center;
+}
+
+.search-div {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-key {
+  background-color: #eee;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+  color: #555;
+}

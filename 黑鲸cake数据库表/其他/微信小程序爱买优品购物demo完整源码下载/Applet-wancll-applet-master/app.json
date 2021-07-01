@@ -1,0 +1,104 @@
+{
+  "pages": [
+    "pages/BarCarts/index",
+    "pages/ComCreateOrder/index",
+    "pages/UserOrderRefound/index",
+    "pages/BarHome/index",
+    
+    "pages/BarCategory/index",
+    "pages/BarUser/index",
+    "pages/ComArticle/index",
+    "pages/ComDetail/index",
+    "pages/ComSearch/index",
+    
+    "pages/ComPay/index",
+    "pages/ComGoodsList/index",
+    "pages/ComLogin/index",
+    "pages/ComRegister/index",
+    "pages/ComBindMobile/index",
+    "pages/ComModifyMobile/index",
+    "pages/ComPayWaiting/index",
+    "pages/UserSetting/index",
+    "pages/UserCard/index",
+    "pages/UserCardEidt/index",
+    "pages/UserComment/index",
+    "pages/UserWallet/index",
+    "pages/UserWalletLog/index",
+    "pages/UserWalletDraw/index",
+    "pages/UserWalletRecharge/index",
+    "pages/UserGrow/index",
+    "pages/UserSettingHelp/index",
+    "pages/UserSettingPass/index",
+    "pages/UserCollect/index",
+    "pages/UserAddress/index",
+    "pages/UserAddressEidt/index",
+    "pages/UserCoupon/index",
+    "pages/UserCouponCenter/index",
+    "pages/UserService/index",
+    "pages/UserOrderList/index",
+ 
+    "pages/UserOrderExpress/index",
+    "pages/UserOrderEstimate/index",
+    "pages/UserOrderDetail/index",
+    "pages/UserIdInfo/index",
+    "pages/UserIdSubmit/index",
+    "pages/UserQRCode/index",
+    "pages/UserDRCenter/index",
+    "pages/UserDBCenter/index",
+    "pages/UserRecAccunt/index",
+    "pages/UserDBCenterWallet/index",
+    "pages/UserDBCenterApply/index",
+    "pages/UserDBCenterDetail/index",
+    "pages/UserDBCenterOrder/index",
+    "pages/UserDBCenterTeam/index",
+    "pages/UserDBCenterCusts/index",
+    "pages/UserDBCenterDetailInfo/index",
+    "pages/UserDRCenterWallet/index",
+    "pages/UserDRCenterApply/index",
+    "pages/UserDRCenterDetail/index",
+    "pages/UserDRCenterOrder/index",
+    "pages/UserDRCenterTeam/index",
+    "pages/UserDRCenterCusts/index",
+    "pages/UserDRCenterDetailInfo/index",
+    "pages/UserDBAndDRApply/index",
+    "pages/UserInfoComplete/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "网开小程序",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#f9f9f9"
+  },
+  "tabBar": {
+    "color": "#757575",
+    "selectedColor": "#2479e9",
+    "list": [
+      {
+        "iconPath": "static/images/index.png",
+        "selectedIconPath": "static/images/index-2.png",
+        "pagePath": "pages/BarCarts/index",
+        "text": "主页"
+      },
+      {
+        "iconPath": "static/images/cate.png",
+        "selectedIconPath": "static/images/cate-2.png",
+        "pagePath": "pages/BarCategory/index",
+        "text": "商品"
+      },
+      {
+        "iconPath": "static/images/cart.png",
+        "selectedIconPath": "static/images/cart-2.png",
+        "pagePath": "pages/BarCarts/index",
+        "text": "购物车"
+      },
+      {
+        "iconPath": "static/images/people.png",
+        "selectedIconPath": "static/images/people-2.png",
+        "pagePath": "pages/BarUser/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

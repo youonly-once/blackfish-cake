@@ -1,0 +1,118 @@
+<view class="content" >
+<!-- 商品没有种类选择的提交订单 -->
+    <view class='top' style='display:none;'>
+        <image class='goodspic' src='{{goodspic}}'></image>
+        <view class='right'>
+          <text class='goodsTitle'>
+            {{goodsTitle}}
+          </text>
+          <view class='nowPrice'>
+            当前价格: 
+            <text class='goodsPrice'>
+              ￥{{nowPrice}}
+            </text>
+          </view>
+          <view class='NumberCount'> 
+            <view class='add' bindtap='addNumber'> 
+              <image class='addlogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/addlogo.png'></image> 
+            </view>
+            <view class='nowNumber'>{{goodsNumber}}</view> 
+            <view class='reduce' bindtap='reduceNumber'> 
+              <image class='reducelogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/reducelogo.png'></image> 
+            </view> 
+          </view>
+        </view>
+      <view class='fansDiscount'>
+        <image class='redLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/redLogo.png'></image>
+        <!-- 未购买和已过期的提示 -->
+        {{cardStateTip}}
+        <!--可做： 没有购买粉丝卡的提示  已过期续费的提示  -->
+        <view class='text-right' style='display:{{cardState}};'>
+          {{nocardkind}}后即享优惠价<text class='red'>{{fansdiscount}}</text>元 
+          <image class='gonext'src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image> 
+        </view>
+        <!-- 已是会员的提示 -->
+        <view class='text-right' style='display:none;'>
+          您是粉丝卡用户，已为您节省<text class='red'>{{fansdiscount}}</text>元 
+        </view>
+      </view>
+    </view>
+
+   <!-- 有商品种类选择的订单 -->
+   <view class='top kinds' style='display:block;'>
+      <image class='goodspic' src='{{goodspic}}'></image>
+      <view class='right'>
+        <text class='goodsTitle'>{{goodsTitle}}
+        </text>
+        <view class='nowPrice'>当前价格:<text class='goodsPrice'>￥{{nowPrice}}
+          </text>
+        </view>
+      </view>
+      <view class='goodschoosekind'>
+        <view class='kind-title'> 
+          <image class='chooseLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/chooseLogo.png'></image> 
+          选择类型
+        </view>
+        <view class='goods-kinds'>
+          <view class="kind {{clickId==index?'selected':''}}" id="{{index}}" bindtap='clickkind' wx:for="{{goodskinds}}" wx:key="{{item.id}}">
+            <image class='kindchoosepic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/kindchoose.png'></image>
+            {{item.name}}
+          </view>
+        </view>
+        <view class='knumber'>
+          <view class='kright'>
+            剩余数量:{{restnumber}}
+          </view>
+          <view class='kNumberCount'> 
+            <view class='kreduce' bindtap='reduceNumber'> 
+              <image class='reducelogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/reducelogo.png'></image> 
+            </view> 
+            <view class='knowNumber'>{{goodsNumber}}</view> 
+            <view class='kadd' bindtap='addNumber'> 
+              <image class='addlogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/addlogo.png'></image> 
+            </view>
+          </view>  
+        </view>
+      </view>
+   </view>
+
+    <view class='writeMessage kind'>
+      <view class='HeadTitle'> 
+        <image class='writeLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/writeLogo.png'></image> 
+        填写信息
+      </view>
+      <form bindsubmit="formSubmit">
+        <view class='name'>
+          <image class='personLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/personLogo.png'></image>
+          <input class='nameInput' name="name" bindinput='nameInput' placeholder='请输入您的姓名'></input>
+        </view>
+        <view class='phone'>
+          <image class='Smartphone' src='../../images/Smartphone.png'></image>
+          <input class='phoneShow' name="phonenumber" placeholder='请输入您的手机号'></input>
+        </view>
+        <view class='address'>
+          <image class='Placeholder' src='../../images/Placeholder.png'></image>
+          <picker name="address" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker-address" bindchange="bindRegionChange">
+               <!-- <view class='area-tip' style='display:{{areatip}}'>请选择您所在地区</view>  -->
+              <!-- <view class='choose-area'>{{region[0]}} {{region[1]}} {{region[2]}}</view> -->
+              <view class='choose-area'>{{region[0]}} {{region[1]}} {{region[2]}}</view>
+              <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+            </view>
+          </picker>
+        </view>
+        <view>
+            <textarea class="more-address" name="addressmore" placeholder='详细地址' bindblur="bindTextAreaBlur" value='{{moreaddr}}' />
+        </view>
+        <view class='wxAddr' bindtap='getaddr'>
+          <image class='wxBg'  src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/wxBg.png'></image>
+          一键获取微信地址
+          <image class='gonext'  src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+        </view> 
+        <view class='bottom-btn'>
+          <button class='submitorder' formType="submit">提交订单</button>
+        </view>
+      </form>
+    </view>
+    <view class='toasttip' style='display:{{showtoast}}'>{{toastText}}</view>
+</view>

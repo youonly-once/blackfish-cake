@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的实名认证",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index"
+  },
+  "enablePullDownRefresh": true
+}

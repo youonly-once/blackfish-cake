@@ -1,0 +1,25 @@
+.items{
+  padding: 15px;
+}
+
+.items .item{
+  background: #fff;
+  padding: 10px;
+  height: 120rpx;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  line-height: 60rpx;
+
+}
+.items .item .info{
+  display: flex;
+
+}
+.items .item .info .intro{
+  flex: 1;
+  text-align: left
+}
+.items .item .info .change{
+  flex: 200rpx 0 0;
+  text-align: right;
+}

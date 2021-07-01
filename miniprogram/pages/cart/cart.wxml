@@ -5,7 +5,7 @@
     <view wx:for="{{carts}}" class="carts-item" wx:key='cart' wx:item='item'>
       <!-- //复选框 -->
       <view class="carts-radio">
-        <image class="carts-select" bindtap="bindCheckbox" data-index="{{index}}" src="{{item.isSelect?'../../images/selected-goods.png':'../../images/select-goods.png'}}" />
+        <image class="carts-select" bindtap="bindCheckbox" data-index="{{index}}" src="{{item.isSelect?'../../images/select_yellow.png':'../../images/select.png'}}" />
       </view>  
       <!-- //商品信息 -->  
       <view class="carts-cnt">
@@ -15,7 +15,7 @@
           <text class="carts-guige">{{item.style}} {{item.cakeSize}}</text>
           <text class="carts-guige">{{item.candleDesc}} </text>
           <view class="carts-subtitle">
-            <text class="carts-price c--f60">￥{{item.singlePrice}}</text>
+            <text class="carts-price color_main">￥{{item.singlePrice}}</text>
           </view>
         </view>
       </view>
@@ -34,11 +34,11 @@
     <view class="bottomfixed">  
       <view class="inner">  
         <view class="chkAll" bindtap="bindSelectAll">
-        <image class="allselect" src="{{selectAllStatus?'../../images/selected-goods.png':'../../images/select-goods.png'}}" /> 
+        <image class="allselect" src="{{selectAllStatus?'../../images/select_yellow.png':'../../images/select.png'}}" /> 
           <text>全选</text>  
         </view>  
-        <view class="total">合计：<em>￥{{totalMoney}}</em></view>  
-        <view wx:if="{{totalCount != 0}}" class="btn-pay" bindtap='bindSettlement'>去结算({{totalCount}})</view>  
+        <view class="total color_main">合计：<em>￥{{totalMoney}}</em></view>  
+        <view wx:if="{{totalCount != 0}}" class="btn-pay main_bg" bindtap='bindSettlement'>去结算({{totalCount}})</view>  
         <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>  
       </view>  
     </view>  

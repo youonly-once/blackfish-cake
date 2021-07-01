@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的优惠券",
+
+  "usingComponents": {
+    "zan-icon": "../../dist/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-button": "../../dist/btn/index",
+    "zan-tab": "../../dist/tab/index"
+  },
+  "enablePullDownRefresh": true
+}

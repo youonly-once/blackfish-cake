@@ -1,0 +1,76 @@
+/**index.wxss**/
+#address{
+	width:100%;
+	height:100%;
+	background:#f5f5f5}
+.noAddr{
+    display: flex;    /*设置显示样式**/
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:row; 
+    color: gray;
+    padding-top: 260rpx;
+    height: 400rpx;
+   
+  }
+.address_item{
+	 border-top: solid 1rpx rgb(236, 235, 235);
+	padding:25rpx 25rpx 0rpx 25rpx;
+	background:#fff;
+}
+.address_left .text1{
+	color:#262626;
+	font-size:30rpx;
+  font-weight: bold;}
+.text_other{
+		font-size:28rpx;
+    color: gray;
+}
+.address_right{
+	font-size:30rpx;
+  font-weight: bold;
+	color:#262626;
+}
+.address_set{
+	padding:5px 25rpx;
+	
+	background:#fff;
+	}
+.address_set text{font-size:28rpx;}
+.address_item .default{
+
+	width:8%;
+  align-self: center;
+	}
+.address_item .default image{
+
+	width:29rpx;
+	height:29rpx;}
+.address_detail{
+  padding-bottom: 15rpx;
+  border-bottom:solid 1px #f7f7f7;
+	background:#fff;
+}
+.address_set  .edit image{
+	width:30rpx;
+	height:30rpx;
+	margin-right:10rpx;
+}
+.edit{color:#7d7d7d;
+display:flex;
+padding: 5rpx;
+margin-left: 20rpx;
+	align-items:center;}
+.de_color{color:#FF0000}
+/***********提交按钮***********/
+.submit_info{
+margin:0rpx 25rpx;
+width:700rpx;
+height:88rpx;
+line-height:88rpx;
+text-align:center;
+font-size:36rpx;
+color:#fff;
+background:linear-gradient(to right,rgb(248, 180, 20),#FFBA1E);
+border-radius:10rpx;margin-top:260rpx;}

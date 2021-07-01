@@ -1,0 +1,539 @@
+.container{
+  margin: 0;
+  padding: 0;
+	width: 750rpx; 
+  overflow-x: hidden;
+  font-family: '微软雅黑';
+}
+.userinfo{
+  padding-top: 16rpx;
+  position: relative;
+  width: 750rpx;
+  height: 362rpx;
+  background-color:#e2e2e2;  
+}  
+/* 没有粉丝卡的加入俱乐部费用提示 */
+ .fansBtn{
+   position: absolute;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   right:0;
+   margin: 0 auto;
+   bottom: 0;
+   width: 330rpx;
+   height: 58rpx;
+   line-height: 58rpx;
+   text-align: center;
+   font-size: 25rpx;
+   border-radius: 10rpx;
+   background-color: #e4be97;
+} 
+ .cardBg{
+  display: none;
+  margin-top: 20rpx;
+  width: 736rpx;
+  height: 362rpx;
+  margin: 0 auto;
+} 
+.userinfo-avatar {
+	  position: absolute;
+    z-index: 999999;
+	  top: 53rpx;
+	  left: 48rpx;
+  	width: 96rpx;
+  	height: 96rpx;
+  	border-radius: 50%;
+  	border: 3rpx solid #fff;
+}
+.nickname{
+	position: absolute;
+  letter-spacing: 4rpx;
+  z-index: 99999;
+	top: 70rpx;
+	left: 167rpx;
+	color: #fff;
+	font-size: 26rpx;
+}
+.daytime{
+  display: block;
+	position: absolute;
+	top: 110rpx;
+	left: 167rpx;
+	color: #fff;
+	font-size: 26rpx;
+  text-align: left;
+  text-indent: -7rpx;
+}
+.daytime .day{
+	margin: 0;
+	padding: 0;
+	color: #e4be97;
+	font-weight: bold;
+}
+.cardNumber{
+  font-family: 'Farrington-7B-Qiqi';
+	position: absolute;
+	left: 72rpx;
+	top: 185rpx;
+	color: #e4be97;
+  font-size: 23rpx;
+	font-weight: bold;
+	letter-spacing: 16rpx;
+}
+.span{
+	margin-right: 38rpx;
+}
+.logo{
+	position: absolute;
+	top: 70rpx;
+	right: 44rpx;
+	width: 184rpx;
+	height: 42rpx;
+}
+.menu{
+	position: absolute;
+	top: 255rpx;
+	width: 624rpx;
+ 	left: 99rpx;
+}
+.menu li{
+	float: left;
+	list-style-type: none;
+}
+.freedomlogo{
+	width: 144rpx;
+	height: 26rpx;
+}
+.discountlogo{
+	width: 139rpx;
+	height: 28rpx;
+  margin-left: 66rpx;
+}
+.fansgiftlogo{
+	width: 143rpx;
+	height: 26rpx;
+  margin-left: 54rpx;
+}
+.curve{
+  display: block; 
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom:-1rpx; 
+  z-index: 100;
+   width: 1500rpx; 
+  /* width: 100%; */
+	height: 61rpx;  
+  /* background-size:1500rpx 61rpx; */
+  background-size: 100% 100%;
+}
+@keyframes a{
+  0% {
+    left: 0;
+}
+100% {
+  left: -100%;
+}
+}
+@keyframes b{
+  0% {
+    left:100%;
+}
+100% {
+  left:0;
+}
+}
+.wavef{
+  left: 0;
+  -webkit-animation: a 2s linear infinite;
+  animation:a 2s linear infinite; 
+  /* background-color: red; */
+}
+.waves{
+  left: 100%;
+  -webkit-animation: b 2s linear infinite;
+  animation:b 2s linear infinite;
+  /* background-color: green; */
+}
+
+.white{
+  position: absolute;
+  z-index: 9;
+  top:365rpx;
+  width: 750rpx;
+  height: 10rpx;
+  background-color:#fff;
+}
+.activity{
+  /* background-color: red; */
+    margin-top: 20rpx;
+	  width: 750rpx;
+  	height: 185rpx;
+	  text-align: center;
+  	/* background-color: #fff; */
+    /* padding-bottom: 10rpx; */
+}
+.activity ul li{
+	width: 375rpx;
+	height: 175rpx;
+	float: left;
+	position: relative;
+}
+.activity ul li:first-child::after{
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 9rpx;
+	width: 2rpx;
+	background-color: #f1f1f1;
+}
+.activity ul li:last-child::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 9rpx;
+	width: 2rpx;
+	background-color: #f4f4f4;
+}
+.chooseActivity{
+	display: block;
+	width: 155rpx;
+	height: 95rpx;
+	margin: 0 auto;
+}
+.ownActivity{
+	display: block;
+	width: 157rpx;
+	height: 95rpx;
+	margin: 0 auto;
+}
+.activity .title{
+	display: block;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 15rpx;
+	font-size: 27rpx;
+  letter-spacing: 20rpx;
+  text-align: center;
+  text-indent: 18rpx;	 
+   /* background-color: green;	   */
+}
+.activity .fanstext{
+	display: block;
+	 /* margin-top: 8rpx;  */
+  height: 35rpx;
+  line-height: 35rpx;
+	font-size: 20rpx;
+  /* background-color: red; */
+}
+.content{
+  border-top: 20rpx solid #f5f4f0;
+	width: 750rpx;
+  /* padding-top: 31rpx; */
+}
+.content .single{
+	position: relative;
+	width: 690rpx;
+  margin: 0 auto;
+	border-radius: 15rpx;
+	margin-top: 25rpx;
+  -moz-box-shadow: 0px 0px 5px 1px #eaeaea;
+  box-shadow: 0px 0px 5px 1px #eaeaea;
+}
+.content .picture{
+	width: 690rpx;
+	height: 360rpx;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+  background-size: cover;
+  background-position: center;
+}
+.content .new-kind{
+  position: absolute;
+  left:-12rpx;
+  top: 25rpx; 
+  height: 48rpx;
+  line-height: 48rpx;
+}
+.content .kind{
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 14rpx;
+  height: 48rpx;
+  margin-left: -1rpx;
+}
+.content .kindtext{
+  float: left;
+  letter-spacing: 3rpx;
+  padding-left: 22rpx;
+  padding-right: 19rpx;
+	font-size: 24rpx;
+  font-weight: bold;
+	color: #fff;
+  background-color: #f35525;
+}
+.content .new-kind.blue{
+  background-color: #55c3bd;
+}
+.content .salekind{
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 87rpx;
+  height: 87rpx;
+}
+.content .title{
+	width: 640rpx;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+	height: 81rpx;
+  padding-top:17rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 5rpx;
+  font-family: '微软雅黑';
+	
+}
+.content .pricekind{
+	width: 640rpx;
+	padding-left: 30rpx;
+	padding-right: 20rpx;
+	height: 63rpx;
+  margin-top: 22rpx;
+
+	border-bottom-left-radius: 10rpx;
+	border-bottom-right-radius: 10rpx;  
+}
+.content .redlogo{
+  position: relative;
+  z-index: 1;
+  display: block;
+	width: 128rpx;
+	height: 46rpx;
+	float: left;
+  margin-top: -2rpx;
+}
+.content .fansprice{
+  height: 42rpx;
+  line-height:42rpx;
+	float: left;
+  color: #f35324;
+  font-size: 24rpx;
+  padding-left: 42rpx; 
+  padding-right: 15rpx;
+  margin-left: -40rpx;
+  margin-top: -2rpx;
+  border-radius: 25px;
+  border: 2rpx solid #f35324;
+}
+.content .price{
+	float: left;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size:24rpx;
+  margin-left: 10rpx; 
+  /* margin-top: -2rpx;    */
+}
+.content .no-price{
+  border: 1rpx solid #f35324;
+  border-radius: 20rpx;
+  padding-left: 37rpx;
+  padding-right: 37rpx;
+  float: left;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size:24rpx;
+  margin-left: 20rpx; 
+  color: #f35324;
+
+}
+.content .saleNumber{
+	float: right;
+  color: #f35324;
+  font-size:26rpx;
+  margin-right: 19rpx;
+  letter-spacing: 4rpx; 
+  margin-top: 2rpx;
+}
+.content .saleNumber .n{
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0rpx;
+  text-align: center;
+}
+.barcontent{
+  border-top: 15rpx solid #f5f4f0;
+  width:750rpx;
+  height: 250rpx;
+}
+.barcontent .rectangle{
+	margin-left: 104rpx;
+	margin-top: 40rpx;
+	height: 184rpx;
+	width: 540rpx;
+	border: 2rpx solid #2e2a1d;
+}
+.twopic{
+	display: block;
+	float: left;
+	width: 148rpx;
+	height: 148rpx;
+	margin-left: 46rpx;
+	margin-top: 19rpx;
+}
+.longpress{
+	display: block;
+  font-size: 28rpx;
+	float: left;
+	margin-left: 40rpx;
+	margin-top: 35rpx;
+}
+.attention{
+	display: block;
+  font-size: 28rpx;
+	float: left;
+	margin-left: 40rpx;
+}
+.copyright{
+	display: block;
+  	font-size: 28rpx;
+	float: left;
+	margin-left: 40rpx;
+}
+.freejewel{
+  position: fixed;
+  z-index:9;
+  background-color: #fff;
+  bottom:30rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.bottom{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #bfbfbf;
+  text-align: center;
+  background-color: #fff;
+}
+.bottomfans{
+  display: block;
+  position: fixed;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  bottom: 9rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  text-align: center;
+}
+.smallCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 42rpx;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  background-color: #212123; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 67rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 35px;
+  height: 58rpx;
+  
+}
+.freedom{
+  flex: 1;
+  position: relative;
+  margin-left: -60rpx;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #ff6161;
+}
+.freedompic{
+  display: block;
+  margin: 0 auto;
+  width: 44rpx;
+  height: 44rpx;
+}
+.bottom .menuBar{
+  flex: 1;
+  position: relative;
+  margin-right: -60rpx;
+  text-align: center;
+  float: left;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #000;
+}
+.menupic{
+  display: block;
+  width: 40rpx;
+  height: 44rpx;
+  margin: 0 auto;
+}
+.indextext,.menutext{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 9rpx;
+  display: inline-block;
+  padding-top: 12rpx;
+}
+/* 底部二维码 */
+.wuhoulogo{
+  width: 750rpx;
+  height: 350rpx;
+  background-color: #f4f4f4;
+}
+.wuhoulogo .wuhou-erwei-logo{
+  display: block;
+  width: 260rpx;
+  height: 101rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+

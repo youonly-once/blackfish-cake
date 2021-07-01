@@ -1,0 +1,6 @@
+.wancll-margin-t-10{
+  padding: 10px;
+}
+.bankicon{
+  font-size: 70rpx;
+}

@@ -1,0 +1,15 @@
+/* pages/ComLogin/index.wxss */
+
+.container {
+  text-align: center;
+}
+
+.logo {
+  margin-top: 100rpx;
+  margin-bottom: 50rpx;
+}
+
+.iconfont {
+  font-size: 65rpx;
+  color: #09bb07;
+}

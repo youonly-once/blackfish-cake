@@ -1,0 +1,67 @@
+.view{
+  color:#999999
+}
+.item{  
+  padding: 15px;
+  display: flex;
+}
+.item .image{
+  flex: 180rpx 0 0;
+}
+.item .image image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.item .order-info{
+  flex: 1
+}
+.item .order-info .text textarea{
+  height: 200rpx;
+}
+
+.padding{
+  padding: 15px;
+  font-size: 28rpx;
+}
+.padding .title{
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+
+
+.image-input{
+  display: flex;
+  flex-wrap: wrap
+}
+.image-input .image-list{
+  margin-right: 20rpx;
+}
+.image-input .up-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.image-input .add-image{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 50rpx;
+}
+
+.star-cent{
+  padding: 15px;
+  display: flex;
+  line-height: 60rpx;
+}
+.star-cent .star-title{
+  font-size: 28rpx;
+  
+}
+.star-cent .star{
+  font-size: 40rpx;
+  color:rgb(255, 198, 64)
+}

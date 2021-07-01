@@ -1,0 +1,15 @@
+<import src="/components/foot-head/foot.wxml" />
+  <view class='confirm-container'>
+  <order-infor id="order_infor" orderId="{{orderId}}" bind:getOrderInfor="getOrderInfor" ></order-infor>
+    <!-- 结算按钮 -->
+    <view class='submit-container' wx:if="{{orderInfors.status>0 && orderInfors.status<6}}">
+      <view class='submit-left' wx:if="{{orderInfors.status==1}}">
+        <view>合计:</view>
+        <view class='total-amount color_main'>￥{{orderInfors.payPrice/100}}.00</view>
+      </view>
+       <view class='submit-right main_bg' bindtap='checkOrderStatus'>{{orderStatusStr}}</view>
+    </view>
+
+  </view>
+
+<!--<template is="foot" />-->

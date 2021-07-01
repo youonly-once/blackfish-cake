@@ -1,0 +1,44 @@
+<view class='conten'>
+  <zan-tab id="tab" class="tab" bindtap="tabchange" list="{{ tabList }}" selected-id="{{ tabSelectedId }}" data-target="{{ tabSelectedId }}" fixed>
+  </zan-tab>
+  <view class='convert'>
+    <input class='convert-input wancll-padded-l-10' bindinput='enterConvert' placeholder='请输入兑换码'></input>
+    <view class='convert-btn'>
+      <zan-button size='small' type="info" catchtap='convert'>兑换</zan-button>
+    </view>
+  </view>
+  <view class='discount-list'>
+    <view class='discount' wx:for="{{discountList}}" wx:key="{{key}}" style="background-image:url({{item.bg_img}})">
+      <view class='left' style="color:{{!item.is_expiry && item.status!=2 ? '#d50202':'#b8b8b8'}}">
+        <view class="num">{{item.change_value}}
+          <text>{{item.coupon_type =='full'?'元':'折'}}</text>
+        </view>
+        <view class="text">优惠券</view>
+      </view>
+      <view class='center'>
+        <view class="num" style="color:{{!item.is_expiry && item.status!=2 ? '#000':'#b8b8b8'}}">购物满{{item.reach_money}}元可以使用</view>
+        <view class="text">过期时间：{{item.expiry_time}}</view>
+      </view>
+      <view class='right'>
+        <template is="see" data="{{...item}}" />
+      </view>
+    </view>
+    <view wx:if="{{FPage.noContent}}" class="no-content-image">
+      <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+      <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+    </view>
+  </view>
+
+  <zan-panel>
+    <view class='fix-bottom'>
+      <button catchtap='goCenter' class="wancll-bg-info wancll-text-white">领券中心</button>
+    </view>
+  </zan-panel>
+</view>
+
+<template name="see">
+  <view class='see gry' wx:if="{{is_expiry==true && status==2}}">已过期</view>
+  <view class='see gry' wx:if="{{is_expiry==true && status==1}}">已过期</view>
+  <view class='see red' catchtap='goBuy' wx:if="{{is_expiry==false && status==1}}">立即使用</view>
+  <view class='see gry' wx:if="{{is_expiry==false && status==2}}">已使用</view>
+</template>

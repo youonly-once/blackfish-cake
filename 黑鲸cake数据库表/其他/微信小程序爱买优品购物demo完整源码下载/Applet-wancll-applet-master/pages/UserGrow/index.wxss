@@ -1,0 +1,73 @@
+.panel{
+  margin-bottom: 20rpx;
+}
+.user{
+  position: relative;
+  height: 300rpx;
+  background-image: url('http://wancllshop.wx.wygoo.com/public/static/wap/images/growth.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 10px;
+}
+.user .avatar{
+  flex: 250rpx 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150rpx;
+  border-radius: 50%;
+}
+.user .avatar image{
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  border-radius: 50%;
+}
+.user .info{
+  flex: 1;
+  color: #fff;
+  padding: 80rpx 0;
+}
+.user .info .icon{
+  font-size: 30rpx;
+}
+.user .info .name{
+  font-size: 36rpx;
+}
+.user .info .phone{
+  line-height: 50rpx;
+}
+.user .info .other{
+  display: flex;
+}
+.user .info .other .vip{
+  margin-right: 50rpx;
+}
+.title{
+  padding: 10px;
+  font-size: 28rpx;
+}
+
+
+.lists{
+  padding: 20rpx;
+}
+.lists .list{
+  display: flex;
+  padding: 10px;
+  border-radius: 10rpx;
+  background: #fff;
+  margin-bottom:20rpx; 
+}
+.lists .list .left{
+  flex: 1
+}
+.lists .list .right{
+  flex: 100rpx 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #358cff;
+}

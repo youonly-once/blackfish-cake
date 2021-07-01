@@ -12,13 +12,13 @@ Page({
     uid: 0, //用户ID
     totalCount: 0,//数量
     carts: [],
+    first:true
   },
 
   onLoad: function (options) {
     wx.showLoading({
       title: '',
     })
-
     this.getCarts();
     app.flushCartStatus();
   },
@@ -26,11 +26,14 @@ Page({
     this.getCarts();
   },
   onShow: function () {
+
+    if(this.data.first){
+      return
+    }
     if (app.globalData.flushCart == true) {
       wx.showLoading({
         title: '',
       })
-
       this.getCarts();
       app.flushCartStatus();
     }
@@ -38,6 +41,11 @@ Page({
       this.setCartNum()
       app.flushCartNum();
     }
+  },
+  onReady:function(){
+    this.setData({
+      first: false
+    })
   },
   /**
      * 获取购物车商品
@@ -51,31 +59,52 @@ Page({
         _ids:[]
       },
       success(res) {
-        console.log("orderInfor", res);
-        let carts = res.result.data
-        let hasList=true;
-        if (carts == null || carts == undefined || carts.length <= 0) {
-            hasList=false
-        }
-       
-        that.setData({
-          carts: carts,
-          hasList: hasList
-        })
-        that.setCartNum()
-        that.getTotalPrice()
+        console.log("购物车列表:", res);
+        that.successProcess(res)
       },
       fail(res) {
-        console.log("加载失败", res)
-        that.setData({
-          hasList: false
-        })
+        console.log("购物车加载失败", res)
+        that.failProcess(res)
       },
       complete(res) {
-        wx.hideLoading()
-        wx.stopPullDownRefresh()
       }
     })
+  },
+  //加载成功做的相关处理
+  successProcess:function(res){
+    let that=this
+    let result = res.result
+    if (result == null || result.data.length <= 0) {
+      that.setData({
+        hasList: false
+      })
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+      return
+    }
+
+    that.setData({
+      carts: result.data,
+      hasList: true
+    })
+    //设置tabbar数量
+    that.setCartNum()
+    //计算总价
+    that.getTotalPrice()
+    //隐藏加载框
+    wx.hideLoading()
+    wx.stopPullDownRefresh()
+  },
+  /**
+   * 加载失败做的处理
+   */
+  failProcess:function(res){
+    this.setData({
+      hasList: false
+    })
+    //隐藏加载框
+    wx.hideLoading()
+    wx.stopPullDownRefresh()
   },
   setCartNum:function(){
     var num = 0;
@@ -83,7 +112,12 @@ Page({
     for (var i = 0; i < carts.length; i++) {
       num = num + carts[i].buyCount
     }
-    console.log(num)
+    if(num<=0){
+      wx.removeTabBarBadge({
+        index: 1,
+      })
+      return
+    }
     wx.setTabBarBadge({
       index: 1,
       text: num + ''
@@ -93,8 +127,7 @@ Page({
   bindIptCartNum: function (e) {
 
     const index = e.currentTarget.dataset.index;
-    console.log("index", index )
-    console.log("id", e.currentTarget.dataset.id)
+
     var num = e.detail.value;
     let carts = this.data.carts;
     carts[index].buyCount = num;
@@ -109,8 +142,7 @@ Page({
 
   /* 点击减号 */
   bindMinus: function (e) {
-    console.log("index", index)
-    console.log("id", e.currentTarget.dataset.id)
+
     const index = e.currentTarget.dataset.index;
     let carts = this.data.carts;
     let num = carts[index].buyCount;
@@ -130,8 +162,7 @@ Page({
 
   /* 点击加号 */
   bindPlus: function (e) {
-    console.log("index", index)
-    console.log("id", e.currentTarget.dataset.id)
+
     const index = e.currentTarget.dataset.index;
     let carts = this.data.carts;
     let num = carts[index].buyCount;
@@ -145,8 +176,7 @@ Page({
     this.updateCount(e.currentTarget.dataset.id,carts[index].buyCount, carts[index].totalPrice);
   },
   updateCount: function (id,buycount, totalPrice){
-    console.log("buycount", buycount)
-    console.log("totalPrice", totalPrice)
+
     if(id==null || id==undefined || buycount<=1 || totalPrice<=0){
       return;
     }
@@ -208,15 +238,15 @@ Page({
         _ids: _ids
       },
       success(res) {
-        console.log("delCart", res);
-        that.getCarts()
-        that.getTotalPrice()
+        console.log("删除购物车:", res);
+        that.successProcess(res)
       },
       fail(res) {
         console.log("删除失败", res)
+        that.failProcess(res)
       },
       complete(res) {
-        wx.hideLoading()
+        
       }
     })
   },
@@ -298,14 +328,14 @@ Page({
     wx.setStorageSync('goods', jscart);//存入缓存
     //转到结算页面
     wx.navigateTo({
-      url: '../cart/confirmation_order/confirmation_order',
+      url: '/pages/OrderCreate/OrderCreate',
     });
 
   },
 
   cakeDetail:function(e){
     wx.navigateTo({
-      url: '../cake_detail/cake_detail?cakeid='+e.currentTarget.dataset.cakeid
+      url: '/pages/CakeDetail/CakeDetail?cakeid='+e.currentTarget.dataset.cakeid
     })
   }
   

@@ -1,0 +1,190 @@
+<!--<view class="swiper_area">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="#fff" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item data-img="{{item.style_image}}" bindtap="seeSwiperAll">
+        <image data-id="{{item.style_id}}" src="{{item.style_image}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>-->
+<view style="{{cakedata!=null && isShow?'':'display:none;'}}">
+  <import src="/components/foot-head/foot.wxml" />
+
+  <swiper indicator-dots="true" indicator-color="#ffffff" indicator-active-color="#66CDAA" autoplay="true" interval="3000" circular="true" duration="1500" class='image-container' style="height:{{swiperImgHei}}">
+    <block wx:for="{{imgMainArray}}" wx:key="swiperimg">
+      <swiper-item data-id="{{style_id}}" data-img="{{item}}" bindtap="seeSwiperAll">
+        <image src="{{item}}" class="slide-image" bindload="imgH" mode="widthFix" style="width:100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--share64.png-->
+  <view class="goods_infor_top">
+    <view style="  display:flex;flex-direction:row;  justify-content: space-between;align-items:center;" class="goods_title">
+      <view>{{cakedata.cakename}}</view>
+    </view>
+    <view class="good_description">
+      <text class="description_content">{{cakedata.cakedesc}}</text>
+    </view>
+
+    <view style="position:absolute;right:20rpx;top:20rpx;display:flex;flex-direction:column;  justify-content: flex-end;align-items:center;margin-right:10rpx;" bindtap="shareActionSheet">
+      <image src="/images/share_yellow.png" style="width:22px;height:22px;"></image>
+      <text style="font-size:20rpx;color:gray;">分享</text>
+    </view>
+
+
+    <view class="good_info_bottom display-flex-row">
+      <view class="good_price">
+        <text class="color_main good_dis_price display-ib" style="font-size:24rpx;">¥</text>
+        <text class="color_main good_dis_price display-ib">{{(sizePrice==0 && stylePrice==0)?cakedata.cakeMinPrice:stylePrice+sizePrice}} </text>
+        <text class="color_main good_dis_price  display-ib" style="font-size:24rpx;">{{(sizePrice==0 && stylePrice==0)?'.00 - ¥':''}}</text>
+        <text class="color_main good_dis_price  display-ib">{{(sizePrice==0 && stylePrice==0)?cakedata.cakeMaxPrice:''}}</text>
+        <text class="color_main good_dis_price  display-ib" style="font-size:24rpx;">.00</text>
+      </view>
+      <view class="sale">
+        <text class="good_sale_count display-ib" style="color:gray;">销量:{{cakedata.sales}}</text>
+      </view>
+    </view>
+
+  </view>
+  <!--<view class="borderTop"></view>
+<view style="font-size:24rpx;font-color:gray;background:#fff;margin-bottom:20rpx;padding:20rpx;">3km里内免运费</view>-->
+  <view class="borderTop"></view>
+  <view bindtap="viewStyleArea" class="choose_catalog_area bg_fff display-flex-row">
+    <view class="fl">选择：{{styleNameSelect.length==0?'口味':styleNameSelect}} {{sizeNameSelect.length==0?'尺寸':sizeNameSelect}}
+    </view>
+    <image class="arrow_right fr" src="../../images/ic_chevron_right_black_18dp.png" />
+  </view>
+  <view class="borderTop"></view>
+  <view class="choose_catalog_area bg_fff display-flex-row">
+    <view class="fl">配送：同城送、自提 {{StyleNameSelect}}
+    </view>
+    <image class="arrow_right fr" src="../../images/ic_chevron_right_black_18dp.png" />
+  </view>
+
+  <view class="store flexRowBetween" bindtap="bindComAbout">
+  <view class="flexRowStart" style="align-items:center;">
+    <image class="thumbnails" src="/images/head1.jpg" mode="aspectFill"></image>
+    <view class="choosed_catalog text-hidden">黑鲸Cake</view>
+    </view>
+    
+  <text>详情</text>
+  </view>
+  <view class="borderTop"></view>
+  <view class="showCompany">
+    <image src="/images/select_company.png"></image>
+    <text>企业认证</text>
+    <image src="/images/select_company.png"></image>
+    <text>收货后结算</text>
+    <image src="/images/select_company.png"></image>
+    <text>线下门店</text>
+  </view>
+
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}" catchtouchmove="toCatch" animation="{{popOpacityAnimation}}"></view>
+  <view animation="{{animationData}}" wx:if="{{showModalStatus}}" class="catalog_area bg_fff " style="min-height:{{940+padding_bottom}}rpx;">
+    <view class="catalog_title">
+      <image class="thumbnails" src="{{styleImgSelect}}" mode="aspectFill" bindtap="seeStylesAll" data-img="{{styleImgSelect}}"></image>
+      <view class="info_tip">
+        <view class="choosed_catalog text-hidden">{{cakedata.cakename}}</view>
+        <view class="good_dis_price color_main">¥{{stylePrice+sizePrice}}.00</view>
+        <!--<view class="choosed_catalog text-hidden">{{styleNameSelect}}</view>-->
+      </view>
+      <image class="cancel" bindtap="hideModal" src="/images/close.png"></image>
+    </view>
+
+    <scroll-view scroll-y="true" style="height: 640rpx;margin-top:175rpx;">
+
+      <view class="info_choose">
+
+
+        <view class="catalog_name">尺寸</view>
+
+        <view class="catalog_items display-flex-row">
+          <block wx:for="{{cakedata.size}}" wx:key="size">
+            <text data-select="{{item.sizeid}}" data-size-price="{{item.sizeprice}}" data-size-name="{{item.cakesize}}" class="{{item.sizeid == cakeSizeSelect ? 'active main_border color_main':'noActive'}} catalog_item" bindtap="chooseCakeSize">{{item.cakesize}}
+            </text>
+          </block>
+        </view>
+
+        <view class="catalog_name">口味</view>
+        <view class="catalog_items display-flex-row">
+          <block wx:for="{{cakedata.style}}" wx:key="style">
+            <text data-img="{{globalData.root}}{{item.styleimgpath}}" data-style-price="{{item.styleprice}}" data-select="{{item.styleid}}" data-style-name="{{item.stylename}}" class="{{item.styleid == styleIdSelect ? 'active main_border color_main':'noActive'}} catalog_item" bindtap="chooseStyle">{{item.stylename}}
+            </text>
+          </block>
+        </view>
+
+
+
+        <view class="borderTop"></view>
+        <view class="catalog_count display-flex-row">
+          <view style="font-weight:bold">
+            购买数量
+          </view>
+          <view class="count_control display-flex-row">
+            <span class="item_reduce item_btn" bindtap="{{buyCount>1?'buyCountReduce':''}}">-</span>
+            <span class="item_num" bindtap="carRemove">{{buyCount}}</span>
+            <span class="item_add item_btn" bindtap="buyCountAdd">+</span>
+          </view>
+        </view>
+        <view class="borderTop"></view>
+        <input class="weui-input" maxlength="10" placeholder="字牌(10个字内)" bindinput="blessingInput" />
+        <view class="borderTop"></view>
+
+        <input class="weui-input" maxlength="10" placeholder="蜡烛说明" bindinput="candleInput" />
+
+
+
+      </view>
+
+    </scroll-view>
+
+
+    <view style="position: fixed;bottom: 0;width:100%;left:0;">
+      <view class="btn_area flexRowCenter">
+        <view bindtap="addCart" class="goods_choose_btn main_bg color_fff" style="margin-right:10rpx;">加入购物车</view>
+        <view bindtap="saveOrder" class="goods_choose_btn main_bg color_fff">立即购买</view>
+      </view>
+      <view style="background:#FFF;height:{{padding_bottom}}rpx;"></view>
+    </view>
+  </view>
+
+
+  <view class="container width100 " style="margin-bottom:{{140+padding_bottom}}rpx;">
+    <view class="tab bg_fff">
+      <view class="tab-content mgb10rpx">
+        <view class="color_main btn right_btn {{select==0?'active':''}}" data-area="0" bindtap="changeArea">商品详情</view>
+        <!--<view class="btn left_btn {{select==1?'active':''}}" data-area="1" bindtap="changeArea">商品参数</view>-->
+      </view>
+    </view>
+
+
+    <view wx:if="{{0==select}}" style="margin-top:20rpx;">
+      <image src="/images/cakeDetail.jpg" mode="widthFix" style="width:100%;" />
+    </view>
+    <!-- <view wx:if="{{1==select}}" class="param_area"></view>-->
+  </view>
+
+
+  <view class="display:block" style="  position: fixed;bottom: 0;width:100%;">
+
+    <view class="goods_bottom_btn flexRowBetween">
+      <view style="align-items:center;display:flex;justify-content:center;flex-direction:column;width:100rpx;color:gray;" bindtap="bindCustom">
+        <image src="../../images/wechat.png" style="width:50rpx;height:50rpx;"></image>
+        <text>客服</text>
+      </view>
+
+      <view bindtap="addCart" class="goods_half_half main_bg color_fff">加入购物车</view>
+      <view bindtap="saveOrder" class="goods_half_half main_bg color_fff">立即购买</view>
+    </view>
+    <view style="background:#FFF;height:{{padding_bottom}}rpx;"></view>
+  </view>
+
+  <template is="foot" />
+</view>
+<custom-actionsheet actionShow="{{showCustomSheet}}" sendMessageTitle="{{cakedata.cakename}}" sendMessagePath="/pages/CakeDetail/CakeDetail?cakeid={{cakeId}}" showMessageCard='true' />
+<action-sheet actionShow="{{showShareSheet}}" closeText="关闭" bind:actionHide="onActionHide">
+  <button open-type="share">发送给朋友</button>
+  <button bindtap="call_custom">生成海报</button>
+</action-sheet>
+<no-content-tip isShow="{{noContent}}"></no-content-tip>

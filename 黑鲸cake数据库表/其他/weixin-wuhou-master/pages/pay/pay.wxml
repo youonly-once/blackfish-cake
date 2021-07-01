@@ -1,0 +1,82 @@
+<view class="content">
+  <view class='head'>
+    订单详情 
+    <view class='noreturn' class='noreturn'>不支持退款</view>
+  </view>
+  <!-- <view class='usetime'>
+    <image class='timeLogo' src='../../images/time.png'></image>
+    使用时间：{{startTime}}~{{endTime}}
+  </view> -->
+  <view class='goodsmessage'>
+    <image class='menuLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menuLogo.png'></image>
+    订单编号:{{goodsidentifier}}
+  </view>
+  <view class='Message'>
+    <view class='goodsinfo'>
+      <image class='pic' src='{{pic}}'></image>
+      <view class='goodstitle'>
+        <view>{{goodstitle}}</view>
+      </view>
+      <!-- 实物价格显示 -->
+      <view class='primecost' style='display:none;'>
+        原价:￥{{primecost}}/件 
+        <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+      </view>
+      <!-- 粉丝价格显示 -->
+      <view class='primecost' style='display:block;'>
+        <view>午逅粉丝卡价:￥{{fansprice}}/件</view>  
+        <view class='oldprice'>原价:￥{{primecost}}/件 </view>
+        <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+      </view>
+      <!-- <view class='goodsnum'>数量:{{goodsnum}}</view> -->
+      <view class='goodskind list'>
+        <view class='left'>商品类型 </view> 
+        <view class='right'>{{goodskind}}</view>  
+      </view>
+      <view class='goodsnumber list'>
+        <view class='left'>商品数量 </view> 
+         <view class='right'>{{goodsnumber}}</view>  
+      </view>
+      <view class='goodsprice list'>
+        <view class='left'>商品总额</view>
+        <view class='right'>￥{{goodsprice}}</view> 
+      </view>
+
+      <!-- 优惠券 -->
+      <view class='discount list' style='display:block;'>
+        <view class='left'>优惠券</view>
+        <view class='right'>-￥{{discountprice}}</view> 
+      </view>
+      <view class='realtotal list'>
+        <view class='left'>实付款</view> 
+        <view class='right red'>￥{{realtotal}}</view>
+      </view>
+    </view>
+  </view>
+      <!-- 收货人信息 -->
+      <view class='head userinfo-head'>
+        <image class='person' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/person.png'></image>
+        收货人
+      </view>
+      <view class='userinfo'>
+        <view class='username list'>
+          <view class='left'>姓名</view>
+          <view class='right'>{{username}}</view>
+        </view>
+        <view class='userphone list'>
+          <view class='left'>电话</view> 
+          <view class='right'>{{userphone}}</view>
+        </view>
+      </view>
+
+  <!-- 背景的f4f4f4     -->
+   <view class='borderB'>
+  </view> 
+
+
+  <!-- 底部付款 -->
+    <view class='bottom'>
+      实付款 <text class='p'>￥{{realtotal}}</text>
+      <view class='paybtn' bindtap='toPaysuccess'>微信支付</view>
+  </view> 
+</view>       

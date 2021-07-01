@@ -1,0 +1,27 @@
+.title-cont{
+  padding: 10px;
+  font-size: 13px;
+}
+.title-cont .icon{
+  font-size: 20px;
+  color: rgb(42, 142, 232);
+}
+.lists .list{
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.lists .image image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.lists .right {
+  text-align: right;
+}
+.lists .right .money{
+  color: #358cff;
+}
+.lists .text{
+  line-height: 25px;
+}

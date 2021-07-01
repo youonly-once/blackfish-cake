@@ -1,0 +1,115 @@
+
+<view class="content">
+  <!-- 商品信息 -->
+  <view class='goodsMessage'>
+    <view class='goodshead'>
+      <view class='goodspic' style="background-image:url('{{goodspic}}')"></view>
+    <view class='right'>
+      <text class='goodsTitle'>{{goodsTitle}}</text>
+      <!-- 付费 -->
+      <view class='nowPrice' style='display:none;'>当前价格: 
+        <text class='goodsPrice'>￥{{nowPrice}}</text> 
+      </view>
+      <!-- 免费 -->
+      <view class='nowPrice'>
+        当前价格: 
+        <text class='goodsPrice'>免费</text> 
+      </view>
+      <view class='NumberCount'> 
+        <view class='reduce' bindtap='reduce'> 
+          <image class='reducelogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/reducelogo.png'></image>
+        </view>
+        <view class='nowNumber'>{{goodsNumber}}</view> 
+        <view class='add' bindtap='add'> 
+          <image class='addlogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/addlogo.png'></image> 
+        </view>
+      </view>
+    </view>      
+    </view>
+    <!-- 粉丝卡通知   免费时为needmoney为none  cardstate为未购买还是已过期 payaction表示是购买还是消费 -->
+    <view class='discount' bindtap='buycard' style='display:{{needmoney}};'>
+      <image class='redLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/redLogo.png'></image> 
+      <text class='cardstate'>{{cardstate}}</text>
+      <view class='discountText'>
+        {{payaction}}后即享优惠价<text class='redprice'>10</text>元
+        <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+      </view>
+    </view>
+    <view class='writeMessage'>
+       <image class="writeLogo " src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/writeLogo.png'></image>报名信息 
+    </view>
+    <form bindsubmit="formSubmit"  class='customerMessage'>
+      <view class='name' style='display:{{name}};'>
+        <view class='tt'>姓名</view>
+          <input class='nameInput' bindinput='nameInput' placeholder='请输入您的姓名'></input>
+        </view>
+        <view class='sex' style='display:{{sex}};'> 
+          <view class='tt'>性别</view>
+          <view class="sex-choose {{clicksex==index?'selected':''}}" wx:for="{{sexs}}" bindtap='chooseSex' id="{{index}}" wx:key="{{item.id}}">
+            {{item}}
+          </view>
+          <view class='clearfloat'></view>
+        </view>
+         <view class='birthday' style='display:{{birthday}};'>
+          <view class='tt'>生日</view>
+          <picker mode="date"  start="1900-01-01" end="2017-12-30" bindchange="bindDateChange">
+            <view class="picker-date">{{date}}
+              <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+            </view> 
+          </picker>  
+        </view> 
+        <view class='address' style='display:{{address}};'>
+          <view class="tt section__title">地址</view>
+          <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker-address">
+              <!-- <text class='input-addr-tip' style='display:{{addrtip}};'>请选择您的地址</text> -->
+              <!-- <text style='display:{{showaddress}}'>{{region[0]}}    {{region[1]}}    {{region[2]}}</text> -->
+               <text>{{region[0]}}    {{region[1]}}    {{region[2]}}</text>
+              <image class='addr-gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+            </view>
+          </picker>
+          <view class="more-address">
+            <textarea placeholder='详细地址' bindblur="addressText" />
+          </view>
+        </view>
+        <view  class='hobby' style='display:{{hobby}};' >
+          <view class='tt'>爱好</view>
+          <checkbox-group bindchange="hobbysChange">  
+            <view class="service_selection ">  
+              <view  class='sigle-hobby' wx:for="{{hobbys}}">  
+                <label class="checkbox {{item.checked?'is_checked':''}}">  
+                  <checkbox  value="{{item.value}}" checked="{{item.checked}}" hidden="false" />
+                  <image class='hobby-select' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/hobby-select.png'></image>
+                  {{item.name}}  
+                </label>  
+              </view>  
+              <!-- 清除浮动 -->
+              <view class='clearfloat'></view>
+            </view>  
+          </checkbox-group>  
+        </view>
+        <view class='introduce' style='display:{{introduce}};'>
+          <view class='tt' >个人介绍</view>
+          <textarea  placeholder="请介绍自己" name="textarea" bindblur="introduceText"/>
+        </view>
+        <view class='uploadPic' style='display:block;'>
+          <view class='tt'>上传图片</view>
+          <view class='upload-picture' wx:for="{{picpath}}">
+            <view class='upload-success-pic' data-index="{{index}}" style="background-image:url('{{item}}')"></view>
+            <image class='closepic' bindtap="deleteImg" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/closebtn.png'></image>
+          </view>
+          <view class='pic' bindtap='uploadImage'>
+            <view class='upload-pic-tip'>
+              <image class='uploadpic-logo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/uploadpic.png'></image>
+              <view class='uploadtext-tip'>上传您的图片</view>
+            </view>
+          </view>
+        </view>
+        <view class='btn'>
+          <button form-type="submit" class='submit-btn'>提交报名</button>
+        </view>
+      </form>
+      <!-- 吐司提示 -->
+      <view class='toasttip' style='display:{{showtoast}}'>{{toastText}}</view>
+    </view>
+  </view>

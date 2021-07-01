@@ -1,0 +1,16 @@
+<view class="container">
+  <image src="{{logo}}" mode="widthFix" class="wancll-col-xs-7 logo"></image>
+  <view class="form wancll-margin-l-10 wancll-margin-r-10">
+    <input bindinput="bindMobileInput" type="number" placeholder="输入手机号码" class="item wancll-bg-white wancll-margin-t-20 wancll-text-left wancll-padded-l-20"></input>
+    <input bindinput="bindPasswordInput" type="text" password="true" placeholder="输入密码" class="item wancll-bg-white wancll-margin-t-20 wancll-text-left wancll-padded-l-20"></input>
+    <button bindtap="login" class="item wancll-bg-info wancll-text-white wancll-margin-t-20">登录</button>
+    <view class="wancll-margin-t-10 clearfix wancll-text-pray wancll-font-size-14">
+      <text class="wancll-fl" bindtap='forgetPassword'>忘记密码？</text>
+      <text class="wancll-fr" bindtap='register'>没有账号？立即注册</text>
+    </view>
+    <view class="wancll-margin-t-25 wancll-text-pray wancll-font-size-16">
+      <button size="mini" type="primary" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">微信用户快速登录</button>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "售后服务",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-badge": "../../dist/badge/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-icon": "../../dist/icon/index",
+    "order-item": "../../components/orderItem/index"
+  }
+}

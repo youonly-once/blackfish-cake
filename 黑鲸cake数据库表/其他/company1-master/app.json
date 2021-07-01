@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/Index/index",
+    "pages/Sort/sort",
+    "pages/Shopping/shopping",
+    "pages/User/user",
+    "pages/userInfo/userInfo",
+    "pages/discount/discount",
+    "pages/manageAddress/manageAddress",
+    "pages/newAddress/newAddress",
+    "pages/order/order",
+    "pages/commentOrder/commentOrder",
+    "pages/shoppingEmpty/shoppingEmpty",
+    "pages/confirmOrder/confirmOrder",
+    "pages/gongzhonghao/gongzhonghao",
+    "pages/detail/detail",
+    "pages/about/about",
+    "pages/sign/sign",
+    "pages/caseDetail/caseDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "纯粹科技",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,77 @@
+<view style="overflow-x:hidden;" >
+ <view style='display:{{start}};'>
+ <view class='head' >
+ <image class='menuLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menuLogo.png'></image>
+ 报名编号：{{identifier}}
+ </view>
+ <view class='goods'>
+ <image   class='goodspic'  src='http://only5201314.com/uploads/2017/04/181412206332.jpg'></image>
+ <view class='title'>{{goodsTitle}}</view>
+ <view class='GG goodsNumber'>数量 <view class='right'>{{goodsNumber}}</view></view>
+ <view class='GG goodsPrice'>总额 <view class='right'>￥{{goodsPrice}}</view></view>
+ </view>
+ </view>
+
+ <!-- 付款后的页面 -->
+ <view style='display:{{end}};'>
+ <view class='end-head-text'>订单详情 <view class='end-noreturn'>不支持退款</view></view>
+ <view class='end-head'>
+ <image class='end-menuLogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menuLogo.png'></image>
+ 报名编号：{{identifier}}
+ </view>
+ <view class='end-goods'>
+ <image class='end-goodspic'  src='http://only5201314.com/uploads/2017/04/181412206332.jpg'></image>
+ <view class='end-title'>签到二维码</view>
+ <view class='end-GG end-title-text'>零基础和孩子一起画油画</view>
+ <view class='end-GG end-goodsPrice'>总额 <view class='end-right'>￥{{goodsPrice}}</view></view>
+ </view>
+ </view>
+
+
+
+ <view class='message'>
+ <view class='message-head'>
+  <image class='personPic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/person.png'></image>
+  我的信息
+ </view>
+ <view class='table'>
+  <view class='T name'>姓名 <view class='t'>{{username}}</view></view>
+  <view class='T sex'>性别 <view class='t'>{{sex}}</view></view>
+  <view class='T birthday'>生日 <view class='t'>{{birthday}}</view></view>
+ <view class='T address'>地址 <view class='t'>{{address}}</view></view>
+ <view class='T hobby'>爱好 <view class='t'>{{hobby}}</view></view>
+ </view>
+<view class='introduce'>
+ <view class='left'>个人简介</view>
+ <view class='introduce-text'>{{introduce}}       </view>
+ </view>
+<view class='pic'> <view class='photo-text'>照片</view>
+<image class='picture-pic' wx:for="{{pics}}"  src='{{item}}'></image> </view>
+ </view>
+<!-- 付款按钮 -->
+ <view class='btn' style='display:{{start}};'>
+  <view class='btn-left'>实付款:<text class='price'>￥{{goodsPrice}}</text><view  class='payBtn' bindtap='pay'>微信支付</view> </view>
+ </view>
+</view>
+
+<view style='display:{{end}};'>
+  <view class='bottom'>
+    <view class='freedom' bindtap='Tofreedom'>
+      <image class='freedompic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/freedomBar.png'></image>
+      <text class='indextext'>首页</text>
+    </view> 
+    <view class='bottomfans'>粉丝俱乐部</view>
+    <view class='menuBar' bindtap='Tomenu'>
+      <image class='menupic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/menu.png'></image>
+      <text class='menutext'>订单</text> 
+    </view>
+  </view>
+  <!-- 边框大圆 -->
+  <view class='freejewel'></view>
+  <!-- 纯白小圆 -->
+  <view class='whiteCircle'></view>
+  <!-- 有粉丝卡的粉丝俱乐部表现形式 -->
+  <view class='smallCircle'  bindtap='TofansHappy' ></view>
+  <image class="jewelLogo"   bindtap="picTofansHappy"  src="http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/fansjewel.png"></image>
+</view>
+

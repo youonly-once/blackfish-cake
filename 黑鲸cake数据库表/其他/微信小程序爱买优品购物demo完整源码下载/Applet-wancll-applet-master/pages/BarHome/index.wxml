@@ -1,0 +1,100 @@
+<!--search-->
+<view wx:if="{{ready}}">
+  <view class='search_box' bindtap='goSearchPage'>
+    <view class='search_input'>
+      <icon class='icon' type='sousuo'></icon>
+      <view class='input'>搜索商品</view>
+    </view>
+  </view>
+  
+  <!-- 轮播图 -->
+  <view class='banner'>
+    <swiper class='banner_swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="key">
+        <swiper-item>
+          <image src="{{item.img}}" class="slide-image" mode="widthFix" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 促销活动 -->
+  <view class='banner-list'>
+    <view class='list' wx:for="{{sellList}}" wx:key="index" data-tag="{{item.title}}" bindtap='goTagGoods'>
+      <view class='img'>
+        <image mode="widthFix" src='{{item.img}}'></image>
+      </view>
+      <view class='text'>{{item.title}}</view>
+    </view>
+  </view>
+
+  <!-- 首页公告 -->
+  <view class='notice'>
+    <view class='notice-img'>
+      <image mode="widthFix" src='{{notice.img}}'></image>
+    </view>
+    <view class='notice-list'>
+      <view bindtap="goArticle" data-id="{{item.id}}" data-type="index" class='list' wx:for="{{notice.data}}" wx:key="index">• {{item.title}}</view>
+    </view>
+  </view>
+
+  <!--限时折扣 -->
+  <view class='discount'>
+    <zan-cell is-link>
+      <text style="color: #df0303;">限时折扣</text> {{discount[0].name}} {{timeDown}}</zan-cell>
+    <scroll-view class='scroll-items' scroll-x="true">
+      <view wx:for="{{discount[0].rule_info}}" class='item' wx:key="key" bindtap="goDetailDiscount" data-id="{{item.goods_id}}" data-discountid="{{item.market_activity_id}}">
+        <view class="info">
+          <image src="{{item.goods_info.thum}}" mode="widthFix" />
+          <view class="discount_price">￥{{item.discount_price}}</view>
+          <view class="sell_price">￥{{item.goods_info.sell_price}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 图片连接 -->
+  <view class='links'>
+    <view class='link' bindtap="goDiscountCenter" style="border-right:1px solid #eee">
+      <text class="text">优惠券</text>
+      <image src="http://wancllshop.wx.wygoo.com/public/static/wap/images/index_coupon.png" mode="widthFix" />
+    </view>
+    <view class='link' bindtap="goCategory">
+      <text class="text">满减促销</text>
+      <image src="http://wancllshop.wx.wygoo.com/public/static/wap/images/index_full.png" mode="widthFix" />
+    </view>
+  </view>
+
+  <!-- 轮播商品 -->
+  <view class="wap-index">
+    <view class='lists' wx:for="{{wapIndex}}" wx:key="key">
+      <image src="{{item.ad_img}}" mode="widthFix" />
+      <scroll-view class='scroll-items' scroll-x="true">
+        <view wx:for="{{item.goods_info}}" wx:for-item="goods" class='item' wx:key="key" bindtap="goDetail" data-id="{{goods.id}}">
+          <view class="info">
+            <image src="{{goods.thum}}" mode="widthFix" />
+            <view class="name">{{goods.name}}</view>
+            <view class="price">￥{{goods.sell_price}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--商品列表 -->
+  <view class='goods-list wancll-padded-3 wancll-bg-pray'>
+    <view class='goods wancll-bg-pray' bindtap='goDetail' data-id='{{item.id}}' wx:for="{{goods}}" wx:key="index">
+      <view class='wancll-padded-3 wancll-bg-pray'>
+        <view class='image'>
+          <image mode="widthFix" class="wancll-col-xs-12" src='{{item.thum}}'></image>
+        </view>
+        <image wx:if="{{item.stock == 0}}" class="no-stock" src="{{noStockImage}}" mode='widthFix'></image>
+        <view class='info wancll-bg-white'>
+          <view class='wancll-padded-t-10 wancll-padded-r-10 wancll-padded-l-10 wancll-ellipsis-2'>{{item.name}}</view>
+          <view class='wancll-padded-10 wancll-text-price'>
+            <text class="wancll-font-size-10">￥</text>{{item.sell_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

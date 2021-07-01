@@ -1,0 +1,28 @@
+.plant{
+  padding:15px;
+  display: flex;
+  line-height: 60rpx;
+}
+.plant .title{
+  flex: 150rpx 0 0;
+  height: 60rpx;
+  font-size: 26rpx;
+}
+.plant .context{
+  flex: 1;
+  height: 60rpx;
+  color: #777
+}
+.plant .title-area{
+  flex: 150rpx 0 0;
+  height: 40rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+}
+.plant .context-area{
+  flex: 1;
+  height: 120rpx;
+}
+.padding{
+  padding: 15px;
+}

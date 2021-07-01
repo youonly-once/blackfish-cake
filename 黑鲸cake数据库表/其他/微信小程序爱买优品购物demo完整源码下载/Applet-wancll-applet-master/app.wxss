@@ -1,0 +1,12 @@
+/**app.wxss**/
+@import "dist/index.wxss";
+@import "static/wxss/reset.wxss";
+page{
+  font-size: 24rpx;
+  background: #F9F9F9;
+}
+.container {
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+}

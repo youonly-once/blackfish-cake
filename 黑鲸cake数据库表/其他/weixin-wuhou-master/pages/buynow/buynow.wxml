@@ -1,0 +1,68 @@
+<view class="buynow">
+  <!-- 头部粉丝卡 -->
+  <view class='head'>
+    <image class='buynowPic' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/BuynowPic.png'></image> 
+    <view class='headNum'>
+      <view class='T numF'>{{numF}}</view>
+      <view class='T numS'>{{numS}}</view>
+      <view class='T numT'>{{numT}}</view>
+    </view>
+  </view>
+  <!-- 自助选号的标题 -->
+  <view class='cc chooseNumber'>
+    <image class='tt' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/writeLogo.png'></image>自主选号
+  </view>
+  <!-- 自主选号 -->
+  <view class='inputPhone'>
+    <image class='Credit-card' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/Credit-card.png'></image>
+    <input class='inputNum' bindinput='bindKeyInput' maxlength="8" type='number' value='{{num}}' placeholder='请输入8位数号码' focus='{{focus}}'></input>
+    <view class='choose-btn' bindtap='showNum'>随机</view>
+  </view>
+  <!-- 收货信息 -->
+  <view class='cc customerMessage'>
+    <image class='tt'  src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/writeLogo.png'></image>
+    收货信息
+  </view>
+  <!-- 收货信息的信息输入 -->
+  <form bindsubmit="formSubmit">
+    <view class='list writeName'>
+      <image  class="listpic personLogo" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/personLogo.png'></image>
+      <input class='inputName' bindinput="inputname"  placeholder='请输入您的姓名'></input>
+    </view>
+    <view class='list writePhone'>
+      <image  class='listpic Smartphone' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/Smartphone.png'></image>
+      <input class='phoneNumber' bindinput="inputphone" maxlength='11' placeholder='请输入您的手机号' ></input>
+    </view>
+    <view class='list writeAddress'>
+      <image class="listpic Placeholde" src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/Placeholder.png'></image>
+      <!-- <view class='placeholder-addr' style='position:absolute; z-index:-1; opacity:{{opacity}}; left:80rpx; color:#7b7b7b;'>请选择您所在的地区</view> -->
+      <picker  mode="region" bindchange="bindChange" value="{{region}}" custom-item="{{customItem}}">
+        <view  class="picker-address">
+          <text class='addrtext'>{{region[0]}} {{region[1]}} {{region[2]}}</text>
+          <image class='gonext' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/gonext.png'></image>
+        </view>
+      </picker>
+    </view>
+    <textarea class='addressT' placeholder='请输入您的详细地址' placeholder-class='di' bindblur="bindTextAreaBlur" />
+    <view class='paybtn'>
+     <button class='payPrice' form-type="submit" >微信支付  ￥{{payPrice}}</button>
+    </view>
+  </form>
+  <!-- 吐司提示 -->
+  <view class='toasttip' style='display:{{showtoast}}'>{{toastText}}</view>
+</view>
+<!-- 靓号弹窗提醒 -->
+<view class='nofansTip' style='display:{{servicetc}}'>
+    <view class='fansdiv'>
+      <view class='cannotjoin'>友情提示</view>
+      <image class='nofanslogo' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/qr_w.png'></image>
+       <image class='erweima' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/wx_qr.jpg'></image> 
+      <view class='cannotjointip'>您选择的号码为靓号，需购买此号码</view>
+      <view class='cannotreason'>请长按识别二维码，添加客服咨询
+      </view>
+    </view>
+    <view class='close'>
+      <image bindtap='closetc' class='close' src='http://wuhouhd.oss-cn-shanghai.aliyuncs.com/wxfans/images/serviceClose.png'></image>
+    </view>
+  </view>
+  <view class='di'></view>

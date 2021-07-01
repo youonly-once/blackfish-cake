@@ -1,0 +1,7 @@
+
+<view hidden="{{!actionShow}}" class="wx-actionsheet_mask wx-actionsheet_{{animationBG}} wx-actionsheet_animated " bindtap="actionHide">
+  <view class="wx-actionsheet_main wx-actionsheet_animated wx-actionsheet_{{animation}}">
+    <slot></slot>
+    <button class="wx-actionsheet_close" catchtap="actionHide" style="border-bottom:0rpx;">{{closeText}}</button>
+  </view>
+</view>

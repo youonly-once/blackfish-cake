@@ -1,0 +1,23 @@
+<view>
+  <view class='search_box'>
+    <view class='search_input'>
+      <icon class='icon' type='sousuo' data-keywords="{{keywords}}" bindtap='search'></icon>
+      <input class='input' placeholder='搜索商品' bindinput='keywordsInput'></input>
+    </view>
+  </view>
+  <view class="wancll-content wancll-bg-white wancll-padded-t-10" style="padding: 0 1.5rem;">
+    <view class="wancll-text-pray" wx-if="{{userKeywordsList.length != 0}}">
+      <span class="wancll-font-size-14">历史搜索</span>
+      <i class="iconfont icon-shanchu wancll-fr" bindtap="deleteKeywords"></i>
+    </view>
+    <view class="search-div" wx-if="{{userKeywordsList.length != 0}}">
+      <view class="search-key wancll-font-size-12" wx:for="{{userKeywordsList}}" wx:key="{{item.id}}" data-keywords="{{item}}" bindtap='search'>{{item}}</view>
+    </view>
+    <view class="wancll-text-pray wancll-padded-t-10">
+      <span class="wancll-font-size-14">热门搜索</span>
+    </view>
+    <view class="search-div">
+      <text class="search-key wancll-font-size-12" wx:for="{{hotKeywordsList}}" wx:key="{{index}}" data-keywords="{{item.keyword}}" bindtap='search'>{{item.keyword}}</text>
+    </view>
+  </view>
+</view>

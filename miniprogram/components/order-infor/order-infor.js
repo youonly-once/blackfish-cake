@@ -5,28 +5,69 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    orderInfors:{
-      type:Object,
-      value:{}
-    }, 
-    addrObject: {
-      type: Object,
-      value: {}
-    }
+    orderId:{
+      type:String,
+      value:null,
+      observer: function (newVal, oldVal) {//数组变化时回调该函数
+        //console.log(typeof (newVal))
+        if (newVal != null && newVal != undefined && newVal != ''){
+            this.getorderInfors()
+          }
+      }
+    },
   },
 
   /**
    * 组件的初始数据
    */
   data: {
- 
+    isShow:false,
+    isNoContent:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    //订单详情页传递的信息
+    getorderInfors: function () {
+      let that = this
+      wx.cloud.callFunction({
+        name: 'manageOrder',
+        data: {
+          command: 'getSingleAndAddr',
+          _id: that.data.orderId
+        },
+        success(res) {
+          console.log("orderInfors", res);
+          let list = res.result.list
+          if (list.length == 0) {
+            that.setData({
+              isNoContent:true,
+              isShow: false
+            })
+          } else {
+            that.setData({
+              orderInfors: list[0],
+              addrObject: list[0].addrObject[0],
+              isShow:true
+            })
+            that.setStatusDate()
+            that.selectComponent("#refund-status").queryRefund1()
+          }
+          
+          that.triggerEvent('getOrderInfor', list)
+          
+        },
+        fail(res) {
+          console.log("加载失败", res)
 
+        },
+        complete(res) {
+          
+        }
+      })
+    },
     setStatusDate: function () {
       this.setData({
         payShowDate: this.data.orderInfors.payDate.toString().substr(0, 10),
@@ -42,7 +83,7 @@ Component({
         latitude: app.globalData.storeLatitude,
         longitude: app.globalData.storeLongitude,
         success(res) {
-          console.log(res)
+           console.log(res)
 
         },
         fail(res) {//打开地理位置授权}
@@ -68,7 +109,7 @@ Component({
       wx.getLocation({
         type: 'gcj02',
         success(res) {
-          console.log(res)
+          //console.log(res)
           let distance = that.getDistance(res.latitude, res.longitude, app.globalData.storeLatitude, app.globalData.storeLongitude)
           let distanceStr = ""
           if (distance != null && distance != undefined) {
@@ -140,7 +181,7 @@ Component({
         title: '',
       })
       wx.navigateTo({
-        url: '../../cake_detail/cake_detail?cakeid=' + id,
+        url: '/pages/CakeDetail/CakeDetail?cakeid=' + id,
         complete(res) {
           wx.hideLoading()
         }
@@ -155,26 +196,20 @@ Component({
     },
      call_custom: function (e) {
       wx.makePhoneCall({
-        phoneNumber: e.currentTarget.dataset.phone //仅为示例，并非真实的电话号码
+        phoneNumber: app.globalData.customPhone //仅为示例，并非真实的电话号码
       })
     },
 
     gotoRefund() {
-      console.log(this.data.orderInfors.status)
-     if (this.data.orderInfors.status == 6) {//用户已提交申请 跳转详情页
+     if (this.data.orderInfors.status >= 6) {//用户已提交申请 跳转详情页
        wx.setStorageSync("orderInfors", this.data.orderInfors)
         wx.navigateTo({
-          url: '/pages/order_refund/refund_detail/refund_detail',
+          url: '/pages/OrderRefund/RefundDetail/RefundDetail',
         })
-     } else if (this.data.orderInfors.status == 7) {//商家已审核
-       wx.setStorageSync("orderInfors", this.data.orderInfors)
-       wx.navigateTo({
-         url: '/pages/order_refund/refund_detail/refund_detail',
-       })
-     } else if (this.data.orderInfors.status >= 2) {//用户已付款，
+     } else if (this.data.orderInfors.status >= 2 && this.data.orderInfors.status<6) {//用户已付款，
        wx.setStorageSync("orderInfors", this.data.orderInfors)
         wx.navigateTo({
-          url: '/pages/order_refund/order_refund',
+          url: '/pages/OrderRefund/OrderRefund',
         })
       } 
     }
@@ -182,11 +217,12 @@ Component({
   lifetimes: {
     // 组件的生命周期函数，用于声明组件的生命周期
     attached() {
+      //console.log(1)
       this.getRealLocation()
-      this.setStatusDate()
+      
     },
     ready: () => {
-     // console.log(2)
+     //console.log(2)
     },
     moved: () => {
       //console.log(3)
@@ -196,4 +232,12 @@ Component({
     },
 
   },
+    /**
+   * 对<2.2.3版本兼容
+   */
+  attached() {
+    console.log(1)
+    this.getRealLocation()
+
+  }
 })

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的收藏",
+  "usingComponents": {
+    "zan-icon": "../../dist/icon/index",
+    "zan-panel": "../../dist/panel/index",
+    "zan-button": "../../dist/btn/index",
+    "zan-loading": "../../dist/loading/index",
+    "icon":"../../components/icon/index"
+  },
+  "enablePullDownRefresh": true
+}

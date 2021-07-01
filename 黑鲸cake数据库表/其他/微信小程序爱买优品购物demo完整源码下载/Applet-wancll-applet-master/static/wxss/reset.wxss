@@ -1,0 +1,512 @@
+@import "iconfont.wxss";
+
+page {
+  background-color: #f5f5f5;
+}
+
+/* 文字省略 */
+
+.wancll-ellipsis {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.wancll-ellipsis-2 {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 内边距 */
+
+.wancll-padded-0 {
+  padding: 0 !important;
+}
+
+.wancll-padded-3 {
+  padding: 6rpx;
+}
+
+.wancll-padded-5 {
+  padding: 10rpx;
+}
+
+.wancll-padded-10 {
+  padding: 20rpx;
+}
+
+.wancll-padded-15 {
+  padding: 30rpx;
+}
+
+.wancll-padded-20 {
+  padding: 40rpx;
+}
+
+.wancll-padded-25 {
+  padding: 50rpx;
+}
+
+.wancll-padded-t-0 {
+  padding-top: 0 !important;
+}
+
+.wancll-padded-t-5 {
+  padding-top: 10rpx;
+}
+
+.wancll-padded-t-10 {
+  padding-top: 20rpx;
+}
+
+.wancll-padded-t-15 {
+  padding-top: 30rpx;
+}
+
+.wancll-padded-t-20 {
+  padding-top: 40rpx;
+}
+
+.wancll-padded-t-25 {
+  padding-top: 50rpx;
+}
+
+.wancll-padded-b-0 {
+  padding: 0 !important;
+}
+
+.wancll-padded-b-5 {
+  padding-bottom: 10rpx;
+}
+
+.wancll-padded-b-10 {
+  padding-bottom: 20rpx;
+}
+
+.wancll-padded-b-15 {
+  padding-bottom: 30rpx;
+}
+
+.wancll-padded-b-20 {
+  padding-bottom: 40rpx;
+}
+
+.wancll-padded-b-25 {
+  padding-bottom: 50rpx;
+}
+
+.wancll-padded-l-0 {
+  padding-left: 0 !important;
+}
+
+.wancll-padded-l-5 {
+  padding-left: 10rpx;
+}
+
+.wancll-padded-l-10 {
+  padding-left: 20rpx;
+}
+
+.wancll-padded-l-15 {
+  padding-left: 30rpx;
+}
+
+.wancll-padded-l-20 {
+  padding-left: 40rpx;
+}
+
+.wancll-padded-l-25 {
+  padding-left: 50rpx;
+}
+
+.wancll-padded-r-0 {
+  padding-right: 0 !important;
+}
+
+.wancll-padded-r-5 {
+  padding-right: 10rpx;
+}
+
+.wancll-padded-r-10 {
+  padding-right: 20rpx;
+}
+
+.wancll-padded-r-15 {
+  padding-right: 30rpx;
+}
+
+.wancll-padded-r-20 {
+  padding-right: 40rpx;
+}
+
+.wancll-padded-r-25 {
+  padding-right: 50rpx;
+}
+
+/* 外边距 */
+
+.wancll-margin-0 {
+  margin: 0 !important;
+}
+
+.wancll-margin-5 {
+  margin: 10rpx;
+}
+
+.wancll-margin-10 {
+  margin: 20rpx;
+}
+
+.wancll-margin-15 {
+  margin: 30rpx;
+}
+
+.wancll-margin-20 {
+  margin: 40rpx;
+}
+
+.wancll-margin-25 {
+  margin: 50rpx;
+}
+
+.wancll-margin-t-0 {
+  margin-top: 0 !important;
+}
+
+.wancll-margin-t-5 {
+  margin-top: 10rpx;
+}
+
+.wancll-margin-t-10 {
+  margin-top: 20rpx;
+}
+
+.wancll-margin-t-15 {
+  margin-top: 30rpx;
+}
+
+.wancll-margin-t-20 {
+  margin-top: 40rpx;
+}
+
+.wancll-margin-t-25 {
+  margin-top: 50rpx;
+}
+
+.wancll-margin-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.wancll-margin-b-5 {
+  margin-bottom: 10rpx;
+}
+
+.wancll-margin-b-10 {
+  margin-bottom: 20rpx;
+}
+
+.wancll-margin-b-15 {
+  margin-bottom: 30rpx;
+}
+
+.wancll-margin-b-20 {
+  margin-bottom: 40rpx;
+}
+
+.wancll-margin-b-25 {
+  margin-bottom: 50rpx;
+}
+
+.wancll-margin-l-0 {
+  margin-left: 0 !important;
+}
+
+.wancll-margin-l-5 {
+  margin-left: 10rpx;
+}
+
+.wancll-margin-l-10 {
+  margin-left: 20rpx;
+}
+
+.wancll-margin-l-15 {
+  margin-left: 30rpx;
+}
+
+.wancll-margin-l-20 {
+  margin-left: 40rpx;
+}
+
+.wancll-margin-l-25 {
+  margin-left: 50rpx;
+}
+
+.wancll-margin-r-0 {
+  margin-right: 0 !important;
+}
+
+.wancll-margin-r-5 {
+  margin-right: 10rpx;
+}
+
+.wancll-margin-r-10 {
+  margin-right: 20rpx;
+}
+
+.wancll-margin-r-15 {
+  margin-right: 30rpx;
+}
+
+.wancll-margin-r-20 {
+  margin-right: 40rpx;
+}
+
+.wancll-margin-r-25 {
+  margin-right: 50rpx;
+}
+
+/* 文字大小 */
+
+.wancll-font-size-10 {
+  font-size: 20rpx !important;
+}
+
+.wancll-font-size-12 {
+  font-size: 24rpx !important;
+}
+
+.wancll-font-size-14 {
+  font-size: 28rpx !important;
+}
+
+.wancll-font-size-16 {
+  font-size: 32rpx !important;
+}
+
+.wancll-font-size-18 {
+  font-size: 36rpx !important;
+}
+
+.wancll-font-size-20 {
+  font-size: 40rpx !important;
+}
+
+/* 文字加粗 */
+
+.wancll-font-weight {
+  font-weight: bold;
+}
+
+/* 文字颜色 */
+
+.wancll-text-info {
+  color: #358cff !important;
+}
+
+.wancll-text-price {
+  color: #df0303 !important;
+}
+
+.wancll-text-white {
+  color: #fff !important;
+}
+
+.wancll-text-pray {
+  color: #777 !important;
+}
+
+.wancll-text-default {
+  color: #333 !important;
+}
+
+/* 文字对齐方式 */
+
+.wancll-text-left {
+  text-align: left;
+}
+
+.wancll-text-center {
+  text-align: center;
+}
+
+.wancll-text-right {
+  text-align: right;
+}
+
+/* 背景颜色 */
+
+.wancll-bg-white {
+  background-color: #fff !important;
+}
+
+.wancll-bg-pray {
+  background-color: #fafafa !important;
+}
+
+.wancll-bg-info {
+  background-color: #358cff !important;
+}
+
+/* 12栅格 */
+
+.wancll-col-xs-1, .wancll-col-xs-2, .wancll-col-xs-3, .wancll-col-xs-4,
+.wancll-col-xs-5, .wancll-col-xs-6, .wancll-col-xs-7, .wancll-col-xs-8,
+.wancll-col-xs-9, .wancll-col-xs-10, .wancll-col-xs-11, .wancll-col-5 {
+  position: relative;
+  /* float: left; */
+}
+
+.wancll-col-xs-12 {
+  width: 100%;
+  position: relative;
+}
+
+.wancll-col-xs-11 {
+  width: 91.6666667%;
+}
+
+.wancll-col-xs-10 {
+  width: 83.3333333%;
+}
+
+.wancll-col-xs-9 {
+  width: 75%;
+}
+
+.wancll-col-xs-8 {
+  width: 66.6666667%;
+}
+
+.wancll-col-xs-7 {
+  width: 58.3333333%;
+}
+
+.wancll-col-xs-6 {
+  width: 50%;
+}
+
+.wancll-col-xs-5 {
+  width: 41.6666667%;
+}
+
+.wancll-col-xs-4 {
+  width: 33.3333333%;
+}
+
+.wancll-col-xs-3 {
+  width: 25%;
+}
+
+.wancll-col-xs-2 {
+  width: 16.6666667%;
+}
+
+.wancll-col-xs-1 {
+  width: 8.33333333%;
+}
+
+.wancll-col-5 {
+  width: 20%;
+}
+
+/* 宫格布局 */
+
+.wancll-grid {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  background-color: #fff;
+}
+
+.wancll-grid [class*=aui-col-] {
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* 去浮动 */
+
+.clearfix:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+/* 浮动 */
+
+.wancll-fl {
+  float: left;
+}
+
+.wancll-fr {
+  float: right;
+}
+
+/* 弹性布局 */
+
+.wancll-flex {
+  display: flex;
+  align-items: center;
+}
+
+.wancll-borderbox {
+  box-sizing: border-box;
+}
+
+/* form */
+
+.form input {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+/* goods */
+
+.goods-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.goods-list .goods {
+  flex: 50% 0 0;
+  position: relative;
+}
+
+.goods-list .goods image {
+  display: block;
+}
+
+/* no-content */
+
+.no-content-image {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.no-content-image image {
+  display: block;
+  width: 18%;
+  margin: 0 auto;
+}
+
+/* 售罄 */
+
+.no-stock {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 30%;
+  transform: translate(-50%, -50%);
+}

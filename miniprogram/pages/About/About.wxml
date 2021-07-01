@@ -1,0 +1,22 @@
+<!--miniprogram/pages/About/About.wxml-->
+<import src="/components/foot-head/foot.wxml" />
+<view class="about">
+  <view class="title"> 营业时间</view>
+  <view class="content">周一至周日09:00-22:00</view>
+  <view class="border"/>
+  <view class="title">经营范围</view>
+  <view class="infor flexRowStart">
+      <view >
+      <image src="/images/head1.jpg" mode="widthFix"></image>
+      </view>
+      <view class="flexColumnStart"> 
+        <view class="name">大渡口黑鲸烘培工作室</view> 
+        <view class="content">蛋糕，鲜花一体型工作室。 蛋糕与鲜花同时拥有。甜蜜与幸福同时拥有。 </view>
+      </view>
+  </view>
+  <view class="border"/>
+  <view class="title">营业许可资质</view>
+  <image src="/images/about/business-license1.jpg" mode="widthFix" style="width:100%;margin-top:20rpx;"></image>
+  <image src="/images/about/business-license2.jpg" mode="widthFix" style="width:100%;margin-top:20rpx;"></image>
+</view>
+<template is="foot" />

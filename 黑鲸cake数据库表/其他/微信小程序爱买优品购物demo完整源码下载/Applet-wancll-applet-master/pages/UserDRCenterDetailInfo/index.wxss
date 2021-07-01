@@ -1,0 +1,52 @@
+.items{
+  padding-top: 10px;
+}
+.items .item{
+  background: #fff;
+  margin-top: 10px;
+}
+.items .item .list {
+  /* padding: 10px; */
+}
+.items .item .list .order-goods{
+  background: #fafafa;
+  display: flex;
+  padding: 10px;
+}
+.items .item .list .order-goods .image {
+  flex: 90px 0 0 ;
+}
+.items .item .list .order-goods .image image{
+  width: 90px;
+  height: 90px;
+}
+.items .item .list .order-goods .goods{
+  flex: 1;
+  margin-left: 10px;
+}
+.items .item .list .order-goods .goods .title{
+  line-height: 25px;
+  font-size: 13px;
+  height: 50px;
+  overflow: hidden;
+}
+.items .item .list .order-goods .goods .money{
+  margin-bottom: 5px;
+  color: #777
+}
+.items .item .list .order-goods .goods .other {
+  font-size: 13px;
+  color: rgb(254, 147, 65)
+}
+.items .item .list .order-info{
+  padding: 10px
+}
+.items .item .list .order-info .title{
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: rgb(254, 147, 65)
+}
+.items .item .list .order-info .text{
+  font-size: 13px;
+  margin-bottom: 8px;
+}

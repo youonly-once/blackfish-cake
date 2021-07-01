@@ -1,0 +1,92 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.content .bg-image {
+  width: 100%;
+  height: 100%;
+}
+
+.info-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.info-box .user-info {
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+}
+
+.info-box .user-info .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.info-box .user-info .name {
+  font-size: 28rpx;
+  line-height: 50rpx;
+}
+
+.info-box .moneys {
+  margin: 0 15px;
+  padding: 15px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: rgb(243, 251, 255) 0px 5px 10px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.info-box .moneys .money {
+  flex: 1;
+  text-align: center;
+}
+
+.info-box .moneys .money .number {
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 60rpx;
+}
+
+.info-box .moneys .money .text {
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+
+.selects-subpage {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.selects-subpage .subpage {
+  flex: 33.33% 0 0;
+  text-align: center;
+  padding: 10px 0 
+}
+.selects-subpage .subpage .other{
+  color: #777
+}
+.selects-subpage .subpage .icon {
+  font-size: 28px;
+}
+
+.selects-subpage .subpage .icon-r {
+  color: rgb(254, 147, 65);
+}
+
+.selects-subpage .subpage .icon-b {
+  color: rgb(37, 127, 214);
+}

@@ -1,0 +1,49 @@
+.item {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.center-info {
+  background: #fafafa;
+  padding: 10rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.center-info .image-warpper {
+  flex: 180rpx 0 0;
+}
+
+.center-info .image {
+  width: 160rpx;
+  height: 160rpx;
+  background: #ccc;
+  display: block;
+}
+
+.center-info .title-warpper {
+  flex: 1;
+}
+
+.star-cent {
+  padding: 15rpx;
+  display: flex;
+}
+
+.star-cent .star-title {
+  font-size: 28rpx;
+}
+
+.star-cent .star {
+  font-size: 40rpx;
+  color: rgb(255, 198, 64);
+}
+
+.bottom-imgs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom-imgs .bottom-img {
+  box-sizing: border-box;
+}

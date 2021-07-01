@@ -60,7 +60,9 @@ function getCart(ids,openid) {
   
 }
 function getNum(openid){
-  return db.collection(databaseName).field({
+  return db.collection(databaseName).where({
+    _openid: openid, //用户ID
+  }).field({
     buyCount: true, //用户ID
   }).get({})
 }
@@ -84,14 +86,17 @@ function getSingleOrder(id, openid) {
  */
 function delCart(ids, openid) {
   console.error(ids)
-  try {
-    return db.collection(databaseName).where({
-      _openid: openid, //用户ID
-      _id: _.in(ids)
-    }).remove()
-  } catch (e) {
-    console.error(e)
-  }
+   return new Promise((reslove=>{
+      db.collection(databaseName).where({
+          _openid: openid, //用户ID
+          _id: _.in(ids)
+        }).remove()
+        .then((res)=>{
+          getCart([],openid).then((res)=>{
+            reslove(res)
+          })
+        })
+   }))
 }
 
 function addOrder(_orderData, openid) {

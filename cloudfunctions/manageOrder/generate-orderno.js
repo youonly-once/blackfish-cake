@@ -47,7 +47,8 @@ function generateOrderNo (len) {
 function queryOrderNo(_out_trade_no) {
   return  cloud.database().collection(databaseName).where({
     out_trade_no: _out_trade_no
-  }).get()
+  }).field({_id:true})
+  .get()
 }
 
 
@@ -82,7 +83,8 @@ function generateRefundNo(len) {
 function queryRefundNo(_out_refund_no) {
   return cloud.database().collection(databaseName).where({
     out_refund_no: _out_refund_no
-  }).get()
+  }).field({ _id: true })
+  .get()
 }
 module.exports={
   generateOrderNo: generateOrderNo,

@@ -1,0 +1,12 @@
+<view class='items'>
+  <view class="item" wx:for="{{logs}}" wx:key="key">
+    <view class='info'>
+      <view class='intro'>{{item.intro}}</view>
+      <view class='change'>{{item.symbol}}{{item.change_money}}</view>
+    </view>
+    <view class='time'>{{item.create_time}}</view>
+  </view>
+  <view class='loading' wx:if="{{loading}}">
+    <zan-loading class="loading-icon" type="spinner" color="black"></zan-loading>
+  </view>
+</view>

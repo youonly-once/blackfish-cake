@@ -1,0 +1,70 @@
+.banner_swiper {
+  width: 100%;
+  height: 188px;
+}
+
+.banner_swiper image {
+  width: 100%;
+}
+
+.banner-list {
+  display: flex;
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.banner-list .list {
+  flex: 1;
+}
+
+.banner-list image {
+  width: 88rpx;
+}
+.coupon .title{
+  padding:10px;
+  font-size: 30rpx;
+}
+.lists{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx;
+}
+.lists .list{
+  position: relative;
+  flex: 50% 0 0;
+  text-align: center;
+  background-size: 100% 100%;
+}
+.lists .list .coupon{
+  margin: 10rpx;
+  padding: 10px;
+}
+.lists .list .coupon .num{
+  color:#358cff;
+  font-size: 40rpx;
+  line-height: 40rpx;
+}
+.lists .list .coupon .info{
+  font-size: 28rpx;
+  line-height: 60rpx;
+}
+.lists .list .coupon .go{
+  width: 70%;
+  margin: 0 auto;
+  color:#fff;
+  font-size: 30rpx;
+  background: #fe4b35;
+  border-radius: 40rpx;
+}
+.lists .list .type{
+  position: absolute;
+  background-color: #e69751;
+  top: 10%;
+  right: 1%;
+  color: #fff;
+  font-size: 0.6rem;
+  padding:2rpx 10rpx;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: -1px 2px 5px #eebd95;
+}

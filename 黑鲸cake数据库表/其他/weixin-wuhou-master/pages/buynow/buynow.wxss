@@ -1,0 +1,277 @@
+.buynow{
+  width: 750rpx;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: '微软雅黑'; 
+}
+.buynow .head{
+  padding-top: 13rpx;
+  width: 750rpx;
+  height: 373rpx;
+  background-color: #dcdcdc;
+}
+.head .headNum{
+  position: absolute;
+  z-index: 1;
+  top: 266rpx;
+  left: 87rpx;
+  color: #fff;
+  width: 332rpx;
+  height: 33rpx;
+  font-size: 33rpx;
+  line-height: 33rpx;
+}
+.headNum .T{
+  display: inline-block;
+  margin-left: 20rpx;
+  letter-spacing: 10rpx;
+  font-family: 'Farrington-7B-Qiqi';
+}
+.buynow .head .buynowPic{
+  display: block;
+  width: 750rpx;
+  height: 373rpx;
+  margin: 0 auto;
+}
+/* 自主选号和收货信息的宽高设置 */
+.buynow .cc{
+  width: 722rpx;
+  padding-left: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #2c2c2c;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+/* 自主选号和收货信息的图片logo */
+.buynow .tt{
+  display: inline-block;
+  width: 34rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-right: 28rpx;  
+}
+.buynow .inputPhone{
+  position: relative;
+  width: 750rpx;
+  height: 83rpx;
+  font-size: 28rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.buynow .Credit-card{
+  position: absolute;
+  left:0;
+  top: 25rpx;
+  width: 36rpx;
+  height: 36rpx;
+  margin-left: 50rpx;
+
+}
+.buynow .inputNum{
+  position: absolute;
+  z-index: 10;
+  display: inline-block;
+  width: 500rpx;
+  height: 83rpx;
+  margin-left: 110rpx;
+  font-size: 28rpx;
+}
+.buynow .inputName{
+  display: inline-block;
+  font-size: 28rpx;
+  width: 605rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+}
+/* 随机选择卡号 */
+.choose-btn{
+  position: absolute;
+  top: 10rpx;
+  right: 30rpx;
+  width: 110rpx;
+  height: 61rpx;
+  line-height: 61rpx;
+  text-align: center;
+  background-color: #f35324;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 7rpx;
+}
+/* 收货信息的每条 */
+form .list{
+  position: relative;
+  width: 690rpx;
+  height: 63rpx;
+  line-height: 63rpx;
+  margin: 0 auto;
+  padding-top: 30rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+form .phoneNumber{
+  display: inline-block;
+  margin-left: 9rpx;
+  width: 605rpx;
+  height: 63rpx;
+  font-size: 28rpx;
+}
+form .list .listpic{
+  float: left;
+  margin-top: 14rpx;
+  margin-right: 26rpx;
+  margin-left: 24rpx;
+}
+/* 收货信息的选择地区 */
+form .picker-address{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+form .picker-address .addrtext{
+  display: inline-block;
+  margin-top: 30rpx;
+  text-indent: 80rpx;
+}
+.placeholder-addr{
+  font-size: 28rpx;
+}
+/* 收货信息的图标Logo */
+form .writeName .personLogo{
+  width: 32rpx;
+  height: 36rpx;
+}
+form .Smartphone{
+  width:23rpx;
+  height: 35rpx;
+}
+form .Placeholde{
+  width: 34rpx;
+  height: 33rpx;
+}
+form .gonext{
+  width: 19rpx;
+  height: 30rpx;
+  margin-top: 48rpx;
+  float: right;
+}
+form .addressT{
+  display: block;
+  width: 628rpx;
+  height: 110rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  border: 1rpx solid #f4f4f4;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  line-height: 1.8;
+}
+/* 微信支付按钮 */
+form .payPrice{
+  display: block;
+  height: 85rpx;
+  width: 690rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  background-color: #05cf0b;
+  color: #fff;
+  font-size: 30rpx;
+  letter-spacing: 5rpx;
+}
+/* 吐司提示样式 */
+.toasttip{
+  position: fixed;
+  top: 700rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+  width: 340rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  letter-spacing: 5rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  }
+  /* 靓号弹窗 */
+  .nofansTip{
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  background-color: rgba(0,0, 0,0.6);
+}
+.fansdiv{
+  position: absolute;
+  top: 182rpx;
+  left: 0;
+  right: 0;
+  width: 540rpx;
+  height: 448rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.nofansTip .nofanslogo{
+  display: block;
+  width: 335rpx;
+  height: 215rpx;
+  padding-bottom: 25rpx;
+  margin: 0 auto;
+}
+.erweima{
+  position: absolute;
+  left: 15rpx;
+  right: 0;
+  top: 108rpx;
+  margin: 0 auto;
+  width: 200rpx;
+  height: 200rpx;
+}
+.nofansTip .cannotjoin{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #d7a775;
+}
+.cannotjointip,.cannotreason{
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #9c9c9c;
+}
+/* .buybtn{
+  width: 280rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  color: #f35324;
+  border: 1rpx solid #f35324;
+  border-radius: 30rpx;
+  margin: 0 auto;
+  margin-top: 34rpx;
+} */
+.close{
+  width: 69rpx;
+  height: 69rpx;
+  position: absolute;
+  top: 360rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.di{
+  position: relative;
+  z-index: 10;
+}

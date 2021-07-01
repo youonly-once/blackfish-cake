@@ -1,0 +1,30 @@
+<zan-panel>
+  <view class='item'>
+    <view class='image'>
+      <image src='{{orderInfo.order_goods_info[0].thum}}' widthFix></image>
+    </view>
+    <view class='order-info'>
+      <view class='list' style="color:#358cff">{{expressInfo.state?logisticsStatus[expressInfo.state]:'正在收录'}}</view>
+      <view class='list'>{{logisticsMap[orderInfo.express_type]}}：{{orderInfo.express_no}}</view>
+      <view class='list'>官方电话：{{expressInfo.comcontact}}</view>
+    </view>
+  </view>
+</zan-panel>
+<view style="margin-bottom:10px;"></view>
+<zan-panel>
+  <view class='express-lists' wx:if="{{expressInfo.data.length}}">
+    <view class='list {{index==0?"this":"after"}}' wx:for="{{expressInfo.data}}" wx:key="key">
+      <view class='left'>
+        <zan-icon class="icon" type="checked"></zan-icon>      
+        <view class="line"></view>
+      </view>
+      <view class='right'>
+        <view class='express-time'>{{item.time}}</view>
+        <view class='express-info'>{{item.context}}</view>
+      </view>
+    </view>
+  </view> 
+  <view class='express-lists' wx:if="{{!expressInfo.data.length}}">
+    暂时无详情......
+  </view>
+</zan-panel>

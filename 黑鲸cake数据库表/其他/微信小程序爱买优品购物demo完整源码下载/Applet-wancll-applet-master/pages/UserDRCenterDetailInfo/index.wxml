@@ -1,0 +1,48 @@
+<view class='items'>
+  <view class='item' wx:for="{{info.commission_info}}" wx:key="item">
+    <view class='list' wx:for="{{item.order_goods_info}}" wx:for-item="list" wx:key="list">
+      <view class='order-goods'>
+        <view class='image'>
+          <image src='{{list.order_goods_info.thum}}' mode='widthFix'></image>
+        </view>
+        <view class='goods'>
+          <view class='title'>{{list.order_goods_info.name}}</view>
+          <view class='money'>分红佣金:{{list.expect_money}}</view>
+          <view class='other'>
+            <template is="type" data="{{...list}}" />
+          </view>
+        </view>
+      </view>
+      <view class='order-info'>
+        <view class='title'>
+          <template is="status" data="{{...item}}" />
+        </view>
+        <view class='text'>分销等级：<template is="level" data="{{...item}}" /></view>
+        <view class='text'>订单金额：{{list.order_info.total_money}} 元</view>
+        <view class='text'>订单编号：{{list.order_info.order_no}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 状态 -->
+<template name="status">
+  <text class='text' wx:if="{{status==1}}">待审核</text>
+  <text class='text' wx:if="{{status==2}}">未通过</text>
+  <text class='text' wx:if="{{status==3}}">已打款</text>
+  <text class='text' wx:if="{{status==9}}">无效</text>
+</template>
+<!-- 状态 -->
+<template name="type">
+  <text class='text' wx:if="{{bonus_type==1}}">等级代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'area'}}">县级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'city'}}">市级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==2 && region_type == 'province'}}">省级区域代理分红</text>
+  <text class='text' wx:if="{{bonus_type==3}}">全球分红</text>
+</template>
+<!-- 分销商等级  -->
+<template name="level">
+  <text class='text' wx:if="{{level==1}}">一级</text>
+  <text class='text' wx:if="{{level==2}}">二级</text>
+  <text class='text' wx:if="{{level==3}}">三级</text>
+</template>

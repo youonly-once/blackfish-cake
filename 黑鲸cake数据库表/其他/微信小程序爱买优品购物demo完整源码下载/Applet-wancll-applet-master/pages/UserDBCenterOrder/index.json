@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单数量",
+  "usingComponents": {
+    "zan-tab": "../../dist/tab/index",
+    "zan-icon": "../../dist/icon/index",
+    "zan-row": "../../dist/row/index",
+    "zan-col": "../../dist/col/index"
+  },
+  "enablePullDownRefresh": true
+}

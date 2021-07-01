@@ -1,0 +1,454 @@
+.content{
+  width: 750rpx;
+  font-family: '微软雅黑';
+  padding-bottom: 100rpx;
+}
+.content .head{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #2c2c2c;
+}
+.head .noreturn{
+  float: right;
+  width: 177rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  background-color: #f4f4f4; 
+  border-radius:6rpx;
+  margin-right: 30rpx;
+  margin-top: 14rpx;
+  color: #2c2c2c;
+}
+.timeLogo{
+  width: 38rpx;
+  height: 38rpx;
+  vertical-align: middle;
+}
+.menuLogo{
+  width: 27rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+.goodsmessage{
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 720rpx;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  border-top: 18rpx solid #f4f4f4;
+  color: #2c2c2c;
+}
+.Message{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.Message .goodsinfohead  .pic{
+  margin-top: 30rpx;
+  padding-right: 30rpx;
+  width: 162rpx;
+  height: 162rpx;
+}
+.goodsinfohead{
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  /* background-color: yellow; */
+  position: relative;
+  padding-bottom: 25rpx;
+}
+.goodsinfohead .type{
+  flex: 1;
+  position: relative;
+  margin-top: 30rpx;
+  padding-right: 30rpx;
+   height: 162rpx; 
+  flex-direction: column;
+}
+.goodstitle{
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  flex: 1;
+  position: absolute;
+  top: 0;
+  padding-bottom: 10rpx; 
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #000;
+}
+ .gonext{
+  position: absolute;
+  right: 0;
+  top: 20rpx; 
+  width: 19rpx;
+  height: 30rpx;
+} 
+.primecost{
+  position: absolute;
+  bottom: 0;
+  font-size: 28rpx;
+  color: #7c7c7c;
+  font-weight: 700;
+  letter-spacing: 1rpx;
+}
+.left{
+  width: 690rpx;
+  height: 87rpx;
+  margin: 0 auto;
+  line-height: 87rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  color: #6f6f6f;
+}
+.right{
+  float: right;
+  font-size: 30rpx;
+}
+.right.red{
+  color: #ff4545;
+}
+.goodsinfo .left:last-child{
+   border-bottom:none; 
+}
+/* 核销价格显示 */
+.oldprice{
+  width: 300rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  text-decoration: line-through;
+}
+
+/* 商家信息 */
+.userinfo,.getinfo{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.userinfo-head,.getinfo-head{
+  border-top: 18rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.getinfo .left:last-child{
+  border-bottom: none;
+}
+.userinfo .tip{
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 19rpx;
+  color: #ff4545;
+}
+.person{
+  width: 32rpx;
+  height: 35rpx;
+}
+.sendgoods{
+  width: 34rpx;
+  height: 31rpx;
+}
+
+
+/* 核销 */
+.hexiao{
+  padding-bottom: 20rpx;
+}
+.hexiao-head{
+  width: 750rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  border-top: 20rpx solid #f4f4f4;
+}
+.hexiaopic{
+  width:34rpx;
+  height: 33rpx; 
+}
+.useday{
+  float: right;
+  font-size: 24rpx;
+  color: #ff4545;
+  margin-right: 30rpx;
+}
+.useday .time{
+  letter-spacing: 0rpx;
+}
+.hxexplain{
+  width: 690rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  padding-top: 26rpx;
+  padding-bottom: 60rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.hxexplain .right{
+  width: 520rpx;
+  font-size: 26rpx;
+  color: #2c2c2c;
+}
+.hxer{
+  width: 690rpx;
+  margin: 0 auto;
+  /* border-bottom: 1rpx solid #dedede; */
+}
+.hxerpic{
+  display: block;
+  width: 222rpx;
+  height: 222rpx;
+  margin: 0 auto;
+  padding-top: 36rpx;
+  padding-bottom: 36rpx;
+}
+.hxshop{
+  position: relative;
+  width: 690rpx;
+  padding-top: 35rpx;
+  padding-bottom: 35rpx;
+  text-indent: 30rpx; 
+  margin: 0 auto;
+  border-top: 1rpx solid #f4f4f4;
+  font-size: 30rpx;
+  /* background-color: red; */
+  /* margin-top: 20rpx; */
+}
+
+.hxshop .openpic{
+  display: block;
+  position: absolute;
+  right: 15rpx;
+  top: 35rpx;
+  width: 35rpx;
+  height: 30rpx;
+}
+.hxshop .closepic{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 35rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.hxshop .red{
+  color: #ff4545;
+}
+.hxshop .close{
+  display: none;
+}
+.hxshop .hexiaoshop{
+  flex: left;
+}
+.hxshop  .hexiaoright{
+  display: inline-block;
+  position: absolute;
+  right: 80rpx;
+  font-size: 30rpx;
+}
+.hxshop:first-child{
+  background-color: #fff;
+}
+.hxshop.selected{
+  background-color: #f4f4f4;
+  border-radius: 10rpx;
+  border: none;
+}
+.hxshop.selected .closepic{
+  display: block;
+  position: absolute;
+  z-index: 888;
+  right: 15rpx;
+  top: 35rpx;
+  width: 35rpx;
+  height: 30rpx;
+}
+.righ-num{
+  float: right;
+  padding-right: 18rpx;
+}
+.hxshop.selected.white .closepic{
+  display: none;
+  
+}
+.hxshop.selected.white{
+  background-color: #fff;
+}
+.hxshop.selected .close{
+  display: block;
+  margin-top: 20rpx;
+  color: #5b5b5b;
+}
+
+
+/* 核销一次 */
+.hxmessage{
+  width: 630rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  background-color: #f4f4f4;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.hxmessage .hxusenum{
+  float: right;
+}
+
+/* 底部 */
+.bottom{
+  width: 750rpx;
+  height: 100rpx;
+  background-color: #f4f4f4;
+}
+/* 底部菜单 */
+.freejewel{
+  position: fixed;
+  z-index:9;
+  background-color: #fff;
+  bottom:32rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.bottom{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1rpx solid #bfbfbf;
+  text-align: center;
+  background-color: #fff;
+}
+.bottomfans{
+  display: block;
+  position: fixed;
+  z-index: 99999999;
+  left: 0;
+  right: 0;
+  bottom: 9rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  text-align: center;
+}
+.smallCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 42rpx;
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  background-color: #212123; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff; 
+  /* background-color: red; */
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 67rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 35px;
+  height: 58rpx;
+  
+}
+.freedom{
+  flex: 1;
+  position: relative;
+  margin-left: -60rpx;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+}
+.freedompic{
+  display: block;
+  margin: 0 auto;
+  width: 44rpx;
+  height: 44rpx;
+}
+.bottom .menuBar{
+  flex: 1;
+  position: relative;
+  margin-right: -60rpx;
+  text-align: center;
+  float: left;
+  padding-top: 14rpx;
+  font-size: 20rpx;
+  color: #000;
+}
+.menupic{
+  display: block;
+  width: 40rpx;
+  height: 44rpx;
+  margin: 0 auto;
+}
+.indextext,.menutext{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 9rpx;
+  display: inline-block;
+  padding-top: 12rpx;
+}
+.realpay{
+  position: fixed;
+  bottom: 0;
+  z-index:10;
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 100rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #f4f4f4;
+}
+.realpay .paymunber{
+  float: left;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  color: #7c7c7c;
+  font-weight: 600;
+}
+.realpay .paymunber .redprice{
+  font-weight: bold;
+  color: #ff4545;
+}
+.realpay .paybtn{
+  float: right;  width: 230rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-radius: 0;
+  font-size: 35rpx;
+  color: #fff;
+  background-color: #06ce0c;
+  text-align: center;
+}
+

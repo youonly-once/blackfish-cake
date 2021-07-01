@@ -1,0 +1,37 @@
+.list{
+  background: #fff;
+  margin: 10px 0 0 0;
+  padding: 15px;
+}
+.list .title{
+  font-size: 15px;
+  display: flex;
+  margin-bottom: 5px;
+}
+.list .title .left{
+  flex: 1;
+  text-align: left
+}
+.list .title .right{
+  flex: 1;
+  text-align: right;
+  color: #358cff
+}
+
+.list .info{
+  display: flex;
+}
+.list .info .left{
+  flex: 1
+}
+.list .info .left .line{
+  color: #777;
+  line-height: 25px;
+}
+.list .info .right{
+  flex: 100px 0 0;
+  line-height: 50px;
+  text-align: right;
+  font-size: 18px;
+  color:  rgb(233, 93, 64)
+}

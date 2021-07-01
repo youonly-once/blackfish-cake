@@ -1,0 +1,323 @@
+
+.deliver_choose{
+  width:100%;
+  background: #fff;
+   border-top: solid 1rpx rgb(236, 235, 235);
+}
+.deliver{
+    border-radius: 10rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  width: 95%;
+  margin: 20rpx 0rpx;
+}
+.dliver_choose_item_deliver{
+  width:50%;
+  text-align: center;
+  color:#fff;
+  font-size:28rpx;
+  padding: 10rpx;
+}
+.dliver_choose_item_get{
+  width:50%;
+  text-align: center;
+  font-size:28rpx;
+   padding: 10rpx;
+}
+
+
+
+/** 收货地址 **/
+.confirm-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x:hidden;
+}
+.address-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top: solid 1rpx rgb(236, 235, 235)
+}
+
+.address-content{
+  width: 95%;
+}
+.headeer-left{
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.header-right{
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.boder-style {
+  width: 100%;
+  border: 1rpx solid transparent;
+  background: linear-gradient(white, white) padding-box,
+  repeating-linear-gradient(-45deg, red 0, red 12.5%, transparent 0, transparent 25%, #58a 0, #58a 37.5%, transparent 0, transparent 50%) 0/80rpx 40rpx;
+  margin-top: 20rpx;
+ }
+
+.address-left{
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address-right{
+  width: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.address-right image{
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.address-left image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 10rpx;
+}
+
+.address-middle{
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.address-middle .user-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.address-info{
+  font-size: 24rpx;
+  color: gray;
+  margin-top: 5rpx;
+}
+.get-address-info{
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 5rpx;
+}
+
+
+/** 底部信息 **/
+.footer-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 210rpx;
+}
+
+.coupon{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}
+
+.coupon-content{
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  padding: 25rpx 0rpx;
+}
+
+.coupon-left{
+  
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+   COLOR: rgb(78, 78, 78);
+}
+
+.coupon-right{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.coupon-right image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-left:10rpx;
+}
+
+.expre-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25rpx 0rpx;
+  background: white;
+  margin-top: 20rpx;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.expre-content{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.expre-info{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 25rpx;
+}
+
+.expre-info .info-title{
+  width: 50%;
+   font-size: 28rpx;
+     COLOR: rgb(78, 78, 78);
+}
+
+.expre-info .info{
+  font-size: 28rpx;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.remark{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 25rpx;
+  border-top-style:solid;
+  border-width:1rpx;
+  border-color: #F2F2F2;
+}
+
+.remark .remark-left{
+  width: 50%;
+   font-size: 28rpx;
+   COLOR: rgb(78, 78, 78)
+}
+
+.remark .remark-right{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  color: darkgray;
+   font-size: 28rpx;
+}
+
+.order-info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  padding: 25rpx 0rpx;
+  align-items: center;
+}
+
+.order-content{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+   font-size: 28rpx;
+}
+
+.order-item{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+   font-size: 28rpx;
+}
+
+.item-left{
+  width: 50%;
+  color: rgb(78, 78, 78);
+}
+
+.item-right{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.express-cost{
+  padding: 20rpx 0rpx;
+}
+
+.coupon-amount{
+  padding-bottom: 20rpx;
+}
+
+.sum-money{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 30rpx;
+  border-top-style:solid;
+  border-width:1rpx;
+  border-color: #F2F2F2;
+}
+
+/** 提交支付按钮 **/
+.submit-container{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  bottom: 0rpx;
+  background: white;
+  border-top-style:solid;
+  border-width:1rpx;
+  border-color: #F2F2F2;
+}
+
+.submit-container .submit-left{
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.submit-left .total-amount{
+  margin-right: 20rpx;
+}
+
+.submit-container .submit-right{
+  color: white;
+  width: 35%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.disabled{
+  background:#ccc;
+}

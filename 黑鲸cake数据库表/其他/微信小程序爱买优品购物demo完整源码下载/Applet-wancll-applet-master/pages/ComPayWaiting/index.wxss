@@ -1,0 +1,8 @@
+.status {
+  margin: 100rpx 0 100rpx 0;
+}
+
+.pay-success {
+  font-size: 70rpx;
+  color: #21c002;
+}

@@ -1,0 +1,9 @@
+<view class='content'>
+  <image class="bg-image" src="{{bgImg}}" mode='scaleToFill'></image>
+  <view class='ewm-box'>
+    <!-- 二维码生成待定 -->
+    <view class='ewm-border'>
+      <canvas style='width:150px' class='canvas' canvas-id='canvas'></canvas>
+    </view>
+  </view>
+</view>

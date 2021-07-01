@@ -1,0 +1,17 @@
+.article{
+  padding: 15px;
+  color: #777;
+}
+.article .title{
+  font-size: 28rpx;
+  color: #000;
+  margin-bottom: 10px;
+}
+.article .timer{
+  font-size: 24rpx;
+  color: #000;
+  margin-bottom: 10px;
+}
+.article .content{
+  font-size: 28rpx;
+}

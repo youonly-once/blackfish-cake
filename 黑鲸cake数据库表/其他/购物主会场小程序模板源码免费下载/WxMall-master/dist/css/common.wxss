@@ -1,0 +1,52 @@
+.page{
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+.dis-flex{
+    display: flex;
+}
+.flex-x-start{
+  justify-content: flex-start;
+}
+.flex-x-center {
+  justify-content: center;
+}
+.flex-x-between {
+  justify-content: space-between;
+}
+.flex-x-around {
+  justify-content: space-around;
+}
+.flex-y-center {
+  align-items: center;
+}
+.flex-dir-column {
+  flex-direction: column;
+}
+.flex-y-center {
+  align-items: center;
+}
+
+.flex-y-end {
+  align-items: flex-end;
+}
+.flex{
+  flex:1
+}
+
+.twolist-hidden {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.list-hidden {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

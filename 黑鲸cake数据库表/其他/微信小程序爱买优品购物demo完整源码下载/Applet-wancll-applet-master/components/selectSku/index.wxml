@@ -1,0 +1,57 @@
+<view class="zan-btns">
+  <zan-panel>
+    <view class='top-close'>
+      <text class="left">请选择规格</text>
+      <text class="right icon" data-type="icon" bindtap="close">关闭</text>
+    </view>
+  </zan-panel>
+  <view class='image-warpper'>
+    <image src='{{goodsinfo.thum}}' widthFix></image>
+    <block wx:if="{{findSku}}">
+      <template is="findSkuPrice" data="{{...findSku}}" />
+    </block>
+    <block wx:else="{{findSku}}">
+      <template is="defaultPrice" data="{{...defaultSku[0]}}" />
+    </block>
+  </view>
+  <zan-panel wx:for="{{skuData}}" wx:key="key">
+    <view class='sku'>
+      <view class='title'>{{item.name.name}}</view>
+      <view class='lists'>
+        <zan-button bindtap="changeSelect" class="sku-list" size="small" wx:for="{{item.select}}" wx:for-item="select" data-nameId="{{item.name.id}}" data-id="{{select.id}}" type="{{lineValue[item.name.id] == select.id ? 'info' : ''}}" wx:key="index">
+          {{select.option}}
+        </zan-button>
+      </view>
+    </view>
+  </zan-panel>
+  <view class='send'>
+    <zan-button type="info" bindtap='confirm'>确定选择</zan-button>
+  </view>
+</view>
+
+<template name="collect">
+  <view wx:if="{{isCollect}}" bindtap="changeCollect">
+    <icon class="icon" type="shoucang"></icon>
+    <view>已收藏</view>
+  </view>
+  <view wx:else="{{isCollect}}" bindtap="changeCollect">
+    <icon class="icon" type="star"></icon>
+    <view>收藏</view>
+  </view>
+</template>
+
+<template name="findSkuPrice">
+  <view class='price-warpper'>
+    <view class='price'>
+      <text style="font-size: 30rpx;">￥</text>{{sell_price}}</view>
+    <view class='stock'>库存：{{stock}}</view>
+  </view>
+</template>
+
+<template name="defaultPrice">
+  <view class='price-warpper'>
+    <view class='price wancll-text-price'>
+      <text style="font-size: 30rpx;">￥</text>{{sell_price}}</view>
+    <view class='stock'>库存：{{stock}}</view>
+  </view>
+</template>

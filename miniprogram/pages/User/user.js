@@ -1,11 +1,10 @@
-//logs.js
-const util = require('../../utils/util.js')
+
 const app = getApp()
 
 
 Page({
   data: {
-    
+    showCustomSheet:false//客服界面显示
   },
   onLoad: function () {
     app.getIsAdmin(function(res){
@@ -21,49 +20,60 @@ Page({
   },
   userInfo:function(){
     wx.navigateTo({
-      url:'/pages/userInfo/userInfo'
+      url:'/pages/UserInfor/UserInfor'
     })
   },
   discount:function(){
     wx.navigateTo({
-      url:'/pages/discount/discount'
+      url:'/pages/UserCoupon/UserCoupon'
     })
   },
   address:function(){
     wx.navigateTo({
-      url:'/pages/manageAddress/manageAddress'
+      url:'/pages/UserAddress/UserAddress'
     })
   },
   order:function(e){
     let orderstatus = e.currentTarget.dataset.orderstatus
     wx.navigateTo({
-      url: '/pages/order/order?orderstatus=' + orderstatus
+      url: '/pages/Order/Order?orderstatus=' + orderstatus
     })
   },
   orderManager: function (e) {
     
     wx.navigateTo({
-      url: '/pages/order_manager/order_manager?orderstatus=0' 
+      url: '/pages/OrderManager/OrderManager?orderstatus=0' 
     })
   },
  shopping:function(){
      wx.redirectTo({
-      url:'/pages/Shopping/shopping'
+      url:'/pages/Shopping/Shopping'
     })
   },
   sort:function(){
      wx.redirectTo({
-      url:'/pages/Sort/sort'
+      url:'/pages/Sort/Sort'
     })
   },
   index:function(){
      wx.redirectTo({
-      url:'/pages/Index/index'
+      url:'/pages/Index/Index'
     })
   },
   User:function(){
      wx.redirectTo({
-      url:'/pages/User/user'
+      url:'/pages/User/User'
+    })
+  },
+  bindCustom: function () {
+    this.setData({
+      showCustomSheet:true
+    })
+  },
+
+  bindAbout: function () {
+    wx.navigateTo({
+      url: '/pages/About/About'
     })
   }
 })

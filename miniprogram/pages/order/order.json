@@ -2,5 +2,10 @@
   "navigationBarTitleText": "我的订单",
   "navigationBarTextStyle":"black",
   "enablePullDownRefresh": true,
-  "onReachBottomDistance":0
+  "onReachBottomDistance":50,
+  "component": true,
+  "usingComponents": {
+    
+    "order-list":"../components/order-list/order-list"
+  }
 }

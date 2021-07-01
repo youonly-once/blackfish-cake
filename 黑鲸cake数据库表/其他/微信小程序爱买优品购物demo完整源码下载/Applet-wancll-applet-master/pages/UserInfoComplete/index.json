@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "完善个人信息",
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-cell": "../../dist/cell/index",
+    "zan-cell-group": "../../dist/cell-group/index",
+    "zan-button-group": "../../dist/btn-group/index",
+    "zan-button": "../../dist/btn/index",
+    "icon": "../../components/icon/index",
+    "citys": "../../components/citys/index"
+  }
+}

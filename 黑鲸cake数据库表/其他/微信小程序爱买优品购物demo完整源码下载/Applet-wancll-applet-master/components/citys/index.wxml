@@ -1,0 +1,17 @@
+<view class="citypicker" wx:if="{{condition}}">
+  <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class="citybody">
+      <view class="cityheader">
+        <view bindtap="open" class="city-cancel">取消</view>
+        <view bindtap="open" class="city-true">确定</view>
+      </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" class="select">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" class="select">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" class="select">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

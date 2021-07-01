@@ -1,0 +1,133 @@
+.item-content {
+  padding: 10px;
+  background: #fff;
+  display: flex;
+}
+
+.select-button {
+  flex: 80rpx 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  font-size: 35rpx;
+}
+
+.pop-example--top {
+  width: 100vw;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.pop-example__container {
+  overflow: hidden;
+  background: #fff;
+}
+
+.pop-example__container--bottom {
+  width: 100vw;
+}
+
+.pop-example__container--left, .pop-example__container--right {
+  height: 100vh;
+}
+
+.center-info {
+  flex: 1;
+  background: #fafafa;
+  padding: 10rpx;
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.center-info .image-warpper {
+  flex: 180rpx 0 0;
+}
+
+.center-info .image {
+  width: 160rpx;
+  height: 160rpx;
+  background: #ccc;
+  display: block;
+}
+
+.center-info .title-warpper {
+  flex: 1;
+}
+
+.center-info .title-warpper .title {
+  width: 100%;
+  line-height: 40rpx;
+  margin-bottom: 5rpx;
+}
+
+.center-info .title-warpper .intro {
+  width: 100%;
+  line-height: 40rpx;
+  margin-bottom: 5rpx;
+  color: #999;
+}
+
+.center-info .title-warpper .sku {
+  line-height: 40rpx;
+  color: #999;
+}
+
+.center-info .title-warpper .price-warpper {
+  display: flex;
+}
+
+.center-info .title-warpper .price-warpper .price {
+  flex: 1;
+}
+
+.center-info .title-warpper .price-warpper .count {
+  flex: 50px 0 0;
+}
+
+.select-all {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  background: #fff;
+}
+
+.select-all .select {
+  height: 100rpx;
+  text-align: center;
+  flex: 150rpx 0 0;
+}
+
+.select-all .price {
+  height: 100rpx;
+  margin-right: 10px;
+  text-align: right;
+  flex: 1;
+}
+
+.select-all .send {
+  height: 100rpx;
+  text-align: center;
+  background: linear-gradient(to bottom, #41c4da, #34a3e4, #2680ef);
+  flex: 200rpx 0 0;
+}
+
+zan-icon .zan-icon-checked{
+  color: #358cff !important;
+}
+
+.edit{
+  padding: 10px;
+  text-align: right
+}
+.edit .btn{
+  margin-left: 10px;
+}

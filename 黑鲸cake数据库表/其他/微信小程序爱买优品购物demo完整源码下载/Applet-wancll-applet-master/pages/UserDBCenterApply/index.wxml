@@ -1,0 +1,24 @@
+<view class="contenr">
+  <view class='info'>
+    <view class='btxt'>可提现金额</view>
+    <view class='rmb'>
+      <text>￥</text> {{bonusInfo.can_drawcash_money}}
+    </view>
+    <view class='stxt'>最小提现金额：￥{{bonusData.min_drawcash_money}}</view>
+  </view>
+  <view class='buttons'>
+    <view class='button'>
+      <zan-button type="danger" bindbtnclick="payWallet">到账钱包</zan-button>    
+    </view>
+    <view class='button'>
+      <zan-button type="primary" bindbtnclick="payWx">到账微信</zan-button>
+    </view>
+    <view class='button'>
+      <zan-button type="info" bindbtnclick="payAli">到账支付宝</zan-button>
+    </view>
+  </view>
+</view>
+
+<modal hidden="{{hidden}}" title="请输入密码" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+    <input value='{{inputData}}' bindinput='inputData' style='text-align:center' password="true" placeholder="输入密码"></input>
+</modal>

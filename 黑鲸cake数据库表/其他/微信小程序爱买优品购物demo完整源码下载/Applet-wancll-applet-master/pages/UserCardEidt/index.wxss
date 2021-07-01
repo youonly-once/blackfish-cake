@@ -1,0 +1,25 @@
+.panel{
+  padding: 15px;
+  display: flex;
+  font-size: 28rpx;
+}
+.panel .title{
+  flex: 160rpx 0 0;
+}
+.panel input{
+  flex: 1;
+}
+.addCard{
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0
+}
+.delete-card{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  text-align: right;
+}

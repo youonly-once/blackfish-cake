@@ -1,0 +1,41 @@
+<zan-panel>
+  <view class='plant'>
+    <view class='title'>收件人：</view>
+    <input class='context' bindinput='enterName' value='{{enterName}}' placeholder='输入收件人姓名'></input>
+  </view>
+  <zan-panel>
+    <view class='plant'>
+      <view class='title'>联系电话：</view>
+      <input class='context' bindinput='enterMobile' value='{{enterMobile}}' placeholder='输入联系电话'></input>
+    </view>
+  </zan-panel>
+  <view class="plant">
+    <view class='title'>当前选择：</view>
+    <view class='context' bindtap="showPicker" >{{showAddress}}</view>
+  </view>
+  <zan-panel>
+    <view class='plant'>
+      <view class='title-area'>详细地址：</view>
+      <textarea class='context-area' bindinput='enterTextarea' value='{{enterTextarea}}' placeholder='请输入详细地址'></textarea>
+    </view>
+  </zan-panel>
+  <view class='plant'>
+    <view class='title'>是否默认：</view>
+    <view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio">
+          <radio value="1" checked="{{enterDefault ==1?'true':''}}" />是
+        </label>
+        <label class="radio">
+          <radio value="0" checked="{{enterDefault ==0?'false':''}}" />否
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <zan-panel>
+    <view class='padding'>
+      <button class="wancll-bg-info wancll-text-white" catchtap='send' disabled="{{loading}}" loading='{{loading}}'>提交</button>
+    </view>
+  </zan-panel>
+</zan-panel>
+<citys id="citys" bind:getCitys="getCitys" condition="{{condition}}"></citys>

@@ -1,0 +1,5 @@
+<view class="wancll-margin-20 wancll-padded-20 wancll-bg-white bg">
+  <text>充值金额(元)</text>
+  <input type="digit" class="input wancll-margin-b-20" bindinput='bindMoney'></input>
+  <button class="wancll-margin-b-10" type="primary" catchtap='payMoney'>微信支付</button>
+</view>

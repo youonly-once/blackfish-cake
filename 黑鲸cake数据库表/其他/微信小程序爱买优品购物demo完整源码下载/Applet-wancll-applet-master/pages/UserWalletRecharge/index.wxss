@@ -1,0 +1,10 @@
+.bg{
+  border-radius: 15rpx;
+}
+.input{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #f4f4f4;
+}

@@ -1,0 +1,46 @@
+<view class='address-list'>
+  <view class='item' wx:for="{{addressList}}" wx:key="key">
+    <zan-panel>
+      <zan-cell-group>
+        <zan-cell class="top">
+          <view data-id="{{item.id}}" bindtap="selectAddress">
+            <view class='line'>
+              <view class='name'>{{item.consignee_name}}</view>
+              <view class='number'>{{item.mobile}}</view>
+            </view>
+            <view class='line'>{{item.address_info}}</view>
+          </view>
+        </zan-cell>
+        <zan-cell>
+          <view class='bottom'>
+            <view class='default-address' data-id='{{item.id}}' catchtap='setDefaultAddress'>
+              <zan-icon style="color:#358cff" type="{{item.is_default == 1 ? 'checked':'check'}}"></zan-icon>
+              <text> 默认地址</text>
+            </view>
+            <view class='click-button'>
+              <zan-button type="info" class='zan-button' bindbtnclick="editAddress" data-id='{{item.id}}' size="small">
+                <zan-icon type="edit"></zan-icon>
+                <text> 编辑</text>
+              </zan-button>
+              <zan-button class='zan-button' bindbtnclick="deleteAddress" data-id='{{item.id}}' size="small" type="danger">
+                <zan-icon type="delete"></zan-icon>
+                <text> 删除</text>
+              </zan-button>
+            </view>
+          </view>
+        </zan-cell>
+      </zan-cell-group>
+    </zan-panel>
+  </view>
+  <view class='add-address'>
+    <zan-panel >
+      <zan-button bindbtnclick="editAddress" type="info" data-id='new'>
+        <zan-icon type="add"></zan-icon> 添加新地址
+      </zan-button>
+    </zan-panel>
+  </view>
+  <view wx:if="{{FPage.noContent}}" style="text-align: center;margin-top: 20%;">
+    <image mode="widthFix" src="{{FPage.noContentImg}}" style="width: 18%;margin: 0 auto;"></image>
+    <view style="color: #777;">啊哦,这里什么都没有~</view>
+  </view>
+</view>

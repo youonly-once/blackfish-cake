@@ -1,0 +1,40 @@
+<view class="order-top wancll-text-white wancll-padded-20 wancll-flex">
+  <i class="{{'iconfont '+ statusFontClass[orderData.status]}}" style="font-size:80rpx;"></i>
+  <text class="wancll-font-size-18 wancll-padded-l-15"> {{statusName}}</text>
+</view>
+<view class="wancll-flex wancll-bg-white wancll-margin-t-10 wancll-margin-b-10 wancll-font-size-14">
+  <i class="iconfont icon-dizhi1 wancll-font-size-20 wancll-text-info wancll-padded-10"></i>
+  <view class="wancll-padded-t-10 wancll-padded-r-10 wancll-padded-b-10">
+    <view class="wancll-font-weight"> {{orderData.province}} {{orderData.city}} {{orderData.area}} {{orderData.address}}</view>
+    <view class="clearfix wancll-margin-t-10">
+      <text>{{orderData.consignee_name}}</text>
+      <text class="wancll-fr">{{orderData.mobile}}</text>
+    </view>
+  </view>
+</view>
+<order-item data="{{orderData}}" gotype='goodsdetail'></order-item>
+<zan-panel>
+  <zan-cell-group>
+    <zan-cell title="运费">
+      <view slot="footer">￥{{orderData.freight_money}}</view>
+    </zan-cell>
+    <block wx:if="{{orderData.market_reduce_money}}">
+      <zan-cell title="有优惠活动">
+        <view slot="footer">￥{{orderData.market_reduce_money}}</view>
+      </zan-cell>
+    </block>
+    <zan-cell title="订单总价（含运费）">
+      <view slot="footer">￥{{orderData.total_money}}</view>
+    </zan-cell>
+  </zan-cell-group>
+</zan-panel>
+<view style="margin-bottom:10px"></view>
+<zan-panel>
+  <view class="order-bottom">
+    <view class="line wancll-text-pray">订单创建时间：{{orderData.create_time}}</view>
+    <view class="line wancll-margin-t-5 wancll-text-pray" wx:if="{{orderData.pay_time}}">付款时间：{{orderData.pay_time}}</view>
+    <view class="line wancll-margin-t-5 wancll-text-pray" wx:if="{{orderData.deliver_time}}">发货时间：{{orderData.deliver_time}}</view>
+    <view class="line wancll-margin-t-5 wancll-text-pray" wx:if="{{orderData.finish_time}}">确认收货时间：{{orderData.finish_time}}</view>
+    <view class="line wancll-margin-t-5 wancll-text-pray" wx:if="{{orderData.cancel_time}}">订单取消时间：{{orderData.cancel_time}}</view>
+  </view>
+</zan-panel> 

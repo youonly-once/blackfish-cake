@@ -1,5 +1,7 @@
+
 /* reset */
-@import "./components/wei_ui/weui.wxss";
+@import "./components/wei-ui/weui.wxss";
+@import "maincolor.wxss";
 page {
   background-color: #F8F8F8;
   height: 100%;
@@ -208,6 +210,12 @@ button{
 	flex-direction:column;
 	justify-content:space-between;
 }
+.flexColumnStart{
+  display:flex;
+	flex-direction:column;
+	justify-content:flex-start;
+}
+
 .avoidOverflow{
 	overflow-x:hidden;
 	text-overflow:ellipsis;

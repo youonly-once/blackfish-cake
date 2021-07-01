@@ -1,0 +1,476 @@
+
+.container{
+  margin: 0;
+  padding: 0;
+  width: 750rpx;
+  letter-spacing: 3rpx;
+  background-color: #181818;
+}
+
+.head{
+  width: 750rpx;
+  height: 430rpx;
+  margin: 0 auto;
+  background-color: #333c43; 
+}
+.cardBg{
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 718rpx;
+  height: 365rpx;
+  top: 35rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.headcontent{
+  position: absolute;
+  z-index: 2;
+  width: 718rpx;
+  height: 365rpx;
+  top: 35rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #fff;
+}
+.headcontent .useravatar{
+  display: block;
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 28rpx;
+}
+.headcontent .username{
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 22rpx;
+  text-align: center;
+}
+.headcontent .cardnumber{
+  width: 450rpx; 
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 32rpx;
+  margin: 0 auto;
+}
+.headcontent .cardnumber .first,.headcontent .cardnumber .second,.headcontent .cardnumber .third{
+  width: 108rpx;
+  float: left;
+  font-weight: bold;
+  letter-spacing: 17rpx;
+  margin-left: 40rpx;
+}
+.headcontent .jointhing{
+  margin-top: 15rpx;
+  height: 65rpx;
+  padding-top: 17rpx;
+  font-size: 23rpx;
+}
+.headcontent .jointhing .joinday,.headcontent .jointhing .joinactivity{
+  width: 355rpx;
+  float: left;
+  text-align: center;
+}
+.headcontent .jointhing .joinday{
+  border-right: 1rpx solid #fff;
+}
+.headcontent .jointhing .joinday .day,.headcontent .jointhing .joinactivity .activitynum{
+  color: #ffc63e;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.tag{
+    width: 750rpx;
+    background-color: #181818;
+}
+.tag{
+  width: 750rpx;
+  margin: 0 auto;
+  background-color: #1c1f20;
+  padding-bottom: 20rpx;
+}
+.tag .tag-title{
+  width: 750rpx;
+  height: 83rpx;
+  line-height: 83rpx;
+  font-size: 27rpx;
+  color: #cfa478;
+  font-weight: bold;
+  text-align: center;
+}
+.tag .tag-title .lingxing{
+  width: 27rpx;
+  height: 25rpx;
+}
+.tag .tags{
+  width: 750rpx;
+  padding-left: 30rpx;
+}
+.tag .tags .singletag,.moretag{
+  float: left;
+  margin: 20rpx 0 0 20rpx;
+  font-size: 20rpx;
+  color: #e4be97;
+  padding: 12rpx 38rpx 12rpx 38rpx;
+  border: 2rpx solid #e4be97;
+  border-radius: 20rpx;
+}
+.tag  .tags .moretag{
+  font-size: 25rpx;
+  font-weight: bold;
+  color: #1d1f20;
+  background-color: #e4be97;
+}
+.tag .clearfloat{
+  width: 0;
+  height: 0;
+  clear: both;
+}
+.buycard{
+  width: 750rpx;
+  height: 388rpx;
+  background-color: #181818; 
+}
+.buycard .open-title{
+  position: relative;
+  width: 750rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+}
+.buycard .open-title .rhombus{
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 23rpx;
+  margin: 0 auto;
+  width: 571rpx;
+  height: 25rpx;
+}
+.buycard .open-title .fansnum{
+  display: inline-block;
+  color: #e4be97;
+  font-weight: bold;
+}
+.buycard .messagemove{
+  position: relative;
+  width: 750rpx;
+  height: 316rpx;
+}
+.buycard .messagemove .openBg{
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width:690rpx;
+  height: 316rpx;
+  margin: 0 auto;
+}
+.all-swiper{
+  width: 670rpx;
+  height: 257rpx;
+  overflow-y: hidden;
+  position: absolute;
+  top: 35rpx;
+  left: 20rpx;
+  right: 0;
+  margin: 0 auto;
+  z-index: 10;
+}
+.buycard .messagemove .message-content{
+  position: relative;
+  z-index: 10;
+  width: 690rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.buycard .messagemove .message-content.before{
+  margin-top: -25rpx;
+}
+.buycard .messagemove .message-content .item-sigle{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: 1rpx solid #181818;
+}
+.buycard .messagemove .message-content .item-sigle .sigle-message{
+  display: block;
+  width: 81rpx;
+  height: 81rpx;
+  border-radius: 50%;
+  margin-top: 15rpx;
+}
+.message-text{
+  flex: 1;
+  color: #181818;
+  font-size: 25rpx;
+  margin-left: 20rpx;
+
+}
+.introduce-julebu{
+  position: relative;
+  width: 750rpx;
+  height: 3131rpx;
+}
+.introduce-julebu .fans-happybg{
+  position: absolute;
+  z-index: 1;
+  width: 750rpx;
+  height: 3131rpx;
+}
+.introduce-julebu .call,.introduce-julebu .weixin,.introduce-julebu .goTop,.introduce-julebu .weixin-btn{
+  position: absolute;
+  z-index: 2;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  right: 8rpx;
+}
+.introduce-julebu .call{
+  top: 2616rpx;
+}
+.introduce-julebu .weixin{
+  top: 2720rpx;
+}
+.introduce-julebu .weixin-btn{
+  top: 2720rpx;
+  opacity: 0;
+  z-index: 3;
+}
+.introduce-julebu .goTop{
+  top: 2820rpx;
+}
+.fansgroup{
+  width: 750rpx;
+  background-color: #181818;
+  padding-bottom: 150rpx;
+}
+.fansgroup .threecircle{
+  display: block;
+  width: 10rpx;
+  height: 47rpx;
+  margin: 0 auto;
+}
+.fansgroup .groups-head{
+  width: 750rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  color: #e4be97;
+  font-size: 27rpx;
+  text-align: center;
+}
+.fansgroup .groups-head .lingxing{
+  width: 27rpx;
+  height: 25rpx;
+}
+.fansgroup .groups-head .lingxing{
+  width: 27rpx;
+  height: 25rpx;
+}
+.fansgroup .single-group{
+  display: flex;
+  flex-direction: row;
+  width: 680rpx;
+  border: 6rpx solid #e4be97;
+  border-radius: 10rpx;
+  margin: 0 auto;
+}
+.fansgroup .single-group .left-group{
+  flex: 1;
+  font-size: 20rpx;
+  color: #e4be97;
+  padding-left: 26rpx;
+}
+.fansgroup .single-group .right-group{
+  width: 195rpx;
+}
+.fansgroup .single-group .left-group .title-group{
+  width: 100%;
+  height: 55rpx;
+  line-height: 55rpx;
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.fansgroup .single-group .left-group .text-group{
+  line-height: 2;
+}
+.fansgroup .right-group .erweima{
+  display: block;
+  width: 140rpx;
+  height: 140rpx;
+  margin-left: 18rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+  border: 10rpx solid #fff;
+}
+.bottom-tag{
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rbga(0,0,0,.6);
+}
+.tagListBottom{
+  position: absolute;
+  bottom: 0; 
+  width: 750rpx;
+  padding-left: 20rpx;
+  background-color: #fff;
+}
+.tagCloseBtn{
+  float: right;
+  padding-top: 20rpx;
+  padding-right: 27rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.tagListBottom .headB{
+  width: 750rpx;
+  margin-left:-20rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: #dcdcdc;
+}
+.tagListBottom .singleTagBottom{
+  float: left; 
+  margin-right: 42rpx;
+  margin-top: 24rpx;
+  padding-left: 34rpx;
+  padding-right: 34rpx;
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #bfbfbf;
+}
+.freejewel{
+  position: fixed;
+  z-index:9;
+  background-color: #fff;
+  bottom:25rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.bottommenu{
+  width: 748rpx;
+  height: 96rpx;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1rpx solid #bfbfbf;
+  text-align: center;
+}
+.bottomfans{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 110rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+  color: #f35324;
+}
+.smallCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  background-color:#f35324; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 26rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 56rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 70rpx;
+  height: 70rpx;
+  
+}
+.freedom{
+  width: 57rpx;
+  height: 88rpx;
+  padding-left: 158rpx;
+  padding-right: 159rpx;
+  float: left;
+  padding-top: 8rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.freedompic{
+  width: 57rpx;
+  height: 59rpx;
+}
+.bottommenu .menuBar{
+  width: 54rpx;
+  padding-left: 160rpx;
+  padding-right: 160rpx;
+  height: 88rpx;
+  float: left;
+  padding-top: 8rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.menupic{
+  width: 54rpx;
+  height: 58rpx;
+}
+
+.nofansBg-btn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50rpx;
+  margin: 0 auto;
+  width: 426rpx;
+  height: 68rpx;
+}
+
+.needpayagain{
+  position: absolute;
+  top: 56rpx;
+  left: 0;
+  width: 230rpx;
+  height: 65rpx;
+}

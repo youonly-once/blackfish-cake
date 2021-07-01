@@ -1,0 +1,14 @@
+/*主题色*/
+.color_main{
+    color:#FFBA1E;
+    /* color:  #ff6347*/
+}
+.main_bg{
+  background-color: #FFBA1E;
+  /* background: #ff6347*/
+}
+.main_border{
+ 
+  border-color: #FFBA1E;
+  /* border-color: #ff6347*/
+}

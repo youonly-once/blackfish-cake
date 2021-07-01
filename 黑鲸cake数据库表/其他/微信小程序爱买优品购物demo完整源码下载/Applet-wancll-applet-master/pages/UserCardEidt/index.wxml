@@ -1,0 +1,28 @@
+<zan-panel>
+  <view class='panel'>
+    <view class='title'>选择银行：</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{bankArray}}">
+      <view class="picker">
+        {{bankArray[index]}}
+      </view>
+    </picker>
+  </view>
+  <zan-panel>
+    <view class='panel'>
+      <view class='title'>持卡人：</view>
+      <input bindinput='enterName' placeholder='请输入持卡人姓名' value='{{enterName}}'></input>
+    </view>
+  </zan-panel>
+  <zan-panel>
+    <view class='panel'>
+      <view class='title'>输入卡号：</view>
+      <input bindinput='enterCard' placeholder='请输入卡号' value='{{enterCard}}'></input>
+    </view>
+  </zan-panel>
+</zan-panel>
+<view class="delete-card" catchtap='deleteCard' wx:if="{{id}}">
+  <zan-button size="small" type="danger">删除</zan-button>
+</view>
+<view class='addCard' data-id='new' catchtap='send'>
+  <button class="wancll-bg-info wancll-text-white" disabled="{{loading}}" loading="{{loading}}">提交</button>
+</view>

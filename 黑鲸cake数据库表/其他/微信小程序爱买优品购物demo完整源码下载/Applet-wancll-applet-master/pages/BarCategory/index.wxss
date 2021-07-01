@@ -1,0 +1,24 @@
+.popup-nav{
+  display: flex;
+  width: 100%;
+  padding-bottom:20rpx; 
+  padding-top:20rpx; 
+  background: #fff;
+}
+.popup-nav .list{
+  margin: 0 0 0 10px;
+  text-align: center;
+}
+.popup-nav .list .image{
+  width: 100%;
+  height: 100rpx;
+  text-align: center
+}
+.popup-nav .list .image image{
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.zan-tab__item--selected .zan-tab__title{
+  color: #358cff !important;
+}

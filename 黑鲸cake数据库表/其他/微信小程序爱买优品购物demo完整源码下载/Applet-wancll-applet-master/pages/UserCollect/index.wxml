@@ -1,0 +1,21 @@
+<view class='goods-list wancll-padded-3 wancll-bg-pray'>
+  <view class='goods wancll-bg-pray' wx:for="{{collectionList}}" wx:key="index">
+    <view class='wancll-padded-3 wancll-bg-pray'>
+      <view class='image' data-id='{{item.goods_info.id}}' catchtap='goDetail'>
+        <image mode="widthFix" class="wancll-col-xs-12" src='{{item.goods_info.thum}}'></image>
+      </view>
+      <view class='info wancll-bg-white'>
+        <view class='wancll-padded-t-10 wancll-padded-r-10 wancll-padded-l-10 wancll-ellipsis-2'>{{item.goods_info.name}}</view>
+        <view class='wancll-padded-10 wancll-text-price'>
+          <text class="wancll-fl wancll-font-size-10">￥</text>{{item.goods_info.sell_price}}
+          <i class='iconfont icon-shanchu wancll-fr wancll-text-pray' catchtap='deleteItem' data-id='{{item.id}}'></i>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{FPage.noContent}}" class="no-content-image">
+  <image mode="widthFix" src="{{FPage.noContentImg}}"></image>
+  <view class="wancll-text-pray wancll-margin-t-10">啊哦,这里什么都没有~</view>
+</view>

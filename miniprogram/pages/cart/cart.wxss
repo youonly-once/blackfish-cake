@@ -1,5 +1,4 @@
 
-.c--f60{color: #f60;}
 .clamp1, .clamp2, .clamp3{display: -webkit-box!important; overflow: hidden; -webkit-box-orient: vertical;}
 .clamp1{-webkit-line-clamp:1;}
 .clamp2{-webkit-line-clamp:2;}
@@ -126,12 +125,12 @@
 .bottomfixed .inner .total{
   font-size:28rpx;
 }
-.bottomfixed .inner .total em{color:#f60;}
+
  
 .btn-pay{
   position: absolute;
   right:0px;
-  background:#FF5E3A;
+
   color:#fff;
   padding:0 10px;
   font-size: 28rpx;

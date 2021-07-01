@@ -1,0 +1,253 @@
+.head-text{
+  width: 750rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-indent: 30rpx;
+  font-size: 25rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.head-text .noreturn{
+  width: 178rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  display: block;
+  margin-top: 6rpx;
+  float: right;
+  background-color: #cecece;
+  text-align: center;
+}
+.head{
+  width: 720rpx;
+  padding-left: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1rpx solid #dedede;
+  font-size: 26rpx;
+  color: #2c2c2c;
+}
+.head .menuLogo{
+ display: inline-block;
+  width: 27rpx;
+  height: 34rpx;
+  padding-right:24rpx;
+}
+.goods{
+  width: 750rpx;
+  padding-top: 31rpx;
+  padding-left: 30rpx;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.goods .goodspic{
+  width: 162rpx;
+  height: 162rpx;
+  display: block;
+  margin: 0 auto;
+}
+.goods .title{
+  width: 690rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30rpx;
+}
+.GG{
+  width: 690rpx;
+  height: 62rpx;
+  line-height: 62rpx;
+  font-size: 24rpx;
+}
+.goodsNumber{
+  border-bottom: 1rpx solid #dedede;
+}
+.goodsPrice .right{
+  color: #ff4545;
+}
+.GG .right{
+  float: right;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.message{
+  width: 750rpx;
+  border-bottom: 106rpx solid #f4f4f4;
+}
+.message .message-head{
+  width: 720rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+.message-head .personPic{
+  width: 32rpx;
+  height: 35rpx;
+  padding-right: 20rpx;
+}
+.message .table{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.message .table .t{
+  display: inline-block;
+  float: right;
+  margin-right: 10rpx;
+}
+.table .T{
+  width: 690rpx;
+  height: 69rpx;
+  line-height: 69rpx;
+  font-size: 25rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+.message .introduce{
+  width: 690rpx;
+  padding-top: 23rpx;
+  margin: 0 auto;
+  font-size: 25rpx;
+  padding-bottom: 20rpx;
+  letter-spacing: 4rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+.introduce .left{
+  width: 126rpx;
+  float: left;
+}
+.introduce .introduce-text{
+  width: 564rpx;
+  display: inline-block;
+  text-indent: 50rpx;
+}
+.message .pic{
+  width: 690rpx;
+  padding-top: 24rpx;
+  margin: 0 auto;
+  padding-bottom: 50rpx;
+}
+.message .pic .photo-text{
+  font-size: 25rpx;
+  padding-bottom: 10rpx;
+}
+/* 图片显示 */
+.message .picture-pic{
+  display: block;
+  width: 500rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+.title-text{
+  height: 42rpx;
+  line-height: 42rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  background-color: #eeeeee;
+}
+contact-button{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+/* 底部菜单 */
+.freejewel{
+  position: fixed;
+  z-index:9;
+  background-color: #fff;
+  bottom:25rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  border: 1rpx solid #bfbfbf;
+}
+.bottom{
+  width: 748rpx;
+  height: 96rpx;
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1rpx solid #bfbfbf;
+  text-align: center;
+}
+.bottomfans{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 110rpx;
+  margin: 0 auto;
+  font-size: 20rpx;
+}
+.smallCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 32rpx;
+  width: 118rpx;
+  height: 118rpx;
+  border-radius: 50%;
+  background-color: #212123; 
+}
+.smallCircle.nofans{
+  background-color: #f35324;
+}
+.whiteCircle{
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 26rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.jewelLogo{
+  position: fixed;
+  z-index: 11;
+  bottom: 56rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 70rpx;
+  height: 70rpx;
+  
+}
+.freedom{
+  width: 57rpx;
+  height: 88rpx;
+  padding-left: 158rpx;
+  padding-right: 159rpx;
+  float: left;
+  padding-top: 8rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.freedompic{
+  width: 57rpx;
+  height: 59rpx;
+}
+.bottom .menuBar{
+  width: 54rpx;
+  padding-left: 160rpx;
+  padding-right: 160rpx;
+  height: 88rpx;
+  float: left;
+  padding-top: 8rpx;
+  font-size: 20rpx;
+  color: #707070;
+}
+.menupic{
+  width: 54rpx;
+  height: 58rpx;
+}

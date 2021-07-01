@@ -1,0 +1,45 @@
+<view class='view'>
+  <zan-panel>
+    <view class='item'>
+      <view class='image'>
+        <image src='{{goodsInfo.thum}}' widthFix></image>
+      </view>
+      <view class='order-info'>
+        <view class='text'>
+          <textarea placeholder='输入评价内容' bindinput='textareaInput'></textarea>
+        </view>
+      </view>
+    </view>
+    <zan-panel>
+      <view class='padding'>
+        <view class='title'>添加图片：（最多4张）</view>
+        <view class='image-input'>
+          <view class='image-list' wx:if="{{tempFilePaths.length}}" wx:for="{{tempFilePaths}}" wx:key="key">
+            <zan-badge catchtap='deleltImage' data-id='{{index}}'>x</zan-badge>
+            <view class='add-image' catchtap='previewImage' data-id='{{index}}'>
+              <image class='up-img' src="{{item}}" mode="aspectFill" />
+            </view>
+          </view>
+          <view class='add-image' catchtap='addImage'>+</view>
+        </view>
+      </view>
+    </zan-panel>
+    <view class='star-cent' catchtap='canesll'>
+      <view class='star-title'>
+        服务评价：
+      </view>
+      <view class='star-list'>
+        <icon class='star' data-n='1' catchtap='star' type="{{score>=1?'shoucang':'star'}}"></icon>
+        <icon class='star' data-n='2' catchtap='star' type="{{score>=2?'shoucang':'star'}}"></icon>
+        <icon class='star' data-n='3' catchtap='star' type="{{score>=3?'shoucang':'star'}}"></icon>
+        <icon class='star' data-n='4' catchtap='star' type="{{score>=4?'shoucang':'star'}}"></icon>
+        <icon class='star' data-n='5' catchtap='star' type="{{score>=5?'shoucang':'star'}}"></icon>
+      </view>
+    </view>
+    <zan-panel>
+      <view class='padding'>
+        <zan-button catchtap='send' type="info">发表评论</zan-button>
+      </view>
+    </zan-panel>
+  </zan-panel>
+</view>

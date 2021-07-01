@@ -1,0 +1,28 @@
+.contenr{
+  padding: 10px;
+}
+.contenr .info{
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.contenr .info .btxt{
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+.contenr .info .rmb{
+  font-size: 30px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+.contenr .info .rmb text{
+font-size: 15px;
+}
+.contenr .info .stxt{
+  font-size: 11px;
+  color: #777
+}
+.button{
+  margin-bottom: 10px;
+}

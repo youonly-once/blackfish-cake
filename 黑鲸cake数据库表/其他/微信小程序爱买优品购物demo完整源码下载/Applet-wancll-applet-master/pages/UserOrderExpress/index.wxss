@@ -1,0 +1,56 @@
+.item{  
+  padding: 15px;
+  display: flex;
+}
+.item .image{
+  flex: 180rpx 0 0;
+}
+.item .image image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.item .order-info{
+  flex: 1
+}
+.item .order-info .list{
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.express-lists{
+  padding: 15px;
+}
+.express-lists .list{
+  display: flex;
+}
+.express-lists .list .left{
+  flex: 100px 0 0;
+  text-align: center;
+  position: relative;
+}
+.express-lists .list .left .line{
+  position: absolute;
+  left: 49%;
+  top: 25px;
+  width: 5rpx;
+  height: 80%;
+  background: rgb(204, 204, 204);
+}
+.express-lists .list .left .icon{
+  font-size: 20px;
+  position: relative;
+  z-index: 10;
+}
+.express-lists .list .right{
+  flex: 1;
+  padding-bottom: 40px;
+}
+.express-lists .list .right .express-time{
+  padding-bottom: 10px;
+}
+.express-lists .this{
+  color:#358cff
+}
+.express-lists .after{
+  color:rgb(204, 204, 204)
+}

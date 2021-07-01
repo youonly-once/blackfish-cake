@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "zan-panel": "../../dist/panel/index",
+    "zan-button": "../../dist/btn/index"
+  }
+}

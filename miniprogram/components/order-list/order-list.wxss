@@ -1,0 +1,149 @@
+@import "../../maincolor.wxss";
+.order_item{
+	font-size:28rpx;
+	color:#333;
+}
+
+.order_left{width:26%;
+	text-align:left;
+     display: flex;    /*设置显示样式**/
+
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:row; 
+}
+.order_all{
+	display:none;
+}
+.order_show{
+	display:block;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  
+}
+.order_list{
+    margin-top: 107rpx;
+	}
+.order_all .orderlistShow{
+	width:100%;
+	height:200rpx;
+	
+	align-items:center;
+}
+.same_stroe{
+ 
+	padding:0rpx 25rpx;
+	overflow:hidden;
+	border-bottom:solid 1rpx #fff;
+  background: #fff;
+}
+.order_tlt{
+	height:65rpx;
+	line-height:65rpx;
+	background:#fff;
+	font-size:28rpx;
+	padding:0rpx 25rpx;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  margin-top:20rpx;
+}
+.tlt_left{
+	color:#666;
+ 
+}
+
+.handle{
+	background:#fff;overflow:hidden;padding:20rpx;
+  border-top:solid 1px #f3f3f3;
+    border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  align-items:center;
+}
+.order_left .image{
+	width:100%;
+	height:160rpx;
+  margin-right:20rpx;
+}
+.order_name{
+	width:74%;
+	height:160rpx;
+	}
+.order_name .text1{
+	font-size:28rpx;
+  height: 25%;
+  font-weight: bold;
+}
+.orders{
+	height:25%;
+	align-items:flex-end;
+	font-size:28rpx;
+	color:#808080;
+}
+.order_price{
+	font-size:24rpx;
+}
+.order_type{
+  font-size: 24rpx;
+  color: #666;
+}
+.order_number{
+   font-size: 24rpx;
+}
+.total_money{
+	font-size:28rpx;
+	color:#666;
+}
+.total_order{
+  align-items: center;
+}
+.total_money .text2{
+	font-size:28rpx;
+
+	margin-left:10rpx;
+	
+}
+.user_discount{
+	color:#262626;
+	font-size:24rpx;
+}
+.total_order{
+  height: 25%;
+	
+	float:right;
+
+}
+.handle_order{
+	clear:both;
+	width:364rpx;
+	float:right;
+}
+.handle_orders{
+	border:solid 1px #d1d1d1;
+	border-radius:20rpx;
+	text-align:center;
+  padding: 10rpx 20rpx;
+	font-size:24rpx;
+  margin-left:20rpx;
+  width: 100rpx;
+	
+}
+.comment_order{
+  color:white;
+  border:none;
+}
+.noMore{
+  width:100%;
+  color: gray;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 50rpx;
+}
+.flexRowBetween{
+	display:flex;
+	flex-direction:Row;
+	justify-content:space-between;
+}
+.flexRowEnd{
+	display:flex;
+	flex-direction:Row;
+	justify-content:flex-end;
+}
