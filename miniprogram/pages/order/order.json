@@ -6,6 +6,6 @@
   "component": true,
   "usingComponents": {
     
-    "order-list":"../components/order-list/order-list"
+    "order-list":"../../components/order-list/order-list"
   }
 }

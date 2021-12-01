@@ -4,7 +4,7 @@
   "component": true,
   "usingComponents": {
 
-    "show-cake": "../components/ShowCake/ShowCake"
+    "show-cake": "../../components/ShowCake/ShowCake"
   }
   
 }

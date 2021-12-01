@@ -1,7 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "no-content-tip": "../components/not-content-tip/not-content-tip",
-    "mp-loading": "../components/loading/loading/loading"
+    "no-content-tip": "../not-content-tip/not-content-tip",
+    "mp-loading": "../loading/loading/loading"
   }
 }

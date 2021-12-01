@@ -3,8 +3,8 @@
   "enablePullDownRefresh": true,
   "component": true,
   "usingComponents": {
-    "no-content-tip": "../components/not-content-tip/not-content-tip",
-    "action-sheet": "../components/action-sheet/action-sheet",
-    "custom-actionsheet": "../components/custom-actionsheet/custom-actionsheet"
+    "no-content-tip": "../../components/not-content-tip/not-content-tip",
+    "action-sheet": "../../components/action-sheet/action-sheet",
+    "custom-actionsheet": "../../components/custom-actionsheet/custom-actionsheet"
   }
 }

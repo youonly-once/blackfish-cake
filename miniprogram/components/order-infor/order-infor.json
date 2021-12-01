@@ -1,8 +1,8 @@
 {
   "component": true,
       "usingComponents": {
-        "show-cake": "../components/ShowCake/ShowCake",
-        "refund-status":"../components/refund-status/refund-status",
-        "no-content-tip": "../components/not-content-tip/not-content-tip"
+        "show-cake": "../ShowCake/ShowCake",
+        "refund-status":"../refund-status/refund-status",
+        "no-content-tip": "../not-content-tip/not-content-tip"
       }
 }

@@ -5,7 +5,7 @@
   "onReachBottomDistance":50,
     "component": true,
     "usingComponents": {
-      "show-cake": "../components/ShowCake/ShowCake",
-      "order-infor": "../components/order-infor/order-infor"
+      "show-cake": "../../../components/ShowCake/ShowCake",
+      "order-infor": "../../../components/order-infor/order-infor"
     }
 }

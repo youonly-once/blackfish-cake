@@ -19,7 +19,7 @@ const appid = 'wx82f1142443293aae' //小程序appid
 const mch_id = '1574775751' //商户号
 const notify_url = 'http://www.weixin.qq.com/wxpay/pay.php' //随便写一个，云函数无法实现返回结果，但有巧妙的方法实现同样功能
 const trade_type = 'JSAPI' //小程序的trade_type为JSAPI。
-const key = 'HUY87T65Gj0iU09G7TFtre45FHJbhGFT' //就是微信支付账户里面设置的API密钥
+const key = 'HAISODJNOAISDA56SD46Q4W1D651AS56' //就是微信支付账户里面设置的API密钥
 const cert_file = __dirname + '/ssl/apiclient_cert.pem' // 微信支付秘钥cert文件,退款接口会用到
 const key_file = __dirname + '/ssl/apiclient_key.pem' // 微信支付秘钥key文件,退款接口会用到
 // 云函数入口函数
@@ -42,7 +42,7 @@ exports.main = async(event, context) => {
       out_trade_noData = (out_trade_noData.data)[0]
       const attach = out_trade_noData.attach
       const body = out_trade_noData.body;          //订单大致内容
-      const payPrice = out_trade_noData.payPrice; //订单金额(单位是分),
+      const payPrice = 1;//out_trade_noData.payPrice; //订单金额(单位是分),
       const spbill_create_ip = out_trade_noData.spbill_create_ip;//付款用户的IP地址
       const out_trade_no = out_trade_noData.out_trade_no//商户号
       
