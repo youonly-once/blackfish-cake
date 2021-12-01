@@ -3,6 +3,6 @@
   "backgroundTextStyle":"dark",
     "component": true,
     "usingComponents": {
-      "no-content-tip": "../components/not-content-tip/not-content-tip"
+      "no-content-tip": "../../components/not-content-tip/not-content-tip"
     }
 }

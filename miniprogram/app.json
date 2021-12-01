@@ -1,6 +1,6 @@
 {
   "pages": [
-     "pages/Index/index",
+    "pages/Index/Index",
     "pages/Home/Home",
     "pages/CakeDetail/CakeDetail",
     "pages/Cart/Cart",
@@ -34,13 +34,13 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/Index/index",
+        "pagePath": "pages/Index/Index",
         "iconPath": "/images/tabbar/home.png",
         "selectedIconPath": "/images/tabbar/home_yellow.png",
         "text": "首页"
       },
       {
-        "pagePath": "pages/Cart/Cart",
+        "pagePath": "pages/User/User",
         "iconPath": "images/tabbar/cart.png",
         "selectedIconPath": "images/tabbar/cart_yellow.png",
         "text": "购物车"
